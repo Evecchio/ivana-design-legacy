@@ -528,17 +528,6 @@ Encabezado
 	i18n_input
 		name = adbar_secondary_03_url
 		description = Link (opcional)
-	collapse
-		title = Mensaje para pestaña inactiva
-	checkbox
-		name = inactive_tab_message
-		description = Mostrar un mensaje diferente al cambiar de pestaña en el navegador
-	i18n_input
-		name = inactive_tab_message_01
-		description = Mensaje 1
-	i18n_input
-		name = inactive_tab_message_02
-		description = Mensaje 2
 
 Página de inicio
 	meta

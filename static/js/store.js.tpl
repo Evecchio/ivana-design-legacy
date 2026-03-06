@@ -168,35 +168,6 @@ DOMContentLoaded.addEventOrExecute(() => {
 
     {% endif %}
 
-    {# /* // Inactive tab message */ #}
-
-    {% if settings.inactive_tab_message and (settings.inactive_tab_message_01 or settings.inactive_tab_message_02) %}
-        
-        {# Identifies available messages and discards nulls from the array #}
-        var messages = [
-            {% if settings.inactive_tab_message_01 %}'{{ settings.inactive_tab_message_01 }}',{% endif %}
-            {% if settings.inactive_tab_message_02 %}'{{ settings.inactive_tab_message_02 }}'{% endif %}
-        ].filter(Boolean);
-
-        {# Variable used for interval identifier in tab visibility #}
-        var intervalID;
-
-        function changeTitle() {
-            if (messages.length > 0) {
-                document.title = messages.shift();
-                messages.push(document.title);
-            }
-        }
-
-        document.addEventListener("visibilitychange", function() {
-            if (document.hidden && messages.length > 0) {
-                intervalID = setInterval(changeTitle, 1000);
-            } else {
-                clearInterval(intervalID);
-                document.title = '{{ page_title }}';
-            }
-        });
-    {% endif %}
 
     {# /* // Adbars */ #}
 
