@@ -490,7 +490,7 @@
 
 			/* === BARRA PROMO === */
 			.ivana-promo-bar {
-				background: var(--brand);
+				background: var(--brand-dark);
 				color: #fff;
 				text-align: center;
 				padding: 0.5rem 1rem;
