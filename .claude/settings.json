@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(lftp:*)",
+      "Bash(curl:*)",
+      "Bash(command -v lftp:*)",
+      "Bash(command -v:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(curl.exe:*)",
+      "Bash(powershell -ExecutionPolicy Bypass -File:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\eivec\\AppData\\Local\\Temp"
+    ]
+  }
+}
