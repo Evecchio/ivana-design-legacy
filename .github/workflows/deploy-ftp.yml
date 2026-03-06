@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - dev
   workflow_dispatch:   # permite dispararlo manualmente desde GitHub
 
 jobs:
@@ -15,14 +16,22 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Seleccionar credenciales FTP segun branch
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            echo "FTP_HOST=${{ secrets.FTP_HOST }}"         >> $GITHUB_ENV
+            echo "FTP_USER=${{ secrets.FTP_USER }}"         >> $GITHUB_ENV
+            echo "FTP_PASSWORD=${{ secrets.FTP_PASSWORD }}" >> $GITHUB_ENV
+          else
+            echo "FTP_HOST=${{ secrets.FTP_HOST_DEV }}"         >> $GITHUB_ENV
+            echo "FTP_USER=${{ secrets.FTP_USER_DEV }}"         >> $GITHUB_ENV
+            echo "FTP_PASSWORD=${{ secrets.FTP_PASSWORD_DEV }}" >> $GITHUB_ENV
+          fi
+
       - name: Install lftp
         run: sudo apt-get install -y lftp
 
       - name: Deploy via FTPS
-        env:
-          FTP_HOST: ${{ secrets.FTP_HOST }}
-          FTP_USER: ${{ secrets.FTP_USER }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
           lftp -c "
             set ftp:ssl-force true;

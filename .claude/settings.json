@@ -12,7 +12,17 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(cmd /c \"mkdir c:\\\\proyects\\\\ivana\\\\ivana-design-legacy\\\\.github\\\\workflows\")",
-      "Bash(gh auth:*)"
+      "Bash(gh auth:*)",
+      "Bash(winget install:*)",
+      "Bash(cmd /c:*)",
+      "Read(//c/Program Files/GitHub CLI//**)",
+      "Bash(powershell -command:*)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" auth status)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run list --repo Evecchio/ivana-design-legacy --limit 5)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run view 22750670696 --repo Evecchio/ivana-design-legacy --log-failed)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run list --repo Evecchio/ivana-design-legacy --limit 3)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run view 22751240223 --repo Evecchio/ivana-design-legacy --log-failed)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run list --repo Evecchio/ivana-design-legacy --limit 1)"
     ],
     "additionalDirectories": [
       "C:\\Users\\eivec\\AppData\\Local\\Temp",
