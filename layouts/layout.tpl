@@ -221,6 +221,8 @@
 			@media(max-width: 768px) {
 				.section-home { padding-top:0.75rem!important; padding-bottom:0.75rem!important }
 			}
+			.section-categories-home { padding-bottom:0.5rem!important }
+			.js-products-sale-container { padding-top:0.5rem!important }
 
 			/* === OCULTAR CATEGORÍAS DEL NAV === */
 			.js-desktop-main-categories-col { display: none !important; }
