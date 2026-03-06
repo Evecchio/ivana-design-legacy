@@ -10,10 +10,13 @@
       "Bash(powershell -ExecutionPolicy Bypass -File:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(cmd /c \"mkdir c:\\\\proyects\\\\ivana\\\\ivana-design-legacy\\\\.github\\\\workflows\")",
+      "Bash(gh auth:*)"
     ],
     "additionalDirectories": [
-      "C:\\Users\\eivec\\AppData\\Local\\Temp"
+      "C:\\Users\\eivec\\AppData\\Local\\Temp",
+      "c:\\proyects\\ivana\\ivana-design-legacy\\.github"
     ]
   }
 }

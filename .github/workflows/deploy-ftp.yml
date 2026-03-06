@@ -1,0 +1,41 @@
+name: Deploy to FTP (Tiendanube)
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:   # permite dispararlo manualmente desde GitHub
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
+
+      - name: Deploy via FTPS
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -c "
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate false;
+            set net:timeout 30;
+            set net:max-retries 3;
+            set net:reconnect-interval-base 5;
+            open -u '$FTP_USER','$FTP_PASSWORD' ftpes://$FTP_HOST:21;
+            mirror --reverse --verbose \
+              --exclude-glob .git/ \
+              --exclude-glob .github/ \
+              --exclude-glob .claude/ \
+              --exclude-glob '*.md' \
+              . /;
+          "
