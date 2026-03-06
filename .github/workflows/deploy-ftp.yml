@@ -31,7 +31,7 @@ jobs:
             set net:timeout 30;
             set net:max-retries 3;
             set net:reconnect-interval-base 5;
-            open -u '$FTP_USER','$FTP_PASSWORD' ftpes://$FTP_HOST:21;
+            open -u '$FTP_USER','$FTP_PASSWORD' ftp://$FTP_HOST:21;
             mirror --reverse --verbose \
               --exclude-glob .git/ \
               --exclude-glob .github/ \
