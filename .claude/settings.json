@@ -22,7 +22,11 @@
       "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run view 22750670696 --repo Evecchio/ivana-design-legacy --log-failed)",
       "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run list --repo Evecchio/ivana-design-legacy --limit 3)",
       "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run view 22751240223 --repo Evecchio/ivana-design-legacy --log-failed)",
-      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run list --repo Evecchio/ivana-design-legacy --limit 1)"
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run list --repo Evecchio/ivana-design-legacy --limit 1)",
+      "Bash(git checkout:*)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run view 22751740295 --repo Evecchio/ivana-design-legacy --log-failed)",
+      "WebFetch(domain:ayuda.tiendanube.com)",
+      "WebFetch(domain:docs.tiendanube.com)"
     ],
     "additionalDirectories": [
       "C:\\Users\\eivec\\AppData\\Local\\Temp",
