@@ -176,18 +176,34 @@
 			/* Navegación */
 			.nav-desktop-container {
 				border-top: 1px solid var(--negro-05);
-				padding: 0.5rem 0 !important;
+				padding: 0.5rem !important;
 			}
+
+			.nav-desktop-list {
+				text-align: center !important;
+			}
+
+			.nav-desktop-list > .nav-item {
+				padding-left: 0.5rem !important;
+				padding-right: 0.5rem !important;
+			}
+
 			.js-main-menu a, [class*="nav-link"], [class*="desktop-nav"] a {
-				font-weight:700!important;
-				letter-spacing:.08em!important;
-				text-transform:uppercase!important;
-				font-size:11px!important;
+				font-weight: 700 !important;
+				letter-spacing: -0.02em !important;
+				text-transform: uppercase !important;
+				font-size: 11px !important;
 				color: #222 !important;
-				padding: 0.5rem 1.25rem !important;
-				transition: color .3s ease!important;
+				padding: 0.5rem 0.8rem !important;
+				transition: color .3s ease !important;
+				white-space: nowrap !important;
+				display: inline-block !important;
 			}
-			.js-main-menu a:hover { color: var(--brand)!important }
+
+			.js-main-menu a:hover, [class*="nav-link"]:hover, [class*="desktop-nav"] a:hover {
+				color: var(--brand) !important;
+				transition: color .3s ease !important;
+			}
 
 			/* Títulos de sección — base */
 			.js-products-featured-title, .js-products-new-title, .js-products-sale-title, .h1, .h2, h1, h2 {
