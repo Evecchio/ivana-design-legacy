@@ -176,23 +176,27 @@
 			/* Navegación */
 			.nav-desktop-container {
 				border-top: 1px solid var(--negro-05);
-				padding: 0.5rem 0 !important;
+				padding: 0.75rem 1.5rem !important;
 				margin: 0 auto !important;
 				text-align: center !important;
 				width: 100% !important;
+				max-width: 100% !important;
+				box-sizing: border-box !important;
 			}
 
 			.nav-desktop-list {
 				text-align: center !important;
-				display: inline-block !important;
-				margin: 0 auto !important;
+				display: block !important;
+				margin: 0 !important;
+				padding: 0 !important;
+				font-size: 0 !important;
 			}
 
 			.nav-desktop-list > .nav-item {
 				display: inline-block !important;
-				padding-left: 0.75rem !important;
-				padding-right: 0.75rem !important;
+				padding: 0 0.6rem !important;
 				vertical-align: middle !important;
+				font-size: 11px !important;
 			}
 
 			.js-main-menu a, [class*="nav-link"], [class*="desktop-nav"] a {
@@ -201,10 +205,11 @@
 				text-transform: uppercase !important;
 				font-size: 11px !important;
 				color: #222 !important;
-				padding: 0.5rem 1.25rem !important;
+				padding: 0.5rem 0.4rem !important;
 				transition: color .3s ease !important;
 				display: inline-block !important;
 				white-space: nowrap !important;
+				line-height: 1.2 !important;
 			}
 
 			.js-main-menu a:hover {
