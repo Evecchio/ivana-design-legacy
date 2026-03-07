@@ -177,15 +177,15 @@
 			.nav-desktop-container {
 				border-top: 1px solid var(--negro-05);
 				padding: 0.75rem 1.5rem !important;
-				margin: 0 auto !important;
-				text-align: center !important;
+				margin: 0 !important;
+				text-align: left !important;
 				width: 100% !important;
 				max-width: 100% !important;
 				box-sizing: border-box !important;
 			}
 
 			.nav-desktop-list {
-				text-align: center !important;
+				text-align: left !important;
 				display: block !important;
 				margin: 0 !important;
 				padding: 0 !important;
