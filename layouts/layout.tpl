@@ -119,12 +119,12 @@
 				background: #fff !important;
 			}
 			.head-row {
-				padding-top: 1.25rem !important;
-				padding-bottom: 1.25rem !important;
+				padding-top: 0.625rem !important;
+				padding-bottom: 0.625rem !important;
 				align-items: center !important;
 			}
 			@media(min-width: 768px) {
-				.head-row { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+				.head-row { padding-top: 0.75rem !important; padding-bottom: 0.75rem !important; }
 			}
 
 			/* Logo */
@@ -135,7 +135,7 @@
 			.logo-container a:hover img { transform: scale(1.04) !important }
 			@media(max-width: 768px) {
 				.logo-container img { max-height: 44px !important; }
-				.head-row { padding-top: 0.75rem !important; padding-bottom: 0.75rem !important; }
+				.head-row { padding-top: 0.375rem !important; padding-bottom: 0.375rem !important; }
 			}
 
 			.logo-text-hidden {
