@@ -89,6 +89,11 @@
 				padding-right: clamp(1rem, 4vw, 3rem) !important;
 			}
 
+			/* === TIPOGRAFÍA FLUIDA === */
+			html {
+				font-size: clamp(15px, 1.1vw, 20px);
+			}
+
 			/* === BASE === */
 			*,*::before,*::after{box-sizing:border-box}
 			body{
@@ -96,6 +101,7 @@
 				-moz-osx-font-smoothing:grayscale;
 				font-family:'Manrope',var(--body-font),sans-serif!important;
 				background-color: var(--blanco);
+				font-size: clamp(15px, 1.1vw, 18px) !important;
 				color: var(--negro);
 				line-height: 1.5;
 			}
