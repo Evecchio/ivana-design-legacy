@@ -82,6 +82,13 @@
 				--blanco-20:      rgba(255,255,255, 0.20);
 			}
 
+				/* === EXPANSIÓN A ANCHO COMPLETO === */
+			.container {
+				max-width: none !important;
+				padding-left: clamp(1rem, 4vw, 3rem) !important;
+				padding-right: clamp(1rem, 4vw, 3rem) !important;
+			}
+
 			/* === BASE === */
 			*,*::before,*::after{box-sizing:border-box}
 			body{
