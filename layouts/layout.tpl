@@ -176,33 +176,39 @@
 			/* Navegación */
 			.nav-desktop-container {
 				border-top: 1px solid var(--negro-05);
-				padding: 0.5rem !important;
+				padding: 0.5rem 0 !important;
+				margin: 0 auto !important;
+				text-align: center !important;
+				width: 100% !important;
 			}
 
 			.nav-desktop-list {
 				text-align: center !important;
+				display: inline-block !important;
+				margin: 0 auto !important;
 			}
 
 			.nav-desktop-list > .nav-item {
-				padding-left: 0.5rem !important;
-				padding-right: 0.5rem !important;
+				display: inline-block !important;
+				padding-left: 0.75rem !important;
+				padding-right: 0.75rem !important;
+				vertical-align: middle !important;
 			}
 
 			.js-main-menu a, [class*="nav-link"], [class*="desktop-nav"] a {
 				font-weight: 700 !important;
-				letter-spacing: -0.02em !important;
+				letter-spacing: .08em !important;
 				text-transform: uppercase !important;
 				font-size: 11px !important;
 				color: #222 !important;
-				padding: 0.5rem 0.8rem !important;
+				padding: 0.5rem 1.25rem !important;
 				transition: color .3s ease !important;
-				white-space: nowrap !important;
 				display: inline-block !important;
+				white-space: nowrap !important;
 			}
 
-			.js-main-menu a:hover, [class*="nav-link"]:hover, [class*="desktop-nav"] a:hover {
+			.js-main-menu a:hover {
 				color: var(--brand) !important;
-				transition: color .3s ease !important;
 			}
 
 			/* Títulos de sección — base */
