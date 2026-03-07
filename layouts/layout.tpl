@@ -118,12 +118,14 @@
 				box-shadow: 0 1px 0 var(--negro-05);
 				background: #fff !important;
 			}
+			.js-head-main .head-row,
 			.head-row {
 				padding-top: 0.625rem !important;
 				padding-bottom: 0.625rem !important;
 				align-items: center !important;
 			}
 			@media(min-width: 768px) {
+				.js-head-main .head-row,
 				.head-row { padding-top: 0.75rem !important; padding-bottom: 0.75rem !important; }
 			}
 
