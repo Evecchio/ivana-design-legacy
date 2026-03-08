@@ -216,8 +216,11 @@ git push -u origin <rama>
 ### JavaScript
 
 - Vanilla JS, sin frameworks
+- Librerías integradas: **Swiper 4.4.2** (carruseles/sliders), **LazySizes** (lazy loading imágenes)
 - Código organizado en secciones con Table of Contents en `store.js.tpl`
 - Secciones: Transitions, Forms, Header/Nav, Home, Product grid, Product detail, Cart, Shipping
+- Prefijo `.js-` en clases HTML usadas como hooks de JavaScript (no usar para estilos)
+- Atributos `data-store` y `data-component` para tracking/comportamiento dinámico
 
 ---
 
@@ -229,7 +232,7 @@ git push -u origin <rama>
 | `defaults.txt` | Valores por defecto de los settings (colores base del tema original) |
 | `translations.txt` | Strings traducibles al español e portugués |
 | `sections.txt` | Define las secciones configurables del tema |
-| `variants.txt` | Variantes del tema disponibles |
+| `variants.txt` | Variantes del tema: `Clothing` (base) y `Electronics` (paleta alternativa) |
 | `data.json` | Indica a Tiendanube qué assets compilar para el preview |
 
 ---
