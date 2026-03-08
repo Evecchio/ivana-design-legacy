@@ -96,7 +96,18 @@
 
 			/* === BASE === */
 			*,*::before,*::after{box-sizing:border-box}
+			html {
+				width: 100% !important;
+				overflow-x: hidden !important;
+				margin: 0 !important;
+				padding: 0 !important;
+			}
 			body{
+				width: 100% !important;
+				max-width: 100% !important;
+				margin: 0 !important;
+				padding: 0 !important;
+				overflow-x: hidden !important;
 				-webkit-font-smoothing:antialiased;
 				-moz-osx-font-smoothing:grayscale;
 				font-family:'Manrope',var(--body-font),sans-serif!important;
