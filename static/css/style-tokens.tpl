@@ -89,6 +89,16 @@
   --header-background: {{ header_background }};
   --header-foreground: {{ header_foreground }};
 
+  --header-desktop-nav-background: var(--header-background);
+  --header-desktop-nav-foreground: var(--header-foreground);
+  --header-search-btn-background: var(--header-background);
+  --header-search-btn-foreground: var(--header-foreground);
+
+  --banner-services-background: {{ banner_services_background }};
+  --banner-services-foreground: {{ banner_services_foreground }};
+
+  --main-text-transform: none;
+
   --header-badge-background: var(--accent-color);
   --header-badge-foreground: var(--text-on-accent);
 

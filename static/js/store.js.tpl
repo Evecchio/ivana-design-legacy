@@ -1615,7 +1615,8 @@ DOMContentLoaded.addEventOrExecute(() => {
                 $category_controls
                 }, { threshold: [0,1]
             });
-            observer.observe(document.querySelector(".js-category-controls-prev"));
+            var $categoryControlsPrev = document.querySelector(".js-category-controls-prev");
+            if ($categoryControlsPrev) { observer.observe($categoryControlsPrev); }
 
             offsetCategories = function() {
                 var $sticky_category_controls = jQueryNuvem(".js-category-controls");
