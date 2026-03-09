@@ -518,3 +518,64 @@
     height: 88px !important;
   }
 }
+
+.js-nav-desktop-color-container .js-nav-desktop-container.nav-desktop-grid[data-desktop-nav-secondary="false"][data-desktop-main-categories="true"] {
+  grid-template-columns: auto auto !important;
+  justify-content: center !important;
+  column-gap: clamp(1rem, 2vw, 2.25rem) !important;
+}
+
+.js-nav-desktop-color-container .js-desktop-main-categories-col,
+.js-nav-desktop-color-container .js-desktop-nav-col {
+  width: auto !important;
+  min-width: 0 !important;
+}
+
+.js-nav-desktop-color-container .js-desktop-nav-col {
+  justify-self: center !important;
+}
+
+.js-nav-desktop-color-container .js-desktop-nav-col .js-nav-desktop,
+.js-nav-desktop-color-container .js-desktop-nav-col .nav-desktop {
+  width: auto !important;
+}
+
+.js-nav-desktop-color-container .js-nav-desktop-list {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: nowrap !important;
+  gap: 0.15rem !important;
+}
+
+.js-nav-desktop-color-container .js-nav-desktop-list > .js-desktop-nav-item,
+.js-nav-desktop-color-container .js-nav-desktop-list > .nav-item,
+.js-nav-desktop-color-container .js-desktop-main-categories-col > .js-desktop-nav-item,
+.js-nav-desktop-color-container .js-desktop-main-categories-col > .nav-item {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.js-nav-desktop-color-container .js-desktop-main-categories-col .nav-item-container,
+.js-nav-desktop-color-container .js-nav-desktop-list .nav-item-container {
+  margin-right: 0 !important;
+}
+
+.js-nav-desktop-color-container .desktop-dropdown {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.js-nav-desktop-color-container .desktop-dropdown-container {
+  justify-content: center !important;
+}
+
+@media (max-width: 1199px) {
+  .js-nav-desktop-color-container .js-nav-desktop-container.nav-desktop-grid[data-desktop-nav-secondary="false"][data-desktop-main-categories="true"] {
+    column-gap: 0.75rem !important;
+  }
+
+  .js-nav-desktop-color-container .js-nav-desktop-list {
+    gap: 0 !important;
+  }
+}
