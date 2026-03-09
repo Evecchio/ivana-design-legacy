@@ -1,5 +1,17 @@
 {# /* Style tokens */ #}
 
+{# Opacity hex suffixes para construir colores con transparencia #}
+{% set opacity_03 = '08' %}
+{% set opacity_05 = '0D' %}
+{% set opacity_10 = '1A' %}
+{% set opacity_20 = '33' %}
+{% set opacity_30 = '4D' %}
+{% set opacity_40 = '66' %}
+{% set opacity_50 = '80' %}
+{% set opacity_60 = '99' %}
+{% set opacity_70 = 'B3' %}
+{% set opacity_80 = 'CC' %}
+
 :root {
   
   {#/*============================================================================

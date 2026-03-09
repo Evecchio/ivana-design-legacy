@@ -105,7 +105,7 @@ DOMContentLoaded.addEventOrExecute(() => {
         const defaultWidth = 300;
 
         {# New speed values based on dynamic content #}
-        const animatedWidth = jQueryNuvem(textSelector).first(el => el.offsetWidth);
+        const animatedWidth = jQueryNuvem(textSelector).first()[0]?.offsetWidth || 0;
         let newDelay;
         newDelay = defaultDelay*(animatedWidth/defaultWidth)*1.5;
 
