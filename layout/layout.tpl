@@ -46,7 +46,7 @@
         .border-brand-pink { border-color: var(--brand-pink); }
     </style>
 
-    {{ head_content }}
+    {% head_content %}
 </head>
 
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
