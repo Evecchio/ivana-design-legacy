@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - dev
+      - investigacion/ivana-design-sesion
   workflow_dispatch:   # permite dispararlo manualmente desde GitHub
 
 jobs:
@@ -15,6 +16,19 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+
+      - name: Verificar confirmacion de deploy (rama investigacion)
+        if: github.ref_name == 'investigacion/ivana-design-sesion' && github.event_name == 'push'
+        run: |
+          if echo "${{ github.event.head_commit.message }}" | grep -qF '[deploy]'; then
+            echo "Deploy confirmado con flag [deploy]. Continuando..."
+          else
+            echo "Deploy omitido: no se encontro '[deploy]' en el mensaje de commit."
+            echo ""
+            echo "Para desplegar desde esta rama, incluí el flag en el commit:"
+            echo "  git commit -m 'descripcion del cambio [deploy]'"
+            exit 1
+          fi
 
       - name: Seleccionar credenciales FTP segun branch
         run: |
