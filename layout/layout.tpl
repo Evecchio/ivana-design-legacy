@@ -99,7 +99,7 @@
             </nav>
         </header>
 
-        {{ template_content }}
+       {% template_content %}
 
         <footer class="bg-brand-pink text-white pt-16 pb-8 mt-12">
             <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -142,6 +142,6 @@
         </footer>
     </div>
     
-    {{ body_content }}
+   {% body_content %}
 </body>
 </html>
