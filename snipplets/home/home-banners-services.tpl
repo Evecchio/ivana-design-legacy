@@ -16,11 +16,13 @@
 
 {% import _self as banner_services %}
 
-<div class="js-informative-banners-container container py-5" {% if not has_informative_banners %}style="display: none"{% endif %}>
-	<div class="js-informative-banners swiper-container text-center my-3">
-		<div class="swiper-wrapper">
-			{{ banner_services.for_each_banner_include('snipplets/home/home-banners-services-item.tpl') }}
+<section class="ivana-home-infos">
+	<div class="js-informative-banners-container container py-5" {% if not has_informative_banners %}style="display: none"{% endif %}>
+		<div class="js-informative-banners swiper-container text-center my-3">
+			<div class="swiper-wrapper">
+				{{ banner_services.for_each_banner_include('snipplets/home/home-banners-services-item.tpl') }}
+			</div>
 		</div>
+		<div class="js-informative-banners-pagination swiper-pagination swiper-pagination-bullets swiper-pagination-outside d-md-none"></div>
 	</div>
-	<div class="js-informative-banners-pagination swiper-pagination swiper-pagination-bullets swiper-pagination-outside d-md-none"></div>
-</div>
+</section>

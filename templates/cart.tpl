@@ -1,9 +1,10 @@
+<section class="ivana-cart-shell">
 <div id="shoppingCartPage" data-minimum="{{ settings.cart_minimum_value }}" data-store="cart-page" class="container">
-    {% embed "snipplets/page-header.tpl" %}
+    {% embed "snipplets/page-header.tpl" with {page_header_class: 'ivana-page-hero', page_header_title_class: 'ivana-page-title'} %}
         {% block page_header_text %}{{ "Carrito de compras" | translate }}{% endblock page_header_text %}
     {% endembed %}
     
-    <form action="{{ store.cart_url }}" method="post" class="visible-when-content-ready mb-5" data-store="cart-form" data-component="cart">
+    <form action="{{ store.cart_url }}" method="post" class="visible-when-content-ready mb-5 ivana-cart-form" data-store="cart-form" data-component="cart">
 
         {# Cart alerts #}
 
@@ -19,9 +20,6 @@
         {% if cart.items %}
             <div class="cart-page-content">
                 <div class="cart-page-products">
-                    
-                    {# Cart table header #}
-            
                     <div class="cart-page-table-header pb-3 mb-3 font-medium bottom-line d-none d-md-grid">
                         <div>{{ 'Productos' | translate }}</div>
                         <div class="cart-page-table-header-totals">
@@ -31,8 +29,6 @@
                         </div>
                     </div>
 
-                    {# Cart table items #}
-
                     <div class="js-ajax-cart-list mb-4">
                         {% if cart.items %}
                           {% for item in cart.items %}
@@ -41,20 +37,14 @@
                         {% endif %}
                     </div>
                     <div class="cart-page-fulfillment">
-
-                        {# Check if store has free shipping without regions or categories #}
-
                         {% set has_free_shipping = cart.free_shipping.cart_has_free_shipping or cart.free_shipping.min_price_free_shipping.min_price %}
                         {% set has_free_shipping_bar = has_free_shipping and cart.free_shipping.min_price_free_shipping.min_price_raw > 0 %}
 
                         {% if has_free_shipping_bar %}
-                          {# includes free shipping progress bar: only if store has free shipping with a minimum #}
                           <div class="mb-3 d-md-none">
                             {% include "snipplets/shipping/shipping-free-rest.tpl" %}
                           </div>
                         {% endif %}
-                        
-                        {# Cart shipping and pickup #}
 
                         {% include "snipplets/cart/cart-fulfillment.tpl" %}
                     </div>
@@ -64,21 +54,19 @@
                 </div>
             </div>
         {% else %}
-
-            {#  Empty cart  #}
-
             {% if not error %}
-                {{ component('alert', {
-                    'type': 'info',
-                    'message': ('El carrito de compras está vacío.' | translate),
-                    'class': 'text-center',
-                }) }}
+                <div class="ivana-empty-state">
+                    <p class="ivana-kicker mb-3">{{ 'Todavia no agregaste productos' | translate }}</p>
+                    <h2 class="h4 mb-3">{{ 'Tu carrito esta vacio.' | translate }}</h2>
+                    <p class="mb-4">{{ 'Explora las categorias destacadas y volve cuando encuentres tus proximas prendas favoritas.' | translate }}</p>
+                    <a href="{{ store.products_url }}" class="btn btn-primary">{{ 'Seguir comprando' | translate }}</a>
+                </div>
             {% endif %}
         {% endif %}
         <div id="error-ajax-stock" class="alert alert-warning mb-3" style="display: none;"> 
-            {{ "¡Uy! No tenemos más stock de este producto para agregarlo al carrito. Si querés podés" | translate }}<a href="{{ store.products_url }}" class="btn-link ml-1 font-small">{{ "ver otros acá" | translate }}</a>
+            {{ "Aun no tenemos mas stock de este producto para agregarlo al carrito. Si queres podes" | translate }}<a href="{{ store.products_url }}" class="btn-link ml-1 font-small">{{ "ver otros aca" | translate }}</a>
         </div>
     </form>
     <div id="store-curr" class="hidden">{{ cart.currency }}</div>
 </div>
-
+</section>

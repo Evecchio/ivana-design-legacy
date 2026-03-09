@@ -1,5 +1,5 @@
-<div id="single-product" class="js-product-detail js-product-container js-has-new-shipping js-shipping-calculator-container" data-variants="{{product.variants_object | json_encode }}" data-store="product-detail">
-	<div class="container pt-3 pt-md-4 pb-4">
+<div id="single-product" class="js-product-detail js-product-container js-has-new-shipping js-shipping-calculator-container ivana-product-shell" data-variants="{{product.variants_object | json_encode }}" data-store="product-detail">
+	<div class="container pt-4 pt-md-5 pb-4">
 		<div class="product-columns mb-md-4">
 			<div class="product-images mb-4 mb-md-0" data-store="product-image-{{ product.id }}">
 				{% include 'snipplets/product/product-image.tpl' %}
@@ -13,4 +13,6 @@
 </div>
 
 {# Related products #}
-{% include 'snipplets/product/product-related.tpl' %}
+<div class="ivana-product-related">
+	{% include 'snipplets/product/product-related.tpl' %}
+</div>

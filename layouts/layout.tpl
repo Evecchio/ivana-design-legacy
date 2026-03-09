@@ -43,22 +43,23 @@
 		{# Load async styling not mandatory for first meaningfull paint #}
 
 		<link rel="stylesheet" href="{{ 'css/style-async.scss' | static_url }}" media="print" onload="this.media='all'">
+		<link rel="stylesheet" href="{{ 'css/ivana-refresh.css' | static_url }}">
 
-		{# Loads custom CSS added from Advanced Settings on the admin´s theme customization screen #}
+		{# Loads custom CSS added from Advanced Settings on the adminÂ´s theme customization screen #}
 
 		<style>
 			{{ settings.css_code | raw }}
 		</style>
 
-		{# Ivana Design — Manrope Font #}
+		{# Ivana Design â€” Manrope Font #}
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-		{# Ivana Design — Premium CSS v3 (Stitch) #}
+		{# Ivana Design â€” Premium CSS v3 (Stitch) #}
 		<style>
 			/* === VARIABLES DE MARCA === */
 			:root {
-				/* ─── MARCA ─── */
+				/* â”€â”€â”€ MARCA â”€â”€â”€ */
 				--brand:          #FF1493;
 				--brand-dark:     #cc007a;
 				--brand-80:       rgba(255,20,147, 0.80);
@@ -66,14 +67,14 @@
 				--brand-20:       rgba(255,20,147, 0.20);
 				--brand-10:       rgba(255,20,147, 0.10);
 
-				/* ─── NEUTROS ─── */
+				/* â”€â”€â”€ NEUTROS â”€â”€â”€ */
 				--negro:          #111111;
 				--gris-oscuro:    #333333;
 				--gris:           #666666;
 				--gris-claro:     #f8f8f8;
 				--blanco:         #ffffff;
 
-				/* ─── NEUTROS CON OPACIDAD ─── */
+				/* â”€â”€â”€ NEUTROS CON OPACIDAD â”€â”€â”€ */
 				--negro-80:       rgba(0,0,0, 0.80);
 				--negro-50:       rgba(0,0,0, 0.50);
 				--negro-10:       rgba(0,0,0, 0.10);
@@ -82,14 +83,14 @@
 				--blanco-20:      rgba(255,255,255, 0.20);
 			}
 
-				/* === EXPANSIÓN A ANCHO COMPLETO === */
+				/* === EXPANSIÃ“N A ANCHO COMPLETO === */
 			.container {
 				max-width: none !important;
 				padding-left: clamp(1rem, 4vw, 3rem) !important;
 				padding-right: clamp(1rem, 4vw, 3rem) !important;
 			}
 
-			/* === TIPOGRAFÍA FLUIDA === */
+			/* === TIPOGRAFÃA FLUIDA === */
 			html {
 				font-size: clamp(15px, 1.1vw, 20px);
 			}
@@ -119,7 +120,7 @@
 			img{display:block;max-width:100%}
 			::selection { background: var(--brand-20); color: var(--negro); }
 
-			/* === TIPOGRAFÍA === */
+			/* === TIPOGRAFÃA === */
 			h1,h2,h3,h4,h5,h6, .h1,.h2,.h3,.h4,.h5,.h6, p,span,div,li,a,button,input,select,textarea {
 				font-family:'Manrope',var(--body-font),sans-serif!important;
 			}
@@ -184,7 +185,7 @@
 			}
 			[class*="search-form"] button svg { width: 18px !important; height: 18px !important; opacity: 0.5; }
 
-			/* Navegación */
+			/* NavegaciÃ³n */
 			.nav-desktop-container {
 				border-top: 1px solid var(--negro-05);
 				padding: 0.75rem 1.5rem !important;
@@ -227,7 +228,7 @@
 				color: var(--brand) !important;
 			}
 
-			/* Títulos de sección — base */
+			/* TÃ­tulos de secciÃ³n â€” base */
 			.js-products-featured-title, .js-products-new-title, .js-products-sale-title, .h1, .h2, h1, h2 {
 				font-size: 1.6rem!important;
 				letter-spacing:-0.01em!important;
@@ -248,7 +249,7 @@
 				.h2, h2 { font-size: 2.2rem!important; }
 			}
 
-			/* Título Super Descuentos — destacado */
+			/* TÃ­tulo Super Descuentos â€” destacado */
 			.js-products-sale-title {
 				font-size: 2rem !important;
 				color: var(--brand) !important;
@@ -277,12 +278,12 @@
 			.section-categories-home { padding-bottom:0.5rem!important }
 			.js-products-sale-container { padding-top:0.5rem!important }
 
-			/* === OCULTAR CATEGORÍAS DEL NAV === */
+			/* === OCULTAR CATEGORÃAS DEL NAV === */
 			.js-desktop-main-categories-col { display: none !important; }
 			.js-main-categories-container,
 			.main-categories-container { display: none !important; }
 
-			/* === CATEGORÍAS HOME — círculos perfectos === */
+			/* === CATEGORÃAS HOME â€” cÃ­rculos perfectos === */
 			.home-category-image-border {
 				border-radius: 50% !important;
 				border: 2px solid #eee !important;
@@ -372,9 +373,9 @@
 				flex: 1 !important;
 				gap: 3px !important;
 			}
-			/* === JERARQUÍA TIPOGRÁFICA — tarjeta de producto === */
+			/* === JERARQUÃA TIPOGRÃFICA â€” tarjeta de producto === */
 
-			/* Nombre: negrita, bien visible — máx 2 líneas */
+			/* Nombre: negrita, bien visible â€” mÃ¡x 2 lÃ­neas */
 			.js-item-product .item-name,
 			.js-item-product a[class*="name"],
 			.js-item-product [class*="item-name"] {
@@ -409,7 +410,7 @@
 				line-height: 1.2 !important;
 			}
 
-			/* % OFF en área de texto: pequeño badge rosa */
+			/* % OFF en Ã¡rea de texto: pequeÃ±o badge rosa */
 			.js-item-product .product-item-discount,
 			.js-item-product [class*="discount-rate"] {
 				font-size: 0.65rem !important;
@@ -443,7 +444,7 @@
 				margin-top: 3px !important;
 			}
 
-			/* Stock urgente: en naranja, itálica */
+			/* Stock urgente: en naranja, itÃ¡lica */
 			.js-item-product .text-stock,
 			.js-item-product [class*="text-stock"],
 			.js-item-product .js-last-product,
@@ -511,7 +512,7 @@
 				padding: 2px 6px !important;
 			}
 
-			/* Sin animaciones — carga rápida */
+			/* Sin animaciones â€” carga rÃ¡pida */
 			.js-item-product,
 			.js-item-product * {
 				animation: none !important;
@@ -560,7 +561,7 @@
 				.ivana-promo-bar { font-size: 11px; letter-spacing: 0.14em; white-space: nowrap; }
 			}
 
-			/* Scroll horizontal en mobile para categorías */
+			/* Scroll horizontal en mobile para categorÃ­as */
 			.section-categories-home .container,
 			[class*="home-categories"] {
 				overflow-x: auto !important;
@@ -571,7 +572,7 @@
 			}
 			[class*="home-categories"]::-webkit-scrollbar { display: none !important; }
 
-			/* === VER PRODUCTO — hover overlay === */
+			/* === VER PRODUCTO â€” hover overlay === */
 			.product-ver-overlay {
 				position: absolute;
 				inset: 0;
@@ -604,10 +605,10 @@
 			}
 			.product-ver-btn:hover { background: #1A1A1A; color: #fff !important; }
 
-			/* Ocultar botón de submit siempre visible — se usa VER PRODUCTO overlay */
+			/* Ocultar botÃ³n de submit siempre visible â€” se usa VER PRODUCTO overlay */
 			.js-item-submit-container { display: none !important; }
 
-			/* === BADGES DESCUENTO — top-left como en el diseño === */
+			/* === BADGES DESCUENTO â€” top-left como en el diseÃ±o === */
 			.product-discount-overlay {
 				position: absolute;
 				top: 10px;
@@ -620,7 +621,7 @@
 				gap: 4px;
 				pointer-events: none;
 			}
-			/* Badge % OFF — sobre la imagen, rosa */
+			/* Badge % OFF â€” sobre la imagen, rosa */
 			.product-discount-badge {
 				background: var(--brand);
 				color: #fff;
@@ -633,7 +634,7 @@
 				font-family: 'Manrope', sans-serif;
 				display: inline-block;
 			}
-			/* === NAV — sin dropdown en ningún ítem === */
+			/* === NAV â€” sin dropdown en ningÃºn Ã­tem === */
 			.js-main-menu li ul,
 			.js-main-menu li .nav-dropdown,
 			.js-main-menu li [class*="dropdown"],
@@ -644,7 +645,7 @@
 				display: none !important;
 			}
 
-			/* === IGUAL ALTURA EN TARJETAS — li padre del grid === */
+			/* === IGUAL ALTURA EN TARJETAS â€” li padre del grid === */
 			.js-product-list > li,
 			.product-list > li,
 			[class*="product-list"] > li {
@@ -652,7 +653,7 @@
 				flex-direction: column !important;
 			}
 
-			/* === PÁGINA DE PRODUCTO — sección envío y retiro === */
+			/* === PÃGINA DE PRODUCTO â€” secciÃ³n envÃ­o y retiro === */
 			/* Evitar que elementos hereden fondo/texto oscuro inesperado */
 			.template-product [class*="shipping"],
 			.template-product [class*="pickup"],
@@ -666,7 +667,7 @@
 				color: #222 !important;
 				background-color: transparent !important;
 			}
-			/* Cajas individuales de opción de envío */
+			/* Cajas individuales de opciÃ³n de envÃ­o */
 			.template-product [class*="shipping-option"],
 			.template-product [class*="shipping-method"],
 			.template-product [class*="delivery-option"] {
@@ -676,7 +677,7 @@
 				padding: 0.75rem !important;
 			}
 
-			/* Badge Ahorrás — sobre la imagen, naranja suave */
+			/* Badge AhorrÃ¡s â€” sobre la imagen, naranja suave */
 			.product-price-badge {
 				background: #fff7ed !important;
 				color: #c2410c !important;

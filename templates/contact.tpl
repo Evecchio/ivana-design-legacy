@@ -1,17 +1,17 @@
 {% set has_contact_info = store.whatsapp or store.phone or store.email or store.address or store.blog or store.contact_intro %}
 {% set is_order_cancellation_without_id = params.order_cancellation_without_id == 'true' %}
 
-<div class="container visible-when-content-ready mb-4">
-	<div class="w-md-80 mb-5">
-		{% embed "snipplets/page-header.tpl" %}
+<section class="ivana-contact-shell">
+<div class="container visible-when-content-ready py-4 py-md-5 mb-4">
+	<div class="mb-5">
+		{% embed "snipplets/page-header.tpl" with {page_header_class: 'ivana-page-hero', page_header_title_class: 'ivana-page-title'} %}
 			{% set form_title = is_order_cancellation ? "Pedí la cancelación de tu última compra" | translate : "Contacto" | translate %}
 			{% block page_header_text %}{{ form_title }}{% endblock page_header_text %}
 		{% endembed %}
 
-		<div class="d-grid grid-md-2">
-
+		<div class="ivana-contact-grid">
 			{% if has_contact_info and not is_order_cancellation %}
-				<div class="mb-3 mr-md-3">
+				<div class="ivana-contact-card">
 					{% if store.contact_intro %}
 						<p class="mb-3 font-medium">{{ store.contact_intro }}</p>
 					{% endif %}
@@ -19,7 +19,7 @@
 				</div>
 			{% endif %}
 			{% if is_order_cancellation %}
-				<div class="mb-3 mr-md-3">
+				<div class="ivana-contact-card">
 					<div class="text-center text-md-left mb-4">
 						<p data-component="order-cancellation-disclaimer">{{ "Si te arrepentiste, podés pedir la cancelación enviando este formulario. Tenés como máximo hasta 10 días corridos desde que recibiste el producto." | translate }} </p>
 						<a class="btn-link" href="{{ status_page_url_regret }}"><strong>{{'Ver detalle de la compra' | translate}}</strong></a>
@@ -32,10 +32,10 @@
 						{% endif %}
 						{% include "snipplets/contact-links.tpl" with {btn_link: true} %}
 					{% endif %}
-				</div>	
+				</div>
 			{% endif %}
-			<div>
-			{% if product %}  
+			<div class="ivana-contact-form-card">
+			{% if product %}
 				<div class="d-grid grid-auto-1 align-items-center mb-4">
 					<div>
 						<img src="{{ product.featured_image | product_image_url('thumb') }}" title="{{ product.name }}" alt="{{ product.name }}" class="img-fluid" />
@@ -48,10 +48,10 @@
 				{% if contact %}
 					{% if contact.success %}
 						{% if is_order_cancellation %}
-							<div class="alert alert-success" data-component="order-cancellation-success-message">{{ "¡Tu pedido de cancelación fue enviado!" | translate }} 
+							<div class="alert alert-success" data-component="order-cancellation-success-message">{{ "¡Tu pedido de cancelación fue enviado!" | translate }}
 							<br>
 							<p class="mb-0 mt-2">{{ "Vamos a ponernos en contacto con vos apenas veamos tu mensaje." | translate }}</p>
-							<br> 
+							<br>
 							<strong>{{ "Tu código de trámite es" | translate }} #{{ last_order_id }}</strong></div>
 						{% else %}
 							<div class="alert alert-success" data-component="contact-success-message">{{ "¡Gracias por contactarnos! Vamos a responderte apenas veamos tu mensaje." | translate }}</div>
@@ -59,17 +59,14 @@
 					{% else %}
 						<div class="alert alert-danger">{{ "Necesitamos tu nombre y un email para poder responderte." | translate }}</div>
 					{% endif %}
-				{% endif %}	
+				{% endif %}
 
 				{% if is_order_cancellation_without_id %}
 					<p class="mb-3" data-component="order-cancellation-disclaimer">{{ "Si te arrepentiste de una compra, podés pedir la cancelación enviando este formulario <strong>con tu número de orden.</strong> Tenés como máximo hasta 10 días corridos desde que recibiste el producto." | translate }}</p>
 				{% endif %}
-				
-				{% embed "snipplets/forms/form.tpl" with{form_id: 'contact-form', form_custom_class: 'js-winnie-pooh-form', form_action: '/winnie-pooh', submit_custom_class: 'btn-block', submit_name: 'contact', submit_text: 'Enviar' | translate, data_store: 'contact-form' }  %}
+
+				{% embed "snipplets/forms/form.tpl" with{form_id: 'contact-form', form_custom_class: 'js-winnie-pooh-form', form_action: '/winnie-pooh', submit_custom_class: 'btn-block', submit_name: 'contact', submit_text: 'Enviar' | translate, data_store: 'contact-form' } %}
 					{% block form_body %}
-
-						{# Hidden inputs used to send attributes #}
-
 						<div class="winnie-pooh hidden">
 							<label for="winnie-pooh">{{ "No completar este campo" | translate }}:</label>
 							<input type="text" id="winnie-pooh" name="winnie-pooh">
@@ -82,28 +79,18 @@
 							<input type="hidden" name="type" value="contact" />
 						{% endif %}
 
-						{# Name input #}
-
 						{% embed "snipplets/forms/form-input.tpl" with{input_for: 'name', type_text: true, input_name: 'name', input_id: 'name', input_label_text: 'Nombre' | translate, input_placeholder: 'ej.: María Perez' | translate } %}
 						{% endembed %}
-
-						{# Email input #}
 
 						{% embed "snipplets/forms/form-input.tpl" with{input_for: 'email', type_email: true, input_name: 'email', input_id: 'email', input_label_text: 'Email' | translate, input_placeholder: 'ej.: tuemail@email.com' | translate } %}
 						{% endembed %}
 
 						{% if not is_order_cancellation %}
-
-							{# Phone input #}
-
 							{% embed "snipplets/forms/form-input.tpl" with{input_for: 'phone', type_tel: true, input_name: 'phone', input_id: 'phone', input_label_text: 'Teléfono' | translate, input_placeholder: 'ej.: 1123445567' | translate } %}
 							{% endembed %}
 
-							{# Message textarea #}
-
 							{% embed "snipplets/forms/form-input.tpl" with{text_area: true, input_for: 'message', input_name: 'message', input_id: 'message', input_rows: '7', input_label_text: 'Mensaje' | translate, input_placeholder: 'ej.: Tu mensaje' | translate } %}
 							{% endembed %}
-
 						{% endif %}
 					{% endblock %}
 				{% endembed %}
@@ -111,3 +98,4 @@
 		</div>
 	</div>
 </div>
+</section>

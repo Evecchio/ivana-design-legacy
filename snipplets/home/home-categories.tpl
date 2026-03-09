@@ -1,11 +1,15 @@
 {% if settings.slider_categories and settings.slider_categories is not empty %}
-	<div class="section-home section-categories-home overflow-none py-10">
+	<section class="section-home section-categories-home ivana-home-categories overflow-none py-10">
 		<div class="container overflow-x-auto hide-scrollbar">
-			<div class="d-flex justify-content-between align-items-start gap-4 pb-4">
+			<div class="ivana-home-section-head text-center mb-4">
+				<p class="ivana-home-section-kicker mb-2">{{ 'Descubri tu estilo' | translate }}</p>
+				<h2 class="ivana-home-section-title mb-0">{{ 'Explora categorias' | translate }}</h2>
+			</div>
+			<div class="d-flex justify-content-between align-items-start gap-4 pb-4 ivana-home-categories-row">
 				{% for slide in settings.slider_categories %}
 					{% if slide.link %}
 						<a href="{{ slide.link | setting_url }}" class="js-home-category d-flex flex-column align-items-center group shrink-0 text-decoration-none" aria-label="{{ 'Categoría' | translate }} {{ loop.index }}">
-							<div class="home-category-image-border w-28 h-28 md:w-36 md:h-36 rounded-circle overflow-hidden p-1 transition-all" style="border: 2px solid transparent;">
+							<div class="home-category-image-border ivana-home-category-circle w-28 h-28 md:w-36 md:h-36 rounded-circle overflow-hidden p-1 transition-all">
 								<div class="w-100 h-100 rounded-circle overflow-hidden">
 									{{ component(
 										'image',{
@@ -21,7 +25,7 @@
 									}}
 								</div>
 							</div>
-							<span class="mt-3 text-[11px] font-bold tracking-widest uppercase text-center" style="font-size: 11px; color: #111;">
+							<span class="mt-3 font-bold tracking-widest uppercase text-center ivana-home-category-name">
 								{% set category_handle = slide.link | trim('/') | split('/') | last %}
 								{% include 'snipplets/home/home-categories-name.tpl' %}
 							</span>
@@ -30,5 +34,5 @@
 				{% endfor %}
 			</div>
 		</div>
-	</div>
+	</section>
 {% endif %}

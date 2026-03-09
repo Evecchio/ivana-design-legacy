@@ -20,8 +20,8 @@
 	<div class="js-home-main-slider-container {% if not has_main_slider and not params.preview %}hidden{% endif %}">
 {% endif %}
 
+<section class="ivana-home-hero{% if mobile %} ivana-home-hero-mobile{% endif %}">
 <div class="js-home-slider-container {{ slider_name }}-visibility position-relative {% if has_main_slider and has_mobile_slider %}{% if mobile %}d-md-none{% else %}d-none d-md-block{% endif %}{% elseif not settings.toggle_slider_mobile and mobile %}hidden{% endif %}{% if not has_slider_full_width %} container{% endif %}" data-align="{{ slider_data_align }}">
-	
 	{{ component(
 		'gallery',{
 			gallery_name: slider,
@@ -34,28 +34,26 @@
 			gallery_prev_classes: 'js-swiper-home-prev svg-icon-text ' ~ slider_outside_button,
 			gallery_next_classes: 'js-swiper-home-next svg-icon-text ' ~ slider_outside_button,
 			gallery_pagination_classes: slider_pagination ~ ' swiper-pagination-outside',
-
 			galley_image_aspect_ratio: true,
 			gallery_first_image_priority_high: first_image_priority_high_value,
 			gallery_image_alt: 'Carrusel' | translate ~ ' ',
 			gallery_image_classes: 'slider-image',
 			gallery_image_lazy_classes: 'fade-in',
-
 			text_classes: {
-				container: 'swiper-text ' ~ slider_alignment,
+				container: 'swiper-text ivana-home-hero-copy ' ~ slider_alignment,
 				number_pagination: 'swiper-fractions',
-				title: 'h1 my-2',
-				description: 'mt-2 mb-3',
+				title: 'h1 my-2 ivana-home-hero-title',
+				description: 'mt-2 mb-3 ivana-home-hero-description',
 			},
 			custom_content: '<div class="placeholder placeholder-fade"></div>',
 			link_aria_label: 'Carrusel' | translate,
 			link_classes: {
-				button: 'btn btn-primary',
+				button: 'btn btn-primary ivana-home-hero-button',
 			},
-
 		})
 	}}
 </div>
+</section>
 
 {% if not mobile %}
 	</div>

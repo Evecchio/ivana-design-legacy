@@ -25,7 +25,6 @@
 {% set has_informative_banners = settings.banner_services_01_title or settings.banner_services_02_title or settings.banner_services_03_title or settings.banner_services_04_title or settings.banner_services_01_description or settings.banner_services_02_description or settings.banner_services_03_description or settings.banner_services_04_description %}
 {% set has_timer_offers = settings.timer_offers_start_datetime and settings.timer_offers_end_datetime %}
 
-
 {% set show_help = not (has_main_slider or has_mobile_slider or has_banners or has_mobile_banners or has_promotional_banners or has_mobile_promotional_banners or has_news_banners or has_image_and_text_module or has_mobile_news_banners or has_institutional or has_main_categories or has_video or has_brands or has_testimonials or has_newsletter or has_instafeed or has_timer_offers) and not has_products and not params.preview %}
 
 {% set show_component_help = params.preview %}
@@ -34,24 +33,19 @@
 	{% include "snipplets/svg/empty-placeholders.tpl" %}
 {% endif %}
 
-{#  **** Features Order ****  #}
 {% set newArray = [] %}
 
-<div class="js-home-sections-container">
+<div class="js-home-sections-container ivana-home-shell">
 	{% for i in 1..18 %}
 		{% set section = 'home_order_position_' ~ i %}
 		{% set section_select = attribute(settings,"#{section}") %}
 
 		{% if section_select not in newArray %}
-
 			{% include 'snipplets/home/home-section-switch.tpl' %}
 			{% set newArray = newArray|merge([section_select]) %}
-
 		{% endif %}
-
 	{% endfor %}
 
-	{#  **** Hidden Sections ****  #}
 	{% if show_component_help %}
 		<div style="display:none">
 			{% for section_select in ['slider', 'categories', 'promotional', 'news_banners', 'institutional', 'main_categories', 'video', 'timer_offers', 'brands', 'testimonials', 'newsletter', 'instafeed', 'products', 'new', 'sale', 'informatives', 'main_product', 'modules'] %}
