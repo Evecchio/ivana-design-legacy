@@ -27,9 +27,9 @@
 				{% for image in product.images %}
 					<div class="js-product-slide swiper-slide slider-slide" data-image="{{image.id}}" data-image-position="{{loop.index0}}">
 						{% if home_main_product %}
-							<div class="js-product-slide-link d-block position-relative" style="padding-bottom: {{ image.dimensions['height'] / image.dimensions['width'] * 100}}%;">
+							<div class="js-product-slide-link d-block position-relative" style="padding-bottom: {{ image.dimensions ? (image.dimensions['height'] / image.dimensions['width'] * 100) : 100 }}%;">
 						{% else %}
-							<a href="{{ image | product_image_url('original') }}" data-fancybox="product-gallery" class="js-product-slide-link d-block position-relative" style="padding-bottom: {{ image.dimensions['height'] / image.dimensions['width'] * 100}}%;">
+							<a href="{{ image | product_image_url('original') }}" data-fancybox="product-gallery" class="js-product-slide-link d-block position-relative" style="padding-bottom: {{ image.dimensions ? (image.dimensions['height'] / image.dimensions['width'] * 100) : 100 }}%;">
 						{% endif %}
 
 							{% set image_priority_high_value = not home_main_product and loop.first %}

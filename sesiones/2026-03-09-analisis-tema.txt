@@ -1,0 +1,230 @@
+================================================================================
+SESION: Análisis del tema ivana-design-legacy
+FECHA:  2026-03-09
+================================================================================
+
+--------------------------------------------------------------------------------
+DESCRIPCION
+--------------------------------------------------------------------------------
+
+Sesión de exploración y análisis completo del proyecto ivana-design-legacy.
+Tema personalizado para Tiendanube (e-commerce latinoamericano), tienda de moda
+premium con identidad visual rosa/magenta.
+
+Repositorio: Evecchio/ivana-design-legacy
+
+
+================================================================================
+INTERACCION 1 — Explicación del proyecto
+================================================================================
+
+USUARIO:
+Explicame los templates .tpl, SCSS, JS vanilla, y deploy automático vía FTPS
+con GitHub Actions
+
+RESPUESTA:
+
+--- TEMPLATES .TPL ---
+
+Los archivos .tpl usan la sintaxis de Tiendanube, similar a Twig/Jinja2.
+
+Jerarquía:
+  layout/layout.tpl          <- HTML base (head, body, carga CSS/JS)
+      templates/home.tpl     <- contenido de la página
+          snipplets/         <- componentes reutilizables
+
+Sintaxis principal:
+  {{ variable }}                          -> imprime un valor
+  {% if %}...{% endif %}                  -> condicional
+  {% for item in collection %}            -> loop
+  {% snipplet 'header/header.tpl' %}      -> incluye un componente
+  {{ 'css/style.scss' | static_url }}     -> URL del asset compilado
+  {{ 'css/style.scss' | static_url | static_inline }}  -> inlinea el archivo
+  {{ component('fonts', {...}) }}         -> componente del sistema TN
+  {% set async_js = true %}               -> define variables locales
+
+Variables globales disponibles:
+  settings.*    -> opciones del panel de admin (colores, fuentes, etc.)
+  store.*       -> datos de la tienda
+  cart.*        -> carrito activo
+  customer.*    -> cliente logueado
+  template      -> nombre de la página actual
+
+
+--- SCSS — SISTEMA DE ESTILOS ---
+
+CSS dividido en 3 capas con estrategia de carga diferente:
+
+  Inlineado en <head> (sin request HTTP):
+    style-critical.scss     -> estilos que deben estar antes del primer render
+    style-utilities.scss    -> clases de utilidad
+
+  Async (no bloquea el render, media="print" trick):
+    style-async.scss        -> estilos no críticos (footer, animaciones)
+
+Archivos:
+  style-tokens.tpl          -> variables CSS (:root { --brand: #FF1493; })
+                               Es .tpl porque usa lógica Twig para leer settings.*
+  style-critical.scss       -> estilos críticos (layout, header, tipografía)
+  style-utilities.scss      -> clases de utilidad
+  style-async.scss          -> estilos no críticos
+
+Tiendanube compila el SCSS — no hay paso de compilación local.
+
+Design tokens principales (style-tokens.tpl):
+  --brand:        #FF1493   (rosa/magenta principal)
+  --brand-dark:   #cc007a   (barra promo, hover)
+  --accent-color: #f4256a   (color de acento actual del tema)
+  --negro:        #111111
+  --blanco:       #ffffff
+
+
+--- JS VANILLA — store.js.tpl ---
+
+No hay framework ni transpilador. Carga así:
+
+  <!-- Librerías críticas: carga inmediata -->
+  external-no-dependencies.js.tpl
+
+  <!-- Después de que Tiendanube esté listo (LS.ready) -->
+  external.js.tpl    -> Swiper, LazySizes, etc.
+  store.js.tpl       -> lógica de la tienda
+
+Librerías integradas:
+  Swiper 4.4.2    -> carruseles y sliders
+  LazySizes       -> lazy loading de imágenes
+  jQueryNuvem     -> versión de jQuery provista por Tiendanube
+
+Organización de store.js.tpl (Table of Contents):
+  Transitions | Forms | Header/Nav | Home | Product grid
+  Product detail | Cart | Shipping
+
+Convenciones:
+  .js-           -> hooks de JS (no se usan para estilos)
+  data-store     -> comportamiento dinámico
+  data-component -> tracking
+
+
+--- DEPLOY AUTOMÁTICO — GitHub Actions + FTPS ---
+
+Workflow: .github/workflows/deploy-ftp.yml
+
+Activadores:
+  push a main   -> deploy a producción
+  push a dev    -> deploy a staging
+  workflow_dispatch -> trigger manual desde GitHub
+
+Flujo:
+  1. Checkout del repo
+  2. Selecciona credenciales según rama:
+       main -> FTP_HOST / FTP_USER / FTP_PASSWORD
+       dev  -> FTP_HOST_DEV / FTP_USER_DEV / FTP_PASSWORD_DEV
+  3. Instala lftp (cliente FTP de Linux)
+  4. Conecta al servidor Tiendanube por FTPS (puerto 21, SSL forzado)
+  5. mirror --reverse -> sube el repo completo al servidor
+     Excluye: .git/, .github/, .claude/, *.md
+
+Comando lftp clave:
+  lftp -c "
+    set ftp:ssl-force true;           # SSL obligatorio
+    set ftp:ssl-protect-data true;    # cifra también la transferencia
+    set ssl:verify-certificate false; # ignora cert autofirmado
+    mirror --reverse --verbose
+      --exclude-glob .git/
+      --exclude-glob .github/
+      --exclude-glob .claude/
+      --exclude-glob '*.md'
+      . /;
+  "
+
+Entornos:
+  Rama main -> Producción  (secrets: FTP_HOST, FTP_USER, FTP_PASSWORD)
+  Rama dev  -> Staging     (secrets: FTP_HOST_DEV, FTP_USER_DEV, FTP_PASSWORD_DEV)
+
+Los secrets están en GitHub Settings > Secrets, nunca en el código.
+
+
+================================================================================
+INTERACCION 2 — Creación de repositorio/rama de investigación
+================================================================================
+
+USUARIO:
+Antes de seguir creo que deberíamos crear un repositorio para esta investigación.
+
+RESPUESTA:
+
+El usuario optó por crear una rama de investigación dentro del mismo repositorio.
+
+Decisiones tomadas:
+  - Tipo: rama de investigación (no repo separado)
+  - Nombre: investigacion/ivana-design-sesion (intento inicial)
+  - Problema: el remote solo acepta ramas con prefijo claude/ + session ID
+  - Solución: usar formato claude/investigacion-ivana-design-sesion-1fFlH
+
+Cambio realizado en .github/workflows/deploy-ftp.yml:
+  - Se agregó la rama al trigger de push
+  - Se agregó paso de verificación con flag [deploy] en el commit message
+  - Sin el flag el workflow falla con instrucciones claras
+  - Usa credenciales de desarrollo (FTP_HOST_DEV), nunca producción
+
+Cómo usar el flag de confirmación:
+  # Push normal -> workflow bloquea el deploy
+  git commit -m "feat: explorar nuevo componente"
+
+  # Push con deploy -> despliega al entorno dev
+  git commit -m "feat: explorar nuevo componente [deploy]"
+
+
+================================================================================
+INTERACCION 3 — Propósito real: base de datos de sesiones
+================================================================================
+
+USUARIO:
+Me interesa poder guardar todo el texto de las interacciones que tenemos
+dentro del chat, en formato texto, subir como historial como archivo .txt,
+para luego usarlo tal vez como fuente de información para futuras
+investigaciones de datos. Es como si fuese la base de datos del proyecto
+donde todo lo que se practica dentro de un chat se va guardando dentro de
+ese repositorio que elijamos, como base de datos para reponer información
+para crear nuevos valores.
+
+RESPUESTA:
+
+Se creó la estructura sesiones/ en el repositorio:
+
+  sesiones/
+    2026-03-09-analisis-tema.txt    <- este archivo (primera sesión)
+
+Convención de nombres: YYYY-MM-DD-descripcion-breve.txt
+
+El directorio sesiones/ actúa como base de datos acumulativa:
+  - Cada conversación queda registrada como archivo .txt
+  - Se pueden consultar como fuente de información en futuras sesiones
+  - Permiten reconstruir el razonamiento y decisiones de cada investigación
+  - Útil para entrenar, orientar o contextualizar nuevas conversaciones
+
+
+================================================================================
+ARCHIVOS CLAVE DEL PROYECTO (referencia rápida)
+================================================================================
+
+  Colores / variables CSS   ->  static/css/style-tokens.tpl
+  Estilos críticos          ->  static/css/style-critical.scss
+  Estilos async             ->  static/css/style-async.scss
+  HTML base global          ->  layout/layout.tpl
+  Header                    ->  snipplets/header/header.tpl
+  Navegación desktop        ->  snipplets/navigation/navigation-categories-desktop.tpl
+  Navegación mobile         ->  snipplets/navigation/navigation-categories-mobile.tpl
+  Home                      ->  templates/home.tpl + snipplets/home/
+  Producto                  ->  templates/product.tpl + snipplets/product/
+  Carrito                   ->  templates/cart.tpl + snipplets/cart/
+  JavaScript                ->  static/js/store.js.tpl
+  Textos traducibles        ->  config/translations.txt
+  Opciones del admin        ->  config/settings.txt
+  Deploy CI/CD              ->  .github/workflows/deploy-ftp.yml
+  Guía del proyecto         ->  CLAUDE.md
+
+
+================================================================================
+FIN DE SESION
+================================================================================

@@ -105,7 +105,7 @@ DOMContentLoaded.addEventOrExecute(() => {
         const defaultWidth = 300;
 
         {# New speed values based on dynamic content #}
-        const animatedWidth = jQueryNuvem(textSelector).first(el => el.offsetWidth);
+        const animatedWidth = jQueryNuvem(textSelector).first()[0]?.offsetWidth || 0;
         let newDelay;
         newDelay = defaultDelay*(animatedWidth/defaultWidth)*1.5;
 
@@ -1615,7 +1615,8 @@ DOMContentLoaded.addEventOrExecute(() => {
                 $category_controls
                 }, { threshold: [0,1]
             });
-            observer.observe(document.querySelector(".js-category-controls-prev"));
+            var $categoryControlsPrev = document.querySelector(".js-category-controls-prev");
+            if ($categoryControlsPrev) { observer.observe($categoryControlsPrev); }
 
             offsetCategories = function() {
                 var $sticky_category_controls = jQueryNuvem(".js-category-controls");

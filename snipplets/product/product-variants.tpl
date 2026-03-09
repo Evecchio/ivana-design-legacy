@@ -85,7 +85,7 @@
 							width_desktop: 'large',
 						},
 						content: {
-							title: 'Guía de talles' | t,
+							title: 'Guía de talles' | translate,
 							body: '<div class="user-content">' ~ page.content ~ '</div>',
 						},
 						icons: {

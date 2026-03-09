@@ -1,5 +1,17 @@
 {# /* Style tokens */ #}
 
+{# Opacity hex suffixes para construir colores con transparencia #}
+{% set opacity_03 = '08' %}
+{% set opacity_05 = '0D' %}
+{% set opacity_10 = '1A' %}
+{% set opacity_20 = '33' %}
+{% set opacity_30 = '4D' %}
+{% set opacity_40 = '66' %}
+{% set opacity_50 = '80' %}
+{% set opacity_60 = '99' %}
+{% set opacity_70 = 'B3' %}
+{% set opacity_80 = 'CC' %}
+
 :root {
   
   {#/*============================================================================
@@ -76,6 +88,16 @@
   
   --header-background: {{ header_background }};
   --header-foreground: {{ header_foreground }};
+
+  --header-desktop-nav-background: var(--header-background);
+  --header-desktop-nav-foreground: var(--header-foreground);
+  --header-search-btn-background: var(--header-background);
+  --header-search-btn-foreground: var(--header-foreground);
+
+  --banner-services-background: {{ banner_services_background }};
+  --banner-services-foreground: {{ banner_services_foreground }};
+
+  --main-text-transform: none;
 
   --header-badge-background: var(--accent-color);
   --header-badge-foreground: var(--text-on-accent);
