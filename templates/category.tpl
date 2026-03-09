@@ -19,7 +19,7 @@
 			{% endif %}
 			<div class="ivana-page-hero ivana-category-header">
 				<div class="ivana-category-heading">
-					<div class="mb-1">
+					<div class="ivana-category-copy mb-1">
 						{% snipplet "breadcrumbs.tpl" %}
 						<p class="ivana-kicker mb-2">{{ products_count }} {{ products_count == 1 ? 'producto' | translate : 'productos' | translate }}</p>
 						<h1 class="h4 mb-2">{{ category.name }}</h1>
@@ -30,7 +30,10 @@
 						{% endif %}
 					</div>
 					{% if products %}
-						<div class="d-none d-md-block">
+						<div class="ivana-category-toolbar d-none d-md-flex">
+							<div class="ivana-category-toolbar-copy">
+								<span class="ivana-category-toolbar-label">{{ 'Ordena y filtra tu seleccion' | translate }}</span>
+							</div>
 							<div class="ivana-sort-box">
 								<label class="font-small mb-0">{{ 'Ordenar por' | translate }}</label>
 								{{ component(
@@ -51,9 +54,19 @@
 				</div>
 			</div>
 			{% include 'snipplets/grid/filters-modals.tpl' %}
-			<div class="grid ivana-category-grid{% if products and has_filters_available %} grid-md-auto-4{% endif %}">
-				{% include 'snipplets/grid/filters-controls.tpl' %}
-				{% include 'snipplets/grid/products-list.tpl' %}
+			<div class="ivana-category-layout{% if products and has_filters_available %} ivana-category-layout-filters{% endif %}">
+				{% if products and has_filters_available %}
+					<aside class="ivana-category-sidebar d-none d-md-block">
+						<div class="ivana-category-filter-card">
+							{% include 'snipplets/grid/filters-controls.tpl' %}
+						</div>
+					</aside>
+				{% endif %}
+				<div class="ivana-category-content">
+					<div class="ivana-category-products">
+						{% include 'snipplets/grid/products-list.tpl' %}
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
