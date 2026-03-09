@@ -55,7 +55,7 @@
         <div class="bg-brand-pink text-white py-2 text-center text-xs font-bold tracking-widest uppercase" data-purpose="announcement-bar">
             🔥 HASTA 40% OFF | 3 CUOTAS SIN INTERÉS | 10% OFF TRANSFERENCIA 🔥
         </div>
-        <header class="border-b border-gray-100 sticky top-0 bg-white z-50">
+        <header class="border-b border-gray-100 sticky top-0 bg-white z-[9999]">
             <div class="container mx-auto px-4 py-4 flex items-center justify-between">
                 <div class="flex-shrink-0">
                     <a href="{{ store.url }}">
