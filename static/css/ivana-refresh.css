@@ -675,3 +675,85 @@
     font-size: 0.68rem !important;
   }
 }
+
+.js-head-main .js-head-row.head-row {
+  grid-template-columns: minmax(150px, 1fr) minmax(420px, 640px) minmax(240px, 1fr) !important;
+  min-height: 92px;
+}
+
+.js-head-main .logo-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-self: start !important;
+}
+
+.js-head-main .logo-container h1,
+.js-head-main .logo-container a {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.js-head-main .search-container {
+  justify-self: center !important;
+}
+
+.js-head-main .utilities-container {
+  justify-self: end !important;
+}
+
+.js-head-main .utilities-container > * {
+  display: flex;
+  align-items: center;
+}
+
+.js-head-main .header-utility {
+  min-height: 44px;
+  padding: 0.25rem 0.1rem;
+}
+
+.js-head-main .utility-text {
+  line-height: 1.15 !important;
+}
+
+.js-head-main .js-header-utility-text-cart {
+  row-gap: 0.1rem !important;
+  align-items: flex-start !important;
+}
+
+.js-head-main .js-header-utility-text-cart .font-weight-bold,
+.js-head-main .js-header-utility-text-cart .js-cart-widget-total {
+  white-space: nowrap;
+}
+
+.js-nav-desktop-color-container .js-nav-desktop-container.nav-desktop-grid {
+  align-items: center !important;
+}
+
+.js-nav-desktop-color-container .js-desktop-main-categories-col,
+.js-nav-desktop-color-container .js-desktop-nav-col,
+.js-nav-desktop-color-container .js-desktop-secondary-nav-col {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.js-nav-desktop-color-container .js-desktop-nav-col {
+  justify-content: center !important;
+}
+
+.js-nav-desktop-color-container .js-desktop-main-categories-col {
+  justify-content: flex-end !important;
+}
+
+@media (max-width: 1199px) {
+  .js-head-main .js-head-row.head-row {
+    grid-template-columns: minmax(132px, 1fr) minmax(320px, 1fr) minmax(220px, 1fr) !important;
+    min-height: 82px;
+  }
+}
+
+@media (max-width: 991px) {
+  .js-head-main .js-head-row.head-row {
+    grid-template-columns: auto minmax(220px, 1fr) auto !important;
+    min-height: 72px;
+  }
+}
