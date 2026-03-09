@@ -757,3 +757,221 @@
     min-height: 72px;
   }
 }
+
+.ivana-footer {
+  background: var(--brand) !important;
+  color: #fff !important;
+  padding-top: clamp(3rem, 6vw, 5rem) !important;
+}
+
+.ivana-footer .container {
+  max-width: 1440px !important;
+}
+
+.ivana-footer-main {
+  padding-bottom: clamp(2rem, 4vw, 3rem) !important;
+}
+
+.ivana-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.1fr) repeat(2, minmax(160px, 0.8fr));
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+.ivana-footer-grid.ivana-footer-grid-news {
+  grid-template-columns: minmax(220px, 1fr) minmax(160px, 0.7fr) minmax(160px, 0.7fr) minmax(280px, 1.2fr);
+}
+
+.ivana-footer-col {
+  min-width: 0;
+}
+
+.ivana-footer-logo {
+  max-width: 180px;
+}
+
+.ivana-footer-brand {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.ivana-footer-title {
+  color: #fff !important;
+  font-size: 0.9rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.ivana-footer a,
+.ivana-footer p,
+.ivana-footer li,
+.ivana-footer span,
+.ivana-footer div {
+  color: rgba(255,255,255,0.88);
+}
+
+.ivana-footer a:hover {
+  color: #fff !important;
+}
+
+.ivana-footer-social a {
+  margin-right: 1rem !important;
+  margin-bottom: 0 !important;
+}
+
+.ivana-footer-social svg {
+  width: 20px;
+  height: 20px;
+}
+
+.ivana-footer-about,
+.ivana-footer-news-description {
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.ivana-footer-contact-links .list,
+.ivana-footer-col-nav .list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ivana-footer-contact-links li,
+.ivana-footer-col-nav li {
+  margin-bottom: 0.85rem !important;
+}
+
+.ivana-footer-col-nav a,
+.ivana-footer-contact-links a,
+.ivana-footer-contact-links li {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.ivana-footer-newsletter-form .input-append {
+  display: flex;
+  max-width: 480px;
+  align-items: stretch;
+}
+
+.ivana-footer-newsletter-form .form-group {
+  flex: 1 1 auto;
+}
+
+.ivana-footer-newsletter-form .ivana-footer-newsletter-input,
+.ivana-footer-newsletter-form input[type='email'] {
+  min-height: 48px !important;
+  border-radius: 12px 0 0 12px !important;
+  border: 1px solid rgba(255,255,255,0.55) !important;
+  background: transparent !important;
+  color: #fff !important;
+  padding: 0 1rem !important;
+}
+
+.ivana-footer-newsletter-form input::placeholder {
+  color: rgba(255,255,255,0.72) !important;
+}
+
+.ivana-footer-newsletter-form .ivana-footer-newsletter-submit,
+.ivana-footer-newsletter-form input[type='submit'] {
+  min-height: 48px !important;
+  border-radius: 0 12px 12px 0 !important;
+  background: #fff !important;
+  color: var(--brand) !important;
+  border: 0 !important;
+  padding: 0 1.5rem !important;
+  font-weight: 800 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  box-shadow: none !important;
+}
+
+.ivana-footer-payments-row {
+  border-top: 1px solid rgba(255,255,255,0.16);
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+  background: rgba(255,255,255,0.05);
+}
+
+.ivana-footer .footer-payments-shipping-container {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ivana-footer .footer-payments-shipping-container img,
+.ivana-footer .footer-payments-shipping-container svg {
+  filter: grayscale(1);
+  opacity: 0.95;
+}
+
+.ivana-footer .footer-payments-shipping-container span,
+.ivana-footer .footer-legal-container,
+.ivana-footer .footer-legal-container a {
+  color: rgba(255,255,255,0.82) !important;
+  font-size: 0.72rem !important;
+}
+
+.ivana-footer .footer-legal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ivana-footer .btn-link {
+  color: #fff !important;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.ivana-home-products .js-products-sale-grid,
+.ivana-home-products .js-products-featured-grid,
+.ivana-home-products .js-products-new-grid {
+  row-gap: 1.25rem !important;
+}
+
+@media (min-width: 1200px) {
+  .ivana-home-products .js-products-sale-grid.grid,
+  .ivana-home-products .js-products-featured-grid.grid,
+  .ivana-home-products .js-products-new-grid.grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .ivana-footer-grid,
+  .ivana-footer-grid.ivana-footer-grid-news {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ivana-footer-col-newsletter {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 767px) {
+  .ivana-footer-grid,
+  .ivana-footer-grid.ivana-footer-grid-news {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .ivana-footer-newsletter-form .input-append {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .ivana-footer-newsletter-form .ivana-footer-newsletter-input,
+  .ivana-footer-newsletter-form input[type='email'],
+  .ivana-footer-newsletter-form .ivana-footer-newsletter-submit,
+  .ivana-footer-newsletter-form input[type='submit'] {
+    border-radius: 12px !important;
+    width: 100%;
+  }
+}
