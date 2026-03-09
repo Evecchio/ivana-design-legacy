@@ -9,7 +9,7 @@
 
 {% if cart_subtotal %}
   <div class="js-visible-on-cart-filled" {% if cart.items_count == 0 %}style="display:none;"{% endif %} data-store="cart-subtotal">
-    <div class="d-grid grid-1-auto mb-2 font-big">
+    <div class="ivana-cart-total-row d-grid grid-1-auto mb-2 font-big">
       <span>
         {{ "Subtotal" | translate }}
         
@@ -48,7 +48,7 @@
       {% else %}
         {% set id = 'all' %}
       {% endif %}
-        <span class="js-total-promotions-detail-row d-grid grid-1-auto mb-2" id="{{ id }}">
+        <span class="js-total-promotions-detail-row ivana-cart-total-row d-grid grid-1-auto mb-2" id="{{ id }}">
           <span>
             {% if promotion.discount_script_type != "custom" %}
               {% if promotion.discount_script_type == "NAtX%off" %}
@@ -83,7 +83,7 @@
 
 {% if cart_shipping_costs and show_cart_fulfillment %}
   <div id="shipping-cost-container" class="js-fulfillment-info js-visible-on-cart-filled js-shipping-cost-table font-big" {% if cart.items_count == 0 or (not cart.has_shippable_products) %}style="display:none;"{% endif %}>
-    <div class="d-grid grid-1-auto mb-2">
+    <div class="ivana-cart-total-row d-grid grid-1-auto mb-2">
       <span>{{ 'Envío:' | translate }}</span>
       <span class="text-right">
         <span id="shipping-cost" class="text-right opacity-40">{{ "Calculalo para verlo" | translate }}</span>
@@ -98,7 +98,7 @@
 
 {% if cart_total %}
   <div class="js-cart-total-container js-visible-on-cart-filled" {% if cart.items_count == 0 %}style="display:none;"{% endif %} data-store="cart-total">
-    <div class="d-grid grid-1-auto mb-3 font-huge">
+    <div class="ivana-cart-grand-total d-grid grid-1-auto mb-3 font-huge">
       <span class="">{{ "Total" | translate }}:</span>
       <span class="text-right">
         <div class="js-cart-total {% if cart.free_shipping.cart_has_free_shipping %}js-free-shipping-achieved{% endif %} {% if cart.shipping_data.selected %}js-cart-saved-shipping{% endif %}" data-component="cart.total" data-component-value={{ cart.total }}>{{ cart.total | money }}</div>

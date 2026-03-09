@@ -21,65 +21,40 @@
   {% endif %}
 
   <div class="pb-2">
-  
-    {# Cart popup subtotal #}
-
     {% include "snipplets/cart/cart-totals.tpl" with {cart_subtotal: true} %}
-
-    {# Cart popup promotions #}
-
-  
     {% include "snipplets/cart/cart-totals.tpl" with {cart_promotions: true} %}
   </div>
 
-  {# Cart shipping and pickup #}
-
   {% include "snipplets/cart/cart-fulfillment.tpl" %}
-
 {% endif %}
 
 {% if cart_page %}
-
-  <div id="cart-sticky-summary" class="position-sticky-md cart-page-totals">
+  <div id="cart-sticky-summary" class="position-sticky-md cart-page-totals ivana-cart-summary-sticky">
+    <div class="ivana-cart-summary-head mb-4">
+      <p class="ivana-kicker mb-2">{{ 'Resumen de compra' | translate }}</p>
+      <h2 class="ivana-cart-summary-title mb-2">{{ 'Tu pedido' | translate }}</h2>
+      <p class="ivana-cart-summary-copy mb-0">{{ 'Revisa tus totales antes de iniciar la compra.' | translate }}</p>
+    </div>
 
     {% if has_free_shipping_bar %}
-      {# includes free shipping progress bar: only if store has free shipping with a minimum #}
       <div class="mb-3 d-none d-md-block">
         {% include "snipplets/shipping/shipping-free-rest.tpl" %}
       </div>
     {% endif %}
 
-    <div class="pb-2">
-      {# Cart page subtotal #}
-
+    <div class="ivana-cart-summary-lines pb-2">
       {% include "snipplets/cart/cart-totals.tpl" with {cart_subtotal: true} %}
-
-      {# Cart page promotions #}
-
       {% include "snipplets/cart/cart-totals.tpl" with {cart_promotions: true} %}
-
-      {# Cart page shipping costs #}
-
       {% include "snipplets/cart/cart-totals.tpl" with {cart_shipping_costs: true} %}
     </div>
 {% else %}
-
-  {# Cart fulfillment #}
-
-  {# include "snipplets/shipping/cart-fulfillment.tpl" #}
 {% endif %}
   
-    {# Cart page and popup total #}
-
     {% include "snipplets/cart/cart-totals.tpl" with {cart_total: true} %}
 
-    {# Cart main CTA #}
-
     {% set cart_page_value = cart_page ? true : false %}
-
     {% include "snipplets/cart/cart-button.tpl" with {cart_page: cart_page_value} %}
     
 {% if cart_page %}
-  {# End of sticky module #}
   </div>
 {% endif %}

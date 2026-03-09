@@ -3,6 +3,10 @@
     {% embed "snipplets/page-header.tpl" with {page_header_class: 'ivana-page-hero', page_header_title_class: 'ivana-page-title'} %}
         {% block page_header_text %}{{ "Carrito de compras" | translate }}{% endblock page_header_text %}
     {% endembed %}
+
+    {% if cart.items %}
+        <p class="ivana-cart-intro mt-n2 mb-4">{{ 'Revisa tus productos, ajusta cantidades y confirma tu resumen antes de iniciar la compra.' | translate }}</p>
+    {% endif %}
     
     <form action="{{ store.cart_url }}" method="post" class="visible-when-content-ready mb-5 ivana-cart-form" data-store="cart-form" data-component="cart">
 
@@ -20,7 +24,7 @@
         {% if cart.items %}
             <div class="cart-page-content">
                 <div class="cart-page-products">
-                    <div class="cart-page-table-header pb-3 mb-3 font-medium bottom-line d-none d-md-grid">
+                    <div class="cart-page-table-header ivana-cart-table-header pb-3 mb-3 font-medium bottom-line d-none d-md-grid">
                         <div>{{ 'Productos' | translate }}</div>
                         <div class="cart-page-table-header-totals">
                             <div>{{ 'Cantidad' | translate }}</div>
@@ -29,14 +33,14 @@
                         </div>
                     </div>
 
-                    <div class="js-ajax-cart-list mb-4">
+                    <div class="js-ajax-cart-list mb-4 ivana-cart-list">
                         {% if cart.items %}
                           {% for item in cart.items %}
                             {% include "snipplets/cart-item-ajax.tpl" with {'cart_page': true} %}
                           {% endfor %}
                         {% endif %}
                     </div>
-                    <div class="cart-page-fulfillment">
+                    <div class="cart-page-fulfillment ivana-cart-fulfillment">
                         {% set has_free_shipping = cart.free_shipping.cart_has_free_shipping or cart.free_shipping.min_price_free_shipping.min_price %}
                         {% set has_free_shipping_bar = has_free_shipping and cart.free_shipping.min_price_free_shipping.min_price_raw > 0 %}
 
@@ -49,7 +53,7 @@
                         {% include "snipplets/cart/cart-fulfillment.tpl" %}
                     </div>
                 </div>
-                <div class="cart-page-summary">
+                <div class="cart-page-summary ivana-cart-summary-panel">
                     {% include "snipplets/cart/cart-summary.tpl" with {cart_page: true} %}
                 </div>
             </div>

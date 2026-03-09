@@ -1,6 +1,6 @@
 <div class="js-visible-on-cart-filled" {% if cart.items_count == 0 %}style="display:none;"{% endif %}>
 
-  {% set cart_button_classes = 'btn btn-primary btn-big btn-block mb-2' %}
+  {% set cart_button_classes = cart_page ? 'btn btn-primary btn-big btn-block mb-3 ivana-cart-checkout-btn' : 'btn btn-primary btn-big btn-block mb-2' %}
 
   {# Cart page and popup CTA Module #}
   
@@ -40,7 +40,7 @@
 
   {# Cart panel continue buying link #}
 
-  <div class="text-center">
-    <a href="{% if cart_page %}{{ store.products_url }}{% else %}#{% endif %}" {% if not cart_page %}data-target="#modal-cart"{% endif %} class="{% if not cart_page %}js-modal-close-private{% endif %} btn btn-link">{{ 'Ver más productos' | translate }}</a>
+  <div class="text-center ivana-cart-continue-wrap">
+    <a href="{% if cart_page %}{{ store.products_url }}{% else %}#{% endif %}" {% if not cart_page %}data-target="#modal-cart"{% endif %} class="{% if not cart_page %}js-modal-close-private{% endif %} btn btn-link ivana-cart-continue-link">{{ 'Ver más productos' | translate }}</a>
   </div>
 </div>
