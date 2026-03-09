@@ -1448,7 +1448,8 @@
 }
 
 .ivana-product-shell .free-shipping-message {
-  display: block;
+  display: flex !important;
+  align-items: center !important;
 }
 
 .ivana-product-shell .ivana-product-support-cards .icon-banner,
