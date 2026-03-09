@@ -837,9 +837,9 @@
 				padding-bottom: clamp(2rem, 4vw, 3rem) !important;
 			}
 
-			.ivana-home-products .js-products-sale-grid,
-			.ivana-home-products .js-products-featured-grid,
-			.ivana-home-products .js-products-new-grid {
+			.ivana-home-products .js-products-sale-grid.grid,
+			.ivana-home-products .js-products-featured-grid.grid,
+			.ivana-home-products .js-products-new-grid.grid {
 				display: grid !important;
 				gap: clamp(1rem, 1.8vw, 1.5rem) !important;
 			}
@@ -953,17 +953,17 @@
 			}
 
 			@media (min-width: 1200px) {
-				.ivana-home-products .js-products-sale-grid,
-				.ivana-home-products .js-products-featured-grid,
-				.ivana-home-products .js-products-new-grid {
+				.ivana-home-products .js-products-sale-grid.grid,
+				.ivana-home-products .js-products-featured-grid.grid,
+				.ivana-home-products .js-products-new-grid.grid {
 					grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
 				}
 			}
 
 			@media (min-width: 768px) and (max-width: 1199px) {
-				.ivana-home-products .js-products-sale-grid,
-				.ivana-home-products .js-products-featured-grid,
-				.ivana-home-products .js-products-new-grid {
+				.ivana-home-products .js-products-sale-grid.grid,
+				.ivana-home-products .js-products-featured-grid.grid,
+				.ivana-home-products .js-products-new-grid.grid {
 					grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
 				}
 			}
