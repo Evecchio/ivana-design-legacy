@@ -1,76 +1,43 @@
-{% set has_filters_available = products and has_filters_enabled and (filter_categories is not empty or product_filters is not empty) %}
+<div class="max-w-[1440px] mx-auto w-full px-6 md:px-20 py-8">
+    
+    <div class="mb-8 overflow-x-auto whitespace-nowrap scrollbar-hide">
+        {% snipplet "snipplets/breadcrumbs.tpl" %}
+    </div>
 
-{# Only remove this if you want to take away the theme onboarding advices #}
-{% set show_help = not has_products %}
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-10">
+        <div class="max-w-2xl">
+            <h1 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-slate-100 mb-2">{{ category.name }}</h1>
+            {% if category.description %}
+                <p class="text-slate-600 dark:text-slate-400 text-lg">{{ category.description }}</p>
+            {% endif %}
+        </div>
+        
+        <div class="flex items-center gap-3 bg-white dark:bg-slate-800 p-1.5 rounded-xl border border-slate-200 dark:border-slate-700">
+            <span class="px-4 py-2 text-slate-600 dark:text-slate-400 text-sm font-bold">Ordenar por:</span>
+        </div>
+    </div>
 
-{% if settings.pagination == 'infinite' %}
-	{% paginate by 12 %}
-{% else %}
-	{% paginate by 60 %}
-{% endif %}
+    <div class="flex flex-col lg:flex-row gap-12">
+        
+        <aside class="w-full lg:w-72 shrink-0 space-y-8">
+            {% snipplet "snipplets/grid/filters-controls.tpl" %}
+        </aside>
 
-{% set category_banner = (category.images is not empty) or ("banner-products.jpg" | has_custom_image) %}
+        <div class="flex-1">
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+                {% for product in products %}
+                    {% snipplet "snipplets/product-item.tpl" %}
+                {% else %}
+                    <div class="col-span-full text-center py-12">
+                        <p class="text-slate-500 text-lg">No hay productos en esta categoría por el momento.</p>
+                    </div>
+                {% endfor %}
+            </div>
 
-{% if not show_help %}
-	<section class="category-body ivana-category-shell" data-store="category-grid-{{ category.id }}">
-		<div class="container py-4 py-md-5">
-			{% if category_banner %}
-				{% include 'snipplets/category-banner.tpl' %}
-			{% endif %}
-			<div class="ivana-page-hero ivana-category-header">
-				<div class="ivana-category-heading">
-					<div class="ivana-category-copy mb-1">
-						{% snipplet "breadcrumbs.tpl" %}
-						<p class="ivana-kicker mb-2">{{ products_count }} {{ products_count == 1 ? 'producto' | translate : 'productos' | translate }}</p>
-						<h1 class="h4 mb-2">{{ category.name }}</h1>
-						{% if category.description %}
-							<p class="ivana-category-meta mt-0 mb-0">{{ category.description }}</p>
-						{% else %}
-							<p class="ivana-category-meta mt-0 mb-0">{{ 'Explora la seleccion actualizada de la categoria y encontra prendas destacadas, novedades y promociones activas.' | translate }}</p>
-						{% endif %}
-					</div>
-					{% if products %}
-						<div class="ivana-category-toolbar d-none d-md-flex">
-							<div class="ivana-category-toolbar-copy">
-								<span class="ivana-category-toolbar-label">{{ 'Ordena y filtra tu seleccion' | translate }}</span>
-							</div>
-							<div class="ivana-sort-box">
-								<label class="font-small mb-0">{{ 'Ordenar por' | translate }}</label>
-								{{ component(
-									'sort-by',{
-										sort_by_classes: {
-											container: 'mb-0',
-											select_group: "d-inline-block w-100 mb-0",
-											select_label: "d-none",
-											select: "form-select-small",
-											select_svg: "icon-inline icon-xs icon-w-14 svg-icon-text",
-										},
-										select_svg_id: 'chevron-down'
-									})
-								}}
-							</div>
-						</div>
-					{% endif %}
-				</div>
-			</div>
-			{% include 'snipplets/grid/filters-modals.tpl' %}
-			<div class="ivana-category-layout{% if products and has_filters_available %} ivana-category-layout-filters{% endif %}">
-				{% if products and has_filters_available %}
-					<aside class="ivana-category-sidebar d-none d-md-block">
-						<div class="ivana-category-filter-card">
-							{% include 'snipplets/grid/filters-controls.tpl' %}
-						</div>
-					</aside>
-				{% endif %}
-				<div class="ivana-category-content">
-					<div class="ivana-category-products">
-						{% include 'snipplets/grid/products-list.tpl' %}
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-{% elseif show_help %}
-	{# Category placeholder #}
-	{% include 'snipplets/defaults/show_help_category.tpl' %}
-{% endif %}
+            <div class="flex justify-center mt-16">
+                {% snipplet "snipplets/grid/pagination.tpl" %}
+            </div>
+        </div>
+
+    </div>
+</div>
