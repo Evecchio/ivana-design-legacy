@@ -15,8 +15,8 @@
 	{% set section_format_desktop = settings.featured_products_format_desktop %}
 	{% set section_format_mobile = settings.featured_products_format_mobile %}
 	{% set section_slider_both = settings.featured_products_format_mobile == 'slider' and settings.featured_products_format_desktop == 'slider' %}
-	{% set section_slider_mobile_only = settings.featured_products_format_mobile == 'slider' and settings.featured_products_format_desktop == 'grid' %}
-	{% set section_slider_desktop_only = settings.featured_products_format_desktop == 'slider' and settings.featured_products_format_mobile == 'grid' %}
+	{% set section_slider_mobile_only = settings.featured_products_format_mobile == 'slider' and settings.featured_products_format_desktop != 'slider' %}
+	{% set section_slider_desktop_only = settings.featured_products_format_desktop == 'slider' and settings.featured_products_format_mobile != 'slider' %}
 	{% set section_slider_id = 'featured' %}
 	{% set section_title = settings.featured_products_title ? settings.featured_products_title : 'Destacados' | translate %}
 	{% set section_kicker = 'Seleccion curada' | translate %}
@@ -29,8 +29,8 @@
 	{% set section_format_desktop = settings.new_products_format_desktop %}
 	{% set section_format_mobile = settings.new_products_format_mobile %}
 	{% set section_slider_both = settings.new_products_format_mobile == 'slider' and settings.new_products_format_desktop == 'slider' %}
-	{% set section_slider_mobile_only = settings.new_products_format_mobile == 'slider' and settings.new_products_format_desktop == 'grid' %}
-	{% set section_slider_desktop_only = settings.new_products_format_desktop == 'slider' and settings.new_products_format_mobile == 'grid' %}
+	{% set section_slider_mobile_only = settings.new_products_format_mobile == 'slider' and settings.new_products_format_desktop != 'slider' %}
+	{% set section_slider_desktop_only = settings.new_products_format_desktop == 'slider' and settings.new_products_format_mobile != 'slider' %}
 	{% set section_slider_id = 'new' %}
 	{% set section_title = settings.new_products_title ? settings.new_products_title : 'Novedades' | translate %}
 	{% set section_kicker = 'Recien llegados' | translate %}
@@ -43,8 +43,8 @@
 	{% set section_format_desktop = settings.sale_products_format_desktop %}
 	{% set section_format_mobile = settings.sale_products_format_mobile %}
 	{% set section_slider_both = settings.sale_products_format_mobile == 'slider' and settings.sale_products_format_desktop == 'slider' %}
-	{% set section_slider_mobile_only = settings.sale_products_format_mobile == 'slider' and settings.sale_products_format_desktop == 'grid' %}
-	{% set section_slider_desktop_only = settings.sale_products_format_desktop == 'slider' and settings.sale_products_format_mobile == 'grid' %}
+	{% set section_slider_mobile_only = settings.sale_products_format_mobile == 'slider' and settings.sale_products_format_desktop != 'slider' %}
+	{% set section_slider_desktop_only = settings.sale_products_format_desktop == 'slider' and settings.sale_products_format_mobile != 'slider' %}
 	{% set section_slider_id = 'sale' %}
 	{% set section_title = settings.sale_products_title ? settings.sale_products_title : 'Super descuentos' | translate %}
 	{% set section_kicker = 'Ofertas destacadas' | translate %}
