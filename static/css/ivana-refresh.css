@@ -1221,3 +1221,326 @@
     display: none;
   }
 }
+
+.ivana-product-form {
+  display: block;
+}
+
+.ivana-product-shell .product-columns {
+  grid-template-columns: minmax(0, 0.96fr) minmax(360px, 0.84fr);
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+.ivana-product-shell .product-images,
+.ivana-product-shell .product-info {
+  padding: clamp(1.25rem, 2.6vw, 2rem);
+}
+
+.ivana-product-gallery .js-swiper-product {
+  border-radius: 24px;
+  overflow: hidden;
+  background: #f7f7f8;
+}
+
+.ivana-product-gallery .slider-slide,
+.ivana-product-gallery .js-product-slide-link {
+  background: #f7f7f8;
+}
+
+.ivana-product-gallery .product-slider-image,
+.ivana-product-gallery .js-product-slide-img {
+  object-fit: cover !important;
+  object-position: center top !important;
+}
+
+.ivana-product-gallery .swiper-fractions {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 3;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.92);
+  color: #111827;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.ivana-product-thumbs {
+  margin-top: 1rem;
+}
+
+.ivana-product-thumbs .product-thumb {
+  display: block;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(17,17,17,0.10);
+  background: #f7f7f8;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ivana-product-thumbs .product-thumb.selected {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(255,20,147,0.12);
+}
+
+.ivana-product-thumbs .product-thumb:hover {
+  border-color: rgba(17,17,17,0.22);
+  transform: translateY(-1px);
+}
+
+.ivana-product-shell .js-product-name {
+  margin-bottom: 1rem !important;
+}
+
+.ivana-product-shell .ivana-product-price-block {
+  margin-bottom: 1.5rem !important;
+}
+
+.ivana-product-shell .ivana-product-price-block .price-compare {
+  display: block !important;
+  margin-bottom: 0.35rem !important;
+  font-size: 0.92rem !important;
+}
+
+.ivana-product-shell .ivana-product-price-block .js-price-display {
+  color: var(--brand) !important;
+  font-size: clamp(2rem, 3.6vw, 3rem) !important;
+  line-height: 1 !important;
+}
+
+.ivana-product-shell .ivana-product-price-block .text-accent,
+.ivana-product-shell .ivana-product-discount-note,
+.ivana-product-shell .ivana-product-payments-box {
+  color: #16a34a !important;
+}
+
+.ivana-product-shell .ivana-product-payments-box {
+  padding: 1rem 1.1rem !important;
+  border: 1px solid rgba(17,17,17,0.08);
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+}
+
+.ivana-product-shell #btn-installments {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.ivana-product-shell .ivana-product-purchase-form {
+  margin-top: 1.5rem !important;
+}
+
+.ivana-product-shell .ivana-product-purchase-form .grid.grid-auto-1 {
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: end;
+}
+
+.ivana-product-shell .js-product-variants {
+  gap: 1rem 1.25rem;
+  margin-bottom: 1.75rem !important;
+}
+
+.ivana-product-shell .js-product-variants-group {
+  min-width: 0;
+}
+
+.ivana-product-shell .js-product-variants .form-label,
+.ivana-product-shell .js-product-variants label {
+  display: block;
+  margin-bottom: 0.75rem !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: #111827 !important;
+}
+
+.ivana-product-shell .btn-variant {
+  margin: 0 0.45rem 0.5rem 0 !important;
+  border: 1px solid rgba(17,17,17,0.12) !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  color: #374151 !important;
+  min-width: 50px;
+  min-height: 46px;
+  padding: 0.15rem !important;
+}
+
+.ivana-product-shell .btn-variant .btn-variant-content {
+  min-width: 44px;
+  min-height: 42px;
+  border-radius: 10px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.ivana-product-shell .btn-variant.selected {
+  border-color: var(--brand) !important;
+  box-shadow: 0 0 0 3px rgba(255,20,147,0.12);
+}
+
+.ivana-product-shell .btn-variant.selected .btn-variant-content {
+  color: var(--brand) !important;
+}
+
+.ivana-product-shell .btn-variant-color .btn-variant-content,
+.ivana-product-shell .btn-variant-content-square {
+  padding: 0 !important;
+  min-width: 46px;
+  width: 46px;
+  min-height: 46px;
+}
+
+.ivana-product-shell .form-quantity-container .form-label {
+  display: none !important;
+}
+
+.ivana-product-shell .form-quantity {
+  border: 1px solid rgba(17,17,17,0.12) !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+  background: #fff;
+  min-height: 52px;
+}
+
+.ivana-product-shell .form-quantity-icon {
+  width: 44px !important;
+  min-height: 52px !important;
+  background: transparent !important;
+  color: #6b7280 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.ivana-product-shell .js-quantity-input {
+  min-height: 52px !important;
+  border: 0 !important;
+  background: transparent !important;
+  text-align: center !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+}
+
+.ivana-product-shell .form-quantity-container .font-small.py-2.text-center {
+  display: none;
+}
+
+.ivana-product-shell .free-shipping-message,
+.ivana-product-shell .ivana-product-support-cards .grid.grid-auto-1,
+.ivana-product-shell .ivana-product-fulfillment .list,
+.ivana-product-shell .ivana-product-fulfillment .js-shipping-calculator,
+.ivana-product-shell .ivana-product-fulfillment [class*='branch'] {
+  border-radius: 20px !important;
+  border: 1px solid rgba(17,17,17,0.08) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%) !important;
+  padding: 1rem !important;
+  box-shadow: none !important;
+}
+
+.ivana-product-shell .free-shipping-message {
+  display: block;
+}
+
+.ivana-product-shell .ivana-product-support-cards .icon-banner,
+.ivana-product-shell .ivana-product-fulfillment .icon-banner {
+  width: 40px;
+}
+
+.ivana-product-shell .ivana-product-support-cards .icon-text,
+.ivana-product-shell .ivana-product-fulfillment .icon-text {
+  color: #4b5563;
+}
+
+.ivana-product-shell .ivana-product-description-card {
+  margin-top: clamp(2rem, 4vw, 3rem) !important;
+}
+
+.ivana-product-shell .ivana-product-description-title {
+  text-align: left !important;
+  font-size: clamp(1.5rem, 2.5vw, 2rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.04em !important;
+  text-transform: uppercase !important;
+  font-weight: 800 !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.ivana-product-shell .ivana-product-description-card .user-content,
+.ivana-product-shell .ivana-product-description-card .user-content p,
+.ivana-product-shell .ivana-product-description-card .user-content li {
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.ivana-product-description-social {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(17,17,17,0.08);
+}
+
+.ivana-product-description-social .social-share {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ivana-product-description-social .social-share-button {
+  margin-right: 0 !important;
+  color: #6b7280 !important;
+}
+
+.ivana-product-related .container {
+  max-width: 1440px !important;
+}
+
+.ivana-product-related .h5,
+.ivana-product-related h2,
+.ivana-product-related h3 {
+  text-align: center !important;
+  font-size: clamp(1.2rem, 2.2vw, 1.8rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 2rem !important;
+}
+
+@media (max-width: 991px) {
+  .ivana-product-shell .product-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .ivana-product-shell .product-images {
+    position: static;
+  }
+}
+
+@media (max-width: 767px) {
+  .ivana-product-shell .ivana-product-purchase-form .grid.grid-auto-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .ivana-product-gallery .swiper-fractions {
+    right: 12px;
+    bottom: 12px;
+    font-size: 0.66rem;
+  }
+
+  .ivana-product-thumbs .product-thumb {
+    border-radius: 14px;
+  }
+
+  .ivana-product-shell .btn-variant .btn-variant-content {
+    min-width: 40px;
+    min-height: 40px;
+    font-size: 0.82rem;
+  }
+}

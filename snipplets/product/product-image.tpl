@@ -5,7 +5,7 @@
 {% endif %}
 
 {% if product.images_count > 0 %}
-	<div class="product-images-slider position-relative mb-md-0 mb-3{% if not has_multiple_slides %} w-100{% endif %}">
+	<div class="product-images-slider ivana-product-gallery position-relative mb-md-0 mb-3{% if not has_multiple_slides %} w-100{% endif %}">
 		{{ component(
 			'labels', {
 				no_stock_only: true,
@@ -64,7 +64,7 @@
 	</div>
 {% endif %}
 {% if has_multiple_slides %}
-	<div class="product-images-thumbs order-md-first text-md-center">
+	<div class="product-images-thumbs ivana-product-thumbs order-md-first text-md-center">
 		<div class="js-swiper-product-thumbs swiper-product-thumb overflow-none mb-3"> 
 			<div class="swiper-wrapper">
 				{% for image in product.images %}

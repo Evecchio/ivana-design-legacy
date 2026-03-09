@@ -1,10 +1,9 @@
 {% set description_content = product.description is not empty or settings.show_product_fb_comment_box %}
-<div class="w-md-60 mt-4 mb-2" data-store="product-description-{{ product.id }}">
-
-	{# Product description #}
+<div class="ivana-rich-content ivana-product-description-card mt-4 mb-2" data-store="product-description-{{ product.id }}">
 
 	{% if product.description is not empty %}
-		<div class="font-weight-bold mb-3">{{ "Descripción" | translate }}</div>
+		<p class="ivana-kicker mb-2">{{ "Detalles del producto" | translate }}</p>
+		<h2 class="ivana-product-description-title mb-3">{{ "Descripción" | translate }}</h2>
 		<div class="user-content mb-4">
 			{{ product.description }}
 		</div>
@@ -15,6 +14,7 @@
 	{% endif %}
 	<div id="reviewsapp"></div>
 
-	{% include 'snipplets/social/social-share.tpl' %}
-
+	<div class="ivana-product-description-social">
+		{% include 'snipplets/social/social-share.tpl' %}
+	</div>
 </div>

@@ -1,4 +1,4 @@
-<div class="pt-md-3">
+<div class="pt-md-3 ivana-product-form">
 
 	{# Breadcrumbs for product page #}
 
@@ -71,7 +71,7 @@
 		{% set discount_rate_percentage = ((product.compare_at_price) - (product.price)) * 100 / (product.compare_at_price) %}
 	{% endif %}
 	{% if not is_subscription_only_product %}
-	<div class="js-price-container price-container mb-3" data-store="product-price-{{ product.id }}">
+	<div class="js-price-container price-container ivana-product-price-block mb-3" data-store="product-price-{{ product.id }}">
 		<div id="compare_price_display" class="js-compare-price-display price-compare font-medium" {% if not product.compare_at_price or not product.display_price %}style="display:none;"{% else %} style="display:block;"{% endif %}>
 			{% if product.compare_at_price and product.display_price %}
 				{{ product.compare_at_price | money }}
@@ -140,7 +140,7 @@
 	{% set show_payments_info = settings.product_detail_installments and product.show_installments and product.display_price and installments_info %}
 
 	{% if not home_main_product and (show_payments_info or hasDiscount) %}
-		<div {% if installments_info %}data-target="#installments-modal"{% endif %} class="{% if installments_info %}js-modal-open-private js-fullscreen-modal-open{% endif %} js-product-payments-container mt-1 mb-3 px-0" {% if not product.display_price or not (product.get_max_installments and product.get_max_installments(false)) %}style="display: none;"{% endif %}>
+		<div {% if installments_info %}data-target="#installments-modal"{% endif %} class="{% if installments_info %}js-modal-open-private js-fullscreen-modal-open{% endif %} js-product-payments-container ivana-product-payments-box mt-1 mb-3 px-0" {% if not product.display_price or not (product.get_max_installments and product.get_max_installments(false)) %}style="display: none;"{% endif %}>
 	{% endif %}
 		{% if show_payments_info %}
 			{{ component('installments', {'location' : 'product_detail', container_classes: { installment: "mb-2 font-medium"}}) }}
@@ -171,7 +171,7 @@
 
 	{# Product form, includes: Variants, CTA and Shipping calculator #}
 
-	<form id="product_form" class="js-product-form mt-4" method="post" action="{{ store.cart_url }}" data-store="product-form-{{ product.id }}">
+	<form id="product_form" class="js-product-form ivana-product-purchase-form mt-4" method="post" action="{{ store.cart_url }}" data-store="product-form-{{ product.id }}">
 		<input type="hidden" name="add_to_cart" value="{{product.id}}" />
 
 		{# Product availability #}
@@ -182,7 +182,7 @@
 		{% set has_product_free_shipping = product.free_shipping %}
 
 		{% if not product.is_non_shippable and show_product_quantity and (has_free_shipping or has_product_free_shipping) %}
-			<div class="js-free-shipping-minimum-message free-shipping-message font-medium mb-4">
+			<div class="js-free-shipping-minimum-message free-shipping-message ivana-product-note font-medium mb-4">
 				<span class="float-left mr-2">
 					<svg class="icon-inline svg-icon-accent icon-lg"><use xlink:href="#truck"/></svg>
 				</span>
@@ -306,7 +306,7 @@
 
 	{% if not home_main_product %}
 		{# Product informative banners #}
-		<div class="pb-4">
+		<div class="ivana-product-support-cards pb-4">
 			{% include 'snipplets/product/product-informative-banner.tpl' %}
 		</div>
 
@@ -315,7 +315,7 @@
 		{% set show_product_fulfillment = settings.shipping_calculator_product_page and (store.has_shipping or store.branches) and not product.free_shipping and not product.is_non_shippable %}
 
 		{% if show_product_fulfillment %}
-			<div class="pb-4 w-md-80">
+			<div class="ivana-product-fulfillment pb-4 w-md-80">
 				{# Shipping calculator and branch link #}
 
 				<div id="product-shipping-container" class="product-shipping-calculator list" {% if not product.display_price or not product.has_stock %}style="display:none;"{% endif %} data-shipping-url="{{ store.shipping_calculator_url }}">
