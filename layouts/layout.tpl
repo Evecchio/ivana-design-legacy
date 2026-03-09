@@ -53,7 +53,7 @@
 
 		{# Ivana Design â€” Manrope Font #}
 		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 		{# Ivana Design â€” Premium CSS v3 (Stitch) #}
 		<style>
@@ -111,7 +111,7 @@
 				overflow-x: hidden !important;
 				-webkit-font-smoothing:antialiased;
 				-moz-osx-font-smoothing:grayscale;
-				font-family:'Manrope',var(--body-font),sans-serif!important;
+				font-family:'Montserrat',var(--body-font),sans-serif!important;
 				background-color: var(--blanco);
 				font-size: clamp(15px, 1.1vw, 18px) !important;
 				color: var(--negro);
@@ -122,7 +122,7 @@
 
 			/* === TIPOGRAFÃA === */
 			h1,h2,h3,h4,h5,h6, .h1,.h2,.h3,.h4,.h5,.h6, p,span,div,li,a,button,input,select,textarea {
-				font-family:'Manrope',var(--body-font),sans-serif!important;
+				font-family:'Montserrat',var(--body-font),sans-serif!important;
 			}
 
 			/* === HEADER EMPROLIJADO === */
@@ -552,7 +552,7 @@
 				font-weight: 700;
 				letter-spacing: 0.1em;
 				text-transform: uppercase;
-				font-family: 'Manrope', sans-serif;
+				font-family: 'Montserrat', sans-serif;
 				line-height: 1.6;
 				white-space: normal;
 				word-break: keep-all;
@@ -599,7 +599,7 @@
 				border-radius: 6px;
 				border: none;
 				cursor: pointer;
-				font-family: 'Manrope', sans-serif;
+				font-family: 'Montserrat', sans-serif;
 				text-align: center;
 				transition: background 0.2s ease;
 			}
@@ -631,7 +631,7 @@
 				border-radius: 4px;
 				letter-spacing: 0.06em;
 				text-transform: uppercase;
-				font-family: 'Manrope', sans-serif;
+				font-family: 'Montserrat', sans-serif;
 				display: inline-block;
 			}
 			/* === NAV â€” sin dropdown en ningÃºn Ã­tem === */
@@ -687,9 +687,324 @@
 				border-radius: 4px !important;
 				border: 1px solid #fed7aa !important;
 				letter-spacing: 0.02em !important;
-				font-family: 'Manrope', sans-serif !important;
+				font-family: 'Montserrat', sans-serif !important;
 				box-shadow: 0 1px 3px rgba(194,65,12,0.15) !important;
 				display: inline-block !important;
+			}
+			/* === IVANA REFRESH V2: BASE GLOBAL + HOME === */
+			body,
+			.body-font {
+				font-family: 'Montserrat', var(--body-font), sans-serif !important;
+				background: #ffffff !important;
+				color: #1f2937 !important;
+			}
+
+			.ivana-promo-bar,
+			.product-discount-badge,
+			.product-price-badge,
+			.product-ver-btn {
+				font-family: 'Montserrat', var(--body-font), sans-serif !important;
+			}
+
+			.ivana-promo-bar {
+				background: var(--brand) !important;
+				padding: 0.7rem 1rem !important;
+				font-size: 0.68rem !important;
+				letter-spacing: 0.22em !important;
+			}
+
+			.js-head-main {
+				box-shadow: none !important;
+				border-bottom: 1px solid rgba(17, 24, 39, 0.06) !important;
+			}
+
+			.js-head-main .head-row,
+			.head-row {
+				padding-top: 1rem !important;
+				padding-bottom: 1rem !important;
+			}
+
+			.logo-container img {
+				max-height: 78px !important;
+			}
+
+			.search-container {
+				max-width: 680px !important;
+				width: 100% !important;
+			}
+
+			[class*="search-form"] input,
+			.search-container input {
+				height: 46px !important;
+				font-size: 0.95rem !important;
+				background: #ffffff !important;
+				border-color: #e5e7eb !important;
+				box-shadow: none !important;
+			}
+
+			.utilities-container {
+				gap: clamp(0.75rem, 1.6vw, 1.5rem) !important;
+			}
+
+			.header-utility {
+				color: #374151 !important;
+			}
+
+			.header-utility:hover {
+				color: var(--brand) !important;
+				text-decoration: none !important;
+			}
+
+			.nav-desktop-container {
+				border-top: 1px solid rgba(17, 24, 39, 0.05) !important;
+				padding-top: 0.9rem !important;
+				padding-bottom: 0.9rem !important;
+			}
+
+			.nav-desktop-list > .nav-item {
+				padding: 0 0.75rem !important;
+			}
+
+			.js-main-menu a,
+			[class*="nav-link"],
+			[class*="desktop-nav"] a {
+				font-size: 0.72rem !important;
+				letter-spacing: 0.14em !important;
+			}
+
+			.ivana-home-hero {
+				padding-top: 0 !important;
+			}
+
+			.ivana-home-section-head {
+				margin-bottom: clamp(1.5rem, 4vw, 2.5rem) !important;
+			}
+
+			.ivana-home-section-kicker {
+				color: #6b7280 !important;
+				font-size: 0.72rem !important;
+				font-weight: 700 !important;
+				letter-spacing: 0.28em !important;
+				text-transform: uppercase !important;
+			}
+
+			.ivana-home-section-title,
+			.js-products-sale-title,
+			.js-products-featured-title,
+			.js-products-new-title {
+				font-family: 'Montserrat', var(--body-font), sans-serif !important;
+				font-size: clamp(2rem, 4.2vw, 3.8rem) !important;
+				line-height: 0.96 !important;
+				letter-spacing: -0.06em !important;
+				color: #111827 !important;
+				text-transform: uppercase !important;
+				margin-bottom: 0 !important;
+				display: block !important;
+			}
+
+			.js-products-sale-title::after,
+			.ivana-home-section-divider {
+				display: none !important;
+			}
+
+			.ivana-home-categories {
+				padding-top: clamp(2.5rem, 5vw, 4.5rem) !important;
+				padding-bottom: clamp(2rem, 4vw, 3.5rem) !important;
+			}
+
+			.ivana-home-categories-row {
+				gap: clamp(1.4rem, 2.4vw, 2.6rem) !important;
+			}
+
+			.home-category-image-border {
+				width: 108px !important;
+				height: 108px !important;
+				border: 2px solid #efefef !important;
+				padding: 4px !important;
+				background: #ffffff !important;
+			}
+
+			.ivana-home-category-name {
+				font-size: 0.72rem !important;
+				font-weight: 700 !important;
+				letter-spacing: 0.14em !important;
+				color: #374151 !important;
+				margin-top: 1rem !important;
+			}
+
+			.ivana-home-products {
+				padding-top: clamp(1rem, 3vw, 2rem) !important;
+				padding-bottom: clamp(2rem, 4vw, 3rem) !important;
+			}
+
+			.ivana-home-products .js-products-sale-grid,
+			.ivana-home-products .js-products-featured-grid,
+			.ivana-home-products .js-products-new-grid {
+				display: grid !important;
+				gap: clamp(1rem, 1.8vw, 1.5rem) !important;
+			}
+
+			.js-item-product,
+			.product-item {
+				border-radius: 0 !important;
+				border-color: #ececec !important;
+			}
+
+			.js-item-product .information {
+				padding: 1rem 1rem 1.25rem !important;
+				gap: 0.25rem !important;
+			}
+
+			.js-item-product .item-name,
+			.js-item-product a[class*="name"],
+			.js-item-product [class*="item-name"] {
+				font-size: 0.76rem !important;
+				font-weight: 800 !important;
+				letter-spacing: 0.06em !important;
+				text-transform: uppercase !important;
+				min-height: 2.9em !important;
+			}
+
+			.js-item-product .js-price-display,
+			.js-item-product .product-item-price,
+			.js-item-product [class*="product-item-price"]:not([class*="compare"]) {
+				font-size: 1.35rem !important;
+				font-weight: 800 !important;
+				color: var(--brand) !important;
+				line-height: 1.1 !important;
+			}
+
+			.js-item-product .price-compare,
+			.js-item-product [class*="compare"] {
+				font-size: 0.8rem !important;
+				color: #9ca3af !important;
+				margin-bottom: 0.15rem !important;
+			}
+
+			.js-item-product .product-item-discount,
+			.js-item-product [class*="discount-rate"] {
+				background: transparent !important;
+				padding: 0 !important;
+				border-radius: 0 !important;
+				color: #16a34a !important;
+				font-size: 0.62rem !important;
+				font-weight: 800 !important;
+				letter-spacing: 0.1em !important;
+			}
+
+			.js-item-product .custom-installments,
+			.js-item-product [class*="installments"] {
+				font-size: 0.72rem !important;
+				color: #6b7280 !important;
+			}
+
+			.js-item-product [class*="payment-discount"],
+			.js-item-product .text-accent {
+				font-size: 0.7rem !important;
+				color: var(--brand) !important;
+			}
+
+			.product-discount-overlay {
+				top: 12px !important;
+				left: 12px !important;
+				gap: 0.35rem !important;
+			}
+
+			.product-discount-badge {
+				border-radius: 6px !important;
+				font-size: 0.62rem !important;
+				letter-spacing: 0.14em !important;
+			}
+
+			.product-price-badge {
+				background: rgba(255, 255, 255, 0.96) !important;
+				border: 1px solid rgba(230, 0, 126, 0.22) !important;
+				color: var(--brand) !important;
+				box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08) !important;
+			}
+
+			.product-ver-overlay {
+				background: linear-gradient(180deg, rgba(255, 255, 255, 0) 45%, rgba(17, 24, 39, 0.18) 100%) !important;
+			}
+
+			.product-ver-btn {
+				background: #ffffff !important;
+				color: #111827 !important;
+				border-radius: 999px !important;
+				padding: 0.7rem 0 !important;
+				font-size: 0.68rem !important;
+				letter-spacing: 0.16em !important;
+			}
+
+			.product-ver-btn:hover {
+				background: var(--brand) !important;
+				color: #ffffff !important;
+			}
+
+			.ivana-home-products-link {
+				background: #ffffff !important;
+				color: #111827 !important;
+				border: 1.5px solid #111827 !important;
+			}
+
+			.ivana-home-products-link:hover {
+				background: #111827 !important;
+				color: #ffffff !important;
+			}
+
+			@media (min-width: 1200px) {
+				.ivana-home-products .js-products-sale-grid,
+				.ivana-home-products .js-products-featured-grid,
+				.ivana-home-products .js-products-new-grid {
+					grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+				}
+			}
+
+			@media (min-width: 768px) and (max-width: 1199px) {
+				.ivana-home-products .js-products-sale-grid,
+				.ivana-home-products .js-products-featured-grid,
+				.ivana-home-products .js-products-new-grid {
+					grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+				}
+			}
+
+			@media (max-width: 767px) {
+				.ivana-promo-bar {
+					font-size: 0.62rem !important;
+					letter-spacing: 0.16em !important;
+				}
+
+				.js-head-main .head-row,
+				.head-row {
+					padding-top: 0.65rem !important;
+					padding-bottom: 0.65rem !important;
+				}
+
+				.logo-container img {
+					max-height: 48px !important;
+				}
+
+				[class*="search-form"] input,
+				.search-container input {
+					height: 42px !important;
+					font-size: 0.88rem !important;
+				}
+
+				.ivana-home-section-title,
+				.js-products-sale-title,
+				.js-products-featured-title,
+				.js-products-new-title {
+					font-size: clamp(1.75rem, 10vw, 2.6rem) !important;
+				}
+
+				.home-category-image-border {
+					width: 94px !important;
+					height: 94px !important;
+				}
+
+				.ivana-home-category-name {
+					font-size: 0.66rem !important;
+				}
 			}
 		</style>
 
