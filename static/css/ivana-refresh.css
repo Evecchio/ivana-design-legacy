@@ -1968,8 +1968,9 @@ div.js-product-item-private.product-item.ivana-card
   color: #999 !important;
   text-decoration: line-through !important;
   order: -1 !important;
-  width: 100% !important;
-  margin-bottom: 2px !important;
+  display: inline !important;
+  margin-bottom: 0 !important;
+  margin-right: 6px !important;
 }
 
 /* Precio principal */
@@ -2027,6 +2028,9 @@ div.js-product-item-private.product-item.ivana-card
   font-weight: 600 !important;
   color: #00a650 !important;
   margin-top: 4px !important;
+  display: block !important;
+  white-space: normal !important;
+  word-spacing: 0.15em !important;
 }
 
 div.js-product-item-private.product-item.ivana-card
@@ -2034,6 +2038,8 @@ div.js-product-item-private.product-item.ivana-card
   span {
   color: #00a650 !important;
   font-weight: 600 !important;
+  display: inline !important;
+  white-space: normal !important;
 }
 
 /* Stock y últimas unidades */
