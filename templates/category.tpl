@@ -21,8 +21,7 @@
 				<div class="mb-1">
 					{% snipplet "breadcrumbs.tpl" %}
 					<div class="grid grid-1-auto align-items-end">
-						<h1 class="sr-only">{{ category.name }}</h1>
-						{% if products | length > 1 %}
+<h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">{{ category.name }}</h1>						{% if products | length > 1 %}
 							<div class="d-md-none text-right font-small mb-1">
 								{{ products_count }} {{ 'productos' | translate }}
 							</div>
