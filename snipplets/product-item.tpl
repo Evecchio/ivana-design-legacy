@@ -91,18 +91,6 @@
 		}) }}
 		{% set product_available_with_price = product.available and product.display_price %}
 
-		{% if settings.last_product_category and product_available_with_price %}
-			<div class="{% if product.variations %}js-last-product {% endif %}text-stock font-small mt-2"{% if product.selected_or_first_available_variant.stock != 1 %} style="display: none;"{% endif %}>
-				xxxx {{ settings.last_product_text }}
-			</div>
-			{% if settings.latest_products_available %}
-				{% set latest_products_limit = settings.latest_products_available %}
-				<div class="{% if product.variations %}js-latest-products-available {% endif %}text-stock font-small mt-2" data-limit="{{ latest_products_limit }}" {% if product.selected_or_first_available_variant.stock > latest_products_limit or product.selected_or_first_available_variant.stock == null or product.selected_or_first_available_variant.stock == 1 %} style="display: none;"{% endif %}>
-					{{ "¡Solo quedan" | translate }} <span class="js-product-stock">{{ product.selected_or_first_available_variant.stock }}</span> {{ "en stock!" | translate }}
-				</div>
-			{% endif %}
-		{% endif %}
-
 		{% if 
 			((settings.quick_shop and not product.isSubscribable()) or settings.product_color_variants)
 			and product.available 
