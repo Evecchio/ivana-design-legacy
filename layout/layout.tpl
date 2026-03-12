@@ -1,147 +1,1009 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>{{ page_title }}</title>
-    
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#e6007e",
-                        "background-light": "#f8f6f6",
-                        "background-dark": "#221610",
-                    },
-                    fontFamily: {
-                        "display": ["Public Sans"]
-                    },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-                },
-            },
-        }
-    </script>
-    <style>
-        body {
-            font-family: 'Public Sans', sans-serif;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-    </style>
-    <style data-purpose="custom-colors">
-        :root {
-            --brand-pink: #e6007e;
-            --brand-pink-hover: #c5006d;
-        }
-        .bg-brand-pink { background-color: var(--brand-pink); }
-        .text-brand-pink { color: var(--brand-pink); }
-        .border-brand-pink { border-color: var(--brand-pink); }
-    </style>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/" lang="{% for language in languages %}{% if language.active %}{{ language.lang }}{% endif %}{% endfor %}">
+	<head>
 
-    {% head_content %}
-</head>
+		{{ component('head-tags') }}
 
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
-    <div class="layout-container flex h-full grow flex-col">
-        
-        <div class="bg-brand-pink text-white py-2 text-center text-xs font-bold tracking-widest uppercase" data-purpose="announcement-bar">
-            🔥 HASTA 40% OFF | 3 CUOTAS SIN INTERÉS | 10% OFF TRANSFERENCIA 🔥
-        </div>
-        <header class="border-b border-gray-100 sticky top-0 bg-white z-50">
-            <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-                <div class="flex-shrink-0">
-                    <a href="{{ store.url }}">
-                        <h1 class="text-3xl font-bold italic tracking-tighter">ivana <span class="font-light not-italic">Design</span></h1>
-                    </a>
-                </div>
-                
-                <div class="flex-grow max-w-xl mx-8">
-                    <form action="{{ store.search_url }}" method="get" class="relative">
-                        <input class="w-full border-gray-200 rounded-full py-2 px-6 focus:ring-brand-pink focus:border-brand-pink" type="text" name="q" value="{{ search.query }}" placeholder="¿Qué estás buscando?" />
-                        <button type="submit" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-brand-pink">
-                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-                            </svg>
-                        </button>
-                    </form>
-                </div>
-                
-                <div class="flex items-center space-x-6 text-sm">
-                    <a class="flex items-center hover:text-brand-pink text-gray-800" href="{{ store.customer_login_url }}">
-                        <svg class="h-5 w-5 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                        Entrar
-                    </a>
-                    <a class="flex items-center hover:text-brand-pink text-gray-800" href="{{ store.customer_register_url }}">
-                        <svg class="h-5 w-5 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                        Registrarse
-                    </a>
-                    <a class="flex items-center text-brand-pink font-bold" href="{{ store.cart_url }}">
-                        <svg class="h-6 w-6 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                        CARRO ({{ cart.items_count }}) <span class="text-xs ml-1">{{ cart.total | money }}</span>
-                    </a>
-                </div>
-            </div>
-            
-            <nav class="border-t border-gray-100 py-3">
-                <ul class="flex justify-center space-x-8 text-xs font-bold tracking-wider text-gray-600">
-                    {% for item in menus[settings.main_menu] %}
-                        <li><a class="hover:text-brand-pink uppercase" href="{{ item.url }}">{{ item.name }}</a></li>
-                    {% endfor %}
-                </ul>
-            </nav>
-        </header>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		
+		{# Preload LCP home, category and product page elements #}
 
-       {% template_content %}
+		{% snipplet 'preload-images.tpl' %}
 
-        <footer class="bg-brand-pink text-white pt-16 pb-8 mt-12">
-            <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
-                <div class="space-y-6">
-                    <div class="flex space-x-4">
-                        <a class="hover:opacity-80" href="#">
-                            <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
-                        </a>
-                        <a class="hover:opacity-80" href="#">
-                            <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.324v-21.35c0-.732-.593-1.325-1.325-1.325z"></path></svg>
-                        </a>
-                    </div>
-                    <div class="space-y-3 text-sm">
-                        <p>5491124769969</p>
-                        <p>+54 1124769969</p>
-                        <p>ivanadesignoficial@gmail.com</p>
-                        <p>ALVEAR 2531 | Villa Ballester</p>
-                    </div>
-                </div>
-                <nav class="space-y-2 text-sm font-light">
-                    <a class="block hover:underline" href="{{ store.url }}">Inicio</a>
-                    <a class="block hover:underline" href="{{ store.products_url }}">Productos</a>
-                    <a class="block hover:underline" href="{{ store.contact_url }}">Contacto</a>
-                </nav>
-                <div class="col-span-1 md:col-span-2 space-y-4">
-                    <h4 class="font-bold text-lg">Newsletter</h4>
-                    <form class="flex max-w-md" action="{{ contact.newsletter_action }}" method="post">
-                        <input class="flex-grow bg-brand-pink border-white text-white placeholder-white focus:ring-white focus:border-white py-2 px-4 rounded-l" name="email" placeholder="Email" type="email" required/>
-                        <button class="bg-white text-brand-pink font-bold px-6 py-2 rounded-r hover:bg-gray-100 transition-colors" type="submit">Enviar</button>
-                    </form>
-                </div>
-            </div>
-            <div class="max-w-[1440px] mx-auto mt-12 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] opacity-80">
-                <p>© 2026 Ivana Design. Todos los derechos reservados.</p>
-                <div class="flex gap-6">
-                    <a class="hover:underline" href="#">Defensa de las y los consumidores. Para reclamos ingresá acá.</a>
-                    <a class="hover:underline" href="#">Botón de arrepentimiento</a>
-                </div>
-            </div>
-        </footer>
-    </div>
-    
-   {% body_content %}
-</body>
+		<link rel="preload" as="style" href="{{ [settings.font_headings, settings.font_rest] | google_fonts_url('400,700') }}" />
+		<link rel="preload" href="{{ 'css/style-critical.scss' | static_url }}" as="style" />
+		<link rel="preload" href="{{ 'css/style-utilities.scss' | static_url }}" as="style" />
+		<link rel="preload" href="{{ 'js/external-no-dependencies.js.tpl' | static_url }}" as="script" />
+
+		{#/*============================================================================
+			#CSS and fonts
+		==============================================================================*/#}
+
+		<style>
+			{# Font families #}
+
+			{{ component(
+				'fonts',{
+					font_weights: '400,700',
+					font_settings: 'settings.font_headings, settings.font_rest'
+				})
+			}}
+
+			{# General CSS Tokens #}
+
+			{% include "static/css/style-tokens.tpl" %}
+		</style>
+
+		{# Critical CSS #}
+
+		{{ 'css/style-critical.scss' | static_url | static_inline }}
+		{{ 'css/style-utilities.scss' | static_url | static_inline }}
+
+		{# Load async styling not mandatory for first meaningfull paint #}
+
+		<link rel="stylesheet" href="{{ 'css/style-async.scss' | static_url }}" media="print" onload="this.media='all'">
+
+		{# Loads custom CSS added from Advanced Settings on the admin´s theme customization screen #}
+
+		<style>
+			{{ settings.css_code | raw }}
+		</style>
+
+		{# Ivana Design — Manrope Font #}
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+		{# Ivana Design — Premium CSS v3 (Stitch) #}
+		<style>
+			/* === VARIABLES DE MARCA === */
+			:root {
+				/* ─── MARCA ─── */
+				--brand:          #FF1493;
+				--brand-dark:     #cc007a;
+				--brand-80:       rgba(255,20,147, 0.80);
+				--brand-50:       rgba(255,20,147, 0.50);
+				--brand-20:       rgba(255,20,147, 0.20);
+				--brand-10:       rgba(255,20,147, 0.10);
+
+				/* ─── NEUTROS ─── */
+				--negro:          #111111;
+				--gris-oscuro:    #333333;
+				--gris:           #666666;
+				--gris-claro:     #f8f8f8;
+				--blanco:         #ffffff;
+
+				/* ─── NEUTROS CON OPACIDAD ─── */
+				--negro-80:       rgba(0,0,0, 0.80);
+				--negro-50:       rgba(0,0,0, 0.50);
+				--negro-10:       rgba(0,0,0, 0.10);
+				--negro-05:       rgba(0,0,0, 0.05);
+				--blanco-80:      rgba(255,255,255, 0.80);
+				--blanco-20:      rgba(255,255,255, 0.20);
+			}
+
+			/* === BASE === */
+			*,*::before,*::after{box-sizing:border-box}
+			body{
+				-webkit-font-smoothing:antialiased;
+				-moz-osx-font-smoothing:grayscale;
+				font-family:'Manrope',var(--body-font),sans-serif!important;
+				background-color: var(--blanco);
+				color: var(--negro);
+				line-height: 1.5;
+			}
+			img{display:block;max-width:100%}
+			::selection { background: var(--brand-20); color: var(--negro); }
+
+			/* === TIPOGRAFÍA === */
+			h1,h2,h3,h4,h5,h6, .h1,.h2,.h3,.h4,.h5,.h6, p,span,div,li,a,button,input,select,textarea {
+				font-family:'Manrope',var(--body-font),sans-serif!important;
+			}
+
+			/* === HEADER EMPROLIJADO === */
+			.js-head-main {
+				box-shadow: 0 1px 0 var(--negro-05);
+				background: #fff !important;
+			}
+			.head-row {
+				padding-top: 1.25rem !important;
+				padding-bottom: 1.25rem !important;
+				align-items: center !important;
+			}
+			@media(min-width: 768px) {
+				.head-row { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+			}
+
+			/* Logo */
+			.logo-container img {
+				max-height: 70px !important;
+				transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important
+			}
+			.logo-container a:hover img { transform: scale(1.04) !important }
+			@media(max-width: 768px) {
+				.logo-container img { max-height: 44px !important; }
+				.head-row { padding-top: 0.75rem !important; padding-bottom: 0.75rem !important; }
+			}
+
+			.logo-text-hidden {
+				display: none !important;
+				position: absolute !important;
+				left: -9999px !important
+			}
+
+			/* Buscador */
+			:root {
+				--search-icon-size: 18px;
+				--search-hit-area: calc(var(--search-icon-size) + 20px);
+			}
+			[class*="search-form"] input, .search-container input {
+				border-radius: 100px!important;
+				border: 1px solid #eeeeee!important;
+				font-size: 13px!important;
+				padding: 0 calc(var(--search-hit-area) * 2)!important;
+				height: var(--search-hit-area)!important;
+				transition: all 0.3s ease!important;
+				background: #fafafa!important;
+			}
+			[class*="search-form"] input:focus {
+				border-color: var(--brand)!important;
+				background: #fff!important;
+				box-shadow: 0 4px 12px var(--brand-10)!important
+			}
+			[class*="search-form"] button {
+				background: transparent !important;
+				color: var(--negro)!important;
+				position: absolute !important;
+				right: 12px !important;
+				top: 50% !important;
+				transform: translateY(-50%) !important;
+				border: none !important;
+				padding: 0 !important;
+				width: var(--search-hit-area)!important;
+				height: var(--search-hit-area)!important;
+			}
+			[class*="search-form"] button svg { width: var(--search-icon-size) !important; height: var(--search-icon-size) !important; opacity: 0.5; }
+
+			/* Navegación */
+			.nav-desktop-container {
+				border-top: 1px solid var(--negro-05);
+				padding: 0.5rem 0 !important;
+			}
+			.js-main-menu a, [class*="nav-link"], [class*="desktop-nav"] a {
+				font-weight:700!important;
+				letter-spacing:.08em!important;
+				text-transform:uppercase!important;
+				font-size:11px!important;
+				color: #222 !important;
+				padding: 0.5rem 1.25rem !important;
+				transition: color .3s ease!important;
+			}
+			.js-main-menu a:hover { color: var(--brand)!important }
+
+			/* Títulos de sección — base */
+			.js-products-featured-title, .js-products-new-title, .js-products-sale-title, .h1, .h2, h1, h2 {
+				font-size: 1.6rem!important;
+				letter-spacing:-0.01em!important;
+				font-weight: 800!important;
+				text-align: center!important;
+				margin-bottom: 2rem!important;
+				color: var(--negro)!important;
+				border-left: none !important;
+				padding-left: 0 !important;
+			}
+			.js-products-featured-title::before, .js-products-new-title::before, .js-products-sale-title::before,
+			.js-products-featured-title::after, .js-products-new-title::after, .js-products-sale-title::after {
+				display: none !important;
+				content: none !important;
+			}
+			@media(min-width: 768px) {
+				.h1, h1 { font-size: 3rem!important; }
+				.h2, h2 { font-size: 2.2rem!important; }
+			}
+
+			/* Título Super Descuentos — destacado */
+			.js-products-sale-title {
+				font-size: 2rem !important;
+				color: var(--brand) !important;
+				position: relative !important;
+				display: inline-block !important;
+				padding-bottom: 0.5rem !important;
+			}
+			.js-products-sale-title::after {
+				display: block !important;
+				content: '' !important;
+				position: absolute !important;
+				bottom: 0 !important;
+				left: 50% !important;
+				transform: translateX(-50%) !important;
+				width: 48px !important;
+				height: 3px !important;
+				background: var(--brand) !important;
+				border-radius: 2px !important;
+			}
+
+			/* Secciones Home */
+			.section-home { padding-top:1rem!important; padding-bottom:1rem!important }
+			@media(max-width: 768px) {
+				.section-home { padding-top:0.75rem!important; padding-bottom:0.75rem!important }
+			}
+
+			/* === OCULTAR CATEGORÍAS DEL NAV === */
+			.js-desktop-main-categories-col { display: none !important; }
+			.js-main-categories-container,
+			.main-categories-container { display: none !important; }
+
+			/* === CATEGORÍAS HOME — círculos perfectos === */
+			.home-category-image-border {
+				border-radius: 50% !important;
+				border: 2px solid #eee !important;
+				padding: 5px !important;
+				overflow: hidden !important;
+				flex-shrink: 0 !important;
+				width: 88px !important;
+				height: 88px !important;
+				display: flex !important;
+				align-items: center !important;
+				justify-content: center !important;
+				transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+			}
+			.home-category-image-border > div {
+				border-radius: 50% !important;
+				overflow: hidden !important;
+				width: 100% !important;
+				height: 100% !important;
+			}
+			.home-category-image-border img {
+				width: 100% !important;
+				height: 100% !important;
+				object-fit: cover !important;
+				object-position: center center !important;
+				border-radius: 0 !important;
+				transform: none !important;
+				transition: none !important;
+				display: block !important;
+			}
+			.js-home-category:hover .home-category-image-border {
+				border-color: var(--brand) !important;
+				box-shadow: 0 0 0 3px var(--brand-20) !important;
+			}
+			@media(min-width: 768px) {
+				.home-category-image-border { width: 110px !important; height: 110px !important; }
+			}
+
+			/* === TARJETAS DE PRODUCTO === */
+			.js-item-product, .product-item {
+				background: #ffffff !important;
+				border: 1px solid #ebebeb !important;
+				border-radius: 10px !important;
+				overflow: hidden !important;
+				box-shadow: none !important;
+				transform: none !important;
+				transition: none !important;
+				display: flex !important;
+				flex-direction: column !important;
+				height: 100% !important;
+			}
+
+			.js-item-product .product-item-image-container,
+			.js-item-product .js-product-item-image-container {
+				aspect-ratio: 3/4 !important;
+				background: #f9f9f9 !important;
+				border-radius: 8px 8px 0 0 !important;
+				overflow: hidden !important;
+				position: relative !important;
+				width: 100% !important;
+				display: block !important;
+				flex-shrink: 0 !important;
+			}
+			.js-item-product .product-item-image-container img,
+			.js-item-product .js-product-item-image-container img,
+			.js-item-product .js-product-item-image,
+			.js-item-product .product-item-image,
+			.js-item-product .img-absolute,
+			.js-item-product .img-absolute-centered-vertically {
+				padding: 0 !important;
+				object-fit: cover !important;
+				object-position: center top !important;
+				width: 100% !important;
+				height: 100% !important;
+				position: absolute !important;
+				top: 0 !important;
+				left: 0 !important;
+				transform: none !important;
+				transition: none !important;
+				animation: none !important;
+			}
+
+			.js-item-product .information {
+				padding: 0.75rem 1rem 1.25rem !important;
+				text-align: left !important;
+				display: flex !important;
+				flex-direction: column !important;
+				flex: 1 !important;
+				gap: 3px !important;
+			}
+			/* === JERARQUÍA TIPOGRÁFICA — tarjeta de producto === */
+
+			/* Nombre: negrita, bien visible — máx 2 líneas */
+			.js-item-product .item-name,
+			.js-item-product a[class*="name"],
+			.js-item-product [class*="item-name"] {
+				font-size: 0.85rem !important;
+				font-weight: 800 !important;
+				color: #0f172a !important;
+				line-height: 1.4 !important;
+				letter-spacing: 0.01em !important;
+				overflow: hidden !important;
+				display: -webkit-box !important;
+				-webkit-line-clamp: 2 !important;
+				-webkit-box-orient: vertical !important;
+				margin-bottom: 4px !important;
+			}
+
+			/* Precio de lista tachado: visible pero secundario */
+			.js-item-product [class*="compare"] {
+				color: #999 !important;
+				font-size: 0.78rem !important;
+				font-weight: 500 !important;
+				text-decoration: line-through !important;
+				opacity: 1 !important;
+				display: block !important;
+				margin-bottom: 1px !important;
+			}
+
+			/* Precio actual: protagonista */
+			.js-item-product [class*="price"]:not([class*="compare"]) {
+				font-size: 1.1rem !important;
+				font-weight: 800 !important;
+				color: #e8185a !important;
+				line-height: 1.2 !important;
+			}
+
+			/* % OFF en área de texto: pequeño badge rosa */
+			.js-item-product .product-item-discount,
+			.js-item-product [class*="discount-rate"] {
+				font-size: 0.65rem !important;
+				font-weight: 700 !important;
+				color: var(--brand) !important;
+				background: var(--brand-10) !important;
+				padding: 2px 7px !important;
+				border-radius: 100px !important;
+				letter-spacing: 0.04em !important;
+				vertical-align: middle !important;
+				display: inline-block !important;
+			}
+
+			/* Cuotas: info auxiliar, discreta */
+			.js-item-product .custom-installments,
+			.js-item-product [class*="installments"] {
+				font-size: 0.7rem !important;
+				font-weight: 500 !important;
+				color: #888 !important;
+				display: block !important;
+				margin-top: 3px !important;
+			}
+
+			/* Con Transferencia: beneficio, en verde */
+			.js-item-product [class*="payment-discount"],
+			.js-item-product .text-accent {
+				font-size: 0.68rem !important;
+				font-weight: 600 !important;
+				color: #16a34a !important;
+				display: block !important;
+				margin-top: 3px !important;
+			}
+
+			/* Stock urgente: en naranja, itálica */
+			.js-item-product .text-stock,
+			.js-item-product [class*="text-stock"],
+			.js-item-product .js-last-product,
+			.js-item-product .js-latest-products-available {
+				font-size: 0.68rem !important;
+				font-weight: 600 !important;
+				color: #ea580c !important;
+				font-style: italic !important;
+				display: block !important;
+				margin-top: 4px !important;
+			}
+
+			/* === FOOTER ROSA MARCA === */
+			.js-footer, .footer-main-info {
+				padding-top: 5rem!important;
+				padding-bottom: 4rem!important;
+				background: var(--brand) !important;
+			}
+			.js-footer h1, .js-footer h2, .js-footer h3, .js-footer h4, .js-footer h5, .js-footer h6 {
+				color: #fff !important;
+				font-size: 0.8rem !important;
+				letter-spacing: 0.15em !important;
+				margin-bottom: 2rem !important;
+				text-transform: uppercase !important;
+				font-weight: 800;
+				text-align: left !important;
+			}
+			.js-footer a, .js-footer p, .js-footer li { color: rgba(255,255,255,0.8) !important; font-size: 0.85rem !important; transition: color 0.3s ease; }
+			.js-footer a:hover { color: #fff !important; }
+
+			.footer-secondary-info {
+				background: var(--brand-dark) !important;
+				color: rgba(255,255,255,0.7) !important;
+				padding: 1.5rem 0 !important;
+				font-size: 11px !important;
+				border-top: 1px solid rgba(255,255,255,0.15) !important;
+			}
+
+			/* Accesorios de Cabecera */
+			.header-icon {
+				background: #f8f8f8 !important;
+				width: 44px !important;
+				height: 44px !important;
+				border: 1px solid #eee !important;
+				border-radius: 50% !important;
+				display: flex !important;
+				align-items: center !important;
+				justify-content: center !important;
+				transition: all 0.3s ease !important;
+			}
+			.header-icon svg, .utility-icon { width: 20px !important; height: 20px !important; fill: #111 !important; transition: all 0.3s ease !important; }
+			.header-utility:hover .header-icon { background: var(--brand) !important; border-color: var(--brand) !important; }
+			.header-utility:hover .header-icon svg { fill: #fff !important; }
+
+			/* Carrito Badge */
+			.js-cart-widget-amount.badge {
+				position: absolute !important;
+				top: -5px !important;
+				right: -5px !important;
+				background: var(--brand) !important;
+				color: #fff !important;
+				border: 2px solid #fff !important;
+				border-radius: 50px !important;
+				font-size: 10px !important;
+				padding: 2px 6px !important;
+			}
+
+			/* Sin animaciones — carga rápida */
+			.js-item-product,
+			.js-item-product * {
+				animation: none !important;
+			}
+
+			/* === PAGINAS INTERNAS (CONTACTO, CARRITO, ETC) === */
+			.template-contact input:not([type="submit"]), .template-contact textarea,
+			#shoppingCartPage .page-header, .category-body h1 {
+				border-radius: 12px !important;
+				border: 1px solid #eee !important;
+				padding: 12px 18px !important;
+			}
+			.template-contact input[type="submit"], #shoppingCartPage .btn-primary {
+				background: var(--brand) !important;
+				border-radius: 100px !important;
+				font-weight: 700 !important;
+				text-transform: uppercase !important;
+				letter-spacing: 0.1em !important;
+				padding: 14px 30px !important;
+			}
+
+			/* Scrollbar Premium */
+			::-webkit-scrollbar { width: 8px; }
+			::-webkit-scrollbar-track { background: #f1f1f1; }
+			::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
+			::-webkit-scrollbar-thumb:hover { background: var(--brand); }
+
+			html { scroll-behavior: smooth; }
+
+			/* === BARRA PROMO === */
+			.ivana-promo-bar {
+				background: var(--brand);
+				color: #fff;
+				text-align: center;
+				padding: 0.5rem 1rem;
+				font-size: 10px;
+				font-weight: 700;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				font-family: 'Manrope', sans-serif;
+				line-height: 1.6;
+				white-space: normal;
+				word-break: keep-all;
+			}
+			@media(min-width: 768px) {
+				.ivana-promo-bar { font-size: 11px; letter-spacing: 0.14em; white-space: nowrap; }
+			}
+
+			/* Scroll horizontal en mobile para categorías */
+			.section-categories-home .container,
+			[class*="home-categories"] {
+				overflow-x: auto !important;
+				-webkit-overflow-scrolling: touch !important;
+				scrollbar-width: none !important;
+				-ms-overflow-style: none !important;
+				flex-wrap: nowrap !important;
+			}
+			[class*="home-categories"]::-webkit-scrollbar { display: none !important; }
+
+			/* === VER PRODUCTO — hover overlay === */
+			.product-ver-overlay {
+				position: absolute;
+				inset: 0;
+				background: rgba(0,0,0,0.06);
+				display: flex;
+				align-items: flex-end;
+				padding: 0.75rem;
+				opacity: 0;
+				transition: opacity 0.3s ease;
+				z-index: 2;
+				text-decoration: none;
+			}
+			.js-item-product:hover .product-ver-overlay { opacity: 1; }
+			.product-ver-btn {
+				display: block;
+				width: 100%;
+				background: var(--brand);
+				color: #fff !important;
+				padding: 0.55rem 0;
+				font-weight: 700;
+				font-size: 0.7rem;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				border-radius: 6px;
+				border: none;
+				cursor: pointer;
+				font-family: 'Manrope', sans-serif;
+				text-align: center;
+				transition: background 0.2s ease;
+			}
+			.product-ver-btn:hover { background: #1A1A1A; color: #fff !important; }
+
+			/* Ocultar botón de submit siempre visible — se usa VER PRODUCTO overlay */
+			.js-item-submit-container { display: none !important; }
+
+			/* === BADGES DESCUENTO — top-left como en el diseño === */
+			.product-discount-overlay {
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				right: auto !important;
+				z-index: 3;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 4px;
+				pointer-events: none;
+			}
+			/* Badge % OFF — sobre la imagen, rosa */
+			.product-discount-badge {
+				background: var(--brand);
+				color: #fff;
+				font-size: 9px;
+				font-weight: 800;
+				padding: 4px 9px;
+				border-radius: 4px;
+				letter-spacing: 0.06em;
+				text-transform: uppercase;
+				font-family: 'Manrope', sans-serif;
+				display: inline-block;
+			}
+			/* === NAV — sin dropdown en ningún ítem === */
+			.js-main-menu li ul,
+			.js-main-menu li .nav-dropdown,
+			.js-main-menu li [class*="dropdown"],
+			.js-main-menu li [class*="submenu"],
+			.nav-desktop-main li ul,
+			.nav-desktop-main li [class*="dropdown"],
+			.nav-desktop-main li [class*="submenu"] {
+				display: none !important;
+			}
+
+			/* === IGUAL ALTURA EN TARJETAS — li padre del grid === */
+			.js-product-list > li,
+			.product-list > li,
+			[class*="product-list"] > li {
+				display: flex !important;
+				flex-direction: column !important;
+			}
+
+			/* === PÁGINA DE PRODUCTO — sección envío y retiro === */
+			/* Evitar que elementos hereden fondo/texto oscuro inesperado */
+			.template-product [class*="shipping"],
+			.template-product [class*="pickup"],
+			.template-product .js-shipping-calculator,
+			.template-product [data-store*="shipping"] {
+				background-color: #fff !important;
+			}
+			.template-product [class*="shipping"] *:not(img):not(svg):not(path):not(use),
+			.template-product [class*="pickup"] *:not(img):not(svg):not(path):not(use),
+			.template-product .js-shipping-calculator *:not(img):not(svg):not(path):not(use) {
+				color: #222 !important;
+				background-color: transparent !important;
+			}
+			/* Cajas individuales de opción de envío */
+			.template-product [class*="shipping-option"],
+			.template-product [class*="shipping-method"],
+			.template-product [class*="delivery-option"] {
+				background: #f8f8f8 !important;
+				border: 1px solid #e5e5e5 !important;
+				border-radius: 8px !important;
+				padding: 0.75rem !important;
+			}
+
+			/* Badge Ahorrás — sobre la imagen, naranja suave */
+			.product-price-badge {
+				background: #fff7ed !important;
+				color: #c2410c !important;
+				font-size: 9px !important;
+				font-weight: 700 !important;
+				padding: 4px 9px !important;
+				border-radius: 4px !important;
+				border: 1px solid #fed7aa !important;
+				letter-spacing: 0.02em !important;
+				font-family: 'Manrope', sans-serif !important;
+				box-shadow: 0 1px 3px rgba(194,65,12,0.15) !important;
+				display: inline-block !important;
+			}
+		/* ============================================================
+		   CARRITO - Rediseno visual completo
+		   Scoped a #shoppingCartPage - no afecta otras paginas
+		   ============================================================ */
+
+		/* Layout general */
+		#shoppingCartPage {
+				max-width: 1100px !important;
+				padding-top: 2rem !important;
+				padding-bottom: 4rem !important;
+		}
+		#shoppingCartPage .page-header {
+				font-size: 1.4rem !important;
+				font-weight: 800 !important;
+				color: #111 !important;
+				border: none !important;
+				background: none !important;
+				padding: 0 0 1.5rem 0 !important;
+				border-radius: 0 !important;
+				margin-bottom: 1.5rem !important;
+				border-bottom: 2px solid #f0f0f0 !important;
+		}
+
+		/* Cabecera de columnas */
+		.cart-page-table-header {
+				font-size: 0.7rem !important;
+				font-weight: 700 !important;
+				text-transform: uppercase !important;
+				letter-spacing: 0.12em !important;
+				color: #aaa !important;
+				padding-bottom: 1rem !important;
+				border-bottom: 1px solid #eee !important;
+				margin-bottom: 1.5rem !important;
+		}
+
+		/* Items del carrito */
+		.cart-item {
+				background: #fff !important;
+				border: 1px solid #ebebeb !important;
+				border-radius: 12px !important;
+				padding: 1rem !important;
+				margin-bottom: 0.75rem !important;
+				transition: border-color 0.2s, box-shadow 0.2s !important;
+		}
+		.cart-item:hover {
+				border-color: #e0e0e0 !important;
+				box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+		}
+
+		/* Imagen del item */
+		.cart-item-image-container {
+				width: 90px !important;
+				min-width: 90px !important;
+				height: 110px !important;
+				border-radius: 8px !important;
+				overflow: hidden !important;
+				background: #f5f5f5 !important;
+				flex-shrink: 0 !important;
+		}
+		.cart-item-image {
+				width: 100% !important;
+				height: 100% !important;
+				object-fit: cover !important;
+				object-position: center top !important;
+				display: block !important;
+		}
+
+		/* Nombre del producto */
+		.cart-item-name {
+				font-size: 0.9rem !important;
+				font-weight: 800 !important;
+				color: #111 !important;
+				text-decoration: none !important;
+				display: block !important;
+				line-height: 1.3 !important;
+				margin-bottom: 4px !important;
+		}
+		.cart-item-name:hover { color: var(--brand) !important; }
+
+		/* Variante */
+		.cart-item-variant {
+				font-size: 0.72rem !important;
+				color: #888 !important;
+				font-weight: 500 !important;
+				display: block !important;
+				margin-bottom: 4px !important;
+		}
+
+		/* Boton Eliminar */
+		.cart-item-delete-button,
+		.cart-item-delete .btn {
+				font-size: 0.7rem !important;
+				color: #ccc !important;
+				font-weight: 600 !important;
+				text-transform: uppercase !important;
+				letter-spacing: 0.08em !important;
+				padding: 0 !important;
+				border: none !important;
+				background: none !important;
+				transition: color 0.2s !important;
+		}
+		.cart-item-delete-button:hover,
+		.cart-item-delete .btn:hover { color: #e8185a !important; }
+
+		/* Controles de cantidad */
+		.cart-item-quantity .js-quantity {
+				border: 1px solid #eee !important;
+				border-radius: 100px !important;
+				background: #fafafa !important;
+				display: inline-flex !important;
+				align-items: center !important;
+				overflow: hidden !important;
+				padding: 0 !important;
+		}
+		.cart-item-quantity .js-cart-quantity-btn {
+				background: transparent !important;
+				color: #444 !important;
+				border: none !important;
+				width: 32px !important;
+				height: 32px !important;
+				display: flex !important;
+				align-items: center !important;
+				justify-content: center !important;
+				cursor: pointer !important;
+		}
+		.cart-item-quantity .js-cart-quantity-btn:hover { color: var(--brand) !important; }
+		.cart-item-quantity .cart-quantity-input {
+				width: 36px !important;
+				text-align: center !important;
+				border: none !important;
+				background: transparent !important;
+				font-weight: 700 !important;
+				font-size: 0.85rem !important;
+				padding: 0 !important;
+		}
+
+		/* Precios del item */
+		.cart-item-subtotal,
+		.cart-item-unit-price {
+				font-size: 0.9rem !important;
+				font-weight: 800 !important;
+				color: #e8185a !important;
+		}
+		.cart-item .price-compare {
+				font-size: 0.75rem !important;
+				color: #aaa !important;
+				text-decoration: line-through !important;
+				font-weight: 500 !important;
+		}
+		.cart-item .text-accent {
+				font-size: 0.7rem !important;
+				color: var(--brand) !important;
+				font-weight: 700 !important;
+		}
+
+		/* Panel de resumen */
+		#cart-sticky-summary {
+				background: #fff !important;
+				border: 1px solid #ebebeb !important;
+				border-radius: 16px !important;
+				padding: 1.75rem !important;
+				box-shadow: 0 4px 24px rgba(0,0,0,0.07) !important;
+				top: 1.5rem !important;
+		}
+
+		/* Filas de totales */
+		#shoppingCartPage .font-big.d-grid,
+		#shoppingCartPage .d-grid.grid-1-auto {
+				font-size: 0.9rem !important;
+				color: #444 !important;
+				font-weight: 600 !important;
+				padding: 0.4rem 0 !important;
+				border-bottom: 1px solid #f5f5f5 !important;
+				margin-bottom: 0.5rem !important;
+		}
+
+		/* Total final */
+		#shoppingCartPage .font-huge {
+				font-size: 1.3rem !important;
+				font-weight: 800 !important;
+				color: #111 !important;
+				padding-top: 0.75rem !important;
+				border-top: 2px solid #f0f0f0 !important;
+				border-bottom: none !important;
+		}
+		#shoppingCartPage .font-huge .text-right,
+		#shoppingCartPage .font-huge .js-cart-total {
+				color: #111 !important;
+		}
+
+		/* Boton checkout */
+		#shoppingCartPage .btn-primary,
+		#shoppingCartPage [data-store="cart-button"] .btn,
+		#shoppingCartPage .js-cart-button,
+		#shoppingCartPage input[type="submit"] {
+				background: var(--brand) !important;
+				color: #fff !important;
+				border: none !important;
+				border-radius: 100px !important;
+				padding: 1rem 2rem !important;
+				font-size: 0.85rem !important;
+				font-weight: 800 !important;
+				text-transform: uppercase !important;
+				letter-spacing: 0.1em !important;
+				width: 100% !important;
+				display: block !important;
+				text-align: center !important;
+				cursor: pointer !important;
+				transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease !important;
+				margin-top: 1.25rem !important;
+				box-shadow: 0 4px 16px rgba(255,20,147,0.3) !important;
+		}
+		#shoppingCartPage .btn-primary:hover,
+		#shoppingCartPage [data-store="cart-button"] .btn:hover,
+		#shoppingCartPage .js-cart-button:hover,
+		#shoppingCartPage input[type="submit"]:hover {
+				background: var(--brand-dark) !important;
+				transform: translateY(-1px) !important;
+				box-shadow: 0 6px 20px rgba(255,20,147,0.4) !important;
+		}
+
+		/* Seccion de envio */
+		#shoppingCartPage .js-shipping-calculator-container,
+		#shoppingCartPage #cart-shipping-container {
+				background: #fafafa !important;
+				border: 1px solid #eee !important;
+				border-radius: 12px !important;
+				padding: 1rem 1.25rem !important;
+				margin-top: 1rem !important;
+		}
+		#shoppingCartPage .js-shipping-calculator-container *,
+		#shoppingCartPage #cart-shipping-container * {
+				color: #333 !important;
+		}
+		#shoppingCartPage .js-shipping-calculator-container input,
+		#shoppingCartPage #cart-shipping-container input {
+				background: #fff !important;
+				border: 1px solid #ddd !important;
+				border-radius: 8px !important;
+				padding: 8px 12px !important;
+		}
+
+		/* Carrito vacio */
+		#shoppingCartPage .alert-info {
+				background: #fff0f6 !important;
+				border: 1.5px solid var(--brand-20) !important;
+				border-radius: 12px !important;
+				color: #555 !important;
+				font-weight: 600 !important;
+				padding: 2rem !important;
+				text-align: center !important;
+				font-size: 1rem !important;
+		}
+		</style>
+
+		{#/*============================================================================
+			#Javascript: Needed before HTML loads
+		==============================================================================*/#}
+
+		{# Defines if async JS will be used by using script_tag(true) #}
+
+		{% set async_js = true %}
+
+		{# Defines the usage of jquery loaded below, if nojquery = true is deleted it will fallback to jquery 1.5 #}
+
+		{% set nojquery = true %}
+
+		{# Jquery async by adding script_tag(true) #}
+
+		{% if load_jquery %}
+
+			{{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' | script_tag(true) }}
+
+		{% endif %}
+
+		{# Loads private Tiendanube JS #}
+
+		{% head_content %}
+
+		{# Structured data to provide information for Google about the page content #}
+
+		{{ component('structured-data') }}
+
+	</head>
+	<body class="{% if customer %}customer-logged-in{% endif %} template-{{ template | replace('.', '-') }}">
+
+		{# Theme icons #}
+
+		{% include "snipplets/svg/icons.tpl" %}
+
+		{# Back to admin bar #}
+
+		{{back_to_admin}}
+
+		{# Header #}
+
+		{% snipplet "header/header.tpl" %}
+
+		{# Page content #}
+
+		{% template_content %}
+
+		{# Quickshop modal #}
+
+		{% snipplet "grid/quick-shop.tpl" %}
+
+		{# WhatsApp chat button #}
+
+		{% snipplet "whatsapp-chat.tpl" %}
+
+		{# Footer #}
+
+		{% snipplet "footer/footer.tpl" %}
+
+		{% if cart.free_shipping.cart_has_free_shipping or cart.free_shipping.min_price_free_shipping.min_price %}
+
+			{# Minimum used for free shipping progress messages. Located on header so it can be accesed everywhere with shipping calculator active or inactive #}
+
+			<span class="js-ship-free-min hidden" data-pricemin="{{ cart.free_shipping.min_price_free_shipping.min_price_raw }}"></span>
+			<span class="js-free-shipping-config hidden" data-config="{{ cart.free_shipping.allFreeConfigurations }}"></span>
+			<span class="js-cart-subtotal hidden" data-priceraw="{{ cart.subtotal }}"></span>
+			<span class="js-cart-discount hidden" data-priceraw="{{ cart.promotional_discount_amount }}"></span>
+		{% endif %}
+
+		{#/*============================================================================
+			#Javascript: Needed after HTML loads
+		==============================================================================*/#}
+
+		{# Javascript used in the store #}
+
+		{# Critical libraries #}
+
+		{{ 'js/external-no-dependencies.js.tpl' | static_url | script_tag }}
+
+		<script type="text/javascript">
+
+			LS.ready.then(function(){
+
+				{# Non critical libraries #}
+
+				{% include "static/js/external.js.tpl" %}
+
+				{# Specific store JS functions: product variants, cart, shipping, etc #}
+
+				{% include "static/js/store.js.tpl" %}
+
+			});
+
+		</script>
+
+		{# Google survey JS for Tiendanube Survey #}
+
+		{{ component('google-survey') }}
+
+		{# Store external codes added from admin #}
+
+		{% if store.assorted_js %}
+			<script>
+				LS.ready.then(function() {
+					var trackingCode = jQueryNuvem.parseHTML('{{ store.assorted_js| escape("js") }}', document, true);
+					jQueryNuvem('body').append(trackingCode);
+				});
+			</script>
+		{% endif %}
+	</body>
 </html>
