@@ -93,7 +93,7 @@
 
 		{% if settings.last_product_category and product_available_with_price %}
 			<div class="{% if product.variations %}js-last-product {% endif %}text-stock font-small mt-2"{% if product.selected_or_first_available_variant.stock != 1 %} style="display: none;"{% endif %}>
-				{{ settings.last_product_text }}
+				xxxx {{ settings.last_product_text }}
 			</div>
 			{% if settings.latest_products_available %}
 				{% set latest_products_limit = settings.latest_products_available %}
