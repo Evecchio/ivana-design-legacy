@@ -1863,3 +1863,63 @@
     font-size: 0.9rem !important;
   }
 }
+
+/* ============================================================
+   PRODUCT CARD — CLEAN (target: MercadoLibre-style)
+   Solo CSS, no toca template ni component() props
+   ============================================================ */
+
+/* Card container */
+.js-item-product {
+	background: var(--blanco);
+	border: 1px solid rgba(17,17,17,0.08);
+	border-radius: 16px;
+	overflow: hidden;
+	transition: box-shadow 0.25s ease;
+}
+
+.js-item-product:hover {
+	box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* Imagen — fondo gris */
+.js-item-product .item-image-container {
+	background: #f5f5f5;
+	border-radius: 16px 16px 0 0;
+	overflow: hidden;
+}
+
+/* Info — limpia, espaciada */
+.js-item-product .item-information {
+	padding: 1rem 1rem 1.25rem !important;
+}
+
+/* Nombre — peso normal, limpio */
+.js-item-product .item-name {
+	font-weight: 500 !important;
+	font-size: 0.9rem !important;
+	line-height: 1.4 !important;
+	color: var(--negro) !important;
+	letter-spacing: 0 !important;
+	text-transform: none !important;
+}
+
+/* Precio principal — negro, no brand */
+.js-item-product .js-price-display,
+.js-item-product .item-price {
+	font-size: 1.25rem !important;
+	font-weight: 600 !important;
+	color: var(--negro) !important;
+}
+
+/* Precio comparativo */
+.js-item-product .price-compare {
+	font-size: 0.82rem !important;
+	color: var(--gris) !important;
+}
+
+/* Ocultar overlays custom — TODO: limpiar del template */
+.product-discount-overlay,
+.product-ver-overlay {
+	display: none !important;
+}s
