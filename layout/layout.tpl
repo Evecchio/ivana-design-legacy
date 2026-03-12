@@ -132,12 +132,16 @@
 			}
 
 			/* Buscador */
+			:root {
+				--search-icon-size: 18px;
+				--search-hit-area: calc(var(--search-icon-size) + 20px);
+			}
 			[class*="search-form"] input, .search-container input {
 				border-radius: 100px!important;
 				border: 1px solid #eeeeee!important;
 				font-size: 13px!important;
-				padding: 0 1.5rem!important;
-				height: 44px!important;
+				padding: 0 calc(var(--search-hit-area) * 2)!important;
+				height: var(--search-hit-area)!important;
 				transition: all 0.3s ease!important;
 				background: #fafafa!important;
 			}
@@ -150,13 +154,15 @@
 				background: transparent !important;
 				color: var(--negro)!important;
 				position: absolute !important;
-				right: 15px !important;
+				right: 12px !important;
 				top: 50% !important;
 				transform: translateY(-50%) !important;
 				border: none !important;
 				padding: 0 !important;
+				width: var(--search-hit-area)!important;
+				height: var(--search-hit-area)!important;
 			}
-			[class*="search-form"] button svg { width: 18px !important; height: 18px !important; opacity: 0.5; }
+			[class*="search-form"] button svg { width: var(--search-icon-size) !important; height: var(--search-icon-size) !important; opacity: 0.5; }
 
 			/* Navegación */
 			.nav-desktop-container {
