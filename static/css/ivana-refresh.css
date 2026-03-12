@@ -1868,7 +1868,7 @@
    PRODUCT CARD — Estilo MercadoLibre
    ============================================= */
 
-.ivana-card {
+div.js-product-item-private.product-item.ivana-card {
   background: #fff;
   border: 1px solid rgba(0,0,0,0.08);
   border-radius: 8px;
@@ -1876,36 +1876,36 @@
   transition: box-shadow 0.2s ease;
 }
 
-.ivana-card:hover {
+div.js-product-item-private.product-item.ivana-card:hover {
   box-shadow: 0 8px 24px rgba(0,0,0,0.10);
 }
 
 /* Imagen */
-.ivana-card .product-item-image-container {
+div.js-product-item-private.product-item.ivana-card .js-product-item-image-container-private.product-item-image-container {
   border-radius: 0 !important;
   overflow: hidden;
   background: #f5f5f5;
 }
 
-.ivana-card .product-item-image {
+div.js-product-item-private.product-item.ivana-card .js-product-item-image-private.product-item-image {
   object-fit: cover !important;
   object-position: center top !important;
 }
 
 /* Ocultar overlays residuales */
-.ivana-card .product-discount-overlay,
-.ivana-card .product-ver-overlay {
+div.js-product-item-private.product-item.ivana-card .product-discount-overlay,
+div.js-product-item-private.product-item.ivana-card .product-ver-overlay {
   display: none !important;
 }
 
 /* Zona de información */
-.ivana-card .ivana-card-info {
+div.js-product-item-private.product-item.ivana-card .product-item-information.ivana-card-info {
   padding: 14px 16px 16px !important;
   gap: 0 !important;
 }
 
 /* Nombre del producto */
-.ivana-card .ivana-card-name {
+div.js-product-item-private.product-item.ivana-card .js-item-name.product-item-name.ivana-card-name {
   font-size: 0.875rem !important;
   font-weight: 400 !important;
   line-height: 1.35 !important;
@@ -1920,7 +1920,7 @@
 }
 
 /* Contenedor de precios */
-.ivana-card .product-item-price-container {
+div.js-product-item-private.product-item.ivana-card .product-item-price-container {
   display: flex !important;
   flex-wrap: wrap !important;
   align-items: baseline !important;
@@ -1929,7 +1929,7 @@
 }
 
 /* Precio tachado (compare) */
-.ivana-card .js-compare-price-display {
+div.js-product-item-private.product-item.ivana-card span.js-compare-price-display.product-item-price-compare {
   font-size: 0.75rem !important;
   font-weight: 400 !important;
   color: #999 !important;
@@ -1940,7 +1940,7 @@
 }
 
 /* Precio principal */
-.ivana-card .js-price-display {
+div.js-product-item-private.product-item.ivana-card span.js-price-display.product-item-price {
   font-size: 1.5rem !important;
   font-weight: 400 !important;
   color: #333 !important;
@@ -1949,7 +1949,7 @@
 }
 
 /* Badge de descuento inline */
-.ivana-card .product-item-discount {
+div.js-product-item-private.product-item.ivana-card span.product-item-discount {
   font-size: 0.75rem !important;
   font-weight: 600 !important;
   color: #00a650 !important;
@@ -1958,33 +1958,37 @@
 }
 
 /* Cuotas — estilo ML verde */
-.ivana-card .ivana-card-installments,
-.ivana-card .ivana-card-installments * {
+div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments,
+div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments span,
+div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments div,
+div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments .js-max-installments,
+div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments .js-installment-price,
+div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments .js-installment-amount {
   color: #00a650 !important;
   font-size: 0.8125rem !important;
   font-weight: 600 !important;
 }
 
-.ivana-card .ivana-card-installments {
+div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments {
   margin-top: 4px !important;
   margin-bottom: 0 !important;
 }
 
 /* Precio con descuento por transferencia */
-.ivana-card .payment-discount-price-product-container {
+div.js-product-item-private.product-item.ivana-card .js-payment-discount-price-product-container.payment-discount-price-product-container {
   font-size: 0.8125rem !important;
   font-weight: 600 !important;
   color: #00a650 !important;
   margin-top: 4px !important;
 }
 
-.ivana-card .payment-discount-price-product-container * {
+div.js-product-item-private.product-item.ivana-card .js-payment-discount-price-product-container.payment-discount-price-product-container span {
   color: #00a650 !important;
   font-weight: 600 !important;
 }
 
 /* Stock y últimas unidades */
-.ivana-card .text-stock {
+div.js-product-item-private.product-item.ivana-card div.text-stock {
   font-size: 0.75rem !important;
   color: #f73 !important;
   font-weight: 600 !important;
@@ -1992,19 +1996,19 @@
 }
 
 /* Ocultar botón quick shop para look limpio ML */
-.ivana-card .product-item-quick-shop-container {
+div.js-product-item-private.product-item.ivana-card .product-item-quick-shop-container {
   display: none !important;
 }
 
 /* Labels (envío gratis, sin stock) */
-.ivana-card .product-labels {
+div.js-product-item-private.product-item.ivana-card .labels.product-labels {
   position: absolute;
   top: 8px;
   left: 8px;
   z-index: 2;
 }
 
-.ivana-card .shipping-label {
+div.js-product-item-private.product-item.ivana-card .labels.product-labels .shipping-label {
   background: #00a650 !important;
   color: #fff !important;
   font-size: 0.68rem !important;
@@ -2016,30 +2020,30 @@
 }
 
 /* Color variants */
-.ivana-card .product-item-colors-container {
+div.js-product-item-private.product-item.ivana-card .product-item-colors-container {
   margin-bottom: 4px !important;
 }
 
 /* Labels de oferta/promoción en la info */
-.ivana-card .labels.order-first {
+div.js-product-item-private.product-item.ivana-card .labels.order-first {
   margin-bottom: 0 !important;
 }
 
-.ivana-card .label-accent {
+div.js-product-item-private.product-item.ivana-card .label-accent {
   display: none !important;
 }
 
 /* Responsive mobile */
 @media (max-width: 767px) {
-  .ivana-card .js-price-display {
+  div.js-product-item-private.product-item.ivana-card span.js-price-display.product-item-price {
     font-size: 1.25rem !important;
   }
 
-  .ivana-card .ivana-card-info {
+  div.js-product-item-private.product-item.ivana-card .product-item-information.ivana-card-info {
     padding: 10px 12px 14px !important;
   }
 
-  .ivana-card .ivana-card-name {
+  div.js-product-item-private.product-item.ivana-card .js-item-name.product-item-name.ivana-card-name {
     font-size: 0.8125rem !important;
   }
 }
