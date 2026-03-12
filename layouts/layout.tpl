@@ -984,9 +984,6 @@
 			}
 		</style>
 
-		<link rel="stylesheet" href="{{ 'css/ivana-refresh.css' | static_url }}">
-
-
 		{#/*============================================================================
 			#Javascript: Needed before HTML loads
 		==============================================================================*/#}
@@ -1015,6 +1012,7 @@
 
 		{{ component('structured-data') }}
 
+		<link rel="stylesheet" href="{{ 'css/ivana-refresh.css' | static_url }}">
 	</head>
 	<body class="{% if customer %}customer-logged-in{% endif %} template-{{ template | replace('.', '-') }}">
 
