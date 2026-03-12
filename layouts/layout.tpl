@@ -43,7 +43,6 @@
 		{# Load async styling not mandatory for first meaningfull paint #}
 
 		<link rel="stylesheet" href="{{ 'css/style-async.scss' | static_url }}" media="print" onload="this.media='all'">
-		<link rel="stylesheet" href="{{ 'css/ivana-refresh.css' | static_url }}">
 
 		{# Loads custom CSS added from Advanced Settings on the adminÂ´s theme customization screen #}
 
@@ -984,6 +983,9 @@
 				}
 			}
 		</style>
+
+		<link rel="stylesheet" href="{{ 'css/ivana-refresh.css' | static_url }}">
+
 
 		{#/*============================================================================
 			#Javascript: Needed before HTML loads
