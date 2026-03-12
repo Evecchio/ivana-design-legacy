@@ -149,17 +149,6 @@
 
 {% set image_overlay %}
 	<div class="placeholder placeholder-fade"></div>
-	{% if product.compare_at_price > product.price %}
-		{% set saving = product.compare_at_price - product.price %}
-		{% set discount_percentage = ((product.compare_at_price - product.price) * 100 / product.compare_at_price) | round %}
-		<div class="product-discount-overlay">
-			<span class="product-discount-badge">{{ discount_percentage }}% OFF</span>
-			<span class="product-price-badge">Ahorrás {{ saving | money }} 🎉</span>
-		</div>
-	{% endif %}
-	<a href="{{ product.url }}" class="product-ver-overlay" aria-label="{{ product.name }}">
-		<span class="product-ver-btn">VER PRODUCTO</span>
-	</a>
 {% endset %}
 
 {{ component(
@@ -182,15 +171,15 @@
 		labels: labels_value,
 		price_compare: price_compare_value,
 		product_item_classes: {
-			item: 'js-product-container js-item-product ' ~ item_spacing_classes ~ slide_item_class ~ reduced_item_classes,
-			name: item_name_classes,
+			item: 'ivana-card js-product-container js-item-product ' ~ item_spacing_classes ~ slide_item_class ~ reduced_item_classes,
+			name: 'ivana-card-name ' ~ item_name_classes,
 			image: image_classes,
-			information: 'd-flex flex-column pt-3 pb-2',
+			information: 'ivana-card-info d-flex flex-column pt-3 pb-2',
 			price: item_price_classes,
 			price_container: is_subscription_only ? 'hidden' : '',
 			price_compare: 'order-first mb-1',
 			discount_rate: 'product-item-discount text-accent font-medium ml-2',
-			installments: 'custom-installments mt-1',
+			installments: 'ivana-card-installments custom-installments mt-1',
 			labels_group: 'product-labels',
 			label_shipping: 'shipping-label',
 			label_no_stock: 'mb-2',
