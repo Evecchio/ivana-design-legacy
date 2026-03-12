@@ -1929,8 +1929,8 @@ div.js-product-item-private.product-item.ivana-card .product-ver-overlay {
 
 /* Zona de información */
 div.js-product-item-private.product-item.ivana-card
-  .product-item-information.ivana-card-info {
-  padding: 14px 16px 16px !important;
+  .product-item-information.ivana-card-info.d-flex.flex-column.pt-3.pb-2 {
+  padding: 20px !important;
   gap: 0 !important;
 }
 
@@ -2094,8 +2094,8 @@ div.js-product-item-private.product-item.ivana-card .label-accent {
   }
 
   div.js-product-item-private.product-item.ivana-card
-    .product-item-information.ivana-card-info {
-    padding: 10px 12px 14px !important;
+    .product-item-information.ivana-card-info.d-flex.flex-column.pt-3.pb-2 {
+    padding: 12px 16px 14px !important;
   }
 
   div.js-product-item-private.product-item.ivana-card
