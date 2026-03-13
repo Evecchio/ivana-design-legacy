@@ -1149,6 +1149,7 @@
 				{# Specific store JS functions: product variants, cart, shipping, etc #}
 
 				{% include "static/js/store.js.tpl" %}
+				{% include "static/js/ivana-card.js.tpl" %}
 
 			});
 

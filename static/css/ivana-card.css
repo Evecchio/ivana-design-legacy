@@ -20,6 +20,9 @@ div.js-product-item-private.product-item.ivana-card
 }
 
 div.js-product-item-private.product-item.ivana-card
+  .product-item-price-container.ivana-no-discount
+  span.js-compare-price-display.product-item-price-compare,
+div.js-product-item-private.product-item.ivana-card
   .product-item-price-container:not(:has(.product-item-discount))
   span.js-compare-price-display.product-item-price-compare {
   display: none !important;
@@ -33,6 +36,9 @@ div.js-product-item-private.product-item.ivana-card
   line-height: 1.05 !important;
 }
 
+div.js-product-item-private.product-item.ivana-card
+  .product-item-price-container.ivana-no-discount
+  span.js-price-display.product-item-price,
 div.js-product-item-private.product-item.ivana-card
   .product-item-price-container:not(:has(.product-item-discount))
   span.js-price-display.product-item-price {
