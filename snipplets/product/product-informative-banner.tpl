@@ -6,9 +6,9 @@
     {% set product_informative_banner_description = attribute(settings,"#{banner}_description") %}
     {% set has_product_informative_banner =  product_banner_show and (product_informative_banner_title or product_informative_banner_description) %}
     {% if has_product_informative_banner %}
-        <div class="grid grid-auto-1 mb-3">
+        <div class="grid grid-auto-1 mb-3 ivana-product-support-card">
             {% if product_informative_banner_icon != 'none' %}
-                <div class="icon-banner">
+                <div class="icon-banner ivana-product-support-icon">
                     {% if product_informative_banner_icon == 'image' and product_informative_banner_image %}
                         {% set banner_image_alt = product_informative_banner_title ? product_informative_banner_title : 'Banner de' | translate ~ ' ' ~ store.name %}
                         {{ component(
@@ -28,12 +28,12 @@
                     {% endif %}
                 </div>
             {% endif %}
-            <div class="icon-text font-medium">
+            <div class="icon-text font-medium ivana-product-support-copy">
                 {% if product_informative_banner_title %}
-                    <div class="mb-1 font-weight-bold">{{ product_informative_banner_title }}</div>
+                    <div class="mb-1 font-weight-bold ivana-product-support-title">{{ product_informative_banner_title }}</div>
                 {% endif %}
                 {% if product_informative_banner_description %}
-                    <div>{{ product_informative_banner_description }}</div> 
+                    <div class="ivana-product-support-description">{{ product_informative_banner_description }}</div>
                 {% endif %}
             </div>
         </div>

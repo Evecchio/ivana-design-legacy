@@ -157,20 +157,19 @@ El tema también soporta las fuentes configurables del admin: `settings.font_hea
 No hay `npm install`, `webpack`, ni paso de compilación local. El flujo es:
 
 1. Editar archivos `.tpl` o `.scss` directamente
-2. Hacer commit y push a la rama correspondiente
+2. Hacer commit sobre `main`
 3. GitHub Actions despliega automáticamente vía FTPS
 
-### Ramas y entornos
+### Rama y entorno
 
 | Rama | Entorno | Secrets usados |
 |------|---------|----------------|
 | `main` | Producción | `FTP_HOST`, `FTP_USER`, `FTP_PASSWORD` |
-| `dev` | Desarrollo/staging | `FTP_HOST_DEV`, `FTP_USER_DEV`, `FTP_PASSWORD_DEV` |
 
 ### Deploy (CI/CD)
 
 El workflow `.github/workflows/deploy-ftp.yml`:
-- Se dispara en push a `main` o `dev`, y manualmente (`workflow_dispatch`)
+- Se usa con push a `main` para publicar en producciÃ³n
 - Instala `lftp` y hace mirror inverso del repo al servidor FTP
 - **Excluye**: `.git/`, `.github/`, `.claude/`, archivos `*.md`
 - **No sube**: `preview-redesign.html` (es excluido por la regla `*.md` no, pero tampoco es parte del tema funcional)
@@ -181,7 +180,7 @@ El workflow `.github/workflows/deploy-ftp.yml`:
 ```bash
 git add <archivo>
 git commit -m "tipo: descripción en español"
-git push -u origin <rama>
+git push origin main
 ```
 
 **Convención de commits** (basada en el historial):

@@ -44,12 +44,12 @@
 		{# Logo #}
 
 		<div class="js-logo-container logo-container head-slot head-slot-logo">
-			<h1 class="m-0">
+			<div class="m-0 ivana-logo-wrap">
 				<span class="logo-text-hidden">Ivana Design</span>
-				<a href="{{ store.url }}">
+				<a href="{{ store.url }}" class="ivana-logo-link" aria-label="{{ store.name }}">
 					<img src="//dcdn-us.mitiendanube.com/stores/872/079/themes/common/logo-1057840909-1747065197-0ef12ce14d866743dfa0d03ce26b00ca1747065197-640-0.webp" alt="Ivana Design" class="logo-img logo-big transition-soft" width="658" height="324">
 				</a>
-			</h1>
+			</div>
 		</div>
 
 		{# Search #}

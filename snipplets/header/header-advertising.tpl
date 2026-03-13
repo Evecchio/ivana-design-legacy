@@ -1,3 +1,3 @@
 {% if adbar_primary %}
-<div class="ivana-promo-bar">🔥 HASTA 40% OFF &nbsp;|&nbsp; 3 CUOTAS SIN INTERÉS &nbsp;|&nbsp; 10% OFF TRANSFERENCIA 🔥</div>
+<div class="ivana-promo-bar">Envios a todo el pais &nbsp;|&nbsp; 3 cuotas sin interes &nbsp;|&nbsp; Cambios faciles</div>
 {% endif %}

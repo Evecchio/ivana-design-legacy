@@ -34,15 +34,21 @@
 {% endif %}
 
 {% set newArray = [] %}
+{% set home_community_rendered = false %}
 
 <div class="js-home-sections-container ivana-home-shell">
 	{% for i in 1..18 %}
 		{% set section = 'home_order_position_' ~ i %}
 		{% set section_select = attribute(settings,"#{section}") %}
+		{% set is_community_section = section_select in ['newsletter', 'instafeed'] %}
+		{% set should_render_community = not is_community_section or not home_community_rendered %}
 
-		{% if section_select not in newArray %}
+		{% if section_select not in newArray and should_render_community %}
 			{% include 'snipplets/home/home-section-switch.tpl' %}
 			{% set newArray = newArray|merge([section_select]) %}
+			{% if is_community_section %}
+				{% set home_community_rendered = true %}
+			{% endif %}
 		{% endif %}
 	{% endfor %}
 

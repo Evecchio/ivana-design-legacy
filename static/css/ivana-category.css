@@ -1,16 +1,128 @@
-/* Ivana layer: category/listing structure and future category-only overrides. */
+/* Category and listing page layout. */
 
-.ivana-category-layout,
-.ivana-category-content,
-.ivana-category-products,
-.ivana-category-grid {
-  min-width: 0;
+.ivana-category-shell .container {
+  max-width: min(100%, var(--ivana-content-max-width)) !important;
+}
+
+.category-banner {
+  border-radius: var(--ivana-shell-radius);
+  overflow: hidden;
+  box-shadow: var(--ivana-shadow-soft);
+  margin-bottom: 1.75rem;
+}
+
+.category-banner img {
+  width: 100%;
+  aspect-ratio: 18 / 6;
+  object-fit: cover;
+}
+
+.ivana-category-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.ivana-category-copy {
+  max-width: 54rem;
+}
+
+.ivana-category-title {
+  text-align: left !important;
+}
+
+.ivana-category-meta {
+  color: var(--ivana-text-soft) !important;
+  font-size: 1rem !important;
+  line-height: 1.75 !important;
+  max-width: 38rem;
+}
+
+.ivana-category-count {
+  color: var(--ivana-text-soft) !important;
+  white-space: nowrap;
+  align-self: end;
 }
 
 .ivana-category-toolbar {
   flex-wrap: wrap;
 }
 
+.ivana-sort-box {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 220px;
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  border: 1px solid var(--ivana-border);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: none;
+}
+
+.ivana-category-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.ivana-category-sidebar {
+  min-width: 0;
+}
+
+.ivana-category-filter-card {
+  position: sticky;
+  top: 142px;
+  background: linear-gradient(180deg, #ffffff, #fbf7f8);
+  border: 1px solid var(--ivana-border);
+  box-shadow: var(--ivana-shadow-card);
+  padding: 1.2rem;
+}
+
+.ivana-category-content,
+.ivana-category-products,
+.ivana-category-grid {
+  min-width: 0;
+}
+
+.ivana-category-products {
+  background: #ffffff;
+  border: 1px solid var(--ivana-border);
+  box-shadow: var(--ivana-shadow-soft);
+  padding: 1.15rem;
+}
+
 .ivana-category-products .js-product-table {
   min-width: 0;
+}
+
+@media (max-width: 991px) {
+  .ivana-category-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ivana-category-filter-card {
+    position: static;
+  }
+}
+
+@media (max-width: 767px) {
+  .category-banner img {
+    aspect-ratio: 4 / 5;
+  }
+
+  .ivana-category-heading {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.85rem;
+  }
+
+  .ivana-category-count {
+    text-align: left !important;
+  }
+
+  .ivana-category-products {
+    padding: 1rem;
+  }
 }

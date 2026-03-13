@@ -1,6 +1,6 @@
 {% set show_installments_settings_value = (settings.product_installments ? true : false) and not reduced_item %}
-{% set show_color_variants_settings_value = not reduced_item %}
-{% set show_quick_shop_settings_value = not reduced_item %}
+{% set show_color_variants_settings_value = settings.product_color_variants and not reduced_item %}
+{% set show_quick_shop_settings_value = settings.quick_shop and not reduced_item and template != 'home' %}
 {% set show_secondary_image_settings_value = false %}
 {% set labels_value = reduced_item ? false : true %}
 {% set price_compare_value = reduced_item ? false : true %}
@@ -62,33 +62,20 @@
 		{% set promotion_only_value = has_custom_percentage_off_promotion_label ? false : true %}
 		{% set offer_only_value = has_custom_percentage_off_promotion_label ? true : false %}
 		
-		{{ component(
-			'labels', {
-				promotion_only: promotion_only_value,
-				offer_only: offer_only_value,
-				group_data_store: false,
-				labels_classes: {
-					group: 'order-first',
-					promotion: label_accent_classes,
-					offer: label_accent_classes,
-				},
-			})
-		}}
-
-		{{ component('payment-discount-price', {
-	            visibility_condition: settings.payment_discount_price,
-	            location: 'product',
-	            container_classes: 'font-small font-md-normal text-accent font-weight-bold mt-2',
-	        }) 
-	    }}
-		{{ component('subscriptions/subscription-message', {
-			subscription_classes: {
-				container: 'd-flex font-small font-md-normal text-accent font-weight-bold mt-2',
-				icon: 'icon-inline icon-lg svg-icon-accent mr-1',
-			},
-			subscription_icon: true,
-			subscription_icon_svg_id: 'returns-alt',
-		}) }}
+		{% if has_custom_percentage_off_promotion_label or product.compare_at_price > product.price %}
+			{{ component(
+				'labels', {
+					promotion_only: promotion_only_value,
+					offer_only: offer_only_value,
+					group_data_store: false,
+					labels_classes: {
+						group: 'order-first product-labels',
+						promotion: label_accent_classes,
+						offer: label_accent_classes,
+					},
+				})
+			}}
+		{% endif %}
 		{% set product_available_with_price = product.available and product.display_price %}
 
 		{% if 
@@ -174,7 +161,7 @@
 			color: 'order-first',
 			color_bullet: 'js-variation-option js-color-variant',
 			quick_shop: 'js-item-submit-container mt-3',
-			quick_shop_modal_trigger: ((not product.isSubscribable() ? 'js-modal-open-private js-quickshop-modal-open ' ) ~ 'btn btn-primary btn-small' ~ slide_item_quick_shop_modal_trigger_class),
+			quick_shop_modal_trigger: ((not product.isSubscribable() ? 'js-modal-open-private js-quickshop-modal-open ' ) ~ 'btn btn-secondary btn-small ivana-card-secondary-action' ~ slide_item_quick_shop_modal_trigger_class),
 			quick_shop_submit_container: 'position-relative',
 			quick_shop_button: 'js-prod-submit-form btn btn-primary btn-small',
 			image_slider_container: 'swiper-container position-absolute h-100 w-100',

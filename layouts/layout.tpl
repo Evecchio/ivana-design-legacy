@@ -52,7 +52,7 @@
 
 		{# Ivana Design â€” Manrope Font #}
 		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 		{# Ivana Design â€” Premium CSS v3 (Stitch) #}
 		<style>
@@ -110,7 +110,7 @@
 				overflow-x: hidden !important;
 				-webkit-font-smoothing:antialiased;
 				-moz-osx-font-smoothing:grayscale;
-				font-family:'Montserrat',var(--body-font),sans-serif!important;
+				font-family:'Manrope',var(--body-font),sans-serif!important;
 				background-color: var(--blanco);
 				font-size: clamp(15px, 1.1vw, 18px) !important;
 				color: var(--negro);
@@ -120,8 +120,11 @@
 			::selection { background: var(--brand-20); color: var(--negro); }
 
 			/* === TIPOGRAFÃA === */
-			h1,h2,h3,h4,h5,h6, .h1,.h2,.h3,.h4,.h5,.h6, p,span,div,li,a,button,input,select,textarea {
-				font-family:'Montserrat',var(--body-font),sans-serif!important;
+			h1,h2,h3,h4,h5,h6, .h1,.h2,.h3,.h4,.h5,.h6 {
+				font-family:'Cormorant Garamond', Georgia, serif!important;
+			}
+			p,span,div,li,a,button,input,select,textarea {
+				font-family:'Manrope',var(--body-font),sans-serif!important;
 			}
 
 			/* === HEADER EMPROLIJADO === */
@@ -569,7 +572,7 @@
 				font-weight: 700;
 				letter-spacing: 0.1em;
 				text-transform: uppercase;
-				font-family: 'Montserrat', sans-serif;
+				font-family: 'Manrope', sans-serif;
 				line-height: 1.6;
 				white-space: normal;
 				word-break: keep-all;
@@ -616,7 +619,7 @@
 				border-radius: 6px;
 				border: none;
 				cursor: pointer;
-				font-family: 'Montserrat', sans-serif;
+				font-family: 'Manrope', sans-serif;
 				text-align: center;
 				transition: background 0.2s ease;
 			}
@@ -648,7 +651,7 @@
 				border-radius: 4px;
 				letter-spacing: 0.06em;
 				text-transform: uppercase;
-				font-family: 'Montserrat', sans-serif;
+				font-family: 'Manrope', sans-serif;
 				display: inline-block;
 			}
 			/* === NAV â€” sin dropdown en ningÃºn Ã­tem === */
@@ -704,14 +707,14 @@
 				border-radius: 4px !important;
 				border: 1px solid #fed7aa !important;
 				letter-spacing: 0.02em !important;
-				font-family: 'Montserrat', sans-serif !important;
+				font-family: 'Manrope', sans-serif !important;
 				box-shadow: 0 1px 3px rgba(194,65,12,0.15) !important;
 				display: inline-block !important;
 			}
 			/* === IVANA REFRESH V2: BASE GLOBAL + HOME === */
 			body,
 			.body-font {
-				font-family: 'Montserrat', var(--body-font), sans-serif !important;
+				font-family: 'Manrope', var(--body-font), sans-serif !important;
 				background: #ffffff !important;
 				color: #1f2937 !important;
 			}
@@ -720,7 +723,7 @@
 			.product-discount-badge,
 			.product-price-badge,
 			.product-ver-btn {
-				font-family: 'Montserrat', var(--body-font), sans-serif !important;
+				font-family: 'Manrope', var(--body-font), sans-serif !important;
 			}
 
 			.ivana-promo-bar {
@@ -809,12 +812,12 @@
 			.js-products-sale-title,
 			.js-products-featured-title,
 			.js-products-new-title {
-				font-family: 'Montserrat', var(--body-font), sans-serif !important;
+				font-family: 'Cormorant Garamond', Georgia, serif !important;
 				font-size: clamp(2rem, 4.2vw, 3.8rem) !important;
 				line-height: 0.96 !important;
-				letter-spacing: -0.06em !important;
+				letter-spacing: -0.04em !important;
 				color: #111827 !important;
-				text-transform: uppercase !important;
+				text-transform: none !important;
 				margin-bottom: 0 !important;
 				display: block !important;
 			}

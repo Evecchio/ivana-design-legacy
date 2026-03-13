@@ -1,10 +1,28 @@
-/* Ivana layer: header structure and navigation-specific overrides. */
+/* Header and navigation overrides for the active Ivana theme. */
+
+.ivana-promo-bar {
+  background: #111111 !important;
+  color: #ffffff !important;
+  text-align: center;
+  padding: 0.78rem 1rem !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+}
+
+.js-head-main {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(18px);
+}
 
 .ivana-header-layout {
   display: grid !important;
-  grid-template-columns: minmax(0, auto) minmax(240px, 1fr) minmax(0, auto) !important;
+  grid-template-columns: minmax(0, auto) minmax(280px, 1fr) minmax(0, auto) !important;
   align-items: center !important;
-  column-gap: clamp(0.75rem, 2vw, 2rem) !important;
+  column-gap: clamp(1rem, 2vw, 2rem) !important;
   row-gap: 0.75rem !important;
   width: 100% !important;
 }
@@ -14,17 +32,25 @@
   max-width: 100%;
 }
 
-.ivana-header-layout .head-slot-logo {
+.ivana-header-layout .head-slot-logo,
+.ivana-logo-wrap,
+.ivana-logo-link {
   display: flex !important;
   align-items: center !important;
-  min-width: 0 !important;
 }
 
-.ivana-header-layout .head-slot-logo h1,
-.ivana-header-layout .head-slot-logo a {
-  display: flex !important;
-  align-items: center !important;
-  max-width: 100%;
+.ivana-logo-link {
+  text-decoration: none !important;
+}
+
+.logo-container img {
+  max-height: 70px !important;
+  width: auto !important;
+  transition: transform 0.3s ease !important;
+}
+
+.logo-container a:hover img {
+  transform: scale(1.02);
 }
 
 .ivana-header-layout .head-slot-search {
@@ -32,20 +58,171 @@
   justify-self: center !important;
 }
 
+.search-container {
+  max-width: clamp(240px, 38vw, 680px) !important;
+  width: 100% !important;
+}
+
+[class*="search-form"] input,
+.search-container input {
+  border-radius: 999px !important;
+  border: 1px solid rgba(17, 17, 17, 0.12) !important;
+  background: #ffffff !important;
+  min-height: 48px !important;
+  font-size: 0.94rem !important;
+  padding: 0 3.25rem 0 1.15rem !important;
+  box-shadow: none !important;
+}
+
+[class*="search-form"] input:focus,
+.search-container input:focus {
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 0 0 4px rgba(244, 37, 106, 0.08) !important;
+}
+
+[class*="search-form"] button {
+  width: 36px !important;
+  height: 36px !important;
+  right: 8px !important;
+  border-radius: 999px !important;
+  background: rgba(244, 37, 106, 0.1) !important;
+  color: #111111 !important;
+}
+
+[class*="search-form"] button svg,
+[class*="search-form"] button:before {
+  opacity: 1 !important;
+}
+
 .ivana-header-layout .head-slot-utilities {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-end !important;
+  gap: 0.75rem !important;
+}
+
+.header-utility {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.65rem !important;
+  color: #111111 !important;
+  text-decoration: none !important;
+}
+
+.header-utility .js-header-utility-icon {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(17, 17, 17, 0.1) !important;
+  background: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: border-color 0.2s ease, transform 0.2s ease !important;
+}
+
+.header-utility:hover .js-header-utility-icon {
+  border-color: rgba(244, 37, 106, 0.45) !important;
+  transform: translateY(-1px);
+}
+
+.utility-icon {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.utility-text {
+  font-size: 0.7rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: #111111 !important;
+}
+
+.js-cart-widget-total {
+  color: rgba(17, 17, 17, 0.62) !important;
+  font-size: 0.8rem !important;
+}
+
+.js-cart-widget-amount.badge {
+  background: var(--accent-color) !important;
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+  font-size: 0.62rem !important;
+  min-width: 22px !important;
+}
+
+.js-desktop-main-categories-col,
+.js-main-categories-container {
+  display: none !important;
+}
+
+.nav-desktop-container {
+  border-top: 1px solid rgba(17, 17, 17, 0.08) !important;
+  padding: 0.9rem 0 1rem !important;
+}
+
+.js-nav-desktop-list,
+.nav-desktop-list {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(0.45rem, 2vw, 1.4rem) !important;
+  flex-wrap: wrap !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.nav-desktop-list > .nav-item {
+  padding: 0 !important;
+}
+
+.js-main-menu a,
+[class*="nav-link"],
+[class*="desktop-nav"] a {
+  font-family: "Manrope", var(--body-font), sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  color: rgba(17, 17, 17, 0.72) !important;
+  padding: 0.2rem 0 !important;
+  position: relative;
+}
+
+.js-main-menu a:hover,
+[class*="nav-link"]:hover,
+[class*="desktop-nav"] a:hover {
+  color: #111111 !important;
+}
+
+.js-main-menu a:after,
+[class*="nav-link"]:after,
+[class*="desktop-nav"] a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.3rem;
+  height: 1px;
+  background: rgba(244, 37, 106, 0.85);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.js-main-menu a:hover:after,
+[class*="nav-link"]:hover:after,
+[class*="desktop-nav"] a:hover:after {
+  transform: scaleX(1);
 }
 
 @media (max-width: 767px) {
-  .ivana-header-layout {
-    display: grid !important;
-    grid-template-columns: auto 1fr auto !important;
-    grid-template-rows: auto auto !important;
-    align-items: center !important;
-    gap: 8px !important;
-    width: 100% !important;
+  .ivana-promo-bar {
+    font-size: 0.62rem !important;
+    letter-spacing: 0.14em !important;
+    line-height: 1.5 !important;
+    white-space: normal;
   }
 
   .head-row.container {
@@ -53,8 +230,10 @@
     padding-right: 12px !important;
   }
 
-  .head-row * {
-    max-width: 100%;
+  .ivana-header-layout {
+    grid-template-columns: auto 1fr auto !important;
+    grid-template-rows: auto auto !important;
+    gap: 0.7rem !important;
   }
 
   .ivana-header-layout .head-slot-menu {
@@ -66,20 +245,30 @@
     grid-column: 2 / 3 !important;
     grid-row: 1 / 2 !important;
     justify-self: center !important;
-    justify-content: center !important;
-    text-align: center !important;
   }
 
   .ivana-header-layout .head-slot-utilities {
     grid-column: 3 / 4 !important;
     grid-row: 1 / 2 !important;
-    gap: 10px !important;
+    gap: 0.4rem !important;
   }
 
   .ivana-header-layout .head-slot-search {
-    grid-column: 1 / span 3 !important;
+    grid-column: 1 / -1 !important;
     grid-row: 2 / 3 !important;
-    max-width: 100% !important;
-    width: 100% !important;
+  }
+
+  .logo-container img {
+    max-height: 50px !important;
+  }
+
+  .utility-text,
+  .js-header-utility-text-cart {
+    display: none !important;
+  }
+
+  .header-utility .js-header-utility-icon {
+    width: 38px !important;
+    height: 38px !important;
   }
 }

@@ -46,8 +46,8 @@
 	{% set section_slider_mobile_only = settings.sale_products_format_mobile == 'slider' and settings.sale_products_format_desktop != 'slider' %}
 	{% set section_slider_desktop_only = settings.sale_products_format_desktop == 'slider' and settings.sale_products_format_mobile != 'slider' %}
 	{% set section_slider_id = 'sale' %}
-	{% set section_title = settings.sale_products_title ? settings.sale_products_title : 'Super descuentos' | translate %}
-	{% set section_kicker = 'Ofertas destacadas' | translate %}
+	{% set section_title = settings.sale_products_title in ['SUPER DESCUENTOS', 'Super descuentos'] ? 'Selecciones especiales' : (settings.sale_products_title ? settings.sale_products_title : 'Selecciones especiales') %}
+	{% set section_kicker = 'Precio especial por tiempo limitado' %}
 {% endif %}
 
 {% set grid_mobile_class = section_columns_mobile == 2 ? 'grid-2' : section_columns_mobile == 1 ? 'grid-1' %}
@@ -88,6 +88,6 @@
 		</div>
 	{% endif %}
 	<div class="text-center mt-4 mt-md-5">
-		<a href="{{ store.products_url }}" class="btn btn-secondary ivana-home-products-link">{{ 'Ver toda la coleccion' | translate }}</a>
+		<a href="{{ store.products_url }}" class="btn btn-secondary ivana-home-products-link">Ver coleccion completa</a>
 	</div>
 </div>

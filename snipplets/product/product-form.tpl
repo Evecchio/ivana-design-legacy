@@ -35,33 +35,31 @@
 		accordion_hide_svg_id: 'chevron-down',
 	}) }}
 
-	{# Sold products quantity #}
-
-	{% set products_sold_limit = settings.quantity_products_sold ? settings.quantity_products_sold : 0 %}
-	{% if settings.products_sold and (product.sold_qty > products_sold_limit) %}
-		<div class="font-small mt-3 mb-2">
-			{% if product.sold_qty > 10 %}
-				+{{ (product.sold_qty/ 10)|round(0, 'floor') * 10 }}
-			{% else %}
-				{{ product.sold_qty }}
-			{% endif %}
-			{{ "vendidos" | translate }}
-		</div>
-	{% endif %}
-
 	{# Product name #}
 
 	{% if home_main_product %}
-		<h2 class="js-product-name h4 mb-3">{{ product.name }}</h2>
+		<h2 class="js-product-name h4 mb-3 ivana-product-title">{{ product.name }}</h2>
 	{% else %}
-		{# Product SKU #}
-		{% if settings.product_sku and product.sku %}
-			<div class="font-small opacity-60 mt-3 mb-2">
-				{{ "SKU" | translate }}: <span class="js-product-sku">{{ product.sku }}</span>
-			</div>
-		{% endif %}
+		{% set products_sold_limit = settings.quantity_products_sold ? settings.quantity_products_sold : 0 %}
+		<div class="ivana-product-meta-row">
+			{% if settings.product_sku and product.sku %}
+				<div class="ivana-product-meta-pill">
+					{{ "SKU" | translate }}: <span class="js-product-sku">{{ product.sku }}</span>
+				</div>
+			{% endif %}
+			{% if settings.products_sold and (product.sold_qty > products_sold_limit) %}
+				<div class="ivana-product-meta-pill">
+					{% if product.sold_qty > 10 %}
+						+{{ (product.sold_qty/ 10)|round(0, 'floor') * 10 }}
+					{% else %}
+						{{ product.sold_qty }}
+					{% endif %}
+					{{ "vendidos" | translate }}
+				</div>
+			{% endif %}
+		</div>
 
-		<h1 class="js-product-name h4 mb-3" data-store="product-name-{{ product.id }}">{{ product.name }}</h1>
+		<h1 class="js-product-name h4 mb-3 ivana-product-title" data-store="product-name-{{ product.id }}">{{ product.name }}</h1>
 	{% endif %}
 
 	{# Product price #}
@@ -77,13 +75,13 @@
 				{{ product.compare_at_price | money }}
 			{% endif %}
 		</div>
-		<div class="d-flex align-items-center">
+		<div class="d-flex align-items-end flex-wrap ivana-product-price-row">
 			<span class="js-price-display h3 font-family-body" id="price_display" {% if not product.display_price %}style="display:none;"{% endif %} data-product-price="{{ product.price }}">
 				{% if product.display_price %}
 					{{ product.price | money }}
 				{% endif %}
 			</span>
-			<span class="font-family-body font-big text-accent ml-2" {% if not product.compare_at_price %}style="display:none;"{% endif %}>
+			<span class="font-family-body font-big text-accent ml-2 ivana-product-price-badge" {% if not product.compare_at_price %}style="display:none;"{% endif %}>
 				<span class="js-offer-percentage">{{ discount_rate_percentage | round }}</span>% OFF
 			</span>
 		</div>
@@ -169,6 +167,10 @@
 		</div>
 	{% endif %}
 
+	{% if not home_main_product %}
+		<p class="ivana-product-selection-note mb-4">Elegi tu talle con calma, revisa la guia y suma la prenda cuando te sientas segura de la eleccion.</p>
+	{% endif %}
+
 	{# Product form, includes: Variants, CTA and Shipping calculator #}
 
 	<form id="product_form" class="js-product-form ivana-product-purchase-form mt-4" method="post" action="{{ store.cart_url }}" data-store="product-form-{{ product.id }}">
@@ -209,13 +211,13 @@
 		{% endif %}
 
 		{% if settings.last_product and show_product_quantity %}
-			<div class="{% if product.variations %}js-last-product {% endif %}text-stock font-big mb-4"{% if product.selected_or_first_available_variant.stock != 1 %} style="display: none;"{% endif %}>
+			<div class="{% if product.variations %}js-last-product {% endif %}text-stock font-big mb-4 ivana-product-stock-note"{% if product.selected_or_first_available_variant.stock != 1 %} style="display: none;"{% endif %}>
 				{{ settings.last_product_text }}
 			</div>
 			{% if settings.latest_products_available %}
 				{% set latest_products_limit = settings.latest_products_available %}
-				<div class="{% if product.variations %}js-latest-products-available {% endif %}text-stock font-big mb-4" data-limit="{{ latest_products_limit }}" {% if product.selected_or_first_available_variant.stock > latest_products_limit or product.selected_or_first_available_variant.stock == null or product.selected_or_first_available_variant.stock == 1 %} style="display: none;"{% endif %}>
-					{{ "¡Solo quedan" | translate }} <span class="js-product-stock">{{ product.selected_or_first_available_variant.stock }}</span> {{ "en stock!" | translate }}
+				<div class="{% if product.variations %}js-latest-products-available {% endif %}text-stock font-big mb-4 ivana-product-stock-note" data-limit="{{ latest_products_limit }}" {% if product.selected_or_first_available_variant.stock > latest_products_limit or product.selected_or_first_available_variant.stock == null or product.selected_or_first_available_variant.stock == 1 %} style="display: none;"{% endif %}>
+					{{ "Quedan pocas unidades disponibles" | translate }}: <span class="js-product-stock">{{ product.selected_or_first_available_variant.stock }}</span>.
 				</div>
 			{% endif %}
 		{% endif %}

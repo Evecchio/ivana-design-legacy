@@ -1,6 +1,6 @@
-<div class="js-informative-banner-container swiper-slide" {% if not banner_show %}style="display: none"{% endif %}>
+<div class="js-informative-banner-container swiper-slide ivana-home-info-card" {% if not banner_show %}style="display: none"{% endif %}>
 	{% if banner_services_url %}
-		<a href="{{ banner_services_url | setting_url }}">
+		<a href="{{ banner_services_url | setting_url }}" class="ivana-home-info-link">
 	{% endif %}
 	{% if banner_services_icon == 'image' and banner_services_image %}
 		{% set banner_image_alt = banner_services_title ? banner_services_title : 'Banner de' | translate %}
@@ -15,7 +15,7 @@
 			})
 		}}
 	{% else %}
-		<div class="js-informative-banner-icon-{{ banner_index }} premium-banner-icon">
+		<div class="js-informative-banner-icon-{{ banner_index }} premium-banner-icon ivana-home-info-icon">
 			{% if banner_services_icon == 'shipping' %}
 				<svg class="icon-inline svg-icon-text"><use xlink:href="#truck"/></svg>
 			{% elseif banner_services_icon == 'card' %}
@@ -33,8 +33,8 @@
 			{% endif %}
 		</div>
 	{% endif %}
-	<h3 class="js-informative-banner-title h6 mb-2"{% if not banner_services_title %} style="display: none"{% endif %}>{{ banner_services_title }}</h3>
-	<p class="js-informative-banner-description m-0 font-small"{% if not banner_services_description %} style="display: none"{% endif %}>{{ banner_services_description }}</p>
+	<h3 class="js-informative-banner-title h6 mb-2 ivana-home-info-title"{% if not banner_services_title %} style="display: none"{% endif %}>{{ banner_services_title }}</h3>
+	<p class="js-informative-banner-description m-0 font-small ivana-home-info-description"{% if not banner_services_description %} style="display: none"{% endif %}>{{ banner_services_description }}</p>
 	{% if banner_services_url %}
 		</a>
 	{% endif %}

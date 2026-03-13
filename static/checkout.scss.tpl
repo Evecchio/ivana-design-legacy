@@ -113,10 +113,10 @@ checkout.scss.tpl
   {#### Typography #}
 
   {# Headings #}
-  --heading-font: 'Manrope', sans-serif;
-  --heading-font-weight: 800;
+  --heading-font: 'Cormorant Garamond', serif;
+  --heading-font-weight: 600;
   --heading-text-transform: none;
-  --heading-letter-spacing: -0.02em;
+  --heading-letter-spacing: -0.04em;
 
   {# Header #}
   --header-logo-font: var(--heading-font);

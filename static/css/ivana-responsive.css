@@ -1,18 +1,70 @@
-/* Ivana layer: shared responsive glue across pages. */
+/* Shared responsive behavior across pages. */
 
 @media (max-width: 991px) {
   .ivana-page-hero,
   .ivana-category-header,
   .ivana-product-related .container,
-  .ivana-footer .container {
+  .ivana-footer .container,
+  .ivana-home-newsletter-panel {
     max-width: 100%;
+  }
+
+  .ivana-home-newsletter-panel,
+  .ivana-contact-grid,
+  .ivana-footer-grid,
+  .ivana-cart-shell .cart-page-content {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ivana-footer-col-newsletter {
+    max-width: 34rem;
   }
 }
 
 @media (max-width: 767px) {
   .ivana-sort-box,
   .ivana-product-shell .ivana-product-payments-box,
-  .ivana-footer-newsletter-form .input-append {
+  .ivana-footer-newsletter-form .input-append,
+  .ivana-home-newsletter-copy .input-append {
     width: 100%;
+  }
+
+  .ivana-home-section-head,
+  .ivana-page-header-copy {
+    max-width: 100%;
+  }
+
+  .ivana-home-section-title,
+  .ivana-page-title,
+  .ivana-category-title,
+  .ivana-product-title,
+  .ivana-cart-shell h1,
+  .ivana-contact-shell h1 {
+    font-size: clamp(2rem, 10vw, 3rem) !important;
+  }
+
+  .ivana-home-hero-copy {
+    margin: 0.85rem !important;
+    padding: 1.2rem !important;
+  }
+
+  .ivana-home-hero-title {
+    font-size: clamp(2.2rem, 12vw, 3.2rem) !important;
+  }
+
+  .ivana-home-categories-row {
+    padding-bottom: 0.25rem !important;
+  }
+
+  .ivana-home-info-card {
+    padding: 1.1rem;
+  }
+
+  .ivana-cart-shell .cart-page-products,
+  .ivana-cart-shell .cart-page-summary,
+  .ivana-contact-card,
+  .ivana-contact-form-card,
+  .ivana-empty-state {
+    padding: 1rem;
   }
 }

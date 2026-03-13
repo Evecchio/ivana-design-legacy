@@ -1,11 +1,74 @@
-/* Ivana layer: shared visual foundations above the Tiendanube base theme. */
+/* Shared visual foundations for the active Ivana theme. */
 
 :root {
   --ivana-content-max-width: 1440px;
-  --ivana-card-radius: 28px;
-  --ivana-card-radius-mobile: 22px;
+  --ivana-narrow-max-width: 1240px;
+  --ivana-shell-radius: 32px;
+  --ivana-card-radius: 24px;
+  --ivana-card-radius-mobile: 20px;
+  --ivana-surface: #ffffff;
+  --ivana-surface-soft: #fbf7f8;
+  --ivana-surface-tint: #fff1f6;
+  --ivana-border: rgba(17, 17, 17, 0.09);
+  --ivana-border-strong: rgba(17, 17, 17, 0.14);
+  --ivana-text: #151417;
+  --ivana-text-soft: #655f66;
+  --ivana-shadow-soft: 0 26px 72px rgba(17, 17, 17, 0.08);
+  --ivana-shadow-card: 0 18px 46px rgba(17, 17, 17, 0.06);
 }
 
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "Manrope", var(--body-font), sans-serif !important;
+  color: var(--ivana-text) !important;
+}
+
+body {
+  background: #ffffff !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  color: var(--ivana-text) !important;
+  letter-spacing: -0.045em !important;
+  font-weight: 600 !important;
+}
+
+p,
+li,
+label,
+small,
+.font-small,
+.font-medium {
+  color: inherit;
+}
+
+.container {
+  max-width: min(100%, var(--ivana-content-max-width)) !important;
+  padding-left: clamp(1rem, 3vw, 2.5rem) !important;
+  padding-right: clamp(1rem, 3vw, 2.5rem) !important;
+}
+
+.section-home {
+  padding-top: clamp(1.5rem, 3vw, 3rem) !important;
+  padding-bottom: clamp(1.5rem, 3vw, 3rem) !important;
+}
+
+.ivana-home-shell,
 .ivana-category-content,
 .ivana-category-products,
 .ivana-product-shell .product-images,
@@ -22,8 +85,334 @@
 .ivana-product-shell .js-product-description,
 .ivana-product-shell .product-description,
 .ivana-cart-shell .cart-page-products,
-.ivana-cart-shell .cart-page-summary {
+.ivana-cart-shell .cart-page-summary,
+.ivana-contact-card,
+.ivana-contact-form-card,
+.ivana-empty-state {
+  border-radius: var(--ivana-shell-radius);
+}
+
+.ivana-home-slot-promotional,
+.ivana-home-slot-news_banners,
+.ivana-home-slot-sale {
+  opacity: 0.92;
+}
+
+.ivana-home-section-head {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ivana-home-section-kicker,
+.ivana-kicker,
+.ivana-category-kicker {
+  font-family: "Manrope", var(--body-font), sans-serif !important;
+  color: var(--ivana-text-soft) !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+}
+
+.ivana-home-section-title,
+.ivana-page-title,
+.ivana-category-title,
+.ivana-product-title,
+.ivana-cart-shell h1,
+.ivana-contact-shell h1 {
+  font-size: clamp(2.4rem, 5vw, 4.3rem) !important;
+  line-height: 0.92 !important;
+  text-align: left !important;
+  margin-bottom: 0 !important;
+}
+
+.ivana-home-section-divider {
+  width: 72px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(244, 37, 106, 0), rgba(244, 37, 106, 0.95), rgba(244, 37, 106, 0));
+  margin: 0.85rem auto 0;
+}
+
+.ivana-home-hero {
+  padding-top: 0.5rem !important;
+}
+
+.ivana-home-hero .swiper-container,
+.ivana-home-hero .swiper-slide {
+  border-radius: var(--ivana-shell-radius) !important;
+  overflow: hidden;
+}
+
+.ivana-home-hero-copy {
+  max-width: min(100%, 36rem);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.76));
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 28px;
+  box-shadow: var(--ivana-shadow-soft);
+  backdrop-filter: blur(16px);
+  padding: clamp(1.4rem, 4vw, 2.8rem) !important;
+  margin: clamp(1rem, 4vw, 2.5rem) !important;
+}
+
+.ivana-home-hero-title {
+  font-size: clamp(2.9rem, 6vw, 5.2rem) !important;
+  line-height: 0.9 !important;
+  text-align: left !important;
+  margin-bottom: 0.8rem !important;
+}
+
+.ivana-home-hero-description {
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
+  color: var(--ivana-text-soft) !important;
+  max-width: 32rem;
+}
+
+.ivana-home-hero-button,
+.ivana-home-products-link,
+.ivana-home-newsletter-copy .btn-primary,
+.ivana-contact-form-card input[type="submit"],
+.ivana-cart-shell .btn-primary,
+.ivana-product-shell .btn-primary {
+  border-radius: 999px !important;
+  min-height: 52px !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  font-size: 0.74rem !important;
+  font-weight: 800 !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+.ivana-home-products-link {
+  background: transparent !important;
+  border: 1px solid #111111 !important;
+  color: #111111 !important;
+}
+
+.ivana-home-products-link:hover {
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+
+.ivana-home-categories {
+  padding-top: clamp(0.75rem, 2vw, 1.25rem) !important;
+}
+
+.ivana-home-categories-row {
+  gap: clamp(1rem, 2.2vw, 1.5rem) !important;
+}
+
+.js-home-category {
+  min-width: 106px;
+}
+
+.ivana-home-category-circle,
+.home-category-image-border {
+  background: linear-gradient(180deg, #ffffff, #fff5f8) !important;
+  border: 1px solid var(--ivana-border) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+}
+
+.ivana-home-category-name {
+  font-size: 0.72rem !important;
+  letter-spacing: 0.16em !important;
+  line-height: 1.5 !important;
+  color: var(--ivana-text) !important;
+}
+
+.ivana-home-infos .container {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.ivana-home-info-card {
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid var(--ivana-border);
   border-radius: var(--ivana-card-radius);
+  box-shadow: var(--ivana-shadow-card);
+  padding: 1.35rem;
+  text-align: left !important;
+}
+
+.ivana-home-info-link {
+  color: inherit !important;
+  display: block;
+  height: 100%;
+  text-decoration: none !important;
+}
+
+.ivana-home-info-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: rgba(244, 37, 106, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.ivana-home-info-title {
+  font-family: "Manrope", var(--body-font), sans-serif !important;
+  font-size: 0.8rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  text-align: left !important;
+}
+
+.ivana-home-info-description {
+  color: var(--ivana-text-soft) !important;
+  line-height: 1.65 !important;
+}
+
+.ivana-home-newsletter-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.96fr);
+  align-items: stretch;
+  background: linear-gradient(135deg, #fff6fa 0%, #ffffff 58%);
+  border: 1px solid var(--ivana-border);
+  border-radius: var(--ivana-shell-radius);
+  overflow: hidden;
+  box-shadow: var(--ivana-shadow-soft);
+}
+
+.ivana-home-newsletter-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ivana-home-newsletter-copy h2 {
+  text-align: left !important;
+  margin-bottom: 0.65rem !important;
+}
+
+.ivana-home-newsletter-copy p {
+  color: var(--ivana-text-soft) !important;
+  line-height: 1.7 !important;
+}
+
+.ivana-page-shell,
+.ivana-contact-shell,
+.ivana-cart-shell,
+.ivana-product-shell,
+.ivana-category-shell {
+  padding-bottom: clamp(2rem, 4vw, 4.5rem);
+}
+
+.ivana-page-hero {
+  background: linear-gradient(135deg, rgba(255, 244, 248, 0.96), #ffffff 62%);
+  border: 1px solid var(--ivana-border);
+  box-shadow: var(--ivana-shadow-soft);
+  padding: clamp(1.5rem, 4vw, 3rem) !important;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem) !important;
+}
+
+.ivana-page-header-copy {
+  max-width: 52rem;
+}
+
+.ivana-contact-grid,
+.ivana-cart-shell .cart-page-content {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.ivana-contact-grid {
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+}
+
+.ivana-contact-card,
+.ivana-contact-form-card,
+.ivana-empty-state,
+.ivana-cart-shell .cart-page-products,
+.ivana-cart-shell .cart-page-summary {
+  background: #ffffff;
+  border: 1px solid var(--ivana-border);
+  box-shadow: var(--ivana-shadow-card);
+  padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.ivana-contact-form-card .form-control,
+.ivana-contact-form-card textarea,
+.ivana-footer-newsletter-input,
+.ivana-home-newsletter-copy .form-control,
+.ivana-home-newsletter-copy input[type="email"] {
+  border-radius: 18px !important;
+  border: 1px solid var(--ivana-border) !important;
+  background: #ffffff !important;
+  min-height: 48px !important;
+  box-shadow: none !important;
+}
+
+.ivana-empty-state p,
+.ivana-contact-card p,
+.ivana-contact-form-card p,
+.ivana-page-shell .user-content,
+.ivana-cart-intro {
+  color: var(--ivana-text-soft) !important;
+  line-height: 1.75 !important;
+}
+
+.ivana-footer {
+  margin-top: clamp(3rem, 6vw, 6rem);
+  background: #151417 !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+.ivana-footer-main {
+  padding-top: clamp(3rem, 5vw, 5rem);
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.ivana-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 0.7fr)) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.ivana-footer-title {
+  font-family: "Manrope", var(--body-font), sans-serif !important;
+  color: #ffffff !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 1rem;
+}
+
+.ivana-footer-brand {
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  color: #ffffff !important;
+  font-size: 2.1rem !important;
+  line-height: 0.95 !important;
+}
+
+.ivana-footer a,
+.ivana-footer p,
+.ivana-footer li,
+.footer-legal-container,
+.footer-payments-shipping-container {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.ivana-footer a:hover {
+  color: #ffffff !important;
+}
+
+.ivana-footer-payments-row {
+  padding-bottom: 2.25rem;
+}
+
+.footer-legal-container {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 1.5rem;
 }
 
 @media (max-width: 767px) {
@@ -35,7 +424,10 @@
   .ivana-product-shell .js-product-description,
   .ivana-product-shell .product-description,
   .ivana-cart-shell .cart-page-products,
-  .ivana-cart-shell .cart-page-summary {
+  .ivana-cart-shell .cart-page-summary,
+  .ivana-contact-card,
+  .ivana-contact-form-card,
+  .ivana-empty-state {
     border-radius: var(--ivana-card-radius-mobile);
   }
 }

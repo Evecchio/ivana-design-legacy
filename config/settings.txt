@@ -82,6 +82,7 @@ Tipo de letra
 			"Chakra Petch", sans-serif = Chakra Petch
 			"Chivo", sans-serif = Chivo
 			"Corben", serif = Corben
+			"Cormorant Garamond", serif = Cormorant Garamond
 			"DM Sans", sans-serif = DM Sans
 			"Domine", serif = Domine
 			"Droid Sans", sans-serif = Droid Sans
@@ -180,6 +181,7 @@ Tipo de letra
 			"Chakra Petch", sans-serif = Chakra Petch
 			"Chivo", sans-serif = Chivo
 			"Corben", serif = Corben
+			"Cormorant Garamond", serif = Cormorant Garamond
 			"DM Sans", sans-serif = DM Sans
 			"Domine", serif = Domine
 			"Droid Sans", sans-serif = Droid Sans

@@ -1,4 +1,8 @@
-/* Ivana layer: product page visual system and future product-only overrides. */
+/* Product page system. */
+
+.ivana-product-shell .container {
+  max-width: min(100%, var(--ivana-content-max-width)) !important;
+}
 
 .ivana-product-shell .product-columns,
 .ivana-product-shell .product-images,
@@ -7,10 +11,294 @@
   min-width: 0;
 }
 
+.ivana-product-shell .product-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+  gap: clamp(1.75rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.ivana-product-shell .product-images,
+.ivana-product-shell .product-info {
+  background: #ffffff;
+  border: 1px solid var(--ivana-border);
+  box-shadow: var(--ivana-shadow-soft);
+  padding: clamp(1rem, 2.4vw, 2rem);
+}
+
+.ivana-product-shell .product-images {
+  position: sticky;
+  top: 130px;
+}
+
+.ivana-product-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0.25rem 0 1rem;
+}
+
+.ivana-product-meta-pill {
+  background: var(--ivana-surface-soft);
+  border: 1px solid var(--ivana-border);
+  border-radius: 999px;
+  color: var(--ivana-text-soft);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  padding: 0.4rem 0.7rem;
+  text-transform: uppercase;
+}
+
+.ivana-product-title {
+  text-align: left !important;
+}
+
+.ivana-product-price-block {
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+  padding-bottom: 0.75rem;
+}
+
+.ivana-product-price-row {
+  gap: 0.65rem 1rem;
+}
+
+.ivana-product-shell .js-price-display,
+.ivana-product-shell [data-component="price.value"] {
+  color: #151417 !important;
+  font-size: clamp(2rem, 4vw, 3rem) !important;
+  font-weight: 800 !important;
+}
+
+.ivana-product-shell .price-compare,
+.ivana-product-shell [data-component="compare-price.value"] {
+  color: rgba(21, 20, 23, 0.48) !important;
+  font-size: 0.95rem !important;
+}
+
+.ivana-product-price-badge {
+  background: rgba(244, 37, 106, 0.1) !important;
+  border-radius: 999px !important;
+  color: var(--accent-color) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.14em !important;
+  padding: 0.3rem 0.65rem !important;
+  text-transform: uppercase !important;
+}
+
+.ivana-product-payments-box {
+  border: 1px solid var(--ivana-border) !important;
+  border-radius: 20px !important;
+  background: linear-gradient(180deg, #ffffff, #fbf7f8) !important;
+  padding: 1rem 1.1rem 1.15rem !important;
+}
+
+.ivana-product-selection-note {
+  color: var(--ivana-text-soft) !important;
+  font-size: 0.94rem !important;
+  line-height: 1.7 !important;
+  max-width: 34rem;
+}
+
+.ivana-variation-group {
+  margin-bottom: 1.2rem !important;
+}
+
+.ivana-variation-label {
+  font-family: "Manrope", var(--body-font), sans-serif !important;
+  color: var(--ivana-text-soft) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
+  margin-bottom: 0.65rem !important;
+  text-transform: uppercase !important;
+}
+
+.ivana-variation-chip {
+  border-radius: 999px !important;
+  border: 1px solid rgba(17, 17, 17, 0.14) !important;
+  background: #ffffff !important;
+  color: #151417 !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  margin-right: 0.4rem !important;
+  margin-bottom: 0.4rem !important;
+  min-height: 40px !important;
+  padding: 0.5rem 0.9rem !important;
+}
+
+.ivana-variation-chip.selected,
+.ivana-variation-chip:hover {
+  border-color: var(--accent-color) !important;
+  background: rgba(244, 37, 106, 0.08) !important;
+  color: var(--accent-color) !important;
+}
+
+.ivana-size-guide-link .btn-link {
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+.ivana-product-stock-note {
+  background: var(--ivana-surface-soft);
+  border: 1px solid var(--ivana-border);
+  border-radius: 18px;
+  color: var(--ivana-text-soft) !important;
+  font-size: 0.8rem !important;
+  line-height: 1.55 !important;
+  padding: 0.75rem 0.9rem;
+}
+
+.ivana-product-shell .js-prod-submit-form,
+.ivana-product-shell .btn-primary {
+  background: #111111 !important;
+  border-color: #111111 !important;
+  color: #ffffff !important;
+  box-shadow: 0 18px 34px rgba(17, 17, 17, 0.16) !important;
+}
+
+.ivana-product-shell .form-control,
+.ivana-product-shell .form-select {
+  border-radius: 18px !important;
+  border: 1px solid rgba(17, 17, 17, 0.12) !important;
+  background: #ffffff !important;
+  min-height: 48px !important;
+  box-shadow: none !important;
+}
+
 .ivana-product-shell .free-shipping-message,
-.ivana-product-shell .ivana-product-support-cards .grid.grid-auto-1,
 .ivana-product-shell .ivana-product-fulfillment .list,
 .ivana-product-shell .ivana-product-fulfillment .js-shipping-calculator,
 .ivana-product-shell .ivana-product-fulfillment [class*="branch"] {
   max-width: 100%;
+}
+
+.ivana-product-support-cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.ivana-product-support-card {
+  background: linear-gradient(180deg, #ffffff, #fbf7f8);
+  border: 1px solid var(--ivana-border);
+  border-radius: 22px;
+  box-shadow: var(--ivana-shadow-card);
+  padding: 1rem 1.1rem;
+}
+
+.ivana-product-support-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: rgba(244, 37, 106, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ivana-product-support-title {
+  font-family: "Manrope", var(--body-font), sans-serif !important;
+  color: #151417 !important;
+  font-size: 0.76rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+.ivana-product-support-description {
+  color: var(--ivana-text-soft) !important;
+  line-height: 1.6 !important;
+}
+
+.ivana-product-description-card {
+  background: #ffffff;
+  border: 1px solid var(--ivana-border);
+  box-shadow: var(--ivana-shadow-card);
+  padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.ivana-product-description-title {
+  text-align: left !important;
+  margin-bottom: 0 !important;
+}
+
+.ivana-product-description-summary {
+  color: var(--ivana-text-soft) !important;
+  line-height: 1.7 !important;
+  max-width: 36rem;
+}
+
+.ivana-product-description-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(250px, 0.8fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.ivana-product-description-copy {
+  color: #151417 !important;
+  line-height: 1.8 !important;
+}
+
+.ivana-product-description-aside {
+  display: grid;
+  gap: 1rem;
+}
+
+.ivana-product-detail-note {
+  background: var(--ivana-surface-soft);
+  border: 1px solid var(--ivana-border);
+  border-radius: 22px;
+  padding: 1rem 1.1rem;
+}
+
+.ivana-product-detail-note-title {
+  font-family: "Manrope", var(--body-font), sans-serif !important;
+  color: #151417 !important;
+  font-size: 0.76rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+.ivana-product-detail-note p {
+  color: var(--ivana-text-soft) !important;
+  line-height: 1.65 !important;
+}
+
+.ivana-product-fulfillment .list,
+.product-shipping-calculator,
+.ivana-product-payment-details {
+  background: #ffffff;
+  border: 1px solid var(--ivana-border);
+  border-radius: 22px;
+  padding: 1rem !important;
+}
+
+@media (max-width: 991px) {
+  .ivana-product-shell .product-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ivana-product-shell .product-images {
+    position: static;
+  }
+
+  .ivana-product-description-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .ivana-product-shell .product-images,
+  .ivana-product-shell .product-info {
+    padding: 1rem;
+  }
+
+  .ivana-product-selection-note {
+    font-size: 0.88rem !important;
+  }
 }

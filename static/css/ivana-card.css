@@ -1,99 +1,209 @@
-/* Product cards */
+/* Product card and product grid refinements. */
 
-div.js-product-item-private.product-item.ivana-card
-  .product-item-price-container {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  align-items: center !important;
-  gap: 6px 8px !important;
-  margin-bottom: 2px !important;
+.ivana-category-grid,
+.ivana-category-products .js-product-table,
+.js-products-featured-grid,
+.js-products-new-grid,
+.js-products-sale-grid {
+  gap: clamp(1rem, 2vw, 1.45rem) !important;
 }
 
-div.js-product-item-private.product-item.ivana-card
-  span.js-compare-price-display.product-item-price-compare {
+.js-product-list > li,
+.product-list > li,
+.js-product-table > li {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+div.js-product-item-private.product-item.ivana-card,
+.js-item-product.ivana-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(17, 17, 17, 0.09) !important;
+  border-radius: var(--ivana-card-radius) !important;
+  overflow: hidden !important;
+  box-shadow: var(--ivana-shadow-card) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+div.js-product-item-private.product-item.ivana-card:hover,
+.js-item-product.ivana-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 60px rgba(17, 17, 17, 0.1) !important;
+}
+
+.js-item-product .product-item-image-container,
+.js-item-product .js-product-item-image-container {
+  aspect-ratio: 0.78;
+  background: #f7f4f5 !important;
+  overflow: hidden !important;
+}
+
+.js-item-product .product-item-image-container img,
+.js-item-product .js-product-item-image-container img,
+.js-item-product .js-product-item-image,
+.js-item-product .product-item-image,
+.js-item-product .img-absolute,
+.js-item-product .img-absolute-centered-vertically {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+}
+
+.ivana-card-info,
+.js-item-product .information {
+  display: flex !important;
+  flex: 1 !important;
+  flex-direction: column !important;
+  gap: 0.45rem !important;
+  padding: 1rem 1.05rem 1.15rem !important;
+}
+
+.ivana-card-name,
+.js-item-product .item-name,
+.js-item-product a[class*="name"],
+.js-item-product [class*="item-name"] {
+  font-family: "Manrope", var(--body-font), sans-serif !important;
+  color: #151417 !important;
+  font-size: 0.92rem !important;
+  font-weight: 700 !important;
+  line-height: 1.45 !important;
+  letter-spacing: 0.01em !important;
+  margin-bottom: 0 !important;
+  display: -webkit-box !important;
+  overflow: hidden !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+div.js-product-item-private.product-item.ivana-card .product-item-price-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: baseline !important;
+  gap: 0.35rem 0.55rem !important;
+  margin-bottom: 0 !important;
+}
+
+div.js-product-item-private.product-item.ivana-card span.js-compare-price-display.product-item-price-compare,
+.ivana-card .price-compare {
   order: 1 !important;
   flex-basis: 100% !important;
   margin: 0 !important;
-  color: #8f8f8f !important;
-  font-size: 0.76rem !important;
-  font-weight: 500 !important;
+  color: rgba(21, 20, 23, 0.46) !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  text-decoration-thickness: 1px !important;
 }
 
-div.js-product-item-private.product-item.ivana-card
-  .product-item-price-container.ivana-no-discount
-  span.js-compare-price-display.product-item-price-compare,
-div.js-product-item-private.product-item.ivana-card
-  .product-item-price-container:not(:has(.product-item-discount))
-  span.js-compare-price-display.product-item-price-compare {
+div.js-product-item-private.product-item.ivana-card span.js-price-display.product-item-price,
+.ivana-card [class*="price"]:not([class*="compare"]) {
+  color: #151417 !important;
+  font-size: 1.08rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+}
+
+div.js-product-item-private.product-item.ivana-card .product-item-discount,
+.ivana-card [class*="discount-rate"] {
+  order: 3 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  border-radius: 999px !important;
+  background: rgba(244, 37, 106, 0.1) !important;
+  color: var(--accent-color) !important;
+  font-size: 0.66rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  padding: 0.22rem 0.55rem !important;
+  text-transform: uppercase !important;
+}
+
+.ivana-card-installments,
+.ivana-card .custom-installments,
+.ivana-card [class*="installments"] {
+  color: var(--ivana-text-soft) !important;
+  font-size: 0.73rem !important;
+  line-height: 1.5 !important;
+  margin-top: 0 !important;
+}
+
+.ivana-card .text-accent {
+  color: var(--ivana-text-soft) !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+}
+
+.product-labels {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.35rem !important;
+  margin-bottom: 0 !important;
+}
+
+.product-labels .label-accent,
+.shipping-label,
+.ivana-card [class*="label-no-stock"],
+.ivana-card [class*="no-stock"] {
+  border-radius: 999px !important;
+  background: rgba(17, 17, 17, 0.06) !important;
+  color: #151417 !important;
+  font-size: 0.64rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.1em !important;
+  padding: 0.28rem 0.55rem !important;
+  text-transform: uppercase !important;
+}
+
+.ivana-card .text-stock,
+.ivana-card .js-last-product,
+.ivana-card .js-latest-products-available {
+  color: var(--ivana-text-soft) !important;
+  font-size: 0.72rem !important;
+  font-style: normal !important;
+}
+
+.js-item-submit-container {
+  margin-top: auto !important;
+}
+
+.ivana-card-secondary-action {
+  background: transparent !important;
+  border: 1px solid rgba(17, 17, 17, 0.14) !important;
+  border-radius: 999px !important;
+  color: #151417 !important;
+  font-size: 0.68rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+.ivana-card-secondary-action:hover {
+  background: #151417 !important;
+  color: #ffffff !important;
+}
+
+.ivana-no-discount span.js-compare-price-display.product-item-price-compare {
   display: none !important;
 }
 
-div.js-product-item-private.product-item.ivana-card
-  span.js-price-display.product-item-price {
-  order: 3 !important;
-  color: #0f0f10 !important;
-  font-weight: 800 !important;
-  line-height: 1.05 !important;
-}
+@media (max-width: 767px) {
+  div.js-product-item-private.product-item.ivana-card,
+  .js-item-product.ivana-card {
+    border-radius: var(--ivana-card-radius-mobile) !important;
+  }
 
-div.js-product-item-private.product-item.ivana-card
-  .product-item-price-container.ivana-no-discount
-  span.js-price-display.product-item-price,
-div.js-product-item-private.product-item.ivana-card
-  .product-item-price-container:not(:has(.product-item-discount))
-  span.js-price-display.product-item-price {
-  order: 1 !important;
-}
+  .ivana-card-info,
+  .js-item-product .information {
+    padding: 0.9rem !important;
+  }
 
-div.js-product-item-private.product-item.ivana-card .product-item-discount {
-  order: 2 !important;
-  background-color: #c1121f !important;
-  color: #ffffff !important;
-  border-radius: 999px !important;
-  padding: 0.18rem 0.45rem !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  line-height: 1 !important;
-  font-weight: 700 !important;
-  font-size: 0.72rem !important;
-  letter-spacing: 0.04em !important;
-  white-space: nowrap !important;
-}
-
-div.js-product-item-private.product-item.ivana-card
-  .js-max-installments-container.ivana-card-installments,
-div.js-product-item-private.product-item.ivana-card
-  .js-max-installments-container.ivana-card-installments span,
-div.js-product-item-private.product-item.ivana-card
-  .js-max-installments-container.ivana-card-installments div,
-div.js-product-item-private.product-item.ivana-card
-  .js-max-installments-container.ivana-card-installments .js-max-installments,
-div.js-product-item-private.product-item.ivana-card
-  .js-max-installments-container.ivana-card-installments .js-installment-price,
-div.js-product-item-private.product-item.ivana-card
-  .js-max-installments-container.ivana-card-installments .js-installment-amount {
-  color: #c1121f !important;
-  font-weight: 700 !important;
-}
-
-div.js-product-item-private.product-item.ivana-card
-  .js-max-installments-container.ivana-card-installments {
-  width: 100% !important;
-  margin-top: 2px !important;
-  line-height: 1.25 !important;
-}
-
-div.js-product-item-private.product-item.ivana-card
-  .js-payment-discount-price-product-container.payment-discount-price-product-container,
-div.js-product-item-private.product-item.ivana-card
-  .js-payment-discount-price-product-container.payment-discount-price-product-container span {
-  color: #d1007a !important;
-  font-weight: 700 !important;
-}
-
-div.js-product-item-private.product-item.ivana-card
-  .js-payment-discount-price-product-container.payment-discount-price-product-container {
-  width: 100% !important;
-  margin-top: 2px !important;
-  line-height: 1.25 !important;
+  .ivana-card-name,
+  .js-item-product .item-name,
+  .js-item-product a[class*="name"],
+  .js-item-product [class*="item-name"] {
+    font-size: 0.86rem !important;
+  }
 }

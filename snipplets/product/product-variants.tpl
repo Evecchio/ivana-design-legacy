@@ -22,7 +22,7 @@
 
 		{% set is_button_variant = (variation.name in ['Color', 'Cor']) or settings.bullet_variants %}
 
-		<div class="js-product-variants-group {% if variation.name in ['Color', 'Cor'] %}js-color-variants-container{% endif %} {% if is_button_variant and show_size_guide and settings.size_guide_url and has_size_variations and loop.last %}mb-0{% endif %} {% if settings.bullet_variants %}mb-3{% endif %}" data-variation-id="{{ variation.id }}">
+		<div class="js-product-variants-group ivana-variation-group {% if variation.name in ['Color', 'Cor'] %}js-color-variants-container{% endif %} {% if is_button_variant and show_size_guide and settings.size_guide_url and has_size_variations and loop.last %}mb-0{% endif %} {% if settings.bullet_variants %}mb-3{% endif %}" data-variation-id="{{ variation.id }}">
 			{% if quickshop %}
 				{% embed "snipplets/forms/form-select.tpl" with{select_label: true, select_label_name: '' ~ variation.name ~ '', select_for: 'variation_' ~ loop.index , select_id: 'variation_' ~ loop.index, select_name: 'variation' ~ '[' ~ variation.id ~ ']', select_group_custom_class: hidden_variant_select, select_custom_class: 'js-variation-option js-refresh-installment-data'} %}
 					{% block select_options %}
@@ -41,17 +41,17 @@
 				{% endembed %}
 			{% endif %}
 			{% if is_button_variant %}
-				<label class="form-label">{{ variation.name }}: <strong class="js-insta-variation-label">{{ product.default_options[variation.id] }}</strong></label>
+				<label class="form-label ivana-variation-label">{{ variation.name }}: <strong class="js-insta-variation-label">{{ product.default_options[variation.id] }}</strong></label>
 				{% for option in variation.options %}
-					<a data-option="{{ option.id }}" class="js-insta-variant btn btn-variant{% if product.default_options[variation.id] is same as(option.id) %} selected{% endif %}{% if variation.name in ['Color', 'Cor'] and (option.custom_data or settings.image_color_variants) %} btn-variant-color{% endif %}" title="{{ option.name }}" data-option="{{ option.id }}" data-variation-id="{{ variation.id }}">
+					<a data-option="{{ option.id }}" class="js-insta-variant btn btn-variant ivana-variation-chip{% if product.default_options[variation.id] is same as(option.id) %} selected{% endif %}{% if variation.name in ['Color', 'Cor'] and (option.custom_data or settings.image_color_variants) %} btn-variant-color{% endif %}" title="{{ option.name }}" data-option="{{ option.id }}" data-variation-id="{{ variation.id }}">
 						<span class="btn-variant-content {% if settings.image_color_variants and variation.name in ['Color', 'Cor'] %} btn-variant-content-square{% endif %}"{% if option.custom_data and variation.name in ['Color', 'Cor'] %} style="background: {{ option.custom_data }}; border: 1px solid #eee"{% endif %} data-name="{{ option.name }}">
 							{% if settings.image_color_variants and variation.name in ['Color', 'Cor'] %}
 								{% if product.default_options[variation.id] is same as(option.id) %}
-									<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ product.featured_variant_image | product_image_url('thumb')}}" data-sizes="auto" class="lazyload img-absolute-centered-vertically" {% if image.alt %}alt="{{image.alt}}"{% endif %} />
+									<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ product.featured_variant_image | product_image_url('thumb')}}" data-sizes="auto" class="lazyload img-absolute-centered-vertically" alt="{{ option.name }}" />
 								{% else %}
 									{% for variant in product.variants if (variant.option1 == option.id) or (variant.option2 == option.id) or (variant.option3 == option.id) %}
 										{% if loop.first %}
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ variant.image | product_image_url('thumb') }}" data-sizes="auto" class="lazyload img-absolute-centered-vertically" />
+											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ variant.image | product_image_url('thumb') }}" data-sizes="auto" class="lazyload img-absolute-centered-vertically" alt="{{ option.name }}" />
 										{% endif %}
 									{% endfor %}
 								{% endif %}
@@ -72,7 +72,7 @@
 		{% for page in pages if page.handle == size_guide_url_handle and not has_size_guide_page_finded %}
 			{% set has_size_guide_page_finded = true %}
 			{% if has_size_guide_page_finded %}
-				<a data-target="#size-guide-modal" data-modal-url="modal-fullscreen-size-guide" class="js-modal-open-private {% if settings.bullet_variants %}mt-1 mb-3{% else %}mt-3{% endif %}">
+				<a data-target="#size-guide-modal" data-modal-url="modal-fullscreen-size-guide" class="js-modal-open-private ivana-size-guide-link {% if settings.bullet_variants %}mt-1 mb-3{% else %}mt-3{% endif %}">
 					<span class="btn-link font-small">{{ 'Guía de talles' | translate }}</span>
 				</a>
 				{{ component(

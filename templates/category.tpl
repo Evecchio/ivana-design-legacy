@@ -20,17 +20,21 @@
 			<div class="ivana-category-header">
 				<div class="grid grid-md-auto mb-md-4 align-items-end ivana-category-heading">
 					<div class="mb-1 ivana-category-copy">
-					{% snipplet "breadcrumbs.tpl" %}
+						{% snipplet "breadcrumbs.tpl" %}
+						<p class="ivana-category-kicker mb-2">Coleccion</p>
 						<div class="grid grid-1-auto align-items-end">
-<h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">{{ category.name }}</h1>						{% if products | length > 1 %}
-								<div class="d-md-none text-right font-small mb-1">
-								{{ products_count }} {{ 'productos' | translate }}
+							<div>
+								<h1 class="ivana-category-title mb-0">{{ category.name }}</h1>
+								{% if category.description %}
+									<p class="font-small mt-2 mb-0 ivana-category-meta">{{ category.description }}</p>
+								{% endif %}
+							</div>
+							{% if products | length > 1 %}
+								<div class="text-right font-small mb-1 ivana-category-count">
+									{{ products_count }} {{ 'productos' | translate }}
 								</div>
 							{% endif %}
 						</div>
-						{% if category.description %}
-							<p class="font-small mt-1 mb-0 ivana-category-meta">{{ category.description }}</p>
-						{% endif %}
 					</div>
 					{% if products %}
 						<div class="d-none d-md-block ivana-category-toolbar">

@@ -1,65 +1,95 @@
-function normalizeIvanaProductCardDiscounts(root) {
+function parseIvanaMoneyValue(text) {
+    if (!text) {
+        return null;
+    }
+
+    var normalized = String(text).replace(/\s+/g, "").replace(/[^\d,.-]/g, "");
+
+    if (!normalized) {
+        return null;
+    }
+
+    if (normalized.indexOf(",") > -1 && normalized.indexOf(".") > -1) {
+        normalized = normalized.replace(/\./g, "").replace(",", ".");
+    } else if (normalized.indexOf(",") > -1) {
+        normalized = normalized.replace(/\./g, "").replace(",", ".");
+    } else {
+        normalized = normalized.replace(/,/g, "");
+    }
+
+    var value = parseFloat(normalized);
+
+    return isNaN(value) ? null : value;
+}
+
+function normalizeIvanaProductCards(root) {
     var scope = root || document;
-    var priceContainers = scope.querySelectorAll('.js-product-item-private.product-item.ivana-card .product-item-price-container');
+    var cards = scope.querySelectorAll(".js-product-item-private.product-item.ivana-card");
 
-    priceContainers.forEach(function(container) {
-        var discountBadge = container.querySelector('.product-item-discount');
-        var comparePrice = container.querySelector('span.js-compare-price-display.product-item-price-compare');
+    cards.forEach(function(card) {
+        var priceContainer = card.querySelector(".product-item-price-container");
+        var discountBadge = card.querySelector(".product-item-discount");
+        var comparePrice = card.querySelector("span.js-compare-price-display.product-item-price-compare");
+        var currentPrice = card.querySelector("span.js-price-display.product-item-price");
 
-        if (!discountBadge) {
-            container.classList.add('ivana-no-discount');
+        if (!priceContainer) {
             return;
         }
 
-        var discountText = (discountBadge.textContent || '').replace(/\s+/g, ' ').trim();
-        var discountMatch = discountText.match(/\d+(?:[.,]\d+)?/);
-        var discountValue = discountMatch ? parseFloat(discountMatch[0].replace(',', '.')) : null;
-        var hideDiscount = discountValue === 0;
+        var currentPriceValue = currentPrice ? parseIvanaMoneyValue(currentPrice.textContent) : null;
+        var comparePriceValue = comparePrice ? parseIvanaMoneyValue(comparePrice.textContent) : null;
+        var discountValue = null;
 
-        if (hideDiscount) {
-            discountBadge.style.display = 'none';
-
-            if (comparePrice) {
-                comparePrice.style.display = 'none';
-            }
-
-            container.classList.add('ivana-no-discount');
-            return;
+        if (discountBadge) {
+            var discountText = (discountBadge.textContent || "").replace(/\s+/g, " ").trim();
+            var discountMatch = discountText.match(/\d+(?:[.,]\d+)?/);
+            discountValue = discountMatch ? parseFloat(discountMatch[0].replace(",", ".")) : null;
         }
 
-        discountBadge.style.display = '';
+        var hideDiscount = !discountBadge || discountValue === null || discountValue <= 0;
+        var hideComparePrice = !comparePrice || comparePriceValue === null || currentPriceValue === null || comparePriceValue <= currentPriceValue;
+
+        if (discountBadge) {
+            discountBadge.style.display = hideDiscount ? "none" : "";
+        }
 
         if (comparePrice) {
-            comparePrice.style.display = '';
+            comparePrice.style.display = (hideDiscount || hideComparePrice) ? "none" : "";
         }
 
-        container.classList.remove('ivana-no-discount');
+        priceContainer.classList.toggle("ivana-no-discount", hideDiscount || hideComparePrice);
+
+        card.querySelectorAll(".custom-installments, .text-accent").forEach(function(node) {
+            if (!node.textContent || !node.textContent.trim()) {
+                node.style.display = "none";
+            }
+        });
     });
 }
 
-var ivanaProductCardDiscountsQueued = false;
+var ivanaProductCardsQueued = false;
 
-function queueIvanaProductCardDiscountNormalization() {
-    if (ivanaProductCardDiscountsQueued) {
+function queueIvanaProductCardNormalization() {
+    if (ivanaProductCardsQueued) {
         return;
     }
 
-    ivanaProductCardDiscountsQueued = true;
+    ivanaProductCardsQueued = true;
 
     window.requestAnimationFrame(function() {
-        normalizeIvanaProductCardDiscounts(document);
-        ivanaProductCardDiscountsQueued = false;
+        normalizeIvanaProductCards(document);
+        ivanaProductCardsQueued = false;
     });
 }
 
-queueIvanaProductCardDiscountNormalization();
+queueIvanaProductCardNormalization();
 
-if (!window.ivanaProductCardDiscountObserver) {
-    window.ivanaProductCardDiscountObserver = new MutationObserver(function() {
-        queueIvanaProductCardDiscountNormalization();
+if (!window.ivanaProductCardObserver) {
+    window.ivanaProductCardObserver = new MutationObserver(function() {
+        queueIvanaProductCardNormalization();
     });
 
-    window.ivanaProductCardDiscountObserver.observe(document.body, {
+    window.ivanaProductCardObserver.observe(document.body, {
         childList: true,
         subtree: true
     });
