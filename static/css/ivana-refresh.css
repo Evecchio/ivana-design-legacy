@@ -1251,13 +1251,14 @@
 }
 
 .ivana-product-shell .product-columns {
-  grid-template-columns: minmax(0, 0.96fr) minmax(360px, 0.84fr);
-  gap: clamp(2rem, 4vw, 4rem);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
 }
 
 .ivana-product-shell .product-images,
 .ivana-product-shell .product-info {
   padding: clamp(1.25rem, 2.6vw, 2rem);
+  min-width: 0;
 }
 
 .ivana-product-gallery .js-swiper-product {
@@ -1363,18 +1364,22 @@
 }
 
 .ivana-product-shell .ivana-product-purchase-form .grid.grid-auto-1 {
-  grid-template-columns: 132px minmax(0, 1fr);
+  grid-template-columns: clamp(104px, 18vw, 132px) minmax(0, 1fr);
   gap: 0.9rem;
   align-items: end;
 }
 
 .ivana-product-shell .js-product-variants {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   gap: 1rem 1.25rem;
   margin-bottom: 1.75rem !important;
 }
 
 .ivana-product-shell .js-product-variants-group {
   min-width: 0;
+  max-width: 100%;
 }
 
 .ivana-product-shell .js-product-variants .form-label,
@@ -1397,6 +1402,7 @@
   min-width: 50px;
   min-height: 46px;
   padding: 0.15rem !important;
+  max-width: 100%;
 }
 
 .ivana-product-shell .btn-variant .btn-variant-content {
@@ -1477,6 +1483,8 @@
 .ivana-product-shell .free-shipping-message {
   display: flex !important;
   align-items: center !important;
+  gap: 0.75rem !important;
+  flex-wrap: wrap;
 }
 
 .ivana-product-shell .ivana-product-support-cards .icon-banner,
@@ -1519,6 +1527,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .ivana-product-description-social .social-share-button {
@@ -1549,11 +1558,54 @@
   .ivana-product-shell .product-images {
     position: static;
   }
+
+  .ivana-product-shell .product-images,
+  .ivana-product-shell .product-info {
+    padding: 1.25rem;
+  }
+
+  .ivana-product-shell .ivana-product-purchase-form .grid.grid-auto-1 {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .ivana-product-shell .js-product-variants {
+    gap: 0.85rem 1rem;
+  }
+
+  .ivana-product-shell .btn-variant {
+    margin-right: 0.35rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .ivana-product-shell .form-quantity {
+    min-height: 48px;
+  }
+
+  .ivana-product-shell .form-quantity-icon,
+  .ivana-product-shell .js-quantity-input {
+    min-height: 48px !important;
+  }
 }
 
 @media (max-width: 767px) {
+  .ivana-product-shell .product-images,
+  .ivana-product-shell .product-info,
+  .ivana-product-shell .js-product-description,
+  .ivana-product-shell .product-description {
+    padding: 1rem !important;
+  }
+
   .ivana-product-shell .ivana-product-purchase-form .grid.grid-auto-1 {
     grid-template-columns: 1fr;
+  }
+
+  .ivana-product-shell .js-product-name {
+    font-size: clamp(1.6rem, 8vw, 2.3rem) !important;
+  }
+
+  .ivana-product-shell .ivana-product-price-block .js-price-display {
+    font-size: clamp(1.65rem, 8vw, 2.2rem) !important;
   }
 
   .ivana-product-gallery .swiper-fractions {
@@ -1570,6 +1622,41 @@
     min-width: 40px;
     min-height: 40px;
     font-size: 0.82rem;
+  }
+
+  .ivana-product-shell .btn-variant {
+    min-width: 44px;
+    min-height: 42px;
+    margin-right: 0.3rem !important;
+  }
+
+  .ivana-product-shell .btn-variant-color .btn-variant-content,
+  .ivana-product-shell .btn-variant-content-square {
+    min-width: 40px;
+    width: 40px;
+    min-height: 40px;
+  }
+
+  .ivana-product-shell .form-quantity {
+    min-height: 46px;
+  }
+
+  .ivana-product-shell .form-quantity-icon {
+    width: 38px !important;
+    min-height: 46px !important;
+  }
+
+  .ivana-product-shell .js-quantity-input {
+    min-height: 46px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .ivana-product-shell .free-shipping-message,
+  .ivana-product-shell .ivana-product-support-cards .grid.grid-auto-1,
+  .ivana-product-shell .ivana-product-fulfillment .list,
+  .ivana-product-shell .ivana-product-fulfillment .js-shipping-calculator,
+  .ivana-product-shell .ivana-product-fulfillment [class*="branch"] {
+    padding: 0.85rem !important;
   }
 }
 .ivana-cart-intro {

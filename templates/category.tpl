@@ -12,33 +12,34 @@
 {% set category_banner = (category.images is not empty) or ("banner-products.jpg" | has_custom_image) %}
 
 {% if not show_help %}
-	<section class="category-body" data-store="category-grid-{{ category.id }}">
+	<section class="category-body ivana-category-shell" data-store="category-grid-{{ category.id }}">
 		<div class="container py-4">
 			{% if category_banner %}
 				{% include 'snipplets/category-banner.tpl' %}
 			{% endif %}
-			<div class="grid grid-md-auto mb-md-4 align-items-end">
-				<div class="mb-1">
+			<div class="ivana-category-header">
+				<div class="grid grid-md-auto mb-md-4 align-items-end ivana-category-heading">
+					<div class="mb-1 ivana-category-copy">
 					{% snipplet "breadcrumbs.tpl" %}
-					<div class="grid grid-1-auto align-items-end">
+						<div class="grid grid-1-auto align-items-end">
 <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">{{ category.name }}</h1>						{% if products | length > 1 %}
-							<div class="d-md-none text-right font-small mb-1">
+								<div class="d-md-none text-right font-small mb-1">
 								{{ products_count }} {{ 'productos' | translate }}
-							</div>
+								</div>
+							{% endif %}
+						</div>
+						{% if category.description %}
+							<p class="font-small mt-1 mb-0 ivana-category-meta">{{ category.description }}</p>
 						{% endif %}
 					</div>
-					{% if category.description %}
-						<p class="font-small mt-1 mb-0">{{ category.description }}</p>
-					{% endif %}
-				</div>
-				{% if products %}
-					<div class="d-none d-md-block">
+					{% if products %}
+						<div class="d-none d-md-block ivana-category-toolbar">
 						{{ component(
 							'sort-by',{
 								sort_by_classes: {
-									container: 'mb-1',
+									container: 'mb-1 ivana-sort-box',
 									select_group: "d-inline-block w-auto mb-0",
-									select_label: "font-small d-block mb-1",
+									select_label: "font-small d-block mb-1 ivana-category-toolbar-label",
 									select: "form-select-small",
 									select_svg: "icon-inline icon-xs icon-w-14 svg-icon-text",
 								},
@@ -46,12 +47,29 @@
 							}) 
 						}}
 					</div>
-				{% endif %}
+					{% endif %}
+				</div>
 			</div>
 			{% include 'snipplets/grid/filters-modals.tpl' %}
-			<div class="grid{% if products and has_filters_available %} grid-md-auto-4{% endif %}">
-				{% include 'snipplets/grid/filters-controls.tpl' %}
-				{% include 'snipplets/grid/products-list.tpl' %}
+			<div class="ivana-category-layout{% if products and has_filters_available %} ivana-category-layout-filters{% endif %}">
+				{% if products and has_filters_available %}
+					<aside class="ivana-category-sidebar">
+						<div class="ivana-category-filter-card">
+							{% include 'snipplets/grid/filters-controls.tpl' %}
+						</div>
+					</aside>
+				{% else %}
+					<div class="ivana-category-sidebar d-none"></div>
+				{% endif %}
+				<div class="ivana-category-content">
+					<div class="ivana-category-products ivana-category-grid">
+						{% if not has_filters_available %}
+							{% include 'snipplets/grid/filters-controls.tpl' %}
+						{% endif %}
+						{% include 'snipplets/grid/products-list.tpl' %}
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 {% elseif show_help %}
