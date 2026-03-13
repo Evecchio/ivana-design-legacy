@@ -157,6 +157,40 @@
 				left: -9999px !important
 			}
 
+			/* Base estructural del header */
+			.ivana-header-layout {
+				display: grid !important;
+				grid-template-columns: minmax(0, auto) minmax(240px, 1fr) minmax(0, auto) !important;
+				align-items: center !important;
+				column-gap: clamp(0.75rem, 2vw, 2rem) !important;
+				row-gap: 0.75rem !important;
+				width: 100% !important;
+			}
+			.ivana-header-layout .head-slot {
+				min-width: 0 !important;
+				max-width: 100%;
+			}
+			.ivana-header-layout .head-slot-logo {
+				display: flex !important;
+				align-items: center !important;
+				min-width: 0 !important;
+			}
+			.ivana-header-layout .head-slot-logo h1,
+			.ivana-header-layout .head-slot-logo a {
+				display: flex !important;
+				align-items: center !important;
+				max-width: 100%;
+			}
+			.ivana-header-layout .head-slot-search {
+				width: 100% !important;
+				justify-self: center !important;
+			}
+			.ivana-header-layout .head-slot-utilities {
+				display: flex !important;
+				align-items: center !important;
+				justify-content: flex-end !important;
+			}
+
 			/* Buscador */
 			:root {
 				--search-icon-size: 18px;
@@ -964,7 +998,8 @@
 
 			@media (max-width: 767px) {
 				.js-head-main .head-row,
-				.head-row {
+				.head-row,
+				.ivana-header-layout {
 					display: grid !important;
 					grid-template-columns: auto 1fr auto !important;
 					grid-template-rows: auto auto !important;
@@ -982,19 +1017,24 @@
 					max-width: 100%;
 				}
 
+				.ivana-header-layout .head-slot-menu,
 				.menu-container {
 					grid-column: 1 / 2 !important;
 					grid-row: 1 / 2 !important;
 				}
 
+				.ivana-header-layout .head-slot-logo,
 				.logo-container,
 				.logo-center .logo-container,
 				.logo-md-left .logo-container {
 					grid-column: 2 / 3 !important;
 					grid-row: 1 / 2 !important;
+					justify-self: center !important;
+					justify-content: center !important;
 					text-align: center !important;
 				}
 
+				.ivana-header-layout .head-slot-utilities,
 				.utilities-container {
 					grid-column: 3 / 4 !important;
 					grid-row: 1 / 2 !important;
@@ -1004,6 +1044,7 @@
 					gap: 10px !important;
 				}
 
+				.ivana-header-layout .head-slot-search,
 				.search-container {
 					grid-column: 1 / span 3 !important;
 					grid-row: 2 / 3 !important;

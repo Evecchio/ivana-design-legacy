@@ -33,17 +33,17 @@
 <header class="js-head-main head-main {{ header_colors_classes }} {{ header_position_classes }} {{ header_with_categories_classes }} transition-soft" data-store="head" data-header-md-fixed="{{ settings.head_fix_desktop ? 'true' : 'false' }}">
 	{% include "snipplets/header/header-advertising.tpl" with {adbar_primary: true} %}
 	{% include "snipplets/header/header-advertising.tpl" with {adbar_secondary: true} %}
-	<div class="js-head-row head-row container {{ header_logo_classes }} {{ header_logo_md_classes }}">
+	<div class="js-head-row head-row container ivana-header-layout {{ header_logo_classes }} {{ header_logo_md_classes }}">
 
 		{# Menu #}
 
-		<div class="menu-container d-md-none">
+		<div class="menu-container head-slot head-slot-menu d-md-none">
 			{% include "snipplets/header/utilities/menu.tpl" %}
 		</div>
 
 		{# Logo #}
 
-		<div class="js-logo-container logo-container">
+		<div class="js-logo-container logo-container head-slot head-slot-logo">
 			<h1 class="m-0">
 				<span class="logo-text-hidden">Ivana Design</span>
 				<a href="{{ store.url }}">
@@ -54,7 +54,7 @@
 
 		{# Search #}
 
-		<div class="search-container">
+		<div class="search-container head-slot head-slot-search">
 			{{ component('search/search-form', {
 				form_classes: { 
 					input_group: 'position-relative m-0', 
@@ -69,7 +69,7 @@
 
 		{# Utilities #}
 
-		<div class="utilities-container {{ utilities_md_spacing_class }}">
+		<div class="utilities-container head-slot head-slot-utilities {{ utilities_md_spacing_class }}">
 			{% if utilities_languages_main_nav or (params.preview and has_languages) %}
 				<span class="d-none d-md-inline-block">
 					{% include "snipplets/header/utilities/language.tpl" with {dropdown: true} %}
