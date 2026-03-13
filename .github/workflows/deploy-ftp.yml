@@ -4,14 +4,7 @@ on:
   push:
     branches:
       - main
-      - dev
-      - investigacion/ivana-design-sesion
-  workflow_dispatch:   # permite dispararlo manualmente desde GitHub
-    inputs:
-      confirmar_deploy:
-        description: "Rama investigacion: escribi 'si' para confirmar deploy manual"
-        required: false
-        default: ''
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -22,39 +15,11 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Verificar confirmacion de deploy (rama investigacion)
-        if: github.ref_name == 'investigacion/ivana-design-sesion'
+      - name: Cargar credenciales FTP de produccion
         run: |
-          if [ "${{ github.event_name }}" = "push" ]; then
-            if echo "${{ github.event.head_commit.message }}" | grep -qF '[deploy]'; then
-              echo "Deploy confirmado con flag [deploy]. Continuando..."
-            else
-              echo "Deploy omitido: no se encontro '[deploy]' en el mensaje de commit."
-              echo ""
-              echo "Para desplegar desde esta rama, incluí el flag en el commit:"
-              echo "  git commit -m 'descripcion del cambio [deploy]'"
-              exit 1
-            fi
-          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            if [ "${{ github.event.inputs.confirmar_deploy }}" = "si" ]; then
-              echo "Deploy manual confirmado. Continuando..."
-            else
-              echo "Deploy omitido: para trigger manual escribi 'si' en el campo de confirmacion."
-              exit 1
-            fi
-          fi
-
-      - name: Seleccionar credenciales FTP segun branch
-        run: |
-          if [ "${{ github.ref_name }}" = "main" ]; then
-            echo "FTP_HOST=${{ secrets.FTP_HOST }}"         >> $GITHUB_ENV
-            echo "FTP_USER=${{ secrets.FTP_USER }}"         >> $GITHUB_ENV
-            echo "FTP_PASSWORD=${{ secrets.FTP_PASSWORD }}" >> $GITHUB_ENV
-          else
-            echo "FTP_HOST=${{ secrets.FTP_HOST_DEV }}"         >> $GITHUB_ENV
-            echo "FTP_USER=${{ secrets.FTP_USER_DEV }}"         >> $GITHUB_ENV
-            echo "FTP_PASSWORD=${{ secrets.FTP_PASSWORD_DEV }}" >> $GITHUB_ENV
-          fi
+          echo "FTP_HOST=${{ secrets.FTP_HOST }}" >> $GITHUB_ENV
+          echo "FTP_USER=${{ secrets.FTP_USER }}" >> $GITHUB_ENV
+          echo "FTP_PASSWORD=${{ secrets.FTP_PASSWORD }}" >> $GITHUB_ENV
 
       - name: Install lftp
         run: sudo apt-get install -y lftp
