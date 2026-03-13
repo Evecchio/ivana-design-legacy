@@ -1,0 +1,29 @@
+/* Product cards */
+
+div.js-product-item-private.product-item.ivana-card
+  span.js-price-display.product-item-price {
+  color: #111111 !important;
+  font-weight: 700 !important;
+}
+
+div.js-product-item-private.product-item.ivana-card
+  .js-max-installments-container.ivana-card-installments,
+div.js-product-item-private.product-item.ivana-card
+  .js-max-installments-container.ivana-card-installments span,
+div.js-product-item-private.product-item.ivana-card
+  .js-max-installments-container.ivana-card-installments div,
+div.js-product-item-private.product-item.ivana-card
+  .js-max-installments-container.ivana-card-installments .js-max-installments,
+div.js-product-item-private.product-item.ivana-card
+  .js-max-installments-container.ivana-card-installments .js-installment-price,
+div.js-product-item-private.product-item.ivana-card
+  .js-max-installments-container.ivana-card-installments .js-installment-amount {
+  color: #d62828 !important;
+}
+
+div.js-product-item-private.product-item.ivana-card
+  .js-payment-discount-price-product-container.payment-discount-price-product-container,
+div.js-product-item-private.product-item.ivana-card
+  .js-payment-discount-price-product-container.payment-discount-price-product-container span {
+  color: #e6007e !important;
+}

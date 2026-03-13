@@ -1083,6 +1083,7 @@
 		<link rel="stylesheet" href="{{ 'css/ivana-refresh.css' | static_url }}">
 		<link rel="stylesheet" href="{{ 'css/ivana-base.css' | static_url }}">
 		<link rel="stylesheet" href="{{ 'css/ivana-header.css' | static_url }}">
+		<link rel="stylesheet" href="{{ 'css/ivana-card.css' | static_url }}">
 		<link rel="stylesheet" href="{{ 'css/ivana-product.css' | static_url }}">
 		<link rel="stylesheet" href="{{ 'css/ivana-category.css' | static_url }}">
 		<link rel="stylesheet" href="{{ 'css/ivana-responsive.css' | static_url }}">
