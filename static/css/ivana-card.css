@@ -1,12 +1,29 @@
 /* Product cards */
 
 div.js-product-item-private.product-item.ivana-card
+  .product-item-price-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 4px 8px !important;
+}
+
+div.js-product-item-private.product-item.ivana-card
+  span.js-compare-price-display.product-item-price-compare {
+  order: 1 !important;
+  flex-basis: 100% !important;
+  margin: 0 !important;
+}
+
+div.js-product-item-private.product-item.ivana-card
   span.js-price-display.product-item-price {
+  order: 3 !important;
   color: #0f0f10 !important;
   font-weight: 800 !important;
 }
 
 div.js-product-item-private.product-item.ivana-card span.product-item-discount {
+  order: 2 !important;
   background-color: #c1121f !important;
   color: #ffffff !important;
   border-radius: 999px !important;
