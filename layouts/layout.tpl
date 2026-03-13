@@ -158,12 +158,23 @@
 			}
 
 			/* Buscador */
+			:root {
+				--search-icon-size: 18px;
+				--search-control-size: 44px;
+				--search-button-hit-area: calc(var(--search-control-size) - 8px);
+			}
+			.search-container {
+				width: 100% !important;
+				max-width: min(100%, 680px) !important;
+				min-width: 0 !important;
+			}
 			[class*="search-form"] input, .search-container input {
 				border-radius: 100px!important;
 				border: 1px solid #eeeeee!important;
 				font-size: 13px!important;
-				padding: 0 1.5rem!important;
-				height: 44px!important;
+				padding: 0 calc(var(--search-button-hit-area) + 1rem) 0 1.1rem!important;
+				height: var(--search-control-size)!important;
+				width: 100% !important;
 				transition: all 0.3s ease!important;
 				background: #fafafa!important;
 			}
@@ -176,13 +187,20 @@
 				background: transparent !important;
 				color: var(--negro)!important;
 				position: absolute !important;
-				right: 15px !important;
+				right: 6px !important;
 				top: 50% !important;
 				transform: translateY(-50%) !important;
 				border: none !important;
 				padding: 0 !important;
+				width: var(--search-button-hit-area) !important;
+				height: var(--search-button-hit-area) !important;
 			}
-			[class*="search-form"] button svg { width: 18px !important; height: 18px !important; opacity: 0.5; }
+			[class*="search-form"] button svg,
+			[class*="search-form"] button:before {
+				width: var(--search-icon-size) !important;
+				height: var(--search-icon-size) !important;
+				opacity: 0.5;
+			}
 
 			/* NavegaciÃ³n */
 			.nav-desktop-container {
@@ -728,13 +746,13 @@
 			}
 
 			.search-container {
-				max-width: 680px !important;
+				max-width: clamp(240px, 40vw, 680px) !important;
 				width: 100% !important;
 			}
 
 			[class*="search-form"] input,
 			.search-container input {
-				height: 46px !important;
+				--search-control-size: 46px;
 				font-size: 0.95rem !important;
 				background: #ffffff !important;
 				border-color: #e5e7eb !important;
@@ -945,6 +963,10 @@
 			}
 
 			@media (max-width: 767px) {
+				.search-container {
+					max-width: 100% !important;
+				}
+
 				.ivana-promo-bar {
 					font-size: 0.62rem !important;
 					letter-spacing: 0.16em !important;
@@ -962,7 +984,8 @@
 
 				[class*="search-form"] input,
 				.search-container input {
-					height: 42px !important;
+					--search-control-size: 42px;
+					--search-icon-size: 16px;
 					font-size: 0.88rem !important;
 				}
 
