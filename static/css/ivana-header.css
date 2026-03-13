@@ -102,11 +102,17 @@
 }
 
 .header-utility {
-  display: inline-flex !important;
   align-items: center !important;
   gap: 0.65rem !important;
   color: #111111 !important;
   text-decoration: none !important;
+}
+
+.menu-container .header-utility,
+.head-slot-utilities > .header-utility:not(.d-none),
+.head-slot-utilities > span.header-utility,
+.head-slot-utilities > span > .header-utility:not(.d-none) {
+  display: inline-flex !important;
 }
 
 .header-utility .js-header-utility-icon {
@@ -257,6 +263,13 @@
     grid-column: 3 / 4 !important;
     grid-row: 1 / 2 !important;
     gap: 0.4rem !important;
+  }
+
+  .head-slot-utilities > a.header-utility.d-none,
+  .head-slot-utilities > a.header-utility.d-md-flex,
+  .head-slot-utilities > span > a.header-utility.d-none,
+  .head-slot-utilities > span > a.header-utility.d-md-flex {
+    display: none !important;
   }
 
   .ivana-header-layout .head-slot-search {
