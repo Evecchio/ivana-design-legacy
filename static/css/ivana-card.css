@@ -5,7 +5,8 @@ div.js-product-item-private.product-item.ivana-card
   display: flex !important;
   flex-wrap: wrap !important;
   align-items: center !important;
-  gap: 4px 8px !important;
+  gap: 6px 8px !important;
+  margin-bottom: 2px !important;
 }
 
 div.js-product-item-private.product-item.ivana-card
@@ -13,6 +14,9 @@ div.js-product-item-private.product-item.ivana-card
   order: 1 !important;
   flex-basis: 100% !important;
   margin: 0 !important;
+  color: #8f8f8f !important;
+  font-size: 0.76rem !important;
+  font-weight: 500 !important;
 }
 
 div.js-product-item-private.product-item.ivana-card
@@ -26,6 +30,7 @@ div.js-product-item-private.product-item.ivana-card
   order: 3 !important;
   color: #0f0f10 !important;
   font-weight: 800 !important;
+  line-height: 1.05 !important;
 }
 
 div.js-product-item-private.product-item.ivana-card
@@ -39,11 +44,14 @@ div.js-product-item-private.product-item.ivana-card span.product-item-discount {
   background-color: #c1121f !important;
   color: #ffffff !important;
   border-radius: 999px !important;
-  padding: 0.2rem 0.5rem !important;
+  padding: 0.18rem 0.45rem !important;
   display: inline-flex !important;
   align-items: center !important;
   line-height: 1 !important;
   font-weight: 700 !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.04em !important;
+  white-space: nowrap !important;
 }
 
 div.js-product-item-private.product-item.ivana-card
@@ -63,9 +71,23 @@ div.js-product-item-private.product-item.ivana-card
 }
 
 div.js-product-item-private.product-item.ivana-card
+  .js-max-installments-container.ivana-card-installments {
+  width: 100% !important;
+  margin-top: 2px !important;
+  line-height: 1.25 !important;
+}
+
+div.js-product-item-private.product-item.ivana-card
   .js-payment-discount-price-product-container.payment-discount-price-product-container,
 div.js-product-item-private.product-item.ivana-card
   .js-payment-discount-price-product-container.payment-discount-price-product-container span {
   color: #d1007a !important;
   font-weight: 700 !important;
+}
+
+div.js-product-item-private.product-item.ivana-card
+  .js-payment-discount-price-product-container.payment-discount-price-product-container {
+  width: 100% !important;
+  margin-top: 2px !important;
+  line-height: 1.25 !important;
 }
