@@ -8,6 +8,8 @@
 {% set has_menus = has_footer_menu or has_footer_menu_secondary %}
 {% set password_page = template == 'password' %}
 {% set footer_color_classes = settings.footer_colors ? 'footer-colors' %}
+{% set footer_menu_title = settings.footer_menu_title ? settings.footer_menu_title : 'Navegacion' | translate %}
+{% set hide_footer_menu_title = footer_menu_title in ['Categorías', 'Categorias'] %}
 
 <footer class="js-footer ivana-footer {{ footer_color_classes }} display-when-content-ready" data-store="footer">
 	<div class="container ivana-footer-main">
@@ -44,7 +46,9 @@
 
 			{% if has_footer_menu and not password_page %}
 				<div class="ivana-footer-col ivana-footer-col-nav">
-					<div class="ivana-footer-title">{{ settings.footer_menu_title ? settings.footer_menu_title : 'Navegacion' | translate }}</div>
+					{% if not hide_footer_menu_title %}
+						<div class="ivana-footer-title">{{ footer_menu_title }}</div>
+					{% endif %}
 					{% include "snipplets/footer/footer-navigation.tpl" %}
 				</div>
 			{% endif %}
