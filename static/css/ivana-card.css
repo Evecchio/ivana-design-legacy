@@ -2,7 +2,18 @@
 
 div.js-product-item-private.product-item.ivana-card
   span.js-price-display.product-item-price {
-  color: #111111 !important;
+  color: #0f0f10 !important;
+  font-weight: 800 !important;
+}
+
+div.js-product-item-private.product-item.ivana-card span.product-item-discount {
+  background-color: #c1121f !important;
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  padding: 0.2rem 0.5rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  line-height: 1 !important;
   font-weight: 700 !important;
 }
 
@@ -18,12 +29,14 @@ div.js-product-item-private.product-item.ivana-card
   .js-max-installments-container.ivana-card-installments .js-installment-price,
 div.js-product-item-private.product-item.ivana-card
   .js-max-installments-container.ivana-card-installments .js-installment-amount {
-  color: #d62828 !important;
+  color: #c1121f !important;
+  font-weight: 700 !important;
 }
 
 div.js-product-item-private.product-item.ivana-card
   .js-payment-discount-price-product-container.payment-discount-price-product-container,
 div.js-product-item-private.product-item.ivana-card
   .js-payment-discount-price-product-container.payment-discount-price-product-container span {
-  color: #e6007e !important;
+  color: #d1007a !important;
+  font-weight: 700 !important;
 }
