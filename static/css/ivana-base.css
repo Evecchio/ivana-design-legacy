@@ -1,0 +1,41 @@
+/* Ivana layer: shared visual foundations above the Tiendanube base theme. */
+
+:root {
+  --ivana-content-max-width: 1440px;
+  --ivana-card-radius: 28px;
+  --ivana-card-radius-mobile: 22px;
+}
+
+.ivana-category-content,
+.ivana-category-products,
+.ivana-product-shell .product-images,
+.ivana-product-shell .product-info,
+.ivana-header-layout .head-slot {
+  min-width: 0;
+}
+
+.ivana-page-hero,
+.ivana-category-products,
+.ivana-category-filter-card,
+.ivana-product-shell .product-images,
+.ivana-product-shell .product-info,
+.ivana-product-shell .js-product-description,
+.ivana-product-shell .product-description,
+.ivana-cart-shell .cart-page-products,
+.ivana-cart-shell .cart-page-summary {
+  border-radius: var(--ivana-card-radius);
+}
+
+@media (max-width: 767px) {
+  .ivana-page-hero,
+  .ivana-category-products,
+  .ivana-category-filter-card,
+  .ivana-product-shell .product-images,
+  .ivana-product-shell .product-info,
+  .ivana-product-shell .js-product-description,
+  .ivana-product-shell .product-description,
+  .ivana-cart-shell .cart-page-products,
+  .ivana-cart-shell .cart-page-summary {
+    border-radius: var(--ivana-card-radius-mobile);
+  }
+}

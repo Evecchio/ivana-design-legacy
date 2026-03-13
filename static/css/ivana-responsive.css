@@ -1,0 +1,18 @@
+/* Ivana layer: shared responsive glue across pages. */
+
+@media (max-width: 991px) {
+  .ivana-page-hero,
+  .ivana-category-header,
+  .ivana-product-related .container,
+  .ivana-footer .container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .ivana-sort-box,
+  .ivana-product-shell .ivana-product-payments-box,
+  .ivana-footer-newsletter-form .input-append {
+    width: 100%;
+  }
+}

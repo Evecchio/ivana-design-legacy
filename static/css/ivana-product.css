@@ -1,0 +1,16 @@
+/* Ivana layer: product page visual system and future product-only overrides. */
+
+.ivana-product-shell .product-columns,
+.ivana-product-shell .product-images,
+.ivana-product-shell .product-info,
+.ivana-product-shell .ivana-product-purchase-form {
+  min-width: 0;
+}
+
+.ivana-product-shell .free-shipping-message,
+.ivana-product-shell .ivana-product-support-cards .grid.grid-auto-1,
+.ivana-product-shell .ivana-product-fulfillment .list,
+.ivana-product-shell .ivana-product-fulfillment .js-shipping-calculator,
+.ivana-product-shell .ivana-product-fulfillment [class*="branch"] {
+  max-width: 100%;
+}

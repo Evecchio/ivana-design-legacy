@@ -1,0 +1,16 @@
+/* Ivana layer: category/listing structure and future category-only overrides. */
+
+.ivana-category-layout,
+.ivana-category-content,
+.ivana-category-products,
+.ivana-category-grid {
+  min-width: 0;
+}
+
+.ivana-category-toolbar {
+  flex-wrap: wrap;
+}
+
+.ivana-category-products .js-product-table {
+  min-width: 0;
+}
