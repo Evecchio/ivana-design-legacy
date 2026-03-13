@@ -23,9 +23,24 @@ jobs:
             echo "FTP_USER=${{ secrets.FTP_USER }}"         >> $GITHUB_ENV
             echo "FTP_PASSWORD=${{ secrets.FTP_PASSWORD }}" >> $GITHUB_ENV
           else
-            echo "FTP_HOST=${{ secrets.FTP_HOST_DEV }}"         >> $GITHUB_ENV
-            echo "FTP_USER=${{ secrets.FTP_USER_DEV }}"         >> $GITHUB_ENV
-            echo "FTP_PASSWORD=${{ secrets.FTP_PASSWORD_DEV }}" >> $GITHUB_ENV
+            if [ -n "${{ secrets.FTP_HOST_DEV }}" ] && [ -n "${{ secrets.FTP_USER_DEV }}" ] && [ -n "${{ secrets.FTP_PASSWORD_DEV }}" ]; then
+              echo "Usando credenciales FTP de dev"
+              echo "FTP_HOST=${{ secrets.FTP_HOST_DEV }}"         >> $GITHUB_ENV
+              echo "FTP_USER=${{ secrets.FTP_USER_DEV }}"         >> $GITHUB_ENV
+              echo "FTP_PASSWORD=${{ secrets.FTP_PASSWORD_DEV }}" >> $GITHUB_ENV
+            else
+              echo "Credenciales FTP de dev ausentes. Haciendo fallback a credenciales de main."
+              echo "FTP_HOST=${{ secrets.FTP_HOST }}"         >> $GITHUB_ENV
+              echo "FTP_USER=${{ secrets.FTP_USER }}"         >> $GITHUB_ENV
+              echo "FTP_PASSWORD=${{ secrets.FTP_PASSWORD }}" >> $GITHUB_ENV
+            fi
+          fi
+
+      - name: Validar credenciales FTP
+        run: |
+          if [ -z "$FTP_HOST" ] || [ -z "$FTP_USER" ] || [ -z "$FTP_PASSWORD" ]; then
+            echo "Faltan secrets FTP para desplegar."
+            exit 1
           fi
 
       - name: Install lftp
