@@ -1,0 +1,338 @@
+/* ═══════════════════════════════════════════════════════════════════
+   IVANA DESIGN — Sistema de Diseño Fluido v4
+   Centraliza tokens y reglas que antes vivían inline en layout.tpl.
+   Cargado como último CSS externo para máxima especificidad.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── TOKENS FLUIDOS ─── */
+:root {
+  /* Marca */
+  --brand:          #FF1493;
+  --brand-dark:     #cc007a;
+  --brand-80:       rgba(255,20,147, 0.80);
+  --brand-50:       rgba(255,20,147, 0.50);
+  --brand-20:       rgba(255,20,147, 0.20);
+  --brand-10:       rgba(255,20,147, 0.10);
+
+  /* Neutros */
+  --negro:          #111111;
+  --gris-oscuro:    #333333;
+  --gris:           #666666;
+  --gris-claro:     #f8f8f8;
+  --blanco:         #ffffff;
+  --negro-80:       rgba(0,0,0, 0.80);
+  --negro-50:       rgba(0,0,0, 0.50);
+  --negro-10:       rgba(0,0,0, 0.10);
+  --negro-05:       rgba(0,0,0, 0.05);
+  --blanco-80:      rgba(255,255,255, 0.80);
+  --blanco-20:      rgba(255,255,255, 0.20);
+
+  /* ─── TIPOGRAFÍA FLUIDA ─── */
+  --fluid-body:     clamp(0.875rem, 0.82rem + 0.25vw, 1.125rem);
+  --fluid-h1:       clamp(2rem, 1.4rem + 2.8vw, 4.2rem);
+  --fluid-h2:       clamp(1.6rem, 1.2rem + 1.8vw, 3rem);
+  --fluid-h3:       clamp(1.2rem, 1rem + 0.9vw, 2rem);
+  --fluid-small:    clamp(0.68rem, 0.64rem + 0.18vw, 0.8rem);
+  --fluid-caption:  clamp(0.6rem, 0.56rem + 0.15vw, 0.72rem);
+
+  /* ─── ESPACIADO FLUIDO ─── */
+  --fluid-space-xs: clamp(0.25rem, 0.2rem + 0.2vw, 0.5rem);
+  --fluid-space-sm: clamp(0.5rem, 0.4rem + 0.4vw, 1rem);
+  --fluid-space-md: clamp(1rem, 0.8rem + 0.8vw, 2rem);
+  --fluid-space-lg: clamp(1.5rem, 1rem + 2vw, 3.5rem);
+  --fluid-space-xl: clamp(2rem, 1.2rem + 3.5vw, 5rem);
+
+  /* ─── LOGO FLUIDO (clave para el bug de superposición) ─── */
+  --logo-height:    clamp(40px, 3.5vw + 20px, 78px);
+  --logo-max-width: clamp(120px, 15vw + 60px, 280px);
+
+  /* ─── CONTENEDOR FLUIDO ─── */
+  --fluid-gutter:   clamp(0.75rem, 0.5rem + 2vw, 2.5rem);
+
+  /* ─── ICONOS DE UTILIDAD FLUIDOS ─── */
+  --utility-size:   clamp(34px, 2vw + 16px, 44px);
+  --utility-icon:   clamp(16px, 0.6vw + 12px, 20px);
+
+  /* ─── CATEGORÍAS HOME ─── */
+  --cat-circle:     clamp(72px, 6vw + 28px, 120px);
+
+  /* ─── BUSCADOR ─── */
+  --search-height:  clamp(40px, 2vw + 22px, 50px);
+  --search-icon:    clamp(14px, 0.5vw + 10px, 18px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   LOGO FLUIDO — Solución definitiva al bug de superposición
+   Un solo set de reglas con clamp(), sin media queries conflictivas.
+   ═══════════════════════════════════════════════════════════════════ */
+.logo-container img {
+  max-height: var(--logo-height) !important;
+  max-width: var(--logo-max-width) !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  transition: transform 0.3s ease !important;
+}
+.logo-container a:hover img {
+  transform: scale(1.02) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   HEADER FLUIDO — Una sola fuente de verdad
+   ═══════════════════════════════════════════════════════════════════ */
+.js-head-main {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.js-head-main .head-row,
+.head-row {
+  padding-top: var(--fluid-space-sm) !important;
+  padding-bottom: var(--fluid-space-sm) !important;
+  align-items: center !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ICONOS DE UTILIDAD — Tamaño fluido tipo app
+   ═══════════════════════════════════════════════════════════════════ */
+.header-utility .js-header-utility-icon,
+.header-icon {
+  width: var(--utility-size) !important;
+  height: var(--utility-size) !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(17, 17, 17, 0.1) !important;
+  background: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease !important;
+}
+.header-utility:hover .js-header-utility-icon,
+.header-utility:hover .header-icon {
+  border-color: rgba(244, 37, 106, 0.45) !important;
+  transform: translateY(-1px) !important;
+}
+
+.utility-icon,
+.header-icon svg {
+  width: var(--utility-icon) !important;
+  height: var(--utility-icon) !important;
+  fill: #111 !important;
+  transition: all 0.2s ease !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   BUSCADOR FLUIDO
+   ═══════════════════════════════════════════════════════════════════ */
+.search-container {
+  max-width: clamp(240px, 38vw, 680px) !important;
+  width: 100% !important;
+}
+
+[class*="search-form"] input,
+.search-container input {
+  border-radius: 999px !important;
+  border: 1px solid rgba(17, 17, 17, 0.12) !important;
+  background: #ffffff !important;
+  min-height: var(--search-height) !important;
+  font-size: var(--fluid-small) !important;
+  padding: 0 3.25rem 0 1.15rem !important;
+  box-shadow: none !important;
+  transition: all 0.25s ease !important;
+}
+
+[class*="search-form"] input:focus,
+.search-container input:focus {
+  border-color: var(--brand) !important;
+  box-shadow: 0 0 0 4px var(--brand-10) !important;
+}
+
+[class*="search-form"] button {
+  width: calc(var(--search-height) - 10px) !important;
+  height: calc(var(--search-height) - 10px) !important;
+  right: 6px !important;
+  border-radius: 999px !important;
+  background: var(--brand-10) !important;
+  border: none !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+[class*="search-form"] button svg,
+[class*="search-form"] button:before {
+  width: var(--search-icon) !important;
+  height: var(--search-icon) !important;
+  opacity: 1 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CATEGORÍAS HOME — Círculos fluidos
+   ═══════════════════════════════════════════════════════════════════ */
+.home-category-image-border {
+  border-radius: 50% !important;
+  border: 2px solid #efefef !important;
+  padding: 4px !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
+  width: var(--cat-circle) !important;
+  height: var(--cat-circle) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(180deg, #ffffff, #fff5f8) !important;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+.home-category-image-border > div {
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.home-category-image-border img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  transition: none !important;
+  display: block !important;
+}
+.js-home-category:hover .home-category-image-border {
+  border-color: var(--brand) !important;
+  box-shadow: 0 0 0 3px var(--brand-20) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TÍTULOS FLUIDOS — Sin media queries, solo clamp()
+   ═══════════════════════════════════════════════════════════════════ */
+.ivana-home-section-title,
+.js-products-sale-title,
+.js-products-featured-title,
+.js-products-new-title {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: var(--fluid-h1) !important;
+  line-height: 0.96 !important;
+  letter-spacing: -0.04em !important;
+  color: #111827 !important;
+  text-transform: none !important;
+  margin-bottom: 0 !important;
+  display: block !important;
+}
+
+.js-products-sale-title::after,
+.ivana-home-section-divider {
+  display: none !important;
+}
+
+h1, .h1 { font-size: var(--fluid-h1) !important; }
+h2, .h2 { font-size: var(--fluid-h2) !important; }
+h3, .h3 { font-size: var(--fluid-h3) !important; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECCIONES HOME — Espaciado fluido
+   ═══════════════════════════════════════════════════════════════════ */
+.section-home {
+  padding-top: var(--fluid-space-md) !important;
+  padding-bottom: var(--fluid-space-md) !important;
+}
+
+.ivana-home-categories {
+  padding-top: var(--fluid-space-lg) !important;
+  padding-bottom: var(--fluid-space-md) !important;
+}
+
+.ivana-home-categories-row {
+  gap: clamp(1rem, 2.2vw, 2.6rem) !important;
+}
+
+.ivana-home-products {
+  padding-top: var(--fluid-space-md) !important;
+  padding-bottom: var(--fluid-space-lg) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   NAVEGACIÓN FLUIDA
+   ═══════════════════════════════════════════════════════════════════ */
+.nav-desktop-container {
+  border-top: 1px solid rgba(17, 17, 17, 0.08) !important;
+  padding: 0.9rem 0 1rem !important;
+}
+
+.js-nav-desktop-list,
+.nav-desktop-list {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(0.45rem, 2vw, 1.4rem) !important;
+  flex-wrap: wrap !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.nav-desktop-list > .nav-item {
+  padding: 0 !important;
+}
+
+.js-main-menu a,
+[class*="nav-link"],
+[class*="desktop-nav"] a {
+  font-family: 'Manrope', var(--body-font), sans-serif !important;
+  font-size: var(--fluid-caption) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  color: rgba(17, 17, 17, 0.72) !important;
+  padding: 0.2rem 0 !important;
+  position: relative;
+  transition: color 0.2s ease !important;
+}
+
+.js-main-menu a:hover,
+[class*="nav-link"]:hover,
+[class*="desktop-nav"] a:hover {
+  color: #111111 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   BARRA PROMO FLUIDA
+   ═══════════════════════════════════════════════════════════════════ */
+.ivana-promo-bar {
+  background: #111111 !important;
+  color: #fff !important;
+  text-align: center;
+  padding: var(--fluid-space-xs) var(--fluid-space-sm) !important;
+  font-size: var(--fluid-caption) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.6;
+  white-space: normal;
+  word-break: keep-all;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CONTENEDOR FLUIDO
+   ═══════════════════════════════════════════════════════════════════ */
+.container {
+  max-width: min(100%, 1440px) !important;
+  padding-left: var(--fluid-gutter) !important;
+  padding-right: var(--fluid-gutter) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CARRITO BADGE
+   ═══════════════════════════════════════════════════════════════════ */
+.js-cart-widget-amount.badge {
+  background: var(--brand) !important;
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+  font-size: 0.62rem !important;
+  min-width: 22px !important;
+}
