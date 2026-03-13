@@ -32,20 +32,35 @@
   max-width: 100%;
 }
 
-.ivana-header-layout .head-slot-logo,
-.ivana-logo-wrap,
-.ivana-logo-link {
+.ivana-header-layout .head-slot-logo {
   display: flex !important;
   align-items: center !important;
+  overflow: hidden !important;
+  min-width: 0 !important;
+}
+
+.ivana-logo-wrap {
+  display: flex !important;
+  align-items: center !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
 }
 
 .ivana-logo-link {
+  display: flex !important;
+  align-items: center !important;
   text-decoration: none !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
 }
 
 .logo-container img {
   max-height: 70px !important;
   width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block !important;
   transition: transform 0.3s ease !important;
 }
 
@@ -283,16 +298,18 @@
 
   .logo-container img {
     max-height: 48px !important;
-    max-width: 156px !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
   }
 
   .utility-text,
-  .js-header-utility-text-cart {
+  .js-header-utility-text-cart,
+  .js-cart-widget-total {
     display: none !important;
   }
 
   .header-utility .js-header-utility-icon {
-    width: 38px !important;
-    height: 38px !important;
+    width: 36px !important;
+    height: 36px !important;
   }
 }
