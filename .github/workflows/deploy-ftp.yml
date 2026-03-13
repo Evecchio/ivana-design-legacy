@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - dev
   workflow_dispatch:   # permite dispararlo manualmente desde GitHub
 
 jobs:
@@ -16,25 +15,18 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Seleccionar credenciales FTP segun branch
+      - name: Validar rama de deploy
         run: |
-          if [ "${{ github.ref_name }}" = "main" ]; then
-            echo "FTP_HOST=${{ secrets.FTP_HOST }}"         >> $GITHUB_ENV
-            echo "FTP_USER=${{ secrets.FTP_USER }}"         >> $GITHUB_ENV
-            echo "FTP_PASSWORD=${{ secrets.FTP_PASSWORD }}" >> $GITHUB_ENV
-          else
-            if [ -n "${{ secrets.FTP_HOST_DEV }}" ] && [ -n "${{ secrets.FTP_USER_DEV }}" ] && [ -n "${{ secrets.FTP_PASSWORD_DEV }}" ]; then
-              echo "Usando credenciales FTP de dev"
-              echo "FTP_HOST=${{ secrets.FTP_HOST_DEV }}"         >> $GITHUB_ENV
-              echo "FTP_USER=${{ secrets.FTP_USER_DEV }}"         >> $GITHUB_ENV
-              echo "FTP_PASSWORD=${{ secrets.FTP_PASSWORD_DEV }}" >> $GITHUB_ENV
-            else
-              echo "Credenciales FTP de dev ausentes. Haciendo fallback a credenciales de main."
-              echo "FTP_HOST=${{ secrets.FTP_HOST }}"         >> $GITHUB_ENV
-              echo "FTP_USER=${{ secrets.FTP_USER }}"         >> $GITHUB_ENV
-              echo "FTP_PASSWORD=${{ secrets.FTP_PASSWORD }}" >> $GITHUB_ENV
-            fi
+          if [ "${{ github.ref_name }}" != "main" ]; then
+            echo "Este workflow solo puede desplegar desde main."
+            exit 1
           fi
+
+      - name: Cargar credenciales FTP de main
+        run: |
+          echo "FTP_HOST=${{ secrets.FTP_HOST }}"         >> $GITHUB_ENV
+          echo "FTP_USER=${{ secrets.FTP_USER }}"         >> $GITHUB_ENV
+          echo "FTP_PASSWORD=${{ secrets.FTP_PASSWORD }}" >> $GITHUB_ENV
 
       - name: Validar credenciales FTP
         run: |
