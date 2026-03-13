@@ -45,7 +45,7 @@ div.js-product-item-private.product-item.ivana-card
   order: 1 !important;
 }
 
-div.js-product-item-private.product-item.ivana-card span.product-item-discount {
+div.js-product-item-private.product-item.ivana-card .product-item-discount {
   order: 2 !important;
   background-color: #c1121f !important;
   color: #ffffff !important;
