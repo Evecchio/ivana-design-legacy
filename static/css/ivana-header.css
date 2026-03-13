@@ -225,6 +225,12 @@
     white-space: normal;
   }
 
+  .js-head-main .head-row,
+  .head-row {
+    padding-top: 1rem !important;
+    padding-bottom: 0.8rem !important;
+  }
+
   .head-row.container {
     padding-left: 12px !important;
     padding-right: 12px !important;
@@ -233,7 +239,7 @@
   .ivana-header-layout {
     grid-template-columns: auto 1fr auto !important;
     grid-template-rows: auto auto !important;
-    gap: 0.7rem !important;
+    gap: 0.95rem !important;
   }
 
   .ivana-header-layout .head-slot-menu {
@@ -258,8 +264,13 @@
     grid-row: 2 / 3 !important;
   }
 
+  .search-container {
+    margin-top: 0.25rem !important;
+  }
+
   .logo-container img {
-    max-height: 50px !important;
+    max-height: 48px !important;
+    max-width: 156px !important;
   }
 
   .utility-text,
