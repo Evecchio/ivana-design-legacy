@@ -963,8 +963,57 @@
 			}
 
 			@media (max-width: 767px) {
+				.js-head-main .head-row,
+				.head-row {
+					display: grid !important;
+					grid-template-columns: auto 1fr auto !important;
+					grid-template-rows: auto auto !important;
+					align-items: center !important;
+					gap: 8px !important;
+					width: 100% !important;
+				}
+
+				.head-row.container {
+					padding-left: 12px !important;
+					padding-right: 12px !important;
+				}
+
+				.head-row * {
+					max-width: 100%;
+				}
+
+				.menu-container {
+					grid-column: 1 / 2 !important;
+					grid-row: 1 / 2 !important;
+				}
+
+				.logo-container,
+				.logo-center .logo-container,
+				.logo-md-left .logo-container {
+					grid-column: 2 / 3 !important;
+					grid-row: 1 / 2 !important;
+					text-align: center !important;
+				}
+
+				.utilities-container {
+					grid-column: 3 / 4 !important;
+					grid-row: 1 / 2 !important;
+					display: flex !important;
+					align-items: center !important;
+					justify-content: flex-end !important;
+					gap: 10px !important;
+				}
+
 				.search-container {
+					grid-column: 1 / span 3 !important;
+					grid-row: 2 / 3 !important;
 					max-width: 100% !important;
+					width: 100% !important;
+				}
+
+				.js-search-form,
+				[class*="search-form"] {
+					width: 100% !important;
 				}
 
 				.ivana-promo-bar {
@@ -980,6 +1029,9 @@
 
 				.logo-container img {
 					max-height: 48px !important;
+					max-width: 160px !important;
+					width: auto !important;
+					height: auto !important;
 				}
 
 				[class*="search-form"] input,
