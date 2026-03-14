@@ -28,7 +28,7 @@
 			<span class="js-header-utility-icon {{ utility_icon_md_color_class }}">
 				<svg class="icon-inline utility-icon icon-lg"><use xlink:href="#user"/></svg>
 			</span>
-			<span class="utility-text font-weight-bold">{{ "Entrar" | translate }}</span>
+			{#<span class="utility-text font-weight-bold">{{ "Entrar" | translate }}</span>#}
 		</a>
 		{# Registrarse #}
 		{% if register_link %}
@@ -36,7 +36,7 @@
 				<span class="js-header-utility-icon {{ utility_icon_md_color_class }}">
 					<svg class="icon-inline utility-icon icon-lg"><use xlink:href="#user"/></svg>
 				</span>
-				<span class="utility-text font-weight-bold">{{ "Registrarse" | translate }}</span>
+				{#<span class="utility-text font-weight-bold">{{ "Registrarse" | translate }}</span>#}
 			</a>
 		{% endif %}
 	{% else %}

@@ -3374,8 +3374,8 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 
 .ivana-product-shell .product-columns {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
-  gap: clamp(1.75rem, 4vw, 4rem);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(1rem, 3vw, 4rem);
   align-items: start;
 }
 
@@ -3384,7 +3384,10 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   background: #ffffff;
   border: 1px solid var(--ivana-border);
   box-shadow: var(--ivana-shadow-soft);
-  padding: clamp(1rem, 2.4vw, 2rem);
+  padding: clamp(0.85rem, 2.2vw, 2rem);
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .ivana-product-shell .product-images {
@@ -3413,6 +3416,10 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 
 .ivana-product-title {
   text-align: left !important;
+  font-size: clamp(1.15rem, 2.2vw, 1.75rem) !important;
+  line-height: 1.3 !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .ivana-product-price-block {
@@ -3427,39 +3434,46 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 .ivana-product-shell .js-price-display,
 .ivana-product-shell [data-component="price.value"] {
   color: #151417 !important;
-  font-size: clamp(2rem, 4vw, 3rem) !important;
+  font-size: clamp(1.4rem, 3.2vw, 2.8rem) !important;
   font-weight: 800 !important;
 }
 
 .ivana-product-shell .price-compare,
 .ivana-product-shell [data-component="compare-price.value"] {
   color: rgba(21, 20, 23, 0.48) !important;
-  font-size: 0.95rem !important;
+  font-size: clamp(0.78rem, 1.1vw, 0.95rem) !important;
+}
+
+.ivana-product-price-row {
+  gap: clamp(0.35rem, 0.8vw, 0.65rem) clamp(0.5rem, 1.2vw, 1rem);
+  align-items: baseline !important;
 }
 
 .ivana-product-price-badge {
   background: rgba(244, 37, 106, 0.1) !important;
   border-radius: 999px !important;
   color: var(--accent-color) !important;
-  font-size: 0.72rem !important;
+  font-size: clamp(0.6rem, 0.85vw, 0.72rem) !important;
   font-weight: 800 !important;
   letter-spacing: 0.14em !important;
-  padding: 0.3rem 0.65rem !important;
+  padding: clamp(0.18rem, 0.4vw, 0.3rem) clamp(0.4rem, 0.8vw, 0.65rem) !important;
   text-transform: uppercase !important;
+  white-space: nowrap;
 }
 
 .ivana-product-payments-box {
   border: 1px solid var(--ivana-border) !important;
-  border-radius: 20px !important;
+  border-radius: clamp(14px, 2.2vw, 20px) !important;
   background: linear-gradient(180deg, #ffffff, #fbf7f8) !important;
-  padding: 1rem 1.1rem 1.15rem !important;
+  padding: clamp(0.75rem, 1.5vw, 1rem) clamp(0.8rem, 1.6vw, 1.1rem) !important;
+  font-size: clamp(0.78rem, 1.1vw, 0.9rem);
 }
 
 .ivana-product-selection-note {
   color: var(--ivana-text-soft) !important;
-  font-size: 0.94rem !important;
-  line-height: 1.7 !important;
-  max-width: 34rem;
+  font-size: clamp(0.8rem, 1.2vw, 0.94rem) !important;
+  line-height: 1.65 !important;
+  max-width: 100%;
 }
 
 .ivana-variation-group {
@@ -3469,10 +3483,10 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 .ivana-variation-label {
   font-family: "Manrope", var(--body-font), sans-serif !important;
   color: var(--ivana-text-soft) !important;
-  font-size: 0.72rem !important;
+  font-size: clamp(0.65rem, 0.9vw, 0.72rem) !important;
   font-weight: 800 !important;
   letter-spacing: 0.16em !important;
-  margin-bottom: 0.65rem !important;
+  margin-bottom: clamp(0.4rem, 0.8vw, 0.65rem) !important;
   text-transform: uppercase !important;
 }
 
@@ -3481,12 +3495,12 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   border: 1px solid rgba(17, 17, 17, 0.14) !important;
   background: #ffffff !important;
   color: #151417 !important;
-  font-size: 0.82rem !important;
+  font-size: clamp(0.74rem, 1vw, 0.82rem) !important;
   font-weight: 700 !important;
-  margin-right: 0.4rem !important;
-  margin-bottom: 0.4rem !important;
-  min-height: 40px !important;
-  padding: 0.5rem 0.9rem !important;
+  margin-right: clamp(0.25rem, 0.5vw, 0.4rem) !important;
+  margin-bottom: clamp(0.25rem, 0.5vw, 0.4rem) !important;
+  min-height: clamp(34px, 4.5vw, 40px) !important;
+  padding: clamp(0.35rem, 0.6vw, 0.5rem) clamp(0.6rem, 1.1vw, 0.9rem) !important;
 }
 
 .ivana-variation-chip.selected,
@@ -3506,11 +3520,11 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 .ivana-product-stock-note {
   background: var(--ivana-surface-soft);
   border: 1px solid var(--ivana-border);
-  border-radius: 18px;
+  border-radius: clamp(12px, 2vw, 18px);
   color: var(--ivana-text-soft) !important;
-  font-size: 0.8rem !important;
+  font-size: clamp(0.72rem, 1vw, 0.8rem) !important;
   line-height: 1.55 !important;
-  padding: 0.75rem 0.9rem;
+  padding: clamp(0.55rem, 1vw, 0.75rem) clamp(0.7rem, 1.1vw, 0.9rem);
 }
 
 .ivana-product-shell .js-prod-submit-form,
@@ -3545,25 +3559,26 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 .ivana-product-support-card {
   background: linear-gradient(180deg, #ffffff, #fbf7f8);
   border: 1px solid var(--ivana-border);
-  border-radius: 22px;
+  border-radius: clamp(14px, 2.5vw, 22px);
   box-shadow: var(--ivana-shadow-card);
-  padding: 1rem 1.1rem;
+  padding: clamp(0.7rem, 1.3vw, 1rem) clamp(0.8rem, 1.4vw, 1.1rem);
 }
 
 .ivana-product-support-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 16px;
+  width: clamp(36px, 5vw, 48px);
+  height: clamp(36px, 5vw, 48px);
+  border-radius: clamp(10px, 1.8vw, 16px);
   background: rgba(244, 37, 106, 0.1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .ivana-product-support-title {
   font-family: "Manrope", var(--body-font), sans-serif !important;
   color: #151417 !important;
-  font-size: 0.76rem !important;
+  font-size: clamp(0.65rem, 0.95vw, 0.76rem) !important;
   font-weight: 800 !important;
   letter-spacing: 0.14em !important;
   text-transform: uppercase !important;
@@ -3571,6 +3586,7 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 
 .ivana-product-support-description {
   color: var(--ivana-text-soft) !important;
+  font-size: clamp(0.74rem, 1vw, 0.88rem) !important;
   line-height: 1.6 !important;
 }
 
