@@ -22,10 +22,10 @@
 		{% if settings.utilities_type_desktop == 'icons_text' or params.preview %}
 			<div class="js-header-utility-text js-header-utility-text-cart utility-text d-none {% if settings.utilities_type_desktop == 'icons_text' %}d-md-grid{% endif %}" {% if settings.utilities_type_desktop == 'icons' %}style="display: none;"{% endif %}>
 				<div class="font-weight-bold d-flex">
-					<span class="mr-1">{{ 'CARRO' | translate }}</span>
+					{#<span class="mr-1">{{ 'CARRO' | translate }}</span>#}
 					<span>(<span class="js-cart-widget-amount">{{ "{1}" | translate(cart.items_count ) }}</span>)</span>
 				</div>
-				<div class="js-cart-widget-total {% if cart.items_count != '0' %}d-md-inline-block{% endif %}" data-priceraw="{{ cart.total }}">{{ cart.total | money }}</div>
+				{#<div class="js-cart-widget-total {% if cart.items_count != '0' %}d-md-inline-block{% endif %}" data-priceraw="{{ cart.total }}">{{ cart.total | money }}</div>#}
 			</div>
 		{% endif %}
 	</a>	
