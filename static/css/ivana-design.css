@@ -116,7 +116,6 @@
 
 .ivana-product-shell .product-images {
   position: sticky;
-  ztop: 110px;
 }
 
 .ivana-product-shell .js-product-price-container,
@@ -3402,7 +3401,6 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 
 .ivana-product-shell .product-images {
   position: sticky;
-  ztop: 130px;
 }
 
 .ivana-product-meta-row {
