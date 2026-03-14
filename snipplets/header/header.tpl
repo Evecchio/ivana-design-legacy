@@ -79,36 +79,31 @@
 			{% include "snipplets/header/utilities/cart.tpl" %}
 		</div>
 
-		{# Add to cart notification #}
+	</div>{# /ivana-header-layout #}
 
-		{% if settings.ajax_cart %}
-			{% if not settings.head_fix_desktop %}
-				<div class="d-block d-md-none">
-			{% endif %}
-					{{ component(
-						'notification',{
-							type: 'add_to_cart',
-							icons: {
-								close_icon_id: 'times',
-							},
-							notification_classes: {
-								notification_cart_container: 'notification-cart-container notification-hidden',
-								notification: 'p-3 w-100',
-								cart_item_image_container: 'mr-3',
-								cart_item_image: 'img-absolute-centered-vertically',
-								cart_item_name: 'mb-2 mb-md-1',
-								cart_item: 'd-grid grid-auto-1',
-								cart_item_price_container: 'mb-2 mb-md-1',
-								cart_item_success_message: 'font-weight-bold',
-								close_icon: 'icon-inline',
-							}
-						}) 
-					}}
-			{% if not settings.head_fix_desktop %}
-				</div>
-			{% endif %}
-		{% endif %}
-	</div>
+	{# Add to cart notification — fuera del grid para no romper el layout #}
+
+	{% if settings.ajax_cart %}
+		{{ component(
+			'notification',{
+				type: 'add_to_cart',
+				icons: {
+					close_icon_id: 'times',
+				},
+				notification_classes: {
+					notification_cart_container: 'notification-cart-container notification-hidden',
+					notification: 'p-3 w-100',
+					cart_item_image_container: 'mr-3',
+					cart_item_image: 'img-absolute-centered-vertically',
+					cart_item_name: 'mb-2 mb-md-1',
+					cart_item: 'd-grid grid-auto-1',
+					cart_item_price_container: 'mb-2 mb-md-1',
+					cart_item_success_message: 'font-weight-bold',
+					close_icon: 'icon-inline',
+				}
+			})
+		}}
+	{% endif %}
 
 	{# Mobile main categories #}
 
@@ -172,30 +167,5 @@
 	}) 
 }}
 
-{# Add to cart notification for non fixed header #}
-
-{% if settings.ajax_cart and not settings.head_fix_desktop %}
-	<div class="d-none d-md-block">
-		{{ component(
-			'notification',{
-				type: 'add_to_cart',
-				icons: {
-					close_icon_id: 'times',
-				},
-				notification_classes: {
-					notification_cart_container: 'notification-cart-container notification-hidden',
-					notification: 'p-3 w-100',
-					cart_item_image_container: 'mr-3',
-					cart_item_image: 'img-absolute-centered-vertically',
-					cart_item_name: 'mb-2 mb-md-1',
-					cart_item: 'd-grid grid-auto-1',
-					cart_item_price_container: 'mb-2 mb-md-1',
-					cart_item_success_message: 'font-weight-bold',
-					close_icon: 'icon-inline',
-				}
-			}) 
-		}}
-	</div>
-{% endif %}
 
 {% include "snipplets/header/header-modals.tpl" %}
