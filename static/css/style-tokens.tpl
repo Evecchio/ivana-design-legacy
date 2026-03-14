@@ -25,7 +25,7 @@
   {% set main_background = settings.background_color %}
   {% set main_foreground = settings.text_color %}
 
-  {% set accent_color = '#f4256a' %}
+  {% set accent_color = '#FF1493' %}
 
   {% set button_background = accent_color %}
   {% set button_foreground = '#ffffff' %}
@@ -235,6 +235,83 @@
   {# Border stroke #}
 
   --border-solid: 1px solid;
+
+  {#/*============================================================================
+    #Marca — Ivana Design (fuente única de verdad para colores de marca)
+  ==============================================================================*/#}
+
+  --brand:        #FF1493;
+  --brand-dark:   #cc007a;
+  --brand-80:     rgba(255, 20, 147, 0.80);
+  --brand-50:     rgba(255, 20, 147, 0.50);
+  --brand-20:     rgba(255, 20, 147, 0.20);
+  --brand-10:     rgba(255, 20, 147, 0.10);
+
+  {# Neutros #}
+  --negro:        #111111;
+  --gris-oscuro:  #333333;
+  --gris:         #666666;
+  --gris-claro:   #f8f8f8;
+  --blanco:       #ffffff;
+  --negro-80:     rgba(0, 0, 0, 0.80);
+  --negro-50:     rgba(0, 0, 0, 0.50);
+  --negro-10:     rgba(0, 0, 0, 0.10);
+  --negro-05:     rgba(0, 0, 0, 0.05);
+  --blanco-80:    rgba(255, 255, 255, 0.80);
+  --blanco-20:    rgba(255, 255, 255, 0.20);
+
+  {#/*============================================================================
+    #Sistema fluido — Tipografía, espaciado e iconos con clamp()
+  ==============================================================================*/#}
+
+  {# Tipografía fluida #}
+  --fluid-body:    clamp(0.875rem, 0.82rem + 0.25vw, 1.125rem);
+  --fluid-h1:      clamp(2rem, 1.4rem + 2.8vw, 4.2rem);
+  --fluid-h2:      clamp(1.6rem, 1.2rem + 1.8vw, 3rem);
+  --fluid-h3:      clamp(1.2rem, 1rem + 0.9vw, 2rem);
+  --fluid-small:   clamp(0.68rem, 0.64rem + 0.18vw, 0.8rem);
+  --fluid-caption: clamp(0.6rem, 0.56rem + 0.15vw, 0.72rem);
+
+  {# Espaciado fluido #}
+  --fluid-space-xs: clamp(0.25rem, 0.2rem + 0.2vw, 0.5rem);
+  --fluid-space-sm: clamp(0.5rem, 0.4rem + 0.4vw, 1rem);
+  --fluid-space-md: clamp(1rem, 0.8rem + 0.8vw, 2rem);
+  --fluid-space-lg: clamp(1.5rem, 1rem + 2vw, 3.5rem);
+  --fluid-space-xl: clamp(2rem, 1.2rem + 3.5vw, 5rem);
+
+  {# Logo fluido #}
+  --logo-height:    clamp(40px, 3.5vw + 20px, 78px);
+  --logo-max-width: clamp(120px, 15vw + 60px, 280px);
+
+  {# Contenedor fluido #}
+  --fluid-gutter:   clamp(0.75rem, 0.5rem + 2vw, 2.5rem);
+
+  {# Iconos de utilidad fluidos #}
+  --utility-size:   clamp(34px, 2vw + 16px, 44px);
+  --utility-icon:   clamp(16px, 0.6vw + 12px, 20px);
+
+  {# Categorías home #}
+  --cat-circle:     clamp(72px, 6vw + 28px, 120px);
+
+  {# Buscador #}
+  --search-height:  clamp(40px, 2vw + 22px, 50px);
+  --search-icon:    clamp(14px, 0.5vw + 10px, 18px);
+
+  {# Variables Ivana (complementarias al sistema base) #}
+  --ivana-content-max-width: 1440px;
+  --ivana-narrow-max-width:  1240px;
+  --ivana-shell-radius:      32px;
+  --ivana-card-radius:       24px;
+  --ivana-card-radius-mobile: 20px;
+  --ivana-surface:           #ffffff;
+  --ivana-surface-soft:      #fbf7f8;
+  --ivana-surface-tint:      #fff1f6;
+  --ivana-border:            rgba(17, 17, 17, 0.09);
+  --ivana-border-strong:     rgba(17, 17, 17, 0.14);
+  --ivana-text:              #151417;
+  --ivana-text-soft:         #655f66;
+  --ivana-shadow-soft:       0 26px 72px rgba(17, 17, 17, 0.08);
+  --ivana-shadow-card:       0 18px 46px rgba(17, 17, 17, 0.06);
 
 }
 
