@@ -44,11 +44,18 @@
 .ivana-breadcrumbs,
 .ivana-breadcrumbs a,
 .ivana-kicker {
-  font-size: 0.72rem !important;
+  font-size: clamp(0.62rem, 0.9vw, 0.72rem) !important;
   font-weight: 700 !important;
-  letter-spacing: 0.18em !important;
+  letter-spacing: clamp(0.1em, 0.2vw, 0.18em) !important;
   text-transform: uppercase !important;
   color: #6b7280 !important;
+}
+
+.ivana-breadcrumbs {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 .ivana-category-shell,
@@ -3662,13 +3669,20 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 .ivana-product-payment-details {
   background: #ffffff;
   border: 1px solid var(--ivana-border);
-  border-radius: 22px;
-  padding: 1rem !important;
+  border-radius: clamp(14px, 2.5vw, 22px);
+  padding: clamp(0.75rem, 1.5vw, 1rem) !important;
+}
+
+.ivana-product-fulfillment,
+.ivana-product-support-cards {
+  max-width: 100%;
+  overflow: hidden;
 }
 
 @media (max-width: 991px) {
   .ivana-product-shell .product-columns {
     grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
   }
 
   .ivana-product-shell .product-images {
@@ -3678,6 +3692,15 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   .ivana-product-description-layout {
     grid-template-columns: minmax(0, 1fr);
   }
+
+  .ivana-product-shell .product-info {
+    padding: 1.1rem;
+  }
+
+  .ivana-product-support-card {
+    grid-template-columns: auto 1fr !important;
+    gap: 0.75rem !important;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3686,6 +3709,58 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
     padding: 0.85rem;
     border: none;
     box-shadow: none;
+  }
+
+  .ivana-breadcrumbs,
+  .ivana-breadcrumbs a {
+    font-size: 0.62rem !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  .ivana-product-title {
+    font-size: 1.1rem !important;
+  }
+
+  .ivana-product-shell .js-price-display {
+    font-size: 1.5rem !important;
+  }
+
+  .ivana-product-price-badge {
+    font-size: 0.6rem !important;
+    padding: 0.18rem 0.42rem !important;
+  }
+
+  .ivana-variation-chip {
+    font-size: 0.74rem !important;
+    min-height: 34px !important;
+    padding: 0.35rem 0.6rem !important;
+  }
+
+  .ivana-product-payments-box {
+    padding: 0.7rem 0.75rem !important;
+    border-radius: 14px !important;
+  }
+
+  .ivana-product-support-card {
+    padding: 0.65rem 0.7rem;
+    border-radius: 14px;
+  }
+
+  .ivana-product-support-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+  }
+
+  .ivana-product-fulfillment .list,
+  .product-shipping-calculator {
+    border-radius: 14px;
+    padding: 0.7rem !important;
+  }
+
+  .form-quantity-container,
+  .cart-button-container {
+    width: 100%;
   }
 }
 
