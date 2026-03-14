@@ -630,12 +630,12 @@
   align-items: center !important;
   justify-content: flex-end !important;
   gap: clamp(0.75rem, 1.5vw, 1.5rem) !important;
-  min-width: max-content;
+  min-width: 0;
 }
 
-.utilities-container a,
-.utilities-container button,
-.utilities-container .header-utility {
+.utilities-container a:not(.d-none),
+.utilities-container button:not(.d-none),
+.utilities-container .header-utility:not(.d-none) {
   display: inline-flex !important;
   align-items: center !important;
   gap: 0.45rem !important;
@@ -4017,4 +4017,42 @@ h3, .h3 { font-size: var(--fluid-h3) !important; }
   color: #ffffff !important;
   font-size: 0.62rem !important;
   min-width: 22px !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   CORRECCIONES MOBILE HEADER — reglas finales (máxima prioridad)
+   Garantizan que d-none/d-md-flex funcionen dentro del header
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* d-none siempre oculta, sin importar otras reglas previas */
+.js-head-main .d-none {
+  display: none !important;
+}
+
+/* d-md-flex oculto en mobile, visible en desktop */
+@media (max-width: 767px) {
+  .js-head-main .d-md-flex {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .js-head-main .d-md-flex {
+    display: flex !important;
+  }
+  .js-head-main .d-md-none {
+    display: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   HEADER — Solo íconos (sin etiquetas de texto)
+   ═══════════════════════════════════════════════════════════════════ */
+
+.utility-text,
+.js-header-utility-text,
+.js-header-utility-text-cart,
+.js-cart-widget-total {
+  display: none !important;
 }
