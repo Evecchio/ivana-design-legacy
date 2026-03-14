@@ -6,7 +6,6 @@
    5. Producto  6. Categoría  7. Responsive  8. Fluid System
    ═══════════════════════════════════════════════════════════════════ */
 
-
 /* ═══════════════════════════════════════════════════════════════════
    1. REFRESH — Estilos base y páginas (versión legacy)
    ═══════════════════════════════════════════════════════════════════ */
@@ -117,7 +116,6 @@
 
 .ivana-product-shell .product-images {
   position: sticky;
-  top: 110px;
 }
 
 .ivana-product-shell .js-product-price-container,
@@ -811,10 +809,9 @@
 }
 
 .ivana-footer-grid.ivana-footer-grid-news {
-  grid-template-columns: minmax(220px, 1fr) minmax(160px, 0.7fr) minmax(
-      160px,
-      0.7fr
-    ) minmax(280px, 1.2fr);
+  grid-template-columns:
+    minmax(220px, 1fr) minmax(160px, 0.7fr) minmax(160px, 0.7fr)
+    minmax(280px, 1.2fr);
 }
 
 .ivana-footer-col {
@@ -2372,7 +2369,6 @@ div.js-product-item-private.product-item.ivana-card .label-accent {
   }
 }
 
-
 /* ═══════════════════════════════════════════════════════════════════
    2. BASE — Fundaciones visuales compartidas
    ═══════════════════════════════════════════════════════════════════ */
@@ -2493,7 +2489,12 @@ small,
   width: 72px;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(244, 37, 106, 0), rgba(244, 37, 106, 0.95), rgba(244, 37, 106, 0));
+  background: linear-gradient(
+    90deg,
+    rgba(244, 37, 106, 0),
+    rgba(244, 37, 106, 0.95),
+    rgba(244, 37, 106, 0)
+  );
   margin: 0.85rem auto 0;
 }
 
@@ -2509,7 +2510,11 @@ small,
 
 .ivana-home-hero-copy {
   max-width: min(100%, 36rem);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.76));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.92),
+    rgba(255, 255, 255, 0.76)
+  );
   border: 1px solid rgba(255, 255, 255, 0.65);
   border-radius: 28px;
   box-shadow: var(--ivana-shadow-soft);
@@ -2735,7 +2740,10 @@ small,
 
 .ivana-footer-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 0.7fr)) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 0.7fr)) minmax(
+      0,
+      1fr
+    );
   gap: clamp(1.5rem, 4vw, 3rem);
 }
 
@@ -2793,7 +2801,6 @@ small,
     border-radius: var(--ivana-card-radius-mobile);
   }
 }
-
 
 /* ═══════════════════════════════════════════════════════════════════
    3. HEADER — Barra de navegación y buscador
@@ -2913,8 +2920,8 @@ small,
 
 [class*="search-form"] input:focus,
 .search-container input:focus {
-  border-color: var(--brand, #FF1493) !important;
-  box-shadow: 0 0 0 4px var(--brand-10, rgba(255,20,147,0.1)) !important;
+  border-color: var(--brand, #ff1493) !important;
+  box-shadow: 0 0 0 4px var(--brand-10, rgba(255, 20, 147, 0.1)) !important;
 }
 
 [class*="search-form"] button {
@@ -2922,7 +2929,7 @@ small,
   height: calc(var(--search-height, 40px) - 10px) !important;
   right: 6px !important;
   border-radius: 999px !important;
-  background: var(--brand-10, rgba(255,20,147,0.1)) !important;
+  background: var(--brand-10, rgba(255, 20, 147, 0.1)) !important;
   color: #111111 !important;
   border: none !important;
   position: absolute !important;
@@ -2969,7 +2976,9 @@ small,
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  transition: border-color 0.2s ease, transform 0.2s ease !important;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease !important;
 }
 
 .header-utility:hover .js-header-utility-icon {
@@ -2996,7 +3005,7 @@ small,
 }
 
 .js-cart-widget-amount.badge {
-  background: var(--brand, #FF1493) !important;
+  background: var(--brand, #ff1493) !important;
   border: 2px solid #ffffff !important;
   color: #ffffff !important;
   font-size: 0.62rem !important;
@@ -3125,7 +3134,6 @@ small,
   }
 }
 
-
 /* ═══════════════════════════════════════════════════════════════════
    4. CARDS — Grilla de productos y tarjetas
    ═══════════════════════════════════════════════════════════════════ */
@@ -3156,7 +3164,9 @@ div.js-product-item-private.product-item.ivana-card,
   border-radius: var(--ivana-card-radius) !important;
   overflow: hidden !important;
   box-shadow: var(--ivana-shadow-card) !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease !important;
 }
 
 div.js-product-item-private.product-item.ivana-card:hover,
@@ -3210,7 +3220,8 @@ div.js-product-item-private.product-item.ivana-card:hover,
   -webkit-box-orient: vertical;
 }
 
-div.js-product-item-private.product-item.ivana-card .product-item-price-container {
+div.js-product-item-private.product-item.ivana-card
+  .product-item-price-container {
   display: flex !important;
   flex-wrap: wrap !important;
   align-items: baseline !important;
@@ -3218,7 +3229,8 @@ div.js-product-item-private.product-item.ivana-card .product-item-price-containe
   margin-bottom: 0 !important;
 }
 
-div.js-product-item-private.product-item.ivana-card span.js-compare-price-display.product-item-price-compare,
+div.js-product-item-private.product-item.ivana-card
+  span.js-compare-price-display.product-item-price-compare,
 .ivana-card .price-compare {
   order: 0 !important;
   flex-basis: auto !important;
@@ -3229,7 +3241,8 @@ div.js-product-item-private.product-item.ivana-card span.js-compare-price-displa
   text-decoration-thickness: 1px !important;
 }
 
-div.js-product-item-private.product-item.ivana-card span.js-price-display.product-item-price,
+div.js-product-item-private.product-item.ivana-card
+  span.js-price-display.product-item-price,
 .ivana-card [class*="price"]:not([class*="compare"]) {
   order: 1 !important;
   color: #151417 !important;
@@ -3355,7 +3368,6 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   }
 }
 
-
 /* ═══════════════════════════════════════════════════════════════════
    5. PRODUCTO — Página de detalle de producto
    ═══════════════════════════════════════════════════════════════════ */
@@ -3392,7 +3404,6 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 
 .ivana-product-shell .product-images {
   position: sticky;
-  top: 130px;
 }
 
 .ivana-product-meta-row {
@@ -3678,7 +3689,6 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   }
 }
 
-
 /* ═══════════════════════════════════════════════════════════════════
    6. CATEGORÍA — Listado y filtros de categoría
    ═══════════════════════════════════════════════════════════════════ */
@@ -3811,7 +3821,6 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   }
 }
 
-
 /* ═══════════════════════════════════════════════════════════════════
    7. RESPONSIVE — Ajustes de layout para distintas resoluciones
    ═══════════════════════════════════════════════════════════════════ */
@@ -3931,7 +3940,6 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   }
 }
 
-
 /* ═══════════════════════════════════════════════════════════════════
    8. FLUID SYSTEM — Tokens fluidos y overrides finales (máx. prioridad)
    Los tokens :root se definen en style-tokens.tpl
@@ -3984,7 +3992,10 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease !important;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    background 0.2s ease !important;
 }
 .header-utility:hover .js-header-utility-icon,
 .header-utility:hover .header-icon {
@@ -4060,7 +4071,9 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   align-items: center !important;
   justify-content: center !important;
   background: linear-gradient(180deg, #ffffff, #fff5f8) !important;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease !important;
 }
 .home-category-image-border > div {
   border-radius: 50% !important;
@@ -4090,7 +4103,7 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 .js-products-sale-title,
 .js-products-featured-title,
 .js-products-new-title {
-  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
   font-size: var(--fluid-h1) !important;
   line-height: 0.96 !important;
   letter-spacing: -0.04em !important;
@@ -4105,9 +4118,18 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   display: none !important;
 }
 
-h1, .h1 { font-size: var(--fluid-h1) !important; }
-h2, .h2 { font-size: var(--fluid-h2) !important; }
-h3, .h3 { font-size: var(--fluid-h3) !important; }
+h1,
+.h1 {
+  font-size: var(--fluid-h1) !important;
+}
+h2,
+.h2 {
+  font-size: var(--fluid-h2) !important;
+}
+h3,
+.h3 {
+  font-size: var(--fluid-h3) !important;
+}
 
 /* ═══════════════════════════════════════════════════════════════════
    SECCIONES HOME — Espaciado fluido
@@ -4157,7 +4179,7 @@ h3, .h3 { font-size: var(--fluid-h3) !important; }
 .js-main-menu a,
 [class*="nav-link"],
 [class*="desktop-nav"] a {
-  font-family: 'Manrope', var(--body-font), sans-serif !important;
+  font-family: "Manrope", var(--body-font), sans-serif !important;
   font-size: var(--fluid-caption) !important;
   font-weight: 800 !important;
   letter-spacing: 0.18em !important;
@@ -4186,7 +4208,7 @@ h3, .h3 { font-size: var(--fluid-h3) !important; }
   font-weight: 700 !important;
   letter-spacing: 0.18em !important;
   text-transform: uppercase !important;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   line-height: 1.6;
   white-space: normal;
   word-break: keep-all;
