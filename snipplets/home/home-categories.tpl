@@ -2,8 +2,8 @@
 	<section class="section-home section-categories-home ivana-home-categories overflow-none py-10">
 		<div class="container overflow-x-auto hide-scrollbar">
 			<div class="ivana-home-section-head text-center mb-4">
-				<p class="ivana-home-section-kicker mb-2">Coleccion curada</p>
-				<h2 class="ivana-home-section-title mb-0">Explora la coleccion</h2>
+				{#<p class="ivana-home-section-kicker mb-2">Coleccion curada</p>#}
+				<h2 class="ivana-home-section-title mb-0">Coleccion</h2>
 			</div>
 			<div class="d-flex justify-content-center align-items-start gap-4 pb-4 ivana-home-categories-row">
 				{% for slide in settings.slider_categories %}
