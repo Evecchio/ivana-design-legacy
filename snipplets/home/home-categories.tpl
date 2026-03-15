@@ -5,7 +5,7 @@
 				<p class="ivana-home-section-kicker mb-2">Coleccion curada</p>
 				<h2 class="ivana-home-section-title mb-0">Explora la coleccion</h2>
 			</div>
-			<div class="d-flex justify-content-between align-items-start gap-4 pb-4 ivana-home-categories-row">
+			<div class="d-flex justify-content-center align-items-start gap-4 pb-4 ivana-home-categories-row">
 				{% for slide in settings.slider_categories %}
 					{% if slide.link %}
 						<a href="{{ slide.link | setting_url }}" class="js-home-category d-flex flex-column align-items-center group shrink-0 text-decoration-none" aria-label="{{ 'Categoría' | translate }} {{ loop.index }}">
