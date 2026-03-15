@@ -655,14 +655,16 @@
   justify-content: center !important;
   align-items: flex-start !important;
   flex-wrap: wrap !important;
-  gap: clamp(1.5rem, 2.5vw, 3rem) clamp(1.25rem, 2vw, 2.25rem) !important;
+  gap: clamp(1.5rem, 2.5vw, 3rem) clamp(2rem, 4vw, 5rem) !important;
   min-width: 0 !important;
   padding-bottom: 0 !important;
+  max-width: 960px;
+  margin-inline: auto;
 }
 
 .ivana-home-categories .js-home-category {
-  flex: 0 0 clamp(108px, 11vw, 160px) !important;
-  max-width: clamp(108px, 11vw, 160px) !important;
+  flex: 0 0 clamp(108px, 13vw, 200px) !important;
+  max-width: clamp(108px, 13vw, 200px) !important;
 }
 
 .ivana-home-category-name {
