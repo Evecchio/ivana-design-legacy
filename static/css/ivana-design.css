@@ -2459,7 +2459,7 @@ small,
 .ivana-contact-shell h1 {
   font-size: clamp(2.4rem, 5vw, 4.3rem) !important;
   line-height: 0.92 !important;
-  text-align: justify !important;
+  text-align: center !important;
   margin-bottom: 0 !important;
 }
 
@@ -4157,7 +4157,11 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   color: #111827 !important;
   text-transform: none !important;
   margin-bottom: 0 !important;
-  display: block !important;
+
+  /* CAMBIO AQUÍ: */
+  display: inline-block !important; /* El cuadro se ajusta al texto */
+  width: auto !important;           /* Quita el ancho del 100% */
+  text-align: center !important;    /* Centra el texto internamente */
 }
 
 .js-products-sale-title::after,
@@ -4281,4 +4285,9 @@ h3,
   color: #ffffff !important;
   font-size: 0.62rem !important;
   min-width: 22px !important;
+}
+
+/* AGREGÁ ESTO AL FINAL DEL ARCHIVO: */
+.ivana-home-slot-timer_offers .ivana-home-section-head {
+    text-align: center !important; /* Empuja el cuadro pequeño al centro de la web */
 }
