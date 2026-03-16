@@ -11,11 +11,9 @@
    ═══════════════════════════════════════════════════════════════════ */
 .ivana-page-hero {
   background:
-    radial-gradient(
-      circle at top left,
+    radial-gradient(circle at top left,
       rgba(255, 20, 147, 0.1),
-      transparent 34%
-    ),
+      transparent 34%),
     linear-gradient(135deg, #ffffff 0%, #fff6fb 100%) !important;
   border: 1px solid rgba(17, 17, 17, 0.08) !important;
   border-radius: 28px !important;
@@ -93,8 +91,8 @@
   align-items: start;
 }
 
-.ivana-category-grid .js-product-list > li,
-.ivana-category-grid .product-list > li {
+.ivana-category-grid .js-product-list>li,
+.ivana-category-grid .product-list>li {
   margin-bottom: 1.5rem;
 }
 
@@ -285,6 +283,7 @@
 }
 
 @media (max-width: 991px) {
+
   .ivana-cart-shell .cart-page-content,
   .ivana-product-shell .product-columns,
   .ivana-contact-grid {
@@ -297,6 +296,7 @@
 }
 
 @media (max-width: 767px) {
+
   .ivana-page-hero,
   .ivana-product-shell .product-images,
   .ivana-product-shell .product-info,
@@ -347,11 +347,9 @@
   max-width: 640px;
   padding: clamp(1.5rem, 4vw, 3rem) !important;
   margin: clamp(1rem, 4vw, 2.5rem) !important;
-  background: linear-gradient(
-    180deg,
-    rgba(17, 17, 17, 0.5),
-    rgba(17, 17, 17, 0.22)
-  );
+  background: linear-gradient(180deg,
+      rgba(17, 17, 17, 0.5),
+      rgba(17, 17, 17, 0.22));
   backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 28px;
@@ -521,6 +519,7 @@
 }
 
 @media (max-width: 767px) {
+
   .ivana-home-hero .swiper-slide,
   .ivana-home-hero .gallery-image-container,
   .ivana-home-hero .slider-image {
@@ -544,8 +543,7 @@
   }
 }
 
-.js-nav-desktop-color-container
-  .js-nav-desktop-container.nav-desktop-grid[data-desktop-nav-secondary="false"][data-desktop-main-categories="true"] {
+.js-nav-desktop-color-container .js-nav-desktop-container.nav-desktop-grid[data-desktop-nav-secondary="false"][data-desktop-main-categories="true"] {
   grid-template-columns: auto auto !important;
   justify-content: center !important;
   column-gap: clamp(1rem, 2vw, 2.25rem) !important;
@@ -574,19 +572,15 @@
   gap: 0.15rem !important;
 }
 
-.js-nav-desktop-color-container .js-nav-desktop-list > .js-desktop-nav-item,
-.js-nav-desktop-color-container .js-nav-desktop-list > .nav-item,
-.js-nav-desktop-color-container
-  .js-desktop-main-categories-col
-  > .js-desktop-nav-item,
-.js-nav-desktop-color-container .js-desktop-main-categories-col > .nav-item {
+.js-nav-desktop-color-container .js-nav-desktop-list>.js-desktop-nav-item,
+.js-nav-desktop-color-container .js-nav-desktop-list>.nav-item,
+.js-nav-desktop-color-container .js-desktop-main-categories-col>.js-desktop-nav-item,
+.js-nav-desktop-color-container .js-desktop-main-categories-col>.nav-item {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-.js-nav-desktop-color-container
-  .js-desktop-main-categories-col
-  .nav-item-container,
+.js-nav-desktop-color-container .js-desktop-main-categories-col .nav-item-container,
 .js-nav-desktop-color-container .js-nav-desktop-list .nav-item-container {
   margin-right: 0 !important;
 }
@@ -601,8 +595,7 @@
 }
 
 @media (max-width: 1199px) {
-  .js-nav-desktop-color-container
-    .js-nav-desktop-container.nav-desktop-grid[data-desktop-nav-secondary="false"][data-desktop-main-categories="true"] {
+  .js-nav-desktop-color-container .js-nav-desktop-container.nav-desktop-grid[data-desktop-nav-secondary="false"][data-desktop-main-categories="true"] {
     column-gap: 0.75rem !important;
   }
 
@@ -712,10 +705,8 @@
 }
 
 .js-head-main .js-head-row.head-row {
-  grid-template-columns: minmax(150px, 1fr) minmax(420px, 640px) minmax(
-      240px,
-      1fr
-    ) !important;
+  grid-template-columns: minmax(150px, 1fr) minmax(420px, 640px) minmax(240px,
+      1fr) !important;
   min-height: 92px;
 }
 
@@ -739,7 +730,7 @@
   justify-self: end !important;
 }
 
-.js-head-main .utilities-container > * {
+.js-head-main .utilities-container>* {
   display: flex;
   align-items: center;
 }
@@ -784,10 +775,8 @@
 
 @media (max-width: 1199px) {
   .js-head-main .js-head-row.head-row {
-    grid-template-columns: minmax(132px, 1fr) minmax(320px, 1fr) minmax(
-        220px,
-        1fr
-      ) !important;
+    grid-template-columns: minmax(132px, 1fr) minmax(320px, 1fr) minmax(220px,
+        1fr) !important;
     min-height: 82px;
   }
 }
@@ -821,8 +810,7 @@
 
 .ivana-footer-grid.ivana-footer-grid-news {
   grid-template-columns:
-    minmax(220px, 1fr) minmax(160px, 0.7fr) minmax(160px, 0.7fr)
-    minmax(280px, 1.2fr);
+    minmax(220px, 1fr) minmax(160px, 0.7fr) minmax(160px, 0.7fr) minmax(280px, 1.2fr);
 }
 
 .ivana-footer-col {
@@ -980,6 +968,7 @@
 }
 
 @media (min-width: 1200px) {
+
   .ivana-home-products .js-products-sale-grid.grid,
   .ivana-home-products .js-products-featured-grid.grid,
   .ivana-home-products .js-products-new-grid.grid {
@@ -988,6 +977,7 @@
 }
 
 @media (max-width: 991px) {
+
   .ivana-footer-grid,
   .ivana-footer-grid.ivana-footer-grid-news {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -999,6 +989,7 @@
 }
 
 @media (max-width: 767px) {
+
   .ivana-footer-grid,
   .ivana-footer-grid.ivana-footer-grid-news {
     grid-template-columns: 1fr;
@@ -1208,8 +1199,7 @@
   border-right: 1px solid rgba(17, 17, 17, 0.08) !important;
 }
 
-.ivana-category-products
-  .d-flex.justify-content-center.align-items-center.my-4 {
+.ivana-category-products .d-flex.justify-content-center.align-items-center.my-4 {
   margin: 2rem 0 0 !important;
   padding-top: 1rem;
 }
@@ -1251,6 +1241,7 @@
 }
 
 @media (max-width: 767px) {
+
   .ivana-category-products,
   .ivana-category-filter-card {
     border-radius: 22px;
@@ -1609,6 +1600,7 @@
 }
 
 @media (max-width: 767px) {
+
   .ivana-product-shell .product-images,
   .ivana-product-shell .product-info,
   .ivana-product-shell .js-product-description,
@@ -1631,6 +1623,7 @@
     scrollbar-width: none;
     padding-bottom: 0.25rem;
   }
+
   .ivana-breadcrumbs::-webkit-scrollbar {
     display: none;
   }
@@ -1842,6 +1835,7 @@
     padding: 0.4rem 0.25rem !important;
   }
 }
+
 .ivana-cart-intro {
   max-width: 42rem;
   color: #52525b;
@@ -2065,11 +2059,11 @@
   align-items: start;
 }
 
-.ivana-cart-total-row > span:first-child {
+.ivana-cart-total-row>span:first-child {
   color: #6b7280;
 }
 
-.ivana-cart-total-row > span:last-child {
+.ivana-cart-total-row>span:last-child {
   font-weight: 700;
   color: #111827;
 }
@@ -2080,7 +2074,7 @@
   border-top: 1px solid rgba(17, 17, 17, 0.08);
 }
 
-.ivana-cart-grand-total > span:first-child {
+.ivana-cart-grand-total>span:first-child {
   font-size: 0.78rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -2117,6 +2111,7 @@
 }
 
 @media (max-width: 991px) {
+
   .ivana-cart-shell .ivana-cart-table-header,
   .ivana-cart-shell .cart-page-item,
   .ivana-cart-shell .cart-item-info-container,
@@ -2146,6 +2141,7 @@
 }
 
 @media (max-width: 767px) {
+
   .ivana-cart-summary-sticky,
   .ivana-cart-shell .cart-page-products {
     border-radius: 22px !important;
@@ -2178,15 +2174,13 @@ div.js-product-item-private.product-item.ivana-card:hover {
 }
 
 /* Imagen */
-div.js-product-item-private.product-item.ivana-card
-  .js-product-item-image-container-private.product-item-image-container {
+div.js-product-item-private.product-item.ivana-card .js-product-item-image-container-private.product-item-image-container {
   border-radius: 0 !important;
   overflow: hidden;
   background: #f5f5f5;
 }
 
-div.js-product-item-private.product-item.ivana-card
-  .js-product-item-image-private.product-item-image {
+div.js-product-item-private.product-item.ivana-card .js-product-item-image-private.product-item-image {
   object-fit: cover !important;
   object-position: center top !important;
 }
@@ -2198,15 +2192,13 @@ div.js-product-item-private.product-item.ivana-card .product-ver-overlay {
 }
 
 /* Zona de información */
-div.js-product-item-private.product-item.ivana-card
-  .product-item-information.ivana-card-info.d-flex.flex-column.pt-3.pb-2 {
+div.js-product-item-private.product-item.ivana-card .product-item-information.ivana-card-info.d-flex.flex-column.pt-3.pb-2 {
   padding: 20px !important;
   gap: 0 !important;
 }
 
 /* Nombre del producto */
-div.js-product-item-private.product-item.ivana-card
-  .js-item-name.product-item-name.ivana-card-name {
+div.js-product-item-private.product-item.ivana-card .js-item-name.product-item-name.ivana-card-name {
   font-size: 0.875rem !important;
   font-weight: 400 !important;
   line-height: 1.35 !important;
@@ -2221,8 +2213,7 @@ div.js-product-item-private.product-item.ivana-card
 }
 
 /* Contenedor de precios */
-div.js-product-item-private.product-item.ivana-card
-  .product-item-price-container {
+div.js-product-item-private.product-item.ivana-card .product-item-price-container {
   display: flex !important;
   flex-wrap: wrap !important;
   align-items: baseline !important;
@@ -2231,8 +2222,7 @@ div.js-product-item-private.product-item.ivana-card
 }
 
 /* Precio tachado (compare) */
-div.js-product-item-private.product-item.ivana-card
-  span.js-compare-price-display.product-item-price-compare {
+div.js-product-item-private.product-item.ivana-card span.js-compare-price-display.product-item-price-compare {
   font-size: 0.75rem !important;
   font-weight: 400 !important;
   color: #999 !important;
@@ -2244,8 +2234,7 @@ div.js-product-item-private.product-item.ivana-card
 }
 
 /* Precio principal */
-div.js-product-item-private.product-item.ivana-card
-  span.js-price-display.product-item-price {
+div.js-product-item-private.product-item.ivana-card span.js-price-display.product-item-price {
   font-size: 1.5rem !important;
   font-weight: 400 !important;
   color: #333 !important;
@@ -2263,37 +2252,24 @@ div.js-product-item-private.product-item.ivana-card span.product-item-discount {
 }
 
 /* Cuotas — estilo ML verde */
-div.js-product-item-private.product-item.ivana-card
-  .js-max-installments-container.ivana-card-installments,
-div.js-product-item-private.product-item.ivana-card
-  .js-max-installments-container.ivana-card-installments
-  span,
-div.js-product-item-private.product-item.ivana-card
-  .js-max-installments-container.ivana-card-installments
-  div,
-div.js-product-item-private.product-item.ivana-card
-  .js-max-installments-container.ivana-card-installments
-  .js-max-installments,
-div.js-product-item-private.product-item.ivana-card
-  .js-max-installments-container.ivana-card-installments
-  .js-installment-price,
-div.js-product-item-private.product-item.ivana-card
-  .js-max-installments-container.ivana-card-installments
-  .js-installment-amount {
+div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments,
+div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments span,
+div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments div,
+div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments .js-max-installments,
+div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments .js-installment-price,
+div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments .js-installment-amount {
   color: #00a650 !important;
   font-size: 0.8125rem !important;
   font-weight: 600 !important;
 }
 
-div.js-product-item-private.product-item.ivana-card
-  .js-max-installments-container.ivana-card-installments {
+div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments {
   margin-top: 4px !important;
   margin-bottom: 0 !important;
 }
 
 /* Precio con descuento por transferencia */
-div.js-product-item-private.product-item.ivana-card
-  .js-payment-discount-price-product-container.payment-discount-price-product-container {
+div.js-product-item-private.product-item.ivana-card .js-payment-discount-price-product-container.payment-discount-price-product-container {
   font-size: 0.8125rem !important;
   font-weight: 600 !important;
   color: #00a650 !important;
@@ -2303,9 +2279,7 @@ div.js-product-item-private.product-item.ivana-card
   word-spacing: 0.15em !important;
 }
 
-div.js-product-item-private.product-item.ivana-card
-  .js-payment-discount-price-product-container.payment-discount-price-product-container
-  span {
+div.js-product-item-private.product-item.ivana-card .js-payment-discount-price-product-container.payment-discount-price-product-container span {
   color: #00a650 !important;
   font-weight: 600 !important;
   display: inline !important;
@@ -2321,8 +2295,7 @@ div.js-product-item-private.product-item.ivana-card div.text-stock {
 }
 
 /* Ocultar botón quick shop para look limpio ML */
-div.js-product-item-private.product-item.ivana-card
-  .product-item-quick-shop-container {
+div.js-product-item-private.product-item.ivana-card .product-item-quick-shop-container {
   display: none !important;
 }
 
@@ -2334,9 +2307,7 @@ div.js-product-item-private.product-item.ivana-card .labels.product-labels {
   z-index: 2;
 }
 
-div.js-product-item-private.product-item.ivana-card
-  .labels.product-labels
-  .shipping-label {
+div.js-product-item-private.product-item.ivana-card .labels.product-labels .shipping-label {
   background: #00a650 !important;
   color: #fff !important;
   font-size: 0.68rem !important;
@@ -2348,8 +2319,7 @@ div.js-product-item-private.product-item.ivana-card
 }
 
 /* Color variants */
-div.js-product-item-private.product-item.ivana-card
-  .product-item-colors-container {
+div.js-product-item-private.product-item.ivana-card .product-item-colors-container {
   margin-bottom: 4px !important;
 }
 
@@ -2364,18 +2334,15 @@ div.js-product-item-private.product-item.ivana-card .label-accent {
 
 /* Responsive mobile */
 @media (max-width: 767px) {
-  div.js-product-item-private.product-item.ivana-card
-    span.js-price-display.product-item-price {
+  div.js-product-item-private.product-item.ivana-card span.js-price-display.product-item-price {
     font-size: 1.25rem !important;
   }
 
-  div.js-product-item-private.product-item.ivana-card
-    .product-item-information.ivana-card-info.d-flex.flex-column.pt-3.pb-2 {
+  div.js-product-item-private.product-item.ivana-card .product-item-information.ivana-card-info.d-flex.flex-column.pt-3.pb-2 {
     padding: 12px 16px 14px !important;
   }
 
-  div.js-product-item-private.product-item.ivana-card
-    .js-item-name.product-item-name.ivana-card-name {
+  div.js-product-item-private.product-item.ivana-card .js-item-name.product-item-name.ivana-card-name {
     font-size: 0.8125rem !important;
   }
 }
@@ -2492,7 +2459,7 @@ small,
 .ivana-contact-shell h1 {
   font-size: clamp(2.4rem, 5vw, 4.3rem) !important;
   line-height: 0.92 !important;
-  text-align: left !important;
+  text-align: justify !important;
   margin-bottom: 0 !important;
 }
 
@@ -2500,12 +2467,10 @@ small,
   width: 72px;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    rgba(244, 37, 106, 0),
-    rgba(244, 37, 106, 0.95),
-    rgba(244, 37, 106, 0)
-  );
+  background: linear-gradient(90deg,
+      rgba(244, 37, 106, 0),
+      rgba(244, 37, 106, 0.95),
+      rgba(244, 37, 106, 0));
   margin: 0.85rem auto 0;
 }
 
@@ -2521,11 +2486,9 @@ small,
 
 .ivana-home-hero-copy {
   max-width: min(100%, 36rem);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.92),
-    rgba(255, 255, 255, 0.76)
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92),
+      rgba(255, 255, 255, 0.76));
   border: 1px solid rgba(255, 255, 255, 0.65);
   border-radius: 28px;
   box-shadow: var(--ivana-shadow-soft);
@@ -2751,10 +2714,8 @@ small,
 
 .ivana-footer-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 0.7fr)) minmax(
-      0,
-      1fr
-    );
+  grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 0.7fr)) minmax(0,
+      1fr);
   gap: clamp(1.5rem, 4vw, 3rem);
 }
 
@@ -2797,6 +2758,7 @@ small,
 }
 
 @media (max-width: 767px) {
+
   .ivana-page-hero,
   .ivana-category-products,
   .ivana-category-filter-card,
@@ -2971,9 +2933,9 @@ small,
 }
 
 .menu-container .header-utility,
-.head-slot-utilities > .header-utility:not(.d-none),
-.head-slot-utilities > span.header-utility,
-.head-slot-utilities > span > .header-utility:not(.d-none) {
+.head-slot-utilities>.header-utility:not(.d-none),
+.head-slot-utilities>span.header-utility,
+.head-slot-utilities>span>.header-utility:not(.d-none) {
   display: inline-flex !important;
 }
 
@@ -3046,7 +3008,7 @@ small,
   margin: 0 !important;
 }
 
-.nav-desktop-list > .nav-item {
+.nav-desktop-list>.nav-item {
   padding: 0 !important;
 }
 
@@ -3115,10 +3077,10 @@ small,
     grid-row: 1 / 2 !important;
   }
 
-  .head-slot-utilities > a.header-utility.d-none,
-  .head-slot-utilities > a.header-utility.d-md-flex,
-  .head-slot-utilities > span > a.header-utility.d-none,
-  .head-slot-utilities > span > a.header-utility.d-md-flex {
+  .head-slot-utilities>a.header-utility.d-none,
+  .head-slot-utilities>a.header-utility.d-md-flex,
+  .head-slot-utilities>span>a.header-utility.d-none,
+  .head-slot-utilities>span>a.header-utility.d-md-flex {
     display: none !important;
   }
 
@@ -3158,9 +3120,9 @@ small,
   gap: clamp(1rem, 2vw, 1.45rem) !important;
 }
 
-.js-product-list > li,
-.product-list > li,
-.js-product-table > li {
+.js-product-list>li,
+.product-list>li,
+.js-product-table>li {
   display: flex !important;
   flex-direction: column !important;
 }
@@ -3231,8 +3193,7 @@ div.js-product-item-private.product-item.ivana-card:hover,
   -webkit-box-orient: vertical;
 }
 
-div.js-product-item-private.product-item.ivana-card
-  .product-item-price-container {
+div.js-product-item-private.product-item.ivana-card .product-item-price-container {
   display: flex !important;
   flex-wrap: wrap !important;
   align-items: baseline !important;
@@ -3240,8 +3201,7 @@ div.js-product-item-private.product-item.ivana-card
   margin-bottom: 0 !important;
 }
 
-div.js-product-item-private.product-item.ivana-card
-  span.js-compare-price-display.product-item-price-compare,
+div.js-product-item-private.product-item.ivana-card span.js-compare-price-display.product-item-price-compare,
 .ivana-card .price-compare {
   order: 0 !important;
   flex-basis: auto !important;
@@ -3252,8 +3212,7 @@ div.js-product-item-private.product-item.ivana-card
   text-decoration-thickness: 1px !important;
 }
 
-div.js-product-item-private.product-item.ivana-card
-  span.js-price-display.product-item-price,
+div.js-product-item-private.product-item.ivana-card span.js-price-display.product-item-price,
 .ivana-card [class*="price"]:not([class*="compare"]) {
   order: 1 !important;
   color: #151417 !important;
@@ -3361,6 +3320,7 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 }
 
 @media (max-width: 767px) {
+
   div.js-product-item-private.product-item.ivana-card,
   .js-item-product.ivana-card {
     border-radius: var(--ivana-card-radius-mobile) !important;
@@ -3708,6 +3668,7 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 }
 
 @media (max-width: 767px) {
+
   .ivana-product-shell .product-images,
   .ivana-product-shell .product-info {
     padding: 0.85rem;
@@ -3911,6 +3872,7 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 
 /* ─── TABLET (≤991px): Columnas a stack ─── */
 @media (max-width: 991px) {
+
   .ivana-page-hero,
   .ivana-category-header,
   .ivana-product-related .container,
@@ -3933,6 +3895,7 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 
 /* ─── MOBILE (≤767px): Full-width y stack completo ─── */
 @media (max-width: 767px) {
+
   /* Formularios y cajas full-width */
   .ivana-sort-box,
   .ivana-product-shell .ivana-product-payments-box,
@@ -4036,6 +3999,7 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   display: block !important;
   transition: transform 0.3s ease !important;
 }
+
 .logo-container a:hover img {
   transform: scale(1.02) !important;
 }
@@ -4076,6 +4040,7 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
     transform 0.2s ease,
     background 0.2s ease !important;
 }
+
 .header-utility:hover .js-header-utility-icon,
 .header-utility:hover .header-icon {
   border-color: rgba(244, 37, 106, 0.45) !important;
@@ -4154,12 +4119,14 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
     border-color 0.3s ease,
     box-shadow 0.3s ease !important;
 }
-.home-category-image-border > div {
+
+.home-category-image-border>div {
   border-radius: 50% !important;
   overflow: hidden !important;
   width: 100% !important;
   height: 100% !important;
 }
+
 .home-category-image-border img {
   width: 100% !important;
   height: 100% !important;
@@ -4170,6 +4137,7 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   transition: none !important;
   display: block !important;
 }
+
 .js-home-category:hover .home-category-image-border {
   border-color: var(--brand) !important;
   box-shadow: 0 0 0 3px var(--brand-20) !important;
@@ -4201,10 +4169,12 @@ h1,
 .h1 {
   font-size: var(--fluid-h1) !important;
 }
+
 h2,
 .h2 {
   font-size: var(--fluid-h2) !important;
 }
+
 h3,
 .h3 {
   font-size: var(--fluid-h3) !important;
@@ -4251,7 +4221,7 @@ h3,
   margin: 0 !important;
 }
 
-.nav-desktop-list > .nav-item {
+.nav-desktop-list>.nav-item {
   padding: 0 !important;
 }
 
