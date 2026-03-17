@@ -1,4 +1,4 @@
-<div class="js-desktop-nav-item js-nav-main-item js-item-subitems-desktop nav-dropdown nav-main-item nav-item item-with-subitems pl-0">
+<div class="js-desktop-nav-item js-nav-main-item js-item-subitems-desktop nav-dropdown nav-main-item nav-item item-with-subitems pl-0" style="margin: 0 14px !important;">
 	<div class="nav-item-container mr-2"> 
 		<a href="{{ store.products_url }}" class="nav-list-link text-underline d-flex align-items-center">    		
 			{{ 'Categorías' | translate }}
