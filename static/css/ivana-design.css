@@ -2201,9 +2201,9 @@ div.js-product-item-private.product-item.ivana-card .product-item-information.iv
 /* Nombre del producto */
 div.js-product-item-private.product-item.ivana-card .js-item-name.product-item-name.ivana-card-name {
   font-size: 0.875rem !important;
-  font-weight: 400 !important;
+  font-weight: 700 !important;
   line-height: 1.35 !important;
-  color: #333 !important;
+  color: #000 !important;
   text-transform: none !important;
   letter-spacing: 0 !important;
   margin-bottom: 8px !important;

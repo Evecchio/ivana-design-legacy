@@ -80,8 +80,9 @@ function normalizeIvanaProductCards(root) {
             if (!existingBadge) {
                 existingBadge = document.createElement("div");
                 existingBadge.className = "ivana-savings-badge";
-                // Insert after installments or after price container
-                var insertAfter = installmentsContainer || priceContainer;
+                // Insert right after the product name
+                var productName = card.querySelector(".js-item-name.product-item-name");
+                var insertAfter = productName || priceContainer;
                 if (insertAfter && insertAfter.parentNode) {
                     insertAfter.parentNode.insertBefore(existingBadge, insertAfter.nextSibling);
                 }
