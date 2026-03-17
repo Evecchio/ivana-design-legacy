@@ -30,15 +30,7 @@
 			</span>
 			{#<span class="utility-text font-weight-bold">{{ "Entrar" | translate }}</span>#}
 		</a>
-		{# Registrarse #}
-		{% if register_link %}
-			<a href="{{ store.customer_register_url }}" class="header-utility d-none d-md-flex">
-				<span class="js-header-utility-icon {{ utility_icon_md_color_class }}">
-					<svg class="icon-inline utility-icon icon-lg"><use xlink:href="#user"/></svg>
-				</span>
-				{#<span class="utility-text font-weight-bold">{{ "Registrarse" | translate }}</span>#}
-			</a>
-		{% endif %}
+
 	{% else %}
 		{# Logged in state #}
 		<span class="header-utility d-none d-md-flex">

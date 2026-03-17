@@ -30,4 +30,15 @@
 			}})
 		}}
 	</div>
+
+	{# Registration Link Block #}
+	<div class="w-md-40">
+		<hr class="mb-4 mt-2">
+		<h3 class="font-body mb-3 text-center">{{ '¿Aún no tenés cuenta?' | translate }}</h3>
+		<p class="mb-4 text-center">{{ 'Comprá más rápido y llevá el control de tus pedidos, ¡en un solo lugar!' | translate }}</p>
+		<a href="{{ store.customer_register_url }}" class="btn btn-secondary btn-big btn-block mb-4">
+			{{ 'Crear cuenta' | translate }}
+		</a>
+	</div>
+
 </div>
