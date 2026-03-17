@@ -2214,7 +2214,7 @@ div.js-product-item-private.product-item.ivana-card .js-item-name.product-item-n
   overflow: hidden;
 }
 
-/* Contenedor de precios */
+/* Contenedor de precios — layout wrap */
 div.js-product-item-private.product-item.ivana-card .product-item-price-container {
   display: flex !important;
   flex-wrap: wrap !important;
@@ -2223,34 +2223,37 @@ div.js-product-item-private.product-item.ivana-card .product-item-price-containe
   margin-bottom: 2px !important;
 }
 
-/* Precio tachado (compare) — oscurecido 30% */
+/* Precio tachado (compare) + %OFF — primera línea */
 div.js-product-item-private.product-item.ivana-card span.js-compare-price-display.product-item-price-compare {
   font-size: 0.75rem !important;
   font-weight: 400 !important;
   color: #6b6b6b !important;
   text-decoration: line-through !important;
-  order: -1 !important;
+  order: 1 !important;
   display: inline !important;
   margin-bottom: 0 !important;
-  margin-right: 6px !important;
+  margin-right: 0 !important;
 }
 
-/* Precio principal — color marca rosa/magenta + bold */
+/* Precio principal — segunda línea, color marca rosa/magenta + bold */
 div.js-product-item-private.product-item.ivana-card span.js-price-display.product-item-price {
   font-size: 1.5rem !important;
   font-weight: 700 !important;
   color: #e91e8c !important;
   line-height: 1.2 !important;
   letter-spacing: -0.02em !important;
+  order: 2 !important;
+  width: 100% !important;
 }
 
-/* Badge de descuento inline — oscurecido 30% */
+/* Badge de descuento inline — junto al compare price */
 div.js-product-item-private.product-item.ivana-card span.product-item-discount {
   font-size: 0.75rem !important;
   font-weight: 600 !important;
   color: #6b6b6b !important;
-  margin-left: 8px !important;
+  margin-left: 4px !important;
   white-space: nowrap;
+  order: 1 !important;
 }
 
 /* Cuotas — estilo rojo */

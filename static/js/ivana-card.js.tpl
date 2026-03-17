@@ -75,7 +75,8 @@ function normalizeIvanaProductCards(root) {
         var existingBadge = card.querySelector(".ivana-savings-badge");
         if (!hideComparePrice && !hideDiscount && comparePriceValue && currentPriceValue && comparePriceValue > currentPriceValue) {
             var savings = comparePriceValue - currentPriceValue;
-            var formattedSavings = "$" + savings.toLocaleString("es-AR", { minimumFractionDigits: 0 });
+            var savingsStr = Math.round(savings).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            var formattedSavings = "$" + savingsStr;
             if (!existingBadge) {
                 existingBadge = document.createElement("div");
                 existingBadge.className = "ivana-savings-badge";
