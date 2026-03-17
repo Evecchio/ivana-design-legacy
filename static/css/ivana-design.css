@@ -4297,3 +4297,10 @@ h3,
   text-align: center !important;
   /* Empuja el cuadro pequeño al centro de la web */
 }
+
+/* REFUERZO DE CENTRADO — Para asegurar que el título se vea centrado */
+.ivana-home-section-title {
+  display: inline-block !important;
+  text-align: center !important;
+  width: auto !important;
+}
