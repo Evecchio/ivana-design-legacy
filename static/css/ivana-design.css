@@ -2225,11 +2225,11 @@ div.js-product-item-private.product-item.ivana-card .product-item-price-containe
 
 /* Precio tachado (compare) — primera línea sola */
 div.js-product-item-private.product-item.ivana-card span.js-compare-price-display.product-item-price-compare {
-  font-size: 0.75rem !important;
-  font-weight: 400 !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
   color: #6b6b6b !important;
   text-decoration: line-through !important;
-  order: 1 !important;
+  order: 0 !important;
   display: inline !important;
   margin-bottom: 0 !important;
   margin-right: 0 !important;
@@ -2251,7 +2251,7 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   align-items: center !important;
   gap: 8px !important;
   flex-wrap: nowrap !important;
-  order: 2 !important;
+  order: 1 !important;
   width: 100% !important;
 }
 
@@ -2286,21 +2286,32 @@ div.js-product-item-private.product-item.ivana-card .js-max-installments-contain
 div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments {
   margin-top: 4px !important;
   margin-bottom: 0 !important;
+  order: 2 !important;
+  font-weight: 700 !important;
 }
 
-/* Badge "Ahorrás" */
+/* Badge "Ahorrás" — barra full-width entre imagen e info */
 .ivana-savings-badge {
-  display: inline-block !important;
-  background: #e91e8c !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  background: linear-gradient(135deg, #e91e8c, #f97316) !important;
   color: #fff !important;
-  font-size: 0.75rem !important;
+  font-size: 0.78rem !important;
   font-weight: 700 !important;
-  padding: 3px 10px !important;
-  border-radius: 4px !important;
-  margin-top: 6px !important;
+  padding: 6px 20px !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
   letter-spacing: 0.02em !important;
   text-transform: none !important;
   line-height: 1.4 !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+.ivana-savings-badge svg {
+  flex-shrink: 0;
 }
 
 /* Precio con descuento por transferencia */

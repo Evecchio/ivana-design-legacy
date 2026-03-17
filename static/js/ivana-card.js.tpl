@@ -10,18 +10,13 @@ function parseIvanaMoneyValue(text) {
     }
 
     if (normalized.indexOf(",") > -1 && normalized.indexOf(".") > -1) {
-        // Both dot and comma: dot is thousands, comma is decimal (e.g., 10.996,67)
         normalized = normalized.replace(/\./g, "").replace(",", ".");
     } else if (normalized.indexOf(",") > -1) {
-        // Only comma: comma is decimal (e.g., 10996,67)
         normalized = normalized.replace(",", ".");
     } else if (normalized.indexOf(".") > -1) {
-        // Only dot: check if it's thousands separator
-        // If dot is followed by exactly 3 digits at end, it's thousands (e.g., 54.990)
         if (/\.\d{3}$/.test(normalized) && !/\.\d{1,2}$/.test(normalized.replace(/\.\d{3}/g, ""))) {
             normalized = normalized.replace(/\./g, "");
         }
-        // Otherwise it's a decimal dot (e.g., 54.99), leave as is
     }
 
     var value = parseFloat(normalized);
@@ -87,14 +82,12 @@ function normalizeIvanaProductCards(root) {
             priceContainer.parentNode.insertBefore(installmentsContainer, priceContainer.nextSibling);
         }
 
-        // Create "Ahorras" savings badge
+        // Create "Ahorras" savings badge — barra full-width ENTRE imagen e info
         var existingBadge = card.querySelector(".ivana-savings-badge");
         if (!hideComparePrice && !hideDiscount && comparePriceValue && currentPriceValue && comparePriceValue > currentPriceValue) {
             var savings = comparePriceValue - currentPriceValue;
-            // Extract currency format from original price text
             var priceText = (currentPrice.textContent || "").trim();
             var currencySymbol = priceText.replace(/[\d.,\s]/g, "") || "$";
-            // Detect if price uses dot as thousands sep (e.g., $23.990)
             var usesDotThousands = /\d\.\d{3}/.test(priceText);
             var usesCommaThousands = /\d,\d{3}/.test(priceText);
             var savingsRound = Math.round(savings);
@@ -108,15 +101,17 @@ function normalizeIvanaProductCards(root) {
             if (!existingBadge) {
                 existingBadge = document.createElement("div");
                 existingBadge.className = "ivana-savings-badge";
-                // Insert right after the product name
-                var productName = card.querySelector(".js-item-name.product-item-name");
-                var insertAfter = productName || priceContainer;
-                if (insertAfter && insertAfter.parentNode) {
-                    insertAfter.parentNode.insertBefore(existingBadge, insertAfter.nextSibling);
-                }
+                // Icono de etiqueta SVG
+                var tagIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>';
+                existingBadge.innerHTML = '<span class="ivana-savings-text"></span> ' + tagIcon;
             }
-            existingBadge.textContent = "Ahorr\u00e1s " + formattedSavings;
+            existingBadge.querySelector(".ivana-savings-text").textContent = "Ahorr\u00e1s " + formattedSavings;
             existingBadge.style.display = "";
+            // Insertar ENTRE la imagen y el contenedor de info
+            var infoContainer = card.querySelector(".ivana-card-info") || card.querySelector(".product-item-information") || card.querySelector(".information");
+            if (infoContainer && existingBadge.parentNode !== card) {
+                card.insertBefore(existingBadge, infoContainer);
+            }
         } else if (existingBadge) {
             existingBadge.style.display = "none";
         }
