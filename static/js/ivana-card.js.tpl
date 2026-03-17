@@ -75,8 +75,20 @@ function normalizeIvanaProductCards(root) {
         var existingBadge = card.querySelector(".ivana-savings-badge");
         if (!hideComparePrice && !hideDiscount && comparePriceValue && currentPriceValue && comparePriceValue > currentPriceValue) {
             var savings = comparePriceValue - currentPriceValue;
-            var savingsStr = Math.round(savings).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-            var formattedSavings = "$" + savingsStr;
+            // Extract currency format from original price text
+            var priceText = (currentPrice.textContent || "").trim();
+            var currencySymbol = priceText.replace(/[\d.,\s]/g, "") || "$";
+            // Detect if price uses dot as thousands sep (e.g., $23.990)
+            var usesDotThousands = /\d\.\d{3}/.test(priceText);
+            var usesCommaThousands = /\d,\d{3}/.test(priceText);
+            var savingsRound = Math.round(savings);
+            var savingsStr = savingsRound.toString();
+            if (usesDotThousands) {
+                savingsStr = savingsStr.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            } else if (usesCommaThousands) {
+                savingsStr = savingsStr.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+            var formattedSavings = currencySymbol + savingsStr;
             if (!existingBadge) {
                 existingBadge = document.createElement("div");
                 existingBadge.className = "ivana-savings-badge";
