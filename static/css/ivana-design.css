@@ -2246,14 +2246,20 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   width: 100% !important;
 }
 
-/* Badge de descuento inline — junto al compare price */
+/* Badge de descuento — sticker rojo con texto blanco */
 div.js-product-item-private.product-item.ivana-card span.product-item-discount {
-  font-size: 0.75rem !important;
-  font-weight: 600 !important;
-  color: #6b6b6b !important;
-  margin-left: 4px !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  background: #cc0000 !important;
+  padding: 2px 8px !important;
+  border-radius: 3px !important;
+  margin-left: 6px !important;
   white-space: nowrap;
   order: 1 !important;
+  display: inline-block !important;
+  line-height: 1.4 !important;
+  vertical-align: middle !important;
 }
 
 /* Cuotas — estilo rojo */
