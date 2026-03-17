@@ -61,7 +61,6 @@
 
 <div class="js-products-{{ section_slider_id }}-container container position-relative py-4 ivana-home-products ivana-home-products-{{ section_slider_id }}">
 	<div class="ivana-home-section-head text-center mb-4 mb-md-5">
-		<p class="ivana-home-section-kicker mb-2">{{ section_kicker }}</p>
 		<h2 class="js-products-{{ section_slider_id }}-title h4 mb-2 ivana-home-section-title">{{ section_title }}</h2>
 		<div class="ivana-home-section-divider"></div>
 	</div>
