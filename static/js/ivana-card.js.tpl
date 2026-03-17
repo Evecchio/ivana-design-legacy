@@ -64,6 +64,12 @@ function normalizeIvanaProductCards(root) {
                 node.style.display = "none";
             }
         });
+
+        // Move installments block right after price container
+        var installmentsContainer = card.querySelector(".js-max-installments-container");
+        if (installmentsContainer && priceContainer && priceContainer.parentNode) {
+            priceContainer.parentNode.insertBefore(installmentsContainer, priceContainer.nextSibling);
+        }
     });
 }
 
