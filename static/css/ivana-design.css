@@ -2223,11 +2223,11 @@ div.js-product-item-private.product-item.ivana-card .product-item-price-containe
   margin-bottom: 2px !important;
 }
 
-/* Precio tachado (compare) */
+/* Precio tachado (compare) — oscurecido 30% */
 div.js-product-item-private.product-item.ivana-card span.js-compare-price-display.product-item-price-compare {
   font-size: 0.75rem !important;
   font-weight: 400 !important;
-  color: #999 !important;
+  color: #6b6b6b !important;
   text-decoration: line-through !important;
   order: -1 !important;
   display: inline !important;
@@ -2235,32 +2235,32 @@ div.js-product-item-private.product-item.ivana-card span.js-compare-price-displa
   margin-right: 6px !important;
 }
 
-/* Precio principal */
+/* Precio principal — color marca rosa/magenta + bold */
 div.js-product-item-private.product-item.ivana-card span.js-price-display.product-item-price {
   font-size: 1.5rem !important;
-  font-weight: 400 !important;
-  color: #333 !important;
+  font-weight: 700 !important;
+  color: #e91e8c !important;
   line-height: 1.2 !important;
   letter-spacing: -0.02em !important;
 }
 
-/* Badge de descuento inline */
+/* Badge de descuento inline — oscurecido 30% */
 div.js-product-item-private.product-item.ivana-card span.product-item-discount {
   font-size: 0.75rem !important;
   font-weight: 600 !important;
-  color: #00a650 !important;
+  color: #6b6b6b !important;
   margin-left: 8px !important;
   white-space: nowrap;
 }
 
-/* Cuotas — estilo ML verde */
+/* Cuotas — estilo rojo */
 div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments,
 div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments span,
 div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments div,
 div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments .js-max-installments,
 div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments .js-installment-price,
 div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments .js-installment-amount {
-  color: #00a650 !important;
+  color: #cc0000 !important;
   font-size: 0.8125rem !important;
   font-weight: 600 !important;
 }
@@ -2268,6 +2268,21 @@ div.js-product-item-private.product-item.ivana-card .js-max-installments-contain
 div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments {
   margin-top: 4px !important;
   margin-bottom: 0 !important;
+}
+
+/* Badge "Ahorrás" */
+.ivana-savings-badge {
+  display: inline-block !important;
+  background: #e91e8c !important;
+  color: #fff !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  padding: 3px 10px !important;
+  border-radius: 4px !important;
+  margin-top: 6px !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  line-height: 1.4 !important;
 }
 
 /* Precio con descuento por transferencia */

@@ -70,6 +70,26 @@ function normalizeIvanaProductCards(root) {
         if (installmentsContainer && priceContainer && priceContainer.parentNode) {
             priceContainer.parentNode.insertBefore(installmentsContainer, priceContainer.nextSibling);
         }
+
+        // Create "Ahorras" savings badge
+        var existingBadge = card.querySelector(".ivana-savings-badge");
+        if (!hideComparePrice && !hideDiscount && comparePriceValue && currentPriceValue && comparePriceValue > currentPriceValue) {
+            var savings = comparePriceValue - currentPriceValue;
+            var formattedSavings = "$" + savings.toLocaleString("es-AR", { minimumFractionDigits: 0 });
+            if (!existingBadge) {
+                existingBadge = document.createElement("div");
+                existingBadge.className = "ivana-savings-badge";
+                // Insert after installments or after price container
+                var insertAfter = installmentsContainer || priceContainer;
+                if (insertAfter && insertAfter.parentNode) {
+                    insertAfter.parentNode.insertBefore(existingBadge, insertAfter.nextSibling);
+                }
+            }
+            existingBadge.textContent = "Ahorr\u00e1s " + formattedSavings;
+            existingBadge.style.display = "";
+        } else if (existingBadge) {
+            existingBadge.style.display = "none";
+        }
     });
 }
 
