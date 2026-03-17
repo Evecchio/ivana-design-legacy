@@ -4304,3 +4304,9 @@ h3,
   text-align: center !important;
   width: auto !important;
 }
+
+/* Espaciado del Menú de Navegación */
+.js-nav-desktop-list > .nav-item-desktop {
+  margin-left: 14px !important;
+  margin-right: 14px !important;
+}
