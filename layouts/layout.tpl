@@ -88,9 +88,9 @@
 			}
 		</style>
 
-		<link rel="stylesheet" href="{{ 'css/ivana-orchestrator.css' | static_url }}">
+
 	</head>
-	<body class="luxury-mode {% if customer %}customer-logged-in{% endif %} template-{{ template | replace('.', '-') }}">
+	<body class="{% if customer %}customer-logged-in{% endif %} template-{{ template | replace('.', '-') }}">
 
 		{# Theme icons #}
 
