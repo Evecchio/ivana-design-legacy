@@ -406,7 +406,7 @@
 .ivana-home-section-title {
   font-size: clamp(1.9rem, 4vw, 3rem) !important;
   letter-spacing: -0.04em !important;
-  text-transform: uppercase !important;
+  text-transform: lowercase !important;
   text-align: center !important;
   margin-bottom: 0.5rem !important;
 }
@@ -4348,6 +4348,11 @@ h3,
   display: inline-block !important;
   text-align: center !important;
   width: auto !important;
+  text-transform: lowercase !important;
+}
+
+.ivana-home-section-title::first-letter {
+  text-transform: uppercase !important;
 }
 
 /* Espaciado del Menú de Navegación */
