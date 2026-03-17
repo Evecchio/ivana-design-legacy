@@ -10,11 +10,18 @@ function parseIvanaMoneyValue(text) {
     }
 
     if (normalized.indexOf(",") > -1 && normalized.indexOf(".") > -1) {
+        // Both dot and comma: dot is thousands, comma is decimal (e.g., 10.996,67)
         normalized = normalized.replace(/\./g, "").replace(",", ".");
     } else if (normalized.indexOf(",") > -1) {
-        normalized = normalized.replace(/\./g, "").replace(",", ".");
-    } else {
-        normalized = normalized.replace(/,/g, "");
+        // Only comma: comma is decimal (e.g., 10996,67)
+        normalized = normalized.replace(",", ".");
+    } else if (normalized.indexOf(".") > -1) {
+        // Only dot: check if it's thousands separator
+        // If dot is followed by exactly 3 digits at end, it's thousands (e.g., 54.990)
+        if (/\.\d{3}$/.test(normalized) && !/\.\d{1,2}$/.test(normalized.replace(/\.\d{3}/g, ""))) {
+            normalized = normalized.replace(/\./g, "");
+        }
+        // Otherwise it's a decimal dot (e.g., 54.99), leave as is
     }
 
     var value = parseFloat(normalized);
