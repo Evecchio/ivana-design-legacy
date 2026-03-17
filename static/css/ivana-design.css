@@ -2223,7 +2223,7 @@ div.js-product-item-private.product-item.ivana-card .product-item-price-containe
   margin-bottom: 2px !important;
 }
 
-/* Precio tachado (compare) + %OFF — primera línea */
+/* Precio tachado (compare) — primera línea sola */
 div.js-product-item-private.product-item.ivana-card span.js-compare-price-display.product-item-price-compare {
   font-size: 0.75rem !important;
   font-weight: 400 !important;
@@ -2233,6 +2233,7 @@ div.js-product-item-private.product-item.ivana-card span.js-compare-price-displa
   display: inline !important;
   margin-bottom: 0 !important;
   margin-right: 0 !important;
+  width: 100% !important;
 }
 
 /* Precio principal — segunda línea, color marca rosa/magenta + bold */
@@ -2243,7 +2244,6 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   line-height: 1.2 !important;
   letter-spacing: -0.02em !important;
   order: 2 !important;
-  width: 100% !important;
 }
 
 /* Badge de descuento — sticker rojo con texto blanco */
@@ -2256,7 +2256,7 @@ div.js-product-item-private.product-item.ivana-card span.product-item-discount {
   border-radius: 3px !important;
   margin-left: 6px !important;
   white-space: nowrap;
-  order: 1 !important;
+  order: 2 !important;
   display: inline-block !important;
   line-height: 1.4 !important;
   vertical-align: middle !important;
