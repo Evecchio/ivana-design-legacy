@@ -1,0 +1,68 @@
+/* ═══════════════════════════════════════════════════════════════════
+   IVANA DESIGN — ORQUESTADOR MAESTRO v1.0
+   Control centralizado de variantes de diseño sin tocar el core.
+
+   Activar:     agregar clase "luxury-mode" al <body> en layout.tpl
+   Desactivar:  quitar la clase "luxury-mode" del <body>
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════
+   CAPA LUXURY — Limpieza y Estética Boutique
+   ═══════════════════════════════════════════════════════════════════ */
+@media screen {
+    body.luxury-mode {
+        /* 1. Tokens de Lujo */
+        --bg-prime: #F9F8F6;
+        --text-prime: #1A1A1A;
+        --font-heading: 'Cormorant Garamond', serif;
+        --font-body: 'Manrope', sans-serif;
+    }
+
+    /* 2. Reset Global de Limpieza */
+    body.luxury-mode .ivana-page-hero,
+    body.luxury-mode .ivana-product-shell .product-images,
+    body.luxury-mode .ivana-product-shell .product-info,
+    body.luxury-mode .ivana-category-products,
+    body.luxury-mode .ivana-cart-shell .cart-page-products {
+        background: var(--bg-prime) !important;
+        border: none !important;
+        box-shadow: 0 4px 30px rgba(0,0,0,0.02) !important;
+        border-radius: 2px !important;
+    }
+
+    /* 3. Hard Delete: Estilo Mercado Libre y Gráfica Agresiva */
+    /* Eliminamos visualmente lo que Tiendanube inyecta por defecto */
+    body.luxury-mode [class*="product-item-private"],
+    body.luxury-mode .ivana-card {
+        border: none !important;
+        background: transparent !important;
+    }
+
+    body.luxury-mode .product-item-price-compare,
+    body.luxury-mode .product-item-discount,
+    body.luxury-mode .ivana-savings-badge,
+    body.luxury-mode .shipping-label {
+        display: none !important;
+    }
+
+    /* 4. Tipografía Luxury */
+    body.luxury-mode h1,
+    body.luxury-mode .ivana-page-title,
+    body.luxury-mode .ivana-product-title,
+    body.luxury-mode .ivana-home-section-title {
+        font-family: var(--font-heading) !important;
+        font-weight: 300 !important;
+        color: var(--text-prime) !important;
+        text-transform: capitalize !important;
+        letter-spacing: -0.02em !important;
+    }
+
+    /* 5. Botones Sobrios */
+    body.luxury-mode .btn-primary,
+    body.luxury-mode .ivana-card-secondary-action {
+        background: #000 !important;
+        border-radius: 0 !important; /* Ángulos rectos = Lujo */
+        letter-spacing: 0.2em !important;
+        font-weight: 400 !important;
+    }
+}
