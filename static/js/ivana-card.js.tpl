@@ -66,6 +66,15 @@ function normalizeIvanaProductCards(root) {
 
         priceContainer.classList.toggle("ivana-no-discount", hideDiscount || hideComparePrice);
 
+        // Wrap current price + discount badge in a single row container
+        if (currentPrice && discountBadge && !card.querySelector(".ivana-price-row")) {
+            var priceRow = document.createElement("span");
+            priceRow.className = "ivana-price-row";
+            currentPrice.parentNode.insertBefore(priceRow, currentPrice);
+            priceRow.appendChild(currentPrice);
+            priceRow.appendChild(discountBadge);
+        }
+
         card.querySelectorAll(".custom-installments, .text-accent").forEach(function(node) {
             if (!node.textContent || !node.textContent.trim()) {
                 node.style.display = "none";
