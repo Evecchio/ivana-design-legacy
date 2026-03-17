@@ -37,7 +37,9 @@
 		</li>
 	{% else %}
 		<li class="js-desktop-nav-item {% if not subitem %}js-nav-main-item nav-main-item{% endif %} nav-item-desktop nav-item" data-component="menu.item" {% if not subitem %}style="margin: 0 14px !important;"{% endif %}>
-			<a class="js-nav-list-link nav-list-link {{ featured_link_classes }} {{ featured_link_color_classes }} {{ item.current ? 'selected' : '' }}" href="{% if item.url %}{{ item.url | setting_url }}{% else %}#{% endif %}" data-url-cleaned="{{ link_url }}">{{ item.name }}</a>
+			<div class="nav-item-container">
+				<a class="js-nav-list-link nav-list-link {{ featured_link_classes }} {{ featured_link_color_classes }} {{ item.current ? 'selected' : '' }}" href="{% if item.url %}{{ item.url | setting_url }}{% else %}#{% endif %}" data-url-cleaned="{{ link_url }}">{{ item.name }}</a>
+			</div>
 		</li>
 	{% endif %}
 	{%- endif -%}
