@@ -79,6 +79,14 @@
 		{{ component('structured-data') }}
 
 		<link rel="stylesheet" href="{{ 'css/ivana-design.css' | static_url }}">
+		<style>
+			/* REFUERZO DE CENTRADO — Para asegurar que el título se vea centrado en la home */
+			.ivana-home-section-title {
+				display: inline-block !important;
+				text-align: center !important;
+				width: auto !important;
+			}
+		</style>
 	</head>
 	<body class="{% if customer %}customer-logged-in{% endif %} template-{{ template | replace('.', '-') }}">
 
