@@ -116,11 +116,7 @@
 
 	<div class="js-nav-desktop-color-container nav-desktop-container {{ nav_desktop_color_class }} d-none d-md-block">
 		<div class="js-nav-desktop-container {{ nav_desktop_grid_class }} {{ nav_desktop_grid_secondary_nav_class }} container" data-desktop-nav-secondary-or-language="{{ nav_secondary_col ? 'true' : 'false' }}" data-desktop-nav-secondary="{{ settings.head_secondary_menu_show ? 'true' : 'false' }}" data-desktop-main-categories="{{ settings.category_item ? 'true' : 'false' }}" style="visibility:hidden; height:0;">
-			{% if settings.category_item or params.preview %}
-				<div class="js-desktop-main-categories-col nav-desktop-list {{ nav_desktop_text_class }}" {% if not settings.category_item %}style="display: none;"{% endif %}>
-					{% include 'snipplets/navigation/navigation-categories-desktop.tpl' %}
-				</div>
-			{% endif %}
+
 			<div class="js-desktop-nav-col nav-desktop-main {{ nav_desktop_text_class }}">
 				{% snipplet "navigation/navigation.tpl" %}
 			</div>
