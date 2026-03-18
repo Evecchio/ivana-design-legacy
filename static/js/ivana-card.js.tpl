@@ -60,6 +60,7 @@ function normalizeIvanaProductCards(root) {
         }
 
         priceContainer.classList.toggle("ivana-no-discount", hideDiscount || hideComparePrice);
+        card.classList.toggle("ivana-no-discount", hideDiscount || hideComparePrice);
 
         // Wrap current price + discount badge in a single row container
         if (currentPrice && discountBadge && !card.querySelector(".ivana-price-row")) {
