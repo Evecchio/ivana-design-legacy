@@ -93,6 +93,12 @@ function normalizeIvanaProductCards(root) {
             priceContainer.parentNode.insertBefore(installmentsContainer, priceContainer.nextSibling);
         }
 
+        // Mover badge de pocas unidades al pie de la tarjeta
+        var lowStockBadge = card.querySelector(".ivana-low-stock-badge");
+        if (lowStockBadge) {
+            card.appendChild(lowStockBadge);
+        }
+
         // Create "Ahorras" savings badge — barra full-width ENTRE imagen e info
         var existingBadge = card.querySelector(".ivana-savings-badge");
         if (!hideComparePrice && !hideDiscount && comparePriceValue && currentPriceValue && comparePriceValue > currentPriceValue) {

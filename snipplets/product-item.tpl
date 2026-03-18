@@ -76,6 +76,17 @@
 				})
 			}}
 		{% endif %}
+		{# Badge de pocas unidades — pie de tarjeta #}
+		{% if product.stock is not null and product.stock > 0 and product.stock < 5 %}
+			<div class="ivana-low-stock-badge">
+				{% if product.stock == 1 %}
+					¡Última unidad!
+				{% else %}
+					¡Quedan solo {{ product.stock }} unidades!
+				{% endif %}
+			</div>
+		{% endif %}
+
 		{% set product_available_with_price = product.available and product.display_price %}
 
 		{% if 

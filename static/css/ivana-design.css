@@ -2305,7 +2305,8 @@ div.js-product-item-private.product-item.ivana-card.ivana-no-discount span.js-pr
 div.js-product-item-private.product-item.ivana-card.ivana-no-discount .js-max-installments-container.ivana-card-installments,
 div.js-product-item-private.product-item.ivana-card.ivana-no-discount .js-max-installments-container.ivana-card-installments span,
 div.js-product-item-private.product-item.ivana-card.ivana-no-discount .js-max-installments-container.ivana-card-installments div {
-  color: #999999 !important;
+  color: #E53935 !important;
+  font-weight: 700 !important;
 }
 
 /* Badge "Ahorrás" — barra full-width entre imagen e info */
@@ -3329,10 +3330,11 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   margin-top: 0 !important;
 }
 
-/* Sin descuento: cuotas en gris */
+/* Sin descuento: cuotas en rojo y negrita */
 .ivana-card.ivana-no-discount .ivana-card-installments,
 .ivana-card.ivana-no-discount [class*="installments"] {
-  color: #999999 !important;
+  color: #E53935 !important;
+  font-weight: 700 !important;
 }
 
 .ivana-card-installments .product-installment-amount,
@@ -3407,6 +3409,35 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 
 .ivana-no-discount span.js-compare-price-display.product-item-price-compare {
   display: none !important;
+}
+
+/* Ocultar badge de descuento y badge de ahorro en tarjetas sin descuento */
+.ivana-no-discount .product-item-discount,
+.ivana-no-discount [class*="discount-rate"],
+.ivana-no-discount .ivana-savings-badge {
+  display: none !important;
+}
+
+/* Badge de pocas unidades — barra naranja al pie de la tarjeta */
+.ivana-low-stock-badge {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  background: #f57c00 !important;
+  color: #fff !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  padding: 6px 20px !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  line-height: 1.4 !important;
+  text-align: center !important;
+  width: 100% !important;
+  order: 999 !important;
+  margin-top: auto !important;
 }
 
 @media (max-width: 767px) {
