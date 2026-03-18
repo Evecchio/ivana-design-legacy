@@ -29,6 +29,16 @@ function normalizeIvanaProductCards(root) {
     var cards = scope.querySelectorAll(".js-product-item-private.product-item.ivana-card");
 
     cards.forEach(function(card) {
+        // Normalizar nombre: solo primera letra mayúscula
+        var nameEl = card.querySelector(".js-item-name.product-item-name");
+        if (nameEl && !nameEl.dataset.ivanaNameNormalized) {
+            var rawText = nameEl.textContent.trim();
+            if (rawText) {
+                nameEl.textContent = rawText.charAt(0).toUpperCase() + rawText.slice(1).toLowerCase();
+                nameEl.dataset.ivanaNameNormalized = "1";
+            }
+        }
+
         var priceContainer = card.querySelector(".product-item-price-container");
         var discountBadge = card.querySelector(".product-item-discount");
         var comparePrice = card.querySelector("span.js-compare-price-display.product-item-price-compare");

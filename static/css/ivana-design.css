@@ -2198,14 +2198,14 @@ div.js-product-item-private.product-item.ivana-card .product-item-information.iv
   gap: 0 !important;
 }
 
-/* Nombre del producto */
+/* Nombre del producto — solo primera letra mayúscula */
 div.js-product-item-private.product-item.ivana-card .js-item-name.product-item-name.ivana-card-name {
   font-family: "Manrope", var(--body-font), sans-serif !important;
   font-size: 14px !important;
   font-weight: 600 !important;
   line-height: 1.35 !important;
   color: #111111 !important;
-  text-transform: lowercase !important;
+  text-transform: none !important;
   letter-spacing: 0 !important;
   margin-bottom: 8px !important;
   display: -webkit-box;
@@ -2213,10 +2213,6 @@ div.js-product-item-private.product-item.ivana-card .js-item-name.product-item-n
   line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-div.js-product-item-private.product-item.ivana-card .js-item-name.product-item-name.ivana-card-name::first-line {
-  text-transform: capitalize !important;
 }
 
 /* Contenedor de precios — layout wrap */
@@ -2236,11 +2232,13 @@ div.js-product-item-private.product-item.ivana-card span.js-compare-price-displa
   font-style: italic !important;
   color: #999999 !important;
   text-decoration: line-through !important;
+  text-decoration-thickness: 1px !important;
   order: 0 !important;
   display: inline !important;
   margin-bottom: 0 !important;
   margin-right: 0 !important;
   width: 100% !important;
+  line-height: 1.2 !important;
 }
 
 /* Precio principal — rojo negrita */
@@ -3261,19 +3259,13 @@ div.js-product-item-private.product-item.ivana-card:hover,
   font-weight: 600 !important;
   line-height: 1.45 !important;
   letter-spacing: 0 !important;
-  text-transform: lowercase !important;
+  text-transform: none !important;
   margin-bottom: 0 !important;
   display: -webkit-box !important;
   overflow: hidden !important;
   -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
-}
-
-.ivana-card-name::first-line,
-.js-item-product .item-name::first-line,
-.js-item-product a[class*="name"]::first-line {
-  text-transform: capitalize !important;
 }
 
 div.js-product-item-private.product-item.ivana-card .product-item-price-container {
