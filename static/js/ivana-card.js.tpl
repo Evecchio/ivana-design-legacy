@@ -26,7 +26,7 @@ function parseIvanaMoneyValue(text) {
 
 function normalizeIvanaProductCards(root) {
     var scope = root || document;
-    var cards = scope.querySelectorAll(".js-product-item-private.product-item.ivana-card");
+    var cards = scope.querySelectorAll(".js-product-item-private.product-item.ivana-card, .js-item-product, .js-product-container.js-product-item");
 
     cards.forEach(function(card) {
         // Normalizar nombre: solo primera letra mayúscula
