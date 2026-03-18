@@ -30,7 +30,7 @@ function normalizeIvanaProductCards(root) {
 
     cards.forEach(function(card) {
         // Normalizar nombre: solo primera letra mayúscula
-        var nameEl = card.querySelector(".js-item-name.product-item-name");
+        var nameEl = card.querySelector(".js-item-name");
         if (nameEl && !nameEl.dataset.ivanaNameNormalized) {
             var rawText = nameEl.textContent.trim();
             if (rawText) {
