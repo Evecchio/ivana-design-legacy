@@ -14,6 +14,7 @@
 {# Logo sizes #}
 
 {% set logo_size_thumbnail = settings.logo_size == 'big' ? 'huge' : 'large' %}
+{% set header_logo_src = store.logo ? store.logo : '//dcdn-us.mitiendanube.com/stores/872/079/themes/common/logo-1057840909-1747065197-0ef12ce14d866743dfa0d03ce26b00ca1747065197-640-0.webp' %}
 
 {# Utilities #}
 
@@ -46,7 +47,7 @@
 		<div class="js-logo-container logo-container head-slot head-slot-logo">
 			<div class="m-0 ivana-logo-wrap">
 				<a href="{{ store.url }}" class="ivana-logo-link" aria-label="{{ store.name }}">
-					<img src="//dcdn-us.mitiendanube.com/stores/872/079/themes/common/logo-1057840909-1747065197-0ef12ce14d866743dfa0d03ce26b00ca1747065197-640-0.webp" alt="Ivana Design" class="logo-img logo-big transition-soft" width="658" height="324">
+					<img src="{{ header_logo_src }}" alt="{{ store.name }}" class="logo-img {{ logo_size_class }} ivana-logo-img transition-soft" width="640" height="171" loading="eager" fetchpriority="high" decoding="async">
 				</a>
 			</div>
 		</div>

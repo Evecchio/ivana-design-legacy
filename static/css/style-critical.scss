@@ -4530,3 +4530,43 @@ h1, .h1, h2, .h2, .page-header {
 h1, h2, .ivana-home-category-name {
   letter-spacing: 0.02em !important;
 }
+
+/* ============================================================
+   LOGO RESPONSIVE
+   ============================================================ */
+
+.ivana-logo-wrap,
+.ivana-logo-link {
+  width: 100%;
+}
+
+.ivana-logo-link {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.ivana-logo-img {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: min(100%, clamp(180px, 28vw, 360px)) !important;
+  max-height: clamp(46px, 6vw, 88px) !important;
+  object-fit: contain !important;
+}
+
+.logo-center .ivana-logo-link,
+.logo-md-center .ivana-logo-link {
+  justify-content: center;
+}
+
+.logo-left .ivana-logo-link,
+.logo-md-left .ivana-logo-link {
+  justify-content: flex-start;
+}
+
+@media (max-width: 767px) {
+  .ivana-logo-img {
+    max-width: min(100%, 300px) !important;
+    max-height: 64px !important;
+  }
+}
