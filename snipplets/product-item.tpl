@@ -2,12 +2,14 @@
 {% set show_color_variants_settings_value = settings.product_color_variants and not reduced_item %}
 {% set show_quick_shop_settings_value = settings.quick_shop and not reduced_item and template != 'home' %}
 {% set show_secondary_image_settings_value = false %}
-{% set labels_value = reduced_item ? false : true %}
-{% set price_compare_value = reduced_item ? false : true %}
-{% set discount_rate_value = reduced_item ? false : true %}
+{% set has_real_discount = product.compare_at_price and product.compare_at_price > product.price %}
+{% set labels_value = reduced_item ? false : has_real_discount %}
+{% set price_compare_value = reduced_item ? false : has_real_discount %}
+{% set discount_rate_value = reduced_item ? false : has_real_discount %}
 {% set slide_item = slide_item | default(false) %}
 {% set slide_item_class = slide_item ? 'js-item-slide swiper-slide ' %}
 {% set reduced_item_classes = reduced_item ? 'product-item-reduced' %}
+{% set discount_state_class = has_real_discount ? '' : ' ivana-no-discount' %}
 {% set item_name_classes = reduced_item ? 'mb-2' : 'mb-3' %}
 {% set item_price_classes = reduced_item ? 'font-medium' %}
 {% set item_spacing_classes = not reduced_item ? 'mb-3' %}
@@ -157,7 +159,7 @@
 		labels: labels_value,
 		price_compare: price_compare_value,
 		product_item_classes: {
-			item: 'ivana-card js-product-container js-item-product ' ~ item_spacing_classes ~ slide_item_class ~ reduced_item_classes,
+			item: 'ivana-card js-product-container js-item-product ' ~ item_spacing_classes ~ slide_item_class ~ reduced_item_classes ~ discount_state_class,
 			name: 'ivana-card-name ' ~ item_name_classes,
 			image: image_classes,
 			information: 'ivana-card-info d-flex flex-column pt-3 pb-2',

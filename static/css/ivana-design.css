@@ -2301,7 +2301,9 @@ div.js-product-item-private.product-item.ivana-card .js-max-installments-contain
 
 /* Sin descuento: precio negro, cuotas gris */
 div.js-product-item-private.product-item.ivana-card.ivana-no-discount span.js-price-display.product-item-price {
+  display: inline-block !important;
   color: #111111 !important;
+  font-weight: 400 !important;
 }
 
 div.js-product-item-private.product-item.ivana-card.ivana-no-discount .js-max-installments-container.ivana-card-installments,
@@ -2309,6 +2311,10 @@ div.js-product-item-private.product-item.ivana-card.ivana-no-discount .js-max-in
 div.js-product-item-private.product-item.ivana-card.ivana-no-discount .js-max-installments-container.ivana-card-installments div {
   color: #E53935 !important;
   font-weight: 700 !important;
+}
+
+span.js-compare-price-display.product-item-price-compare:empty {
+  display: none !important;
 }
 
 /* Badge "Ahorrás" — barra full-width entre imagen e info */
