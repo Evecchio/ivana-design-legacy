@@ -5,10 +5,10 @@
 				<h2 class="ivana-home-section-title mb-0" style="display: inline-block !important; text-align: center !important; width: auto !important;">Colección</h2>			
 				<div class="ivana-home-section-divider"></div>	
 				</div>
-			<div class="d-flex justify-content-center align-items-start gap-4 pb-4 ivana-home-categories-row">
+			<div class="d-flex justify-content-center align-items-start gap-4 pb-4 ivana-home-categories-row category-slider-mobile">
 				{% for slide in settings.slider_categories %}
 					{% if slide.link %}
-						<a href="{{ slide.link | setting_url }}" class="js-home-category d-flex flex-column align-items-center group shrink-0 text-decoration-none" aria-label="{{ 'Categoría' | translate }} {{ loop.index }}">
+						<a href="{{ slide.link | setting_url }}" class="js-home-category d-flex flex-column align-items-center group shrink-0 text-decoration-none category-item" aria-label="{{ 'Categoría' | translate }} {{ loop.index }}">
 							<div class="home-category-image-border ivana-home-category-circle w-28 h-28 md:w-36 md:h-36 rounded-circle overflow-hidden p-1 transition-all">
 								<div class="w-100 h-100 rounded-circle overflow-hidden">
 									{{ component(

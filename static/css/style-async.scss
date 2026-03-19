@@ -2462,6 +2462,24 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   .product-image-limited {
     max-height: 210px;
   }
+
+  .category-slider-mobile {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 var(--spacing-3);
+    touch-action: pan-x;
+    padding-bottom: 15px;
+  }
+
+  .category-slider-mobile .category-item {
+    flex: 0 0 32%;
+    max-width: 32%;
+    scroll-snap-align: start;
+    text-align: center;
+  }
 }
 
 /*============================================================================
