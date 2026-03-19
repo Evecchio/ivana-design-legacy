@@ -4486,3 +4486,47 @@ h6,
   font-size: 13px;
   margin-bottom: 1.5rem;
 }
+
+/* ============================================================
+   TRANSFORMACIÓN GLOBAL A TITLE CASE (Solo primera letra Mayúscula)
+   ============================================================ */
+
+/* 1. Títulos Principales de Páginas (Categorías, Contacto, Checkout) */
+h1, .h1, h2, .h2, .page-header {
+  text-transform: capitalize !important;
+}
+
+/* 2. Secciones de la Home y Categorías */
+.ivana-home-section-title,
+.ivana-home-category-name,
+.js-products-featured-title,
+.js-products-new-title,
+.js-products-sale-title {
+  text-transform: capitalize !important;
+}
+
+/* 3. Nombres de Productos en Grillas, Búsqueda y Detalle */
+.ivana-card-name,
+.product-item-name,
+.js-item-name,
+.product-name {
+  text-transform: capitalize !important;
+}
+
+/* 4. Elementos de Navegación Secundaria y Migas de Pan */
+.breadcrumb-item,
+.breadcrumb-link,
+.cart-item-name {
+  text-transform: capitalize !important;
+}
+
+/* 5. EXCLUSIÓN CRÍTICA: Mantener Menú Principal según diseño original */
+.nav-list-link,
+.nav-item,
+.desktop-dropdown .nav-list-link {
+  text-transform: none !important;
+}
+
+h1, h2, .ivana-home-category-name {
+  letter-spacing: 0.02em !important;
+}
