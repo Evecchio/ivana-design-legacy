@@ -163,7 +163,7 @@
 			.h1, .h2, h1, h2 {
 				font-size: 1.8rem!important;
 				letter-spacing:-0.03em!important;
-				text-transform: uppercase!important;
+				text-transform: capitalize!important;
 				font-weight: 900!important; /* Extra Black de Stitch */
 				text-align: center!important;
 				margin-bottom: 2.5rem!important;
