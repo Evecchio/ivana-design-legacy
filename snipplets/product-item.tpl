@@ -3,6 +3,7 @@
 {% set show_quick_shop_settings_value = settings.quick_shop and not reduced_item and template != 'home' %}
 {% set show_secondary_image_settings_value = false %}
 {% set has_real_discount = product.compare_at_price and product.compare_at_price > product.price %}
+{% set show_installments_line = settings.product_installments and not reduced_item and product.display_price %}
 {% set labels_value = reduced_item ? false : has_real_discount %}
 {% set price_compare_value = reduced_item ? false : has_real_discount %}
 {% set discount_rate_value = reduced_item ? false : has_real_discount %}
@@ -87,6 +88,22 @@
 					¡Quedan solo {{ product.stock }} unidades!
 				{% endif %}
 			</div>
+		{% endif %}
+
+		{% if not product.available %}
+			<div class="ivana-out-of-stock-badge">
+				Sin stock
+			</div>
+		{% endif %}
+
+		{% if not product.available and show_installments_line %}
+			{{ component('installments', {
+				location: 'product_list',
+				short_wording: true,
+				container_classes: {
+					installment: 'ivana-card-installments custom-installments mt-1'
+				}
+			}) }}
 		{% endif %}
 
 		{% set product_available_with_price = product.available and product.display_price %}

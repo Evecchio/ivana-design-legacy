@@ -3486,6 +3486,27 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   margin-top: auto !important;
 }
 
+.ivana-out-of-stock-badge {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  background: #d32f2f !important;
+  color: #fff !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  padding: 6px 20px !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  line-height: 1.4 !important;
+  text-align: center !important;
+  width: 100% !important;
+  order: 999 !important;
+  margin-top: auto !important;
+}
+
 @media (max-width: 767px) {
 
   div.js-product-item-private.product-item.ivana-card,
