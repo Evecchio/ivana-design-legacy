@@ -92,7 +92,7 @@
 
 		{% if not product.available %}
 			<div class="ivana-out-of-stock-badge">
-				Sin stock
+				Sin stock por el momento
 			</div>
 		{% endif %}
 

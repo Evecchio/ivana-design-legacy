@@ -93,15 +93,19 @@ function normalizeIvanaProductCards(root) {
             priceContainer.parentNode.insertBefore(installmentsContainer, priceContainer.nextSibling);
         }
 
-        // Mover badge de pocas unidades al pie de la tarjeta
+        // Ubicar badges de estado justo después del bloque comercial
         var lowStockBadge = card.querySelector(".ivana-low-stock-badge");
-        if (lowStockBadge) {
-            card.appendChild(lowStockBadge);
+        if (lowStockBadge && installmentsContainer && installmentsContainer.parentNode) {
+            installmentsContainer.parentNode.insertBefore(lowStockBadge, installmentsContainer.nextSibling);
+        } else if (lowStockBadge && priceContainer && priceContainer.parentNode) {
+            priceContainer.parentNode.insertBefore(lowStockBadge, priceContainer.nextSibling);
         }
 
         var outOfStockBadge = card.querySelector(".ivana-out-of-stock-badge");
-        if (outOfStockBadge) {
-            card.appendChild(outOfStockBadge);
+        if (outOfStockBadge && installmentsContainer && installmentsContainer.parentNode) {
+            installmentsContainer.parentNode.insertBefore(outOfStockBadge, installmentsContainer.nextSibling);
+        } else if (outOfStockBadge && priceContainer && priceContainer.parentNode) {
+            priceContainer.parentNode.insertBefore(outOfStockBadge, priceContainer.nextSibling);
         }
 
         // Create "Ahorras" savings badge — barra full-width ENTRE imagen e info
