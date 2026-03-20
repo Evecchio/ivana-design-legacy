@@ -2906,8 +2906,7 @@ small,
   font-size: var(--fluid-caption, 0.68rem) !important;
   font-weight: 700 !important;
   letter-spacing: 0.18em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: uppercase !important;
   line-height: 1.5 !important;
   white-space: normal;
   word-break: keep-all;
@@ -4464,8 +4463,7 @@ h3,
   font-size: var(--fluid-caption) !important;
   font-weight: 700 !important;
   letter-spacing: 0.18em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: uppercase !important;
   font-family: "Manrope", sans-serif;
   line-height: 1.6;
   white-space: normal;
