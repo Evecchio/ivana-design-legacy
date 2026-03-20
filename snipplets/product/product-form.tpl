@@ -69,7 +69,7 @@
 		{% set discount_rate_percentage = ((product.compare_at_price) - (product.price)) * 100 / (product.compare_at_price) %}
 	{% endif %}
 	{% if not is_subscription_only_product %}
-	<div class="js-price-container price-container ivana-product-price-block mb-3" data-store="product-price-{{ product.id }}">
+	<div class="js-price-container price-container ivana-product-price-block {% if product.compare_at_price > product.price %}ivana-product-price-block-discounted{% endif %} mb-3" data-store="product-price-{{ product.id }}">
 		<div id="compare_price_display" class="js-compare-price-display price-compare font-medium" {% if not product.compare_at_price or not product.display_price %}style="display:none;"{% else %} style="display:block;"{% endif %}>
 			{% if product.compare_at_price and product.display_price %}
 				{{ product.compare_at_price | money }}

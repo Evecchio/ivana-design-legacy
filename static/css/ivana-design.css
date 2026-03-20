@@ -3507,6 +3507,12 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   margin-top: auto !important;
 }
 
+div.js-product-item-private.product-item.ivana-card span.js-price-display.product-item-price,
+.js-item-product.ivana-card span.js-price-display.product-item-price,
+.ivana-product-price-block-discounted .js-price-display {
+  font-weight: 800 !important;
+}
+
 @media (max-width: 767px) {
 
   div.js-product-item-private.product-item.ivana-card,
