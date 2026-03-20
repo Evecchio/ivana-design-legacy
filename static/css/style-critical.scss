@@ -4531,6 +4531,18 @@ h1, h2, .ivana-home-category-name {
   letter-spacing: 0.02em !important;
 }
 
+/* Category/page header casing */
+.ivana-category-copy .ivana-breadcrumbs,
+.ivana-category-copy .ivana-breadcrumbs a,
+.ivana-category-copy .crumb,
+.ivana-category-copy .crumb.active,
+.ivana-category-copy .ivana-category-kicker,
+.ivana-category-copy .ivana-category-title,
+.ivana-category-copy .ivana-category-count {
+  text-transform: lowercase !important;
+  text-transform: capitalize !important;
+}
+
 /* ============================================================
    LOGO RESPONSIVE
    ============================================================ */
