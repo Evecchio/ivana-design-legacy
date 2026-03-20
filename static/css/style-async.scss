@@ -2470,15 +2470,48 @@ body:not(.is-using-mouse) .fancybox__container :focus {
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
+    scrollbar-width: none;
     touch-action: pan-x;
+    justify-content: flex-start !important;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 15px;
   }
 
+  .category-slider-mobile::-webkit-scrollbar {
+    display: none;
+  }
+
   .category-slider-mobile .category-item {
-    flex: 0 0 28%;
+    flex: 0 0 auto;
+    width: 28%;
     max-width: 28%;
+    scroll-snap-align: start;
+    text-align: center;
+    margin-right: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .category-slider-mobile {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    touch-action: pan-x;
+    padding-bottom: 15px;
+  }
+
+  .category-slider-mobile::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-slider-mobile .category-item {
+    flex: 0 0 auto;
+    width: 150px;
     scroll-snap-align: start;
     text-align: center;
     margin-right: 15px;
