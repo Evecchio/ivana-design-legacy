@@ -4544,6 +4544,17 @@ h3,
   text-transform: capitalize !important;
 }
 
+/* Desktop navigation and megamenu casing */
+.js-nav-desktop-list .nav-list-link,
+.js-nav-desktop-list .nav-item,
+.desktop-dropdown .nav-list-link,
+.desktop-dropdown .nav-item,
+.desktop-list-subitems .nav-item .nav-list-link,
+.desktop-list-subitems .nav-item .list-subitems .nav-item .nav-list-link {
+  text-transform: lowercase !important;
+  text-transform: capitalize !important;
+}
+
 /* Category/page header casing */
 .ivana-category-copy .ivana-breadcrumbs,
 .ivana-category-copy .ivana-breadcrumbs a,

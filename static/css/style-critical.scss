@@ -4520,11 +4520,13 @@ h1, .h1, h2, .h2, .page-header {
   text-transform: capitalize !important;
 }
 
-/* 5. EXCLUSIÓN CRÍTICA: Mantener Menú Principal según diseño original */
-.nav-list-link,
-.nav-item,
-.desktop-dropdown .nav-list-link {
-  text-transform: none !important;
+/* 5. Navegación desktop en title case */
+.js-nav-desktop-list .nav-list-link,
+.js-nav-desktop-list .nav-item,
+.desktop-dropdown .nav-list-link,
+.desktop-dropdown .nav-item {
+  text-transform: lowercase !important;
+  text-transform: capitalize !important;
 }
 
 h1, h2, .ivana-home-category-name {

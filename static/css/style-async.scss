@@ -2364,7 +2364,8 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   .desktop-list-subitems .nav-item .list-subitems .nav-item .nav-list-link {
     margin-bottom: var(--spacing-2);
     font-size: var(--font-small);
-    text-transform: initial;
+    text-transform: lowercase;
+    text-transform: capitalize;
   }
 
   .head-main.hover .navigation-banner {
