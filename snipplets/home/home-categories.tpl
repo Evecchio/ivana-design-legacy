@@ -65,7 +65,7 @@
 								{% endif %}
 							</div>
 						</div>
-						<span class="mt-3 font-bold tracking-widest uppercase text-center ivana-home-category-name">
+						<span class="mt-3 font-bold tracking-widest text-center ivana-home-category-name">
 							{{ subcategory.name | lower }}
 						</span>
 					</a>
