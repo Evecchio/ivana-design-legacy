@@ -4405,6 +4405,20 @@ h3,
   gap: clamp(1rem, 2.2vw, 2.6rem) !important;
 }
 
+.ivana-home-categories-row.category-slider-mobile {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  overflow-x: auto !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  padding-bottom: 15px !important;
+  gap: clamp(1rem, 2.2vw, 1.5rem) !important;
+}
+
 .ivana-home-products {
   padding-top: var(--fluid-space-md) !important;
   padding-bottom: var(--fluid-space-lg) !important;

@@ -36,11 +36,11 @@
 			</div>
 			<div class="d-flex justify-content-start align-items-start gap-4 pb-4 ivana-home-categories-row category-slider-mobile">
 				{% for subcategory in unique_home_subcategories %}
-					{% set subcategory_handle = subcategory.url | split('://') | last | split('/') | last | trim %}
+					{% set subcategory_handle = subcategory.url | split('://') | last | trim('/') | split('/') | last | trim %}
 					{% set fallback_slide_image = false %}
 					{% for slide in settings.slider_categories %}
 						{% if slide.link %}
-							{% set slide_handle = slide.link | split('://') | last | split('/') | last | trim %}
+							{% set slide_handle = slide.link | split('://') | last | trim('/') | split('/') | last | trim %}
 							{% if slide_handle == subcategory_handle %}
 								{% set fallback_slide_image = slide.image %}
 							{% endif %}
