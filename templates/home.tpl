@@ -11,7 +11,7 @@
 {% set has_institutional_02 = settings.institutional_02_description or settings.institutional_02_title or settings.institutional_02_button %}
 {% set has_institutional_03 = settings.institutional_03_description or settings.institutional_03_title or settings.institutional_03_button %}
 {% set has_institutional = has_institutional_01 or has_institutional_02 or has_institutional_03 %}
-{% set has_main_categories = settings.slider_categories and settings.slider_categories is not empty %}
+{% set has_main_categories = navigation and navigation is not empty %}
 {% set has_video = settings.video_embed %}
 {% set has_brands = settings.brands and settings.brands is not empty %}
 {% set has_testimonial_01 = settings.testimonial_01_title or settings.testimonial_01_description or settings.testimonial_01_name or "testimonial_01.jpg" | has_custom_image %}
