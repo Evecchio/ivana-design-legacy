@@ -4601,9 +4601,11 @@ h3,
 .ivana-category-copy .ivana-breadcrumbs a,
 .ivana-category-copy .crumb,
 .ivana-category-copy .crumb.active,
+.ivana-category-copy .separator,
 .ivana-category-copy .ivana-category-kicker,
 .ivana-category-copy .ivana-category-title,
-.ivana-category-copy .ivana-category-count {
+.ivana-category-copy .ivana-category-count,
+.ivana-category-copy .ivana-category-meta {
   text-transform: lowercase !important;
   text-transform: capitalize !important;
 }
