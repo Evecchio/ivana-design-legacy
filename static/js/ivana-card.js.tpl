@@ -146,6 +146,33 @@ function normalizeIvanaProductCards(root) {
 
 var ivanaProductCardsQueued = false;
 
+function initializeIvanaHomeCategoryCarouselMouseScroll() {
+    var sliders = document.querySelectorAll(".ivana-home-categories-row.category-slider-mobile");
+
+    sliders.forEach(function(slider) {
+        if (slider.dataset.ivanaMouseScrollBound === "1") {
+            return;
+        }
+
+        slider.dataset.ivanaMouseScrollBound = "1";
+
+        slider.addEventListener("wheel", function(event) {
+            if (window.innerWidth < 768) {
+                return;
+            }
+
+            var delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+
+            if (!delta) {
+                return;
+            }
+
+            event.preventDefault();
+            slider.scrollLeft += delta;
+        }, { passive: false });
+    });
+}
+
 function queueIvanaProductCardNormalization() {
     if (ivanaProductCardsQueued) {
         return;
@@ -155,6 +182,7 @@ function queueIvanaProductCardNormalization() {
 
     window.requestAnimationFrame(function() {
         normalizeIvanaProductCards(document);
+        initializeIvanaHomeCategoryCarouselMouseScroll();
         ivanaProductCardsQueued = false;
     });
 }
