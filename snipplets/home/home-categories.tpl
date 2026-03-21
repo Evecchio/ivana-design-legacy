@@ -56,12 +56,11 @@
 											image_classes: 'd-block w-100 h-100 object-cover fade-in',
 											image_lazy: true,
 											image_lazy_js: true,
-											custom_content: '<div class="placeholder placeholder-fade"></div>',
 											image_alt: subcategory.name,
 										})
 									}}
 								{% else %}
-									<div class="placeholder placeholder-fade w-100 h-100"></div>
+									<div class="ivana-home-category-placeholder" aria-hidden="true"></div>
 								{% endif %}
 							</div>
 						</div>

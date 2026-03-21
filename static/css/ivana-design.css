@@ -4497,6 +4497,15 @@ h3,
 .section-home.section-categories-home.ivana-home-categories .home-category-image-border {
   width: 102px !important;
   height: 102px !important;
+  position: relative;
+}
+
+.section-home.section-categories-home.ivana-home-categories .ivana-home-category-placeholder {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  background: linear-gradient(180deg, #faf7f8, #f1eaed) !important;
+  display: block !important;
 }
 
 @media (max-width: 767px) {
