@@ -4399,6 +4399,9 @@ h3,
 .ivana-home-categories {
   padding-top: var(--fluid-space-lg) !important;
   padding-bottom: var(--fluid-space-md) !important;
+  background: #ffffff !important;
+  position: relative;
+  z-index: 1;
 }
 
 .ivana-home-categories-row {
@@ -4411,12 +4414,20 @@ h3,
   justify-content: flex-start !important;
   align-items: flex-start !important;
   overflow-x: auto !important;
+  background: transparent !important;
   width: 100% !important;
   min-width: 0 !important;
   padding-left: 20px !important;
   padding-right: 20px !important;
   padding-bottom: 15px !important;
   gap: clamp(1rem, 2.2vw, 1.5rem) !important;
+}
+
+.ivana-home-categories .container,
+.ivana-home-section-head {
+  position: relative;
+  z-index: 1;
+  background: transparent !important;
 }
 
 .ivana-home-products {
