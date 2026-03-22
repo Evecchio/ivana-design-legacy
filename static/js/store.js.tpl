@@ -2973,7 +2973,19 @@ DOMContentLoaded.addEventOrExecute(() => {
         e.preventDefault();
 
         {# Take the Zip code to all shipping calculators on screen #}
-        let shipping_input_val = jQueryNuvem(e.currentTarget).closest(".js-shipping-calculator-form").find(".js-shipping-input").val();
+        let $shipping_form = jQueryNuvem(e.currentTarget).closest(".js-shipping-calculator-form");
+        let shipping_input_val = $shipping_form.find(".js-shipping-input").val();
+        let shipping_input_trimmed = shipping_input_val ? shipping_input_val.trim() : "";
+
+        $shipping_form.find(".js-ship-calculator-empty-field").hide();
+
+        if (!shipping_input_trimmed.length) {
+            $shipping_form.find(".js-ship-calculator-empty-field").show();
+            $shipping_form.find(".js-shipping-input").trigger("focus");
+            return;
+        }
+
+        shipping_input_val = shipping_input_trimmed;
 
         jQueryNuvem(".js-shipping-input").val(shipping_input_val);
 
@@ -3001,6 +3013,10 @@ DOMContentLoaded.addEventOrExecute(() => {
                 jQueryNuvem(e.currentTarget).trigger('blur');
             }
         }
+    });
+
+    jQueryNuvem(".js-shipping-input").on("input", function () {
+        jQueryNuvem(this).closest(".js-shipping-calculator-form").find(".js-ship-calculator-empty-field").hide();
     });
 
     {# /* // Shipping and branch click */ #}

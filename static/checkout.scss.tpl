@@ -285,6 +285,11 @@ a {
 .form-group {
   margin-bottom: 15px;
 }
+.form-required-mark {
+  margin-left: 0.25rem;
+  color: var(--danger);
+  font-weight: 700;
+}
 .form-control {
   background: var(--main-background);
   border-color: var(--border-color);
@@ -299,6 +304,17 @@ a {
 }
 .form-group.form-group-error .form-control {
   border-radius: var(--border-radius);
+  border-color: var(--danger);
+}
+.form-group.form-group-error .input-label,
+.form-group.form-group-error .has-float-label label,
+.form-group.form-group-error .form-control-help {
+  color: var(--danger);
+}
+.form-group.form-group-error .form-control-help {
+  display: block;
+  margin-top: 6px;
+  font-size: var(--font-small);
 }
 .form-options-content {
   font-size: var(--font-small);

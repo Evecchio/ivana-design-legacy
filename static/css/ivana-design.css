@@ -194,6 +194,25 @@
   padding-bottom: clamp(1rem, 3vw, 2rem);
 }
 
+.ivana-cart-page {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.ivana-cart-page-content {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.ivana-cart-intro-card {
+  max-width: 48rem;
+  background: linear-gradient(180deg, #fffdfd 0%, #fff7fb 100%);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 28px;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  box-shadow: 0 20px 60px rgba(17, 17, 17, 0.04);
+}
+
 .ivana-cart-shell .cart-page-content {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
@@ -1865,6 +1884,10 @@
 
 .ivana-cart-shell .page-header.ivana-page-hero {
   margin-bottom: 1rem !important;
+}
+
+.ivana-cart-shell .ivana-cart-form > .alert {
+  margin-bottom: 1rem;
 }
 
 .ivana-cart-shell .cart-page-products,
