@@ -2287,6 +2287,17 @@ div.js-product-item-private.product-item.ivana-card .product-item-information.iv
   padding: 20px !important;
   gap: 0.45rem !important;
   min-height: 100%;
+  display: grid !important;
+  grid-template-rows: minmax(5.8em, auto) auto;
+  align-content: start;
+}
+
+div.js-product-item-private.product-item.ivana-card .product-item-link,
+div.js-product-item-private.product-item.ivana-card .item-link {
+  display: grid !important;
+  grid-template-rows: minmax(2.7em, auto) minmax(3.1em, auto);
+  row-gap: 0.35rem;
+  align-content: start;
 }
 
 /* Nombre del producto — solo primera letra mayúscula */
@@ -2299,7 +2310,7 @@ div.js-product-item-private.product-item.ivana-card .js-item-name.product-item-n
   text-transform: lowercase !important;
   text-transform: capitalize !important;
   letter-spacing: 0 !important;
-  margin-bottom: 8px !important;
+  margin-bottom: 0 !important;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
@@ -2462,47 +2473,6 @@ div.js-product-item-private.product-item.ivana-card div.text-stock {
 /* Ocultar botón quick shop para look limpio ML */
 div.js-product-item-private.product-item.ivana-card .product-item-quick-shop-container {
   display: none !important;
-}
-
-.ivana-card-terms {
-  display: grid;
-  align-content: start;
-  row-gap: 0.4rem;
-  min-height: 3.2rem;
-}
-
-.ivana-card-action {
-  margin-top: auto;
-  padding-top: 0.4rem;
-}
-
-.ivana-card-buy-button {
-  width: 100%;
-  min-height: 46px;
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  border-radius: 16px !important;
-  background: linear-gradient(180deg, #111111 0%, #2b2b2b 100%) !important;
-  border: 1px solid rgba(17, 17, 17, 0.9) !important;
-  box-shadow: 0 10px 22px rgba(17, 17, 17, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  color: #ffffff !important;
-  font-size: 0.74rem !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.14em !important;
-  text-transform: uppercase !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease !important;
-}
-
-.ivana-card-buy-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 28px rgba(17, 17, 17, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.14);
-  background: linear-gradient(180deg, #1b1b1b 0%, #000000 100%) !important;
-  color: #ffffff !important;
-}
-
-.ivana-card-buy-button:focus {
-  color: #ffffff !important;
 }
 
 /* Labels (envío gratis, sin stock) */
@@ -3579,19 +3549,20 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   align-items: center !important;
   justify-content: center !important;
   gap: 6px !important;
-  background: rgba(245, 124, 0, 0.1) !important;
-  color: #b85f00 !important;
-  font-size: 0.73rem !important;
+  background: #f57c00 !important;
+  color: #fff !important;
+  font-size: 0.78rem !important;
   font-weight: 700 !important;
-  padding: 7px 12px !important;
-  border-radius: 12px !important;
-  border: 1px solid rgba(245, 124, 0, 0.2) !important;
+  padding: 6px 20px !important;
+  border-radius: 0 !important;
   margin: 0 !important;
   letter-spacing: 0.02em !important;
   text-transform: none !important;
   line-height: 1.4 !important;
-  text-align: left !important;
+  text-align: center !important;
   width: 100% !important;
+  order: 999 !important;
+  margin-top: 0.45rem !important;
 }
 
 .ivana-out-of-stock-badge {
@@ -3599,19 +3570,20 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   align-items: center !important;
   justify-content: center !important;
   gap: 6px !important;
-  background: rgba(211, 47, 47, 0.08) !important;
-  color: #b42318 !important;
-  font-size: 0.73rem !important;
+  background: #d32f2f !important;
+  color: #fff !important;
+  font-size: 0.78rem !important;
   font-weight: 700 !important;
-  padding: 7px 12px !important;
-  border-radius: 12px !important;
-  border: 1px solid rgba(211, 47, 47, 0.16) !important;
+  padding: 6px 20px !important;
+  border-radius: 0 !important;
   margin: 0 !important;
   letter-spacing: 0.02em !important;
   text-transform: none !important;
   line-height: 1.4 !important;
-  text-align: left !important;
+  text-align: center !important;
   width: 100% !important;
+  order: 999 !important;
+  margin-top: 0.45rem !important;
 }
 
 div.js-product-item-private.product-item.ivana-card span.js-price-display.product-item-price,
