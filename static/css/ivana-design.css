@@ -2288,16 +2288,22 @@ div.js-product-item-private.product-item.ivana-card .product-item-information.iv
   gap: 0.45rem !important;
   min-height: 100%;
   display: grid !important;
-  grid-template-rows: minmax(5.8em, auto) auto;
+  grid-template-rows: minmax(8.8em, auto) minmax(1.5rem, auto) minmax(1.8rem, auto) minmax(2rem, auto) minmax(2.5rem, auto);
   align-content: start;
 }
 
 div.js-product-item-private.product-item.ivana-card .product-item-link,
 div.js-product-item-private.product-item.ivana-card .item-link {
   display: grid !important;
-  grid-template-rows: minmax(2.7em, auto) minmax(3.1em, auto);
+  grid-template-rows: minmax(1.4rem, auto) minmax(2.7em, auto) minmax(1.4rem, auto) minmax(2rem, auto);
   row-gap: 0.35rem;
   align-content: start;
+  grid-row: 1;
+}
+
+div.js-product-item-private.product-item.ivana-card .labels.order-first,
+div.js-product-item-private.product-item.ivana-card .product-labels {
+  grid-row: 1;
 }
 
 /* Nombre del producto — solo primera letra mayúscula */
@@ -2317,16 +2323,19 @@ div.js-product-item-private.product-item.ivana-card .js-item-name.product-item-n
   -webkit-box-orient: vertical;
   overflow: hidden;
   min-height: 2.7em !important;
+  grid-row: 2;
 }
 
 /* Contenedor de precios — layout wrap */
 div.js-product-item-private.product-item.ivana-card .product-item-price-container {
   display: flex !important;
-  flex-wrap: wrap !important;
-  align-items: baseline !important;
-  gap: 3mm !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0.15rem !important;
   margin-bottom: 0 !important;
-  min-height: 3.1em;
+  min-height: 2rem;
+  grid-row: 3 / span 2;
+  justify-content: flex-start;
 }
 
 /* Precio tachado (compare) — itálica, gris, mismo tamaño que precio actual */
@@ -2344,6 +2353,7 @@ div.js-product-item-private.product-item.ivana-card span.js-compare-price-displa
   margin-right: 0 !important;
   width: 100% !important;
   line-height: 1.2 !important;
+  min-height: 1.2rem;
 }
 
 /* Precio principal — rojo negrita */
@@ -2354,6 +2364,7 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   color: #E53935 !important;
   line-height: 1.2 !important;
   letter-spacing: -0.02em !important;
+  min-height: 1.4rem;
 }
 
 /* Fila fija: precio + sticker de descuento */
@@ -2400,6 +2411,8 @@ div.js-product-item-private.product-item.ivana-card .js-max-installments-contain
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   order: 2 !important;
+  min-height: 1.5rem;
+  grid-row: 2;
 }
 
 /* Sin descuento: precio negro, cuotas gris */
@@ -2453,6 +2466,9 @@ div.js-product-item-private.product-item.ivana-card .js-payment-discount-price-p
   display: block !important;
   white-space: normal !important;
   word-spacing: 0.15em !important;
+  min-height: 1.8rem;
+  margin-top: 0 !important;
+  grid-row: 3;
 }
 
 div.js-product-item-private.product-item.ivana-card .js-payment-discount-price-product-container.payment-discount-price-product-container span {
@@ -2460,6 +2476,13 @@ div.js-product-item-private.product-item.ivana-card .js-payment-discount-price-p
   font-weight: 600 !important;
   display: inline !important;
   white-space: normal !important;
+}
+
+.ivana-card-stock-row {
+  min-height: 2rem;
+  display: flex;
+  align-items: flex-start;
+  grid-row: 4;
 }
 
 /* Stock y últimas unidades */
@@ -2506,7 +2529,43 @@ div.js-product-item-private.product-item.ivana-card .labels.order-first {
 }
 
 div.js-product-item-private.product-item.ivana-card .label-accent {
-  display: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 1.4rem;
+}
+
+.ivana-card-action-row {
+  min-height: 2.5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  grid-row: 5;
+}
+
+.ivana-card-buy-button {
+  width: auto;
+  min-width: 112px;
+  min-height: 34px;
+  padding: 0.5rem 0.9rem !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, #1f1f1f 0%, #090909 100%) !important;
+  border: 1px solid rgba(15, 15, 15, 0.92) !important;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  color: #ffffff !important;
+  font-size: 0.66rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: none !important;
+}
+
+.ivana-card-buy-button:hover,
+.ivana-card-buy-button:focus {
+  color: #ffffff !important;
+  background: linear-gradient(180deg, #2a2a2a 0%, #111111 100%) !important;
 }
 
 /* Responsive mobile */
