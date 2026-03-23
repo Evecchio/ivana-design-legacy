@@ -79,34 +79,41 @@
 				})
 			}}
 		{% endif %}
-		{# Badge de pocas unidades — pie de tarjeta #}
-		{% if product.stock is not null and product.stock > 0 and product.stock < 5 %}
-			<div class="ivana-low-stock-badge">
-				{% if product.stock == 1 %}
-					¡Última unidad!
-				{% else %}
-					¡Quedan solo {{ product.stock }} unidades!
-				{% endif %}
-			</div>
-		{% endif %}
 
-		{% if not product.available %}
-			<div class="ivana-out-of-stock-badge">
-				Sin stock por el momento
-			</div>
-		{% endif %}
+		<div class="ivana-card-terms">
+			{% if product.stock is not null and product.stock > 0 and product.stock < 5 %}
+				<div class="ivana-low-stock-badge">
+					{% if product.stock == 1 %}
+						Â¡Ãšltima unidad!
+					{% else %}
+						Â¡Quedan solo {{ product.stock }} unidades!
+					{% endif %}
+				</div>
+			{% endif %}
 
-		{% if not product.available and show_installments_line %}
-			{{ component('installments', {
-				location: 'product_list',
-				short_wording: true,
-				container_classes: {
-					installment: 'ivana-card-installments custom-installments mt-1'
-				}
-			}) }}
-		{% endif %}
+			{% if not product.available %}
+				<div class="ivana-out-of-stock-badge">
+					Sin stock por el momento
+				</div>
+			{% endif %}
+
+			{% if not product.available and show_installments_line %}
+				{{ component('installments', {
+					location: 'product_list',
+					short_wording: true,
+					container_classes: {
+						installment: 'ivana-card-installments custom-installments mt-1'
+					}
+				}) }}
+			{% endif %}
+		</div>
 
 		{% set product_available_with_price = product.available and product.display_price %}
+		{% set product_action_text = product_available_with_price ? 'Comprar' : 'Ver producto' %}
+
+		<div class="ivana-card-action">
+			<a href="{{ product.url }}" class="btn btn-primary ivana-card-buy-button">{{ product_action_text | translate }}</a>
+		</div>
 
 		{% if 
 			((settings.quick_shop and not product.isSubscribable()) or settings.product_color_variants)
