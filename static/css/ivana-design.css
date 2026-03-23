@@ -674,20 +674,29 @@
   align-items: center;
 }
 
-.ivana-home-categories-row {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: flex-start !important;
-  flex-wrap: wrap !important;
-  gap: clamp(1.5rem, 2.5vw, 3rem) clamp(2rem, 4vw, 5rem) !important;
-  min-width: 0 !important;
-  padding-bottom: 0 !important;
+.ivana-home-categories-slider {
   width: 100%;
+  padding: 0 clamp(2.5rem, 5vw, 4rem);
+}
+
+.ivana-home-categories-swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.ivana-home-categories-row {
+  align-items: flex-start !important;
+  padding-bottom: 0 !important;
+}
+
+.ivana-home-category-slide {
+  width: clamp(108px, 13vw, 200px) !important;
+  margin-right: clamp(1.5rem, 2.5vw, 3rem);
 }
 
 .ivana-home-categories .js-home-category {
-  flex: 0 0 clamp(108px, 13vw, 200px) !important;
-  max-width: clamp(108px, 13vw, 200px) !important;
+  display: flex !important;
+  width: 100%;
 }
 
 .ivana-home-category-name {
@@ -696,6 +705,11 @@
   min-height: 2.8em;
   line-height: 1.35 !important;
   text-wrap: balance;
+}
+
+.ivana-home-categories .swiper-button-prev,
+.ivana-home-categories .swiper-button-next {
+  color: #111 !important;
 }
 
 @media (max-width: 991px) {
@@ -711,22 +725,26 @@
 
 @media (max-width: 767px) {
   .ivana-home-categories .container {
-    overflow-x: auto !important;
+    overflow: visible !important;
+  }
+
+  .ivana-home-categories-slider {
+    padding: 0;
+  }
+
+  .ivana-home-categories-swiper {
+    overflow: visible;
   }
 
   .ivana-home-categories-row {
-    justify-content: flex-start !important;
-    flex-wrap: nowrap !important;
-    min-width: max-content !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
     padding-bottom: 15px !important;
   }
 
-  .ivana-home-categories .js-home-category {
-    flex: 0 0 28% !important;
-    max-width: 28% !important;
-    margin-right: 15px !important;
+  .ivana-home-category-slide {
+    width: 28% !important;
+    margin-right: 15px;
   }
 
   .ivana-home-category-name {
