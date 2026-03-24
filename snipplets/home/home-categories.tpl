@@ -39,20 +39,34 @@
 					<div class="swiper-wrapper ivana-home-categories-row">
 						{% for subcategory in unique_home_subcategories %}
 							{% set subcategory_handle = subcategory.url | split('://') | last | trim('/') | split('/') | last | trim %}
+							{% set category_image = subcategory.image | default(false) %}
 							{% set fallback_slide_image = false %}
-							{% for slide in settings.slider_categories %}
-								{% if slide.link %}
-									{% set slide_handle = slide.link | split('://') | last | trim('/') | split('/') | last | trim %}
-									{% if slide_handle == subcategory_handle %}
-										{% set fallback_slide_image = slide.image %}
+							{% if not category_image %}
+								{% for slide in settings.slider_categories %}
+									{% if slide.link %}
+										{% set slide_handle = slide.link | replace({'www.': ''}) | split('://') | last | trim('/') | split('/') | last | trim %}
+										{% set normalized_subcategory_handle = subcategory_handle | replace({'www.': ''}) %}
+										{% if slide_handle == normalized_subcategory_handle %}
+											{% set fallback_slide_image = slide.image %}
+										{% endif %}
 									{% endif %}
-								{% endif %}
-							{% endfor %}
+								{% endfor %}
+							{% endif %}
 							<div class="swiper-slide ivana-home-category-slide">
 								<a href="{{ subcategory.url }}" class="js-home-category d-flex flex-column align-items-center group text-decoration-none category-item" aria-label="{{ 'Categoría' | translate }} {{ loop.index }}">
 									<div class="home-category-image-border ivana-home-category-circle w-28 h-28 md:w-36 md:h-36 rounded-circle overflow-hidden p-1 transition-all">
 										<div class="w-100 h-100 rounded-circle overflow-hidden">
-											{% if fallback_slide_image %}
+											{% if category_image %}
+												{{ component(
+													'image',{
+														image_name: category_image,
+														image_classes: 'd-block w-100 h-100 object-cover fade-in',
+														image_lazy: true,
+														image_lazy_js: true,
+														image_alt: subcategory.name,
+													})
+												}}
+											{% elseif fallback_slide_image %}
 												{{ component(
 													'image',{
 														image_name: fallback_slide_image,
