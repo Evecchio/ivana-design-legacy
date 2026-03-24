@@ -39,7 +39,30 @@
 					<div class="swiper-wrapper ivana-home-categories-row">
 						{% for subcategory in unique_home_subcategories %}
 							{% set subcategory_handle = subcategory.url | split('://') | last | trim('/') | split('/') | last | trim %}
-							{% set category_image = subcategory.image | default(false) %}
+							{% set category_image = false %}
+
+							{# Buscar imagen en el árbol de categories por handle #}
+							{% for cat in categories %}
+								{% if not category_image and cat.handle == subcategory_handle %}
+									{% set category_image = cat.image | default(false) %}
+								{% endif %}
+								{% if not category_image and cat.subcategories %}
+									{% for subcat in cat.subcategories %}
+										{% if not category_image and subcat.handle == subcategory_handle %}
+											{% set category_image = subcat.image | default(false) %}
+										{% endif %}
+										{% if not category_image and subcat.subcategories %}
+											{% for subsubcat in subcat.subcategories %}
+												{% if not category_image and subsubcat.handle == subcategory_handle %}
+													{% set category_image = subsubcat.image | default(false) %}
+												{% endif %}
+											{% endfor %}
+										{% endif %}
+									{% endfor %}
+								{% endif %}
+							{% endfor %}
+
+							{# Fallback: imagen configurada manualmente en slider_categories #}
 							{% set fallback_slide_image = false %}
 							{% if not category_image %}
 								{% for slide in settings.slider_categories %}
