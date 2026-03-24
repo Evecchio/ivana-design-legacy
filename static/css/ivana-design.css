@@ -3434,6 +3434,43 @@ div.js-product-item-private.product-item.ivana-card:hover,
 
 
 
+.js-item-submit-container {
+  margin-top: auto !important;
+}
+
+.ivana-card-secondary-action {
+  background: var(--brand) !important;
+  border: 1px solid var(--brand) !important;
+  border-radius: 999px !important;
+  color: #ffffff !important;
+  font-size: 0 !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: capitalize !important;
+}
+
+.ivana-card-secondary-action::after {
+  content: "VER PRODUCTO" !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0.14em !important;
+}
+
+.ivana-card-secondary-action:hover {
+  background: var(--brand-dark) !important;
+  border-color: var(--brand-dark) !important;
+  color: #ffffff !important;
+}
+
+.ivana-no-discount span.js-compare-price-display.product-item-price-compare {
+  display: none !important;
+}
+
+.ivana-no-discount .product-item-discount,
+.ivana-no-discount [class*="discount-rate"],
+.ivana-no-discount .ivana-savings-badge {
+  display: none !important;
+}
+
 /* Badge de pocas unidades — barra naranja al pie de la tarjeta */
 .ivana-low-stock-badge {
   display: flex !important;
