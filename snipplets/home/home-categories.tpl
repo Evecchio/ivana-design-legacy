@@ -38,33 +38,20 @@
 				<div class="js-swiper-categories swiper-container ivana-home-categories-swiper">
 					<div class="swiper-wrapper ivana-home-categories-row">
 						{% for subcategory in unique_home_subcategories %}
-							{# --- NUEVA LÓGICA AUTOMÁTICA --- #}
 							{% set subcategory_handle = subcategory.url | split('://') | last | trim('/') | split('/') | last | trim %}
-
-							{# 1. Intentamos obtener la imagen de la categoría configurada en Tiendanube #}
-							{% set category_image = subcategory.category.image | default(subcategory.image) | default(false) %}
-
-							{# 2. Si la categoría no tiene imagen, buscamos la imagen del primer producto de esa categoría #}
-							{% if not category_image %}
-								{% set category_products = subcategory.category.products | default(subcategory.products) %}
-								{% if category_products is not empty %}
-									{% set category_image = (category_products | first).featured_image %}
-								{% endif %}
-							{% endif %}
-
-							{# 3. Si sigue sin haber imagen, usamos el fallback del slider como última instancia #}
+							{% set category_image = subcategory.image | default(false) %}
+							{% set fallback_slide_image = false %}
 							{% if not category_image %}
 								{% for slide in settings.slider_categories %}
 									{% if slide.link %}
 										{% set slide_handle = slide.link | replace({'www.': ''}) | split('://') | last | trim('/') | split('/') | last | trim %}
 										{% set normalized_subcategory_handle = subcategory_handle | replace({'www.': ''}) %}
 										{% if slide_handle == normalized_subcategory_handle %}
-											{% set category_image = slide.image %}
+											{% set fallback_slide_image = slide.image %}
 										{% endif %}
 									{% endif %}
 								{% endfor %}
 							{% endif %}
-
 							<div class="swiper-slide ivana-home-category-slide">
 								<a href="{{ subcategory.url }}" class="js-home-category d-flex flex-column align-items-center group text-decoration-none category-item" aria-label="{{ 'Categoría' | translate }} {{ loop.index }}">
 									<div class="home-category-image-border ivana-home-category-circle w-28 h-28 md:w-36 md:h-36 rounded-circle overflow-hidden p-1 transition-all">
@@ -73,6 +60,16 @@
 												{{ component(
 													'image',{
 														image_name: category_image,
+														image_classes: 'd-block w-100 h-100 object-cover fade-in',
+														image_lazy: true,
+														image_lazy_js: true,
+														image_alt: subcategory.name,
+													})
+												}}
+											{% elseif fallback_slide_image %}
+												{{ component(
+													'image',{
+														image_name: fallback_slide_image,
 														image_classes: 'd-block w-100 h-100 object-cover fade-in',
 														image_lazy: true,
 														image_lazy_js: true,
