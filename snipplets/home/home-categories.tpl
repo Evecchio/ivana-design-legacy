@@ -42,11 +42,14 @@
 							{% set subcategory_handle = subcategory.url | split('://') | last | trim('/') | split('/') | last | trim %}
 
 							{# 1. Intentamos obtener la imagen de la categoría configurada en Tiendanube #}
-							{% set category_image = subcategory.image | default(false) %}
+							{% set category_image = subcategory.category.image | default(subcategory.image) | default(false) %}
 
 							{# 2. Si la categoría no tiene imagen, buscamos la imagen del primer producto de esa categoría #}
-							{% if not category_image and subcategory.products is not empty %}
-								{% set category_image = subcategory.products | first .featured_image %}
+							{% if not category_image %}
+								{% set category_products = subcategory.category.products | default(subcategory.products) %}
+								{% if category_products is not empty %}
+									{% set category_image = (category_products | first).featured_image %}
+								{% endif %}
 							{% endif %}
 
 							{# 3. Si sigue sin haber imagen, usamos el fallback del slider como última instancia #}
