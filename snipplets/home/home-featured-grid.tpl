@@ -54,7 +54,7 @@
 {% set _title_raw = settings.sale_products_title|default('') %}
 {% set _title_lower = _title_raw|lower %}
 {% if _title_lower in ['super descuentos'] %}
-    {% set section_title = 'Selecciones especiales' %}
+    {% set section_title = 'Super Descuentos' %}
 {% else %}
     {% set section_title = _title_raw|capitalize %}
 {% endif %}
