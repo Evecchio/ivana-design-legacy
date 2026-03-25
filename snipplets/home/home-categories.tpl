@@ -1,3 +1,5 @@
+{% set allowed_categories = ['tops', 'short', 'ciclista', 'capri', 'legging'] %}
+{% set category_order = ['tops', 'short', 'ciclista', 'capri', 'legging'] %}
 {% set unique_home_subcategories = [] %}
 {% set rendered_home_subcategory_names = [] %}
 
@@ -6,7 +8,7 @@
 		{% for subcategory in nav_item.subitems %}
 			{% if subcategory.isCategory %}
 				{% set normalized_subcategory_name = subcategory.name | lower | trim %}
-				{% if normalized_subcategory_name not in rendered_home_subcategory_names %}
+				{% if normalized_subcategory_name in allowed_categories and normalized_subcategory_name not in rendered_home_subcategory_names %}
 					{% set rendered_home_subcategory_names = rendered_home_subcategory_names | merge([normalized_subcategory_name]) %}
 					{% set unique_home_subcategories = unique_home_subcategories | merge([subcategory]) %}
 				{% endif %}
@@ -16,17 +18,24 @@
 				{% for nested_subcategory in subcategory.subitems %}
 					{% if nested_subcategory.isCategory %}
 						{% set normalized_nested_subcategory_name = nested_subcategory.name | lower | trim %}
-						{% if normalized_nested_subcategory_name not in rendered_home_subcategory_names %}
+						{% if normalized_nested_subcategory_name in allowed_categories and normalized_nested_subcategory_name not in rendered_home_subcategory_names %}
 							{% set rendered_home_subcategory_names = rendered_home_subcategory_names | merge([normalized_nested_subcategory_name]) %}
 							{% set unique_home_subcategories = unique_home_subcategories | merge([nested_subcategory]) %}
 						{% endif %}
 					{% endif %}
-				{% endfor %}
-			{% endif %}
-		{% endfor %}
-	{% endif %}
 {% endfor %}
-
+{% endfor %}
+{% if unique_home_subcategories is not empty %}
+    {% set ordered_categories = [] %}
+    {% for category_name in category_order %}
+        {% for subcategory in unique_home_subcategories %}
+            {% if subcategory.name | lower | trim == category_name %}
+                {% set ordered_categories = ordered_categories | merge([subcategory]) %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+    {% set unique_home_subcategories = ordered_categories %}
+{% endif %}
 {% if unique_home_subcategories is not empty %}
 	<section class="section-home section-categories-home ivana-home-categories overflow-none py-10">
 		<div class="container">
