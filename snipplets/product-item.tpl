@@ -17,6 +17,10 @@
 {% set slide_item_quick_shop_modal_trigger_class = slide_item ? ' js-quickshop-slide' %}
 {% set modal_trigger_data = "#quickshop-modal" %}
 
+{% import 'snipplets/utils/title-case.tpl' as tc %}
+{% if not reduced_item %}
+  <div class="ivana-card-product-name">{{ tc.title_case(product.name) }}</div>
+{% endif %}
 {# Subscription only detection #}
 {% set is_subscription_only = product.isSubscriptionOnly() %}
 
