@@ -1,6 +1,6 @@
 {% import 'snipplets/utils/title-case.tpl' as tc %}
-{% set allowed_categories = ['tops', 'short', 'ciclista', 'capri', 'legging'] %}
-{% set category_order = ['tops', 'short', 'ciclista', 'capri', 'legging'] %}
+{% set allowed_categories = ['tops', 'short', 'capri', 'legging'] %}
+{% set category_order = ['tops', 'legging', 'capri', 'short'] %}
 {% set unique_home_subcategories = [] %}
 {% set rendered_home_subcategory_names = [] %}
 
@@ -49,7 +49,7 @@
       <h2 class="ivana-home-section-title mb-0" style="display: inline-block !important; text-align: center !important; width: auto !important;">Colección</h2>
       <div class="ivana-home-section-divider"></div>
     </div>
-    <div class="ivana-home-categories-row" style="display:flex; justify-content:center; gap:48px; flex-wrap:wrap;">
+    <div class="ivana-home-categories-row category-slider-mobile" data-ivana-mouse-scroll-bound="1" style="display:flex; justify-content:center; gap:48px; flex-wrap:wrap;">
       {% for subcategory in unique_home_subcategories %}
         {% set subcategory_handle = subcategory.url | split('://') | last | trim('/') | split('/') | last | trim %}
         {% set category_image = subcategory.image | default(false) %}
