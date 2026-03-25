@@ -1,4 +1,5 @@
 {% import 'snipplets/utils/title-case.tpl' as tc %}
+{% from 'snipplets/utils/text-normalization.tpl' import normalizar_texto as normalizar %}
 {% set allowed_categories = ['tops', 'short', 'capri', 'legging'] %}
 {% set category_order = ['tops', 'legging', 'capri', 'short'] %}
 {% set unique_home_subcategories = [] %}
@@ -90,7 +91,7 @@
             </div>
           </div>
         <span class="mt-3 font-bold tracking-widest text-center ivana-home-category-name" style="display:block;width:100%;text-align:center;">
-            {{ tc.title_case(subcategory.name) }}
+            {{ normalizar(tc.title_case(subcategory.name)) }}
           </span>
         </a>
       {% endfor %}
