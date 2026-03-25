@@ -46,7 +46,17 @@
 	{% set section_slider_mobile_only = settings.sale_products_format_mobile == 'slider' and settings.sale_products_format_desktop != 'slider' %}
 	{% set section_slider_desktop_only = settings.sale_products_format_desktop == 'slider' and settings.sale_products_format_mobile != 'slider' %}
 	{% set section_slider_id = 'sale' %}
-	{% set section_title = settings.sale_products_title in ['SUPER DESCUENTOS', 'Super descuentos'] ? 'Selecciones especiales' : (settings.sale_products_title ? settings.sale_products_title : 'Selecciones especiales') %}
+{# Normalize capitalization for sale products title to ensure consistent UI text
+   - If the configured title matches 'super descuentos' (any case), show 'Selecciones especiales'
+   - Otherwise, display the title capitalized (first letter upper, rest lower) or fallback
+#}
+{% set _title_raw = settings.sale_products_title|default('') %}
+{% set _title_lower = _title_raw|lower %}
+{% if _title_lower in ['super descuentos'] %}
+    {% set section_title = 'Selecciones especiales' %}
+{% else %}
+    {% set section_title = _title_raw|capitalize %}
+{% endif %}
 	{% set section_kicker = 'Precio especial por tiempo limitado' %}
 {% endif %}
 
@@ -86,7 +96,7 @@
 			<svg class="icon-inline icon-2x"><use xlink:href="#arrow-long"/></svg>
 		</div>
 	{% endif %}
-	<div class="text-center mt-4 mt-md-5">
-		<a href="{{ store.products_url }}" class="btn btn-secondary ivana-home-products-link">Ver coleccion completa</a>
-	</div>
+  <div class="text-center mt-4 mt-md-5">
+    <a href="{{ store.products_url }}" class="btn btn-secondary ivana-home-products-link">Ver colección completa</a>
+  </div>
 </div>
