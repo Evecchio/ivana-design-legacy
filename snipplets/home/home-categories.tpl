@@ -88,7 +88,7 @@
               {% endif %}
             </div>
           </div>
-        <span class="mt-3 font-bold tracking-widest text-center ivana-home-category-name">
+        <span class="mt-3 font-bold tracking-widest text-center ivana-home-category-name" style="display:block;width:100%;text-align:center;">
             {{ tc.title_case(subcategory.name) }}
           </span>
         </a>
