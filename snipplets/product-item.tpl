@@ -18,6 +18,11 @@
 {% set modal_trigger_data = "#quickshop-modal" %}
 
 {% import 'snipplets/utils/title-case.tpl' as tc %}
+{# Title-case display for product name on card (Step 1) #}
+{% if product.name %}
+  {% set _prod_name = tc.title_case(product.name) %}
+  <div class="ivana-card-product-name display-none">{{ _prod_name }}</div>
+{% endif %}
 {# Title-case of product name handled by core item rendering; avoid duplicating output here #}
 {# Subscription only detection #}
 {% set is_subscription_only = product.isSubscriptionOnly() %}
