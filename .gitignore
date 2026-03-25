@@ -1,0 +1,3 @@
+# Ignore local Playwright artifacts and test outputs
+.playwright-cli/
+output/

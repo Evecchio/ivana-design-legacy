@@ -3,6 +3,8 @@
 {% set unique_home_subcategories = [] %}
 {% set rendered_home_subcategory_names = [] %}
 
+{% import 'snipplets/utils/title-case.tpl' as tc %}
+
 {% for nav_item in navigation %}
     {% if nav_item.isCategory and nav_item.subitems %}
         {% for subcategory in nav_item.subitems %}
@@ -86,8 +88,8 @@
               {% endif %}
             </div>
           </div>
-          <span class="mt-3 font-bold tracking-widest text-center ivana-home-category-name">
-            {{ subcategory.name | lower }}
+        <span class="mt-3 font-bold tracking-widest text-center ivana-home-category-name" style="display:block;width:100%;text-align:center;">
+            {{ tc.title_case(subcategory.name) }}
           </span>
         </a>
       {% endfor %}

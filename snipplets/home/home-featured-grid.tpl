@@ -5,6 +5,7 @@
 {% set has_featured_products_and_slider = featured_products and (settings.featured_products_format_mobile == 'slider' or settings.featured_products_format_desktop == 'slider') %}
 {% set has_new_products_and_slider = new_products and (settings.new_products_format_mobile == 'slider' or settings.new_products_format_desktop == 'slider') %}
 {% set has_sale_products_and_slider = sale_products and (settings.sale_products_format_mobile == 'slider' or settings.sale_products_format_desktop == 'slider') %}
+{% import 'snipplets/utils/title-case.tpl' as tc %}
 {% set use_slider = has_featured_products_and_slider or has_new_products_and_slider or has_sale_products_and_slider %}
 
 {% if featured_products %}
@@ -46,7 +47,17 @@
 	{% set section_slider_mobile_only = settings.sale_products_format_mobile == 'slider' and settings.sale_products_format_desktop != 'slider' %}
 	{% set section_slider_desktop_only = settings.sale_products_format_desktop == 'slider' and settings.sale_products_format_mobile != 'slider' %}
 	{% set section_slider_id = 'sale' %}
-	{% set section_title = settings.sale_products_title in ['SUPER DESCUENTOS', 'Super descuentos'] ? 'Selecciones especiales' : (settings.sale_products_title ? settings.sale_products_title : 'Selecciones especiales') %}
+{# Normalize capitalization for sale products title to ensure consistent UI text
+   - If the configured title matches 'super descuentos' (any case), show 'Selecciones especiales'
+   - Otherwise, display the title capitalized (first letter upper, rest lower) or fallback
+#}
+{% set _title_raw = settings.sale_products_title|default('') %}
+{% set _title_lower = _title_raw|lower %}
+{% if _title_lower in ['super descuentos'] %}
+    {% set section_title = 'Selecciones especiales' %}
+{% else %}
+    {% set section_title = _title_raw|capitalize %}
+{% endif %}
 	{% set section_kicker = 'Precio especial por tiempo limitado' %}
 {% endif %}
 
@@ -86,7 +97,7 @@
 			<svg class="icon-inline icon-2x"><use xlink:href="#arrow-long"/></svg>
 		</div>
 	{% endif %}
-	<div class="text-center mt-4 mt-md-5">
-		<a href="{{ store.products_url }}" class="btn btn-secondary ivana-home-products-link">Ver coleccion completa</a>
-	</div>
+  <div class="text-center mt-4 mt-md-5">
+    <a href="{{ store.products_url }}" class="btn btn-secondary ivana-home-products-link">{{ tc.title_case('Ver colección completa' | translate) }}</a>
+  </div>
 </div>
