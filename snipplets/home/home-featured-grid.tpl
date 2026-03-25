@@ -5,6 +5,7 @@
 {% set has_featured_products_and_slider = featured_products and (settings.featured_products_format_mobile == 'slider' or settings.featured_products_format_desktop == 'slider') %}
 {% set has_new_products_and_slider = new_products and (settings.new_products_format_mobile == 'slider' or settings.new_products_format_desktop == 'slider') %}
 {% set has_sale_products_and_slider = sale_products and (settings.sale_products_format_mobile == 'slider' or settings.sale_products_format_desktop == 'slider') %}
+{% import 'snipplets/utils/title-case.tpl' as tc %}
 {% set use_slider = has_featured_products_and_slider or has_new_products_and_slider or has_sale_products_and_slider %}
 
 {% if featured_products %}
@@ -97,6 +98,6 @@
 		</div>
 	{% endif %}
   <div class="text-center mt-4 mt-md-5">
-    <a href="{{ store.products_url }}" class="btn btn-secondary ivana-home-products-link">Ver colección completa</a>
+    <a href="{{ store.products_url }}" class="btn btn-secondary ivana-home-products-link">{{ tc.title_case('Ver colección completa' | translate) }}</a>
   </div>
 </div>

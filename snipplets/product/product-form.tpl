@@ -38,7 +38,8 @@
 	{# Product name #}
 
 	{% if home_main_product %}
-		<h2 class="js-product-name h4 mb-3 ivana-product-title">{{ product.name }}</h2>
+        {% import 'snipplets/utils/title-case.tpl' as tc %}
+        <h2 class="js-product-name h4 mb-3 ivana-product-title">{{ tc.title_case(product.name) }}</h2>
 	{% else %}
 		{% set products_sold_limit = settings.quantity_products_sold ? settings.quantity_products_sold : 0 %}
 		<div class="ivana-product-meta-row">
