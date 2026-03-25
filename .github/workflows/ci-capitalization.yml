@@ -1,0 +1,24 @@
+name: Capitalization CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  apply-capitalization:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Node (optional, if needed later)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Run capitalization runner
+        run: |
+          bash ./scripts/ci-capitalization-runner.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

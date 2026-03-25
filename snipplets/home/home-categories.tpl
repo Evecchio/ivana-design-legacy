@@ -1,3 +1,4 @@
+{% import 'snipplets/utils/title-case.tpl' as tc %}
 {% set allowed_categories = ['tops', 'short', 'ciclista', 'capri', 'legging'] %}
 {% set category_order = ['tops', 'short', 'ciclista', 'capri', 'legging'] %}
 {% set unique_home_subcategories = [] %}
