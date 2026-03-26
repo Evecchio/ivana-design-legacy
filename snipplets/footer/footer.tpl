@@ -8,7 +8,6 @@
 {% set has_menus = has_footer_menu or has_footer_menu_secondary %}
 {% set password_page = template == 'password' %}
 {% set footer_color_classes = settings.footer_colors ? 'footer-colors' %}
-{% import 'snipplets/utils/title-case.tpl' as tc %}
 {% set footer_menu_title = settings.footer_menu_title ? settings.footer_menu_title : 'Navegacion' | translate %}
 {% set hide_footer_menu_title = footer_menu_title in ['Categorías', 'Categorias'] %}
 
@@ -48,7 +47,7 @@
 			{% if has_footer_menu and not password_page %}
 				<div class="ivana-footer-col ivana-footer-col-nav">
 					{% if not hide_footer_menu_title %}
-                    <div class="ivana-footer-title">{{ tc.title_case(footer_menu_title) }}</div>
+						<div class="ivana-footer-title">{{ footer_menu_title }}</div>
 					{% endif %}
 					{% include "snipplets/footer/footer-navigation.tpl" %}
 				</div>
@@ -56,7 +55,7 @@
 
 			{% if has_footer_menu_secondary and not password_page %}
 				<div class="ivana-footer-col ivana-footer-col-nav">
-                <div class="ivana-footer-title">{{ tc.title_case((settings.footer_menu_secondary_title ? settings.footer_menu_secondary_title : 'Informacion') | translate) }}</div>
+					<div class="ivana-footer-title">{{ settings.footer_menu_secondary_title ? settings.footer_menu_secondary_title : 'Informacion' | translate }}</div>
 					{% include "snipplets/footer/footer-navigation.tpl" with {footer_menu_secondary: true} %}
 				</div>
 			{% endif %}
