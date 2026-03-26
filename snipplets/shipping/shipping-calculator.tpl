@@ -69,7 +69,6 @@
 
 				{% block input_form_alert %}
 					<div class="mt-2">
-						<div class="js-ship-calculator-empty-field alert alert-danger mb-0" style="display: none;">{{ "Por favor, ingresá tu código postal para continuar." | translate }}</div>
 						<div class="js-ship-calculator-error invalid-zipcode alert alert-danger mb-0" style="display: none;">
 							
 							{# Specific error message considering if store has multiple languages #}

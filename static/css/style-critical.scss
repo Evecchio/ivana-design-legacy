@@ -1551,12 +1551,6 @@ button {
   font-size: var(--font-medium);
 }
 
-.form-required-mark {
-  margin-left: 0.25rem;
-  color: var(--danger);
-  font-weight: 700;
-}
-
 .form-control::-webkit-input-placeholder {
   color: var(--main-foreground-opacity-30);
 }
