@@ -1,7 +1,7 @@
 {% import 'snipplets/utils/title-case.tpl' as tc %}
 {% from 'snipplets/utils/text-normalization.tpl' import normalizar_texto as normalizar %}
-{% set allowed_categories = ['tops', 'short', 'capri', 'legging'] %}
-{% set category_order = ['tops', 'legging', 'capri', 'short'] %}
+{% set allowed_categories = ['tops', 'short', 'capri', 'capris', 'legging', 'leggings'] %}
+{% set category_order = ['tops', 'leggings', 'capris', 'short'] %}
 {% set unique_home_subcategories = [] %}
 {% set rendered_home_subcategory_names = [] %}
 
