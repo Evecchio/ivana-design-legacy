@@ -37,7 +37,7 @@
     {% set control_prev_svg_id = 'arrow-long' %}
 {% endif %}
 
-{% set image_classes = 'img-absolute img-absolute-centered fade-in' %}
+{% set image_classes = 'img-absolute img-absolute-centered' %}
 {% set data_expand = show_image_slider ? '50' %}
 
 {% set custom_content %}
