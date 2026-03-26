@@ -1,4 +1,4 @@
-{% set allowed_categories = ['top', 'capris', 'short', 'leggings'] %}
+{% set allowed_categories = ['tops', 'capris', 'short', 'leggings'] %}
 {% set unique_home_subcategories = [] %}
 {% set all_subcategories = [] %}
 
@@ -38,7 +38,7 @@
 				<h2 class="ivana-home-section-title mb-0" style="display: inline-block !important; text-align: center !important; width: auto !important;">Colección</h2>
 				<div class="ivana-home-section-divider"></div>
 			</div>
-			<div class="d-flex justify-content-start align-items-start gap-4 pb-4 ivana-home-categories-row category-slider-mobile">
+			<div class="d-flex justify-content-center align-items-start gap-4 pb-4 ivana-home-categories-row category-slider-mobile">
 				{% for subcategory in unique_home_subcategories %}
 					{% set subcategory_handle = subcategory.url | split('://') | last | trim('/') | split('/') | last | trim %}
 					{% set fallback_slide_image = false %}
