@@ -35,7 +35,7 @@ jobs:
             set net:max-retries 3;
             set net:reconnect-interval-base 5;
             open -u '$FTP_USER','$FTP_PASSWORD' ftp://$FTP_HOST:21;
-            mirror --reverse --verbose --no-perms \
+            mirror --reverse --delete --verbose --no-perms \
               --exclude-glob .git/ \
               --exclude-glob .github/ \
               --exclude-glob .claude/ \
