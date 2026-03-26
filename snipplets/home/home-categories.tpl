@@ -1,30 +1,34 @@
+{% set allowed_categories = ['top', 'capris', 'short', 'leggings'] %}
 {% set unique_home_subcategories = [] %}
-{% set rendered_home_subcategory_names = [] %}
+{% set all_subcategories = [] %}
 
+{# Recolectar todas las subcategorías de la navegación #}
 {% for nav_item in navigation %}
 	{% if nav_item.isCategory and nav_item.subitems %}
 		{% for subcategory in nav_item.subitems %}
 			{% if subcategory.isCategory %}
-				{% set normalized_subcategory_name = subcategory.name | lower | trim %}
-				{% if normalized_subcategory_name not in rendered_home_subcategory_names %}
-					{% set rendered_home_subcategory_names = rendered_home_subcategory_names | merge([normalized_subcategory_name]) %}
-					{% set unique_home_subcategories = unique_home_subcategories | merge([subcategory]) %}
-				{% endif %}
+				{% set all_subcategories = all_subcategories | merge([subcategory]) %}
 			{% endif %}
-
 			{% if subcategory.subitems %}
 				{% for nested_subcategory in subcategory.subitems %}
 					{% if nested_subcategory.isCategory %}
-						{% set normalized_nested_subcategory_name = nested_subcategory.name | lower | trim %}
-						{% if normalized_nested_subcategory_name not in rendered_home_subcategory_names %}
-							{% set rendered_home_subcategory_names = rendered_home_subcategory_names | merge([normalized_nested_subcategory_name]) %}
-							{% set unique_home_subcategories = unique_home_subcategories | merge([nested_subcategory]) %}
-						{% endif %}
+						{% set all_subcategories = all_subcategories | merge([nested_subcategory]) %}
 					{% endif %}
 				{% endfor %}
 			{% endif %}
 		{% endfor %}
 	{% endif %}
+{% endfor %}
+
+{# Armar lista final en el orden definido, solo las permitidas #}
+{% for allowed_name in allowed_categories %}
+	{% for subcategory in all_subcategories %}
+		{% if subcategory.name | lower | trim == allowed_name %}
+			{% if subcategory not in unique_home_subcategories %}
+				{% set unique_home_subcategories = unique_home_subcategories | merge([subcategory]) %}
+			{% endif %}
+		{% endif %}
+	{% endfor %}
 {% endfor %}
 
 {% if unique_home_subcategories is not empty %}
