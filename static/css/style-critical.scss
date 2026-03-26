@@ -3032,9 +3032,12 @@ input[type="number"] {
   object-fit: cover;
 }
 
+.product-item-image:not(.product-item-image-secondary) {
+  opacity: 1 !important;
+}
+
 .product-item-image:not(.product-item-image-secondary).lazyloaded {
   z-index: 2;
-  opacity: 1;
 }
 
 .product-item-image-secondary,
