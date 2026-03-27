@@ -10,6 +10,7 @@
 {% endif %}
 
 {% set category_banner = (category.images is not empty) or ("banner-products.jpg" | has_custom_image) %}
+{% set normalized_category_name = category.name | lower | capitalize %}
 
 {% if not show_help %}
 	<section class="category-body ivana-category-shell" data-store="category-grid-{{ category.id }}">
@@ -20,10 +21,14 @@
 			<div class="ivana-category-header">
 				<div class="grid grid-md-auto mb-md-4 align-items-end ivana-category-heading">
 					<div class="mb-1 ivana-category-copy">
-						{% snipplet "breadcrumbs.tpl" %}
+						<div class="ivana-breadcrumbs font-small mb-2">
+							<a class="crumb" href="{{ store.url }}" title="{{ store.name }}">{{ 'Inicio' | translate }}</a>
+							<span class="separator">/</span>
+							<span class="crumb active">{{ normalized_category_name }}</span>
+						</div>
 						<div class="grid grid-1-auto align-items-end">
 							<div>
-								<h1 class="ivana-category-title mb-0">{{ category.name }}</h1>
+								<h1 class="ivana-category-title mb-0">{{ normalized_category_name }}</h1>
 								{% if category.description %}
 									<p class="font-small mt-2 mb-0 ivana-category-meta">{{ category.description }}</p>
 								{% endif %}
