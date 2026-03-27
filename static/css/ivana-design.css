@@ -4640,11 +4640,6 @@ h3,
   display: inline-block !important;
   text-align: center !important;
   width: auto !important;
-  text-transform: lowercase !important;
-}
-
-.ivana-home-section-title::first-letter {
-  text-transform: lowercase !important;
   text-transform: capitalize !important;
 }
 
