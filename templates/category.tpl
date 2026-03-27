@@ -26,8 +26,8 @@
 							<span class="separator">/</span>
 							<span class="crumb active">{{ normalized_category_name }}</span>
 						</div>
-						<div class="grid grid-1-auto align-items-end">
-							<div>
+						<div class="grid grid-1-auto align-items-end ivana-category-title-row">
+							<div class="ivana-category-title-block">
 								<h1 class="ivana-category-title mb-0">{{ normalized_category_name }}</h1>
 								{% if category.description %}
 									<p class="font-small mt-2 mb-0 ivana-category-meta">{{ category.description }}</p>

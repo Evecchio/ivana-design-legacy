@@ -3967,6 +3967,10 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   text-align: left !important;
 }
 
+.ivana-category-title-row {
+  position: relative;
+}
+
 .ivana-category-meta {
   color: var(--ivana-text-soft) !important;
   font-size: 1rem !important;
@@ -3978,6 +3982,34 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   color: var(--ivana-text-soft) !important;
   white-space: nowrap;
   align-self: end;
+}
+
+@media (min-width: 768px) {
+  .ivana-category-title-row {
+    display: block !important;
+  }
+
+  .ivana-category-title-block {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ivana-category-title {
+    text-align: center !important;
+  }
+
+  .ivana-category-meta {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center !important;
+  }
+
+  .ivana-category-count {
+    position: absolute;
+    right: 0;
+    bottom: 0.2rem;
+    text-align: right;
+  }
 }
 
 .ivana-category-toolbar {
