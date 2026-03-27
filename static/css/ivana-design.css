@@ -4769,12 +4769,9 @@ h3,
 .ivana-category-copy .separator,
 .ivana-category-copy .ivana-category-kicker,
 .ivana-category-copy .ivana-category-title,
-.ivana-category-copy .ivana-category-count {
+.ivana-category-copy .ivana-category-count,
+.ivana-category-copy .ivana-category-meta {
   text-transform: lowercase !important;
   text-transform: capitalize !important;
-}
-
-.ivana-category-copy .ivana-category-meta {
-  text-transform: none !important;
 }
 
