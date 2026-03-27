@@ -21,7 +21,6 @@
 				<div class="grid grid-md-auto mb-md-4 align-items-end ivana-category-heading">
 					<div class="mb-1 ivana-category-copy">
 						{% snipplet "breadcrumbs.tpl" %}
-						<p class="ivana-category-kicker mb-2">Coleccion</p>
 						<div class="grid grid-1-auto align-items-end">
 							<div>
 								<h1 class="ivana-category-title mb-0">{{ category.name }}</h1>
