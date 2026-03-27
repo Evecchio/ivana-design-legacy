@@ -3992,6 +3992,7 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   .ivana-category-title-block {
     width: 100%;
     text-align: center;
+    padding-left: clamp(1.5rem, 4vw, 4.5rem);
   }
 
   .ivana-category-title {
