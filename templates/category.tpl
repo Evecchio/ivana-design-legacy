@@ -33,11 +33,6 @@
 									<p class="font-small mt-2 mb-0 ivana-category-meta">{{ category.description }}</p>
 								{% endif %}
 							</div>
-							{% if products | length > 1 %}
-								<div class="text-right font-small mb-1 ivana-category-count">
-									{{ products_count }} {{ 'productos' | translate }}
-								</div>
-							{% endif %}
 						</div>
 					</div>
 					{% if products %}
