@@ -4411,16 +4411,22 @@ h3,
 .ivana-home-categories-row.category-slider-mobile {
   display: flex !important;
   flex-wrap: nowrap !important;
-  justify-content: flex-start !important;
+  justify-content: center !important;
   align-items: flex-start !important;
   overflow-x: auto !important;
   background: transparent !important;
   width: 100% !important;
   min-width: 0 !important;
-  padding-left: 20px !important;
-  padding-right: 20px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   padding-bottom: 15px !important;
   gap: clamp(1rem, 2.2vw, 1.5rem) !important;
+}
+
+.ivana-home-categories-row.category-slider-mobile.ivana-overflowing {
+  justify-content: flex-start !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
 }
 
 .ivana-home-categories .container,
@@ -4455,19 +4461,24 @@ h3,
 .section-home.section-categories-home.ivana-home-categories .ivana-home-categories-row.category-slider-mobile {
   display: flex !important;
   flex-wrap: nowrap !important;
-  justify-content: flex-start !important;
+  justify-content: center !important;
   align-items: flex-start !important;
   overflow-x: auto !important;
   overflow-y: hidden !important;
   width: 100% !important;
   min-width: 0 !important;
-  padding: 0 20px 15px !important;
+  padding: 0 0 15px !important;
   gap: 1.25rem !important;
   background: transparent !important;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   touch-action: pan-x;
+}
+
+.section-home.section-categories-home.ivana-home-categories .ivana-home-categories-row.category-slider-mobile.ivana-overflowing {
+  justify-content: flex-start !important;
+  padding: 0 20px 15px !important;
 }
 
 .section-home.section-categories-home.ivana-home-categories .ivana-home-categories-row.category-slider-mobile::-webkit-scrollbar {

@@ -2474,11 +2474,17 @@ body:not(.is-using-mouse) .fancybox__container :focus {
       touch-action: pan-x;
       overscroll-behavior-x: contain;
       scroll-padding-inline: 20px;
-      justify-content: flex-start !important;
+      justify-content: center !important;
       width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 15px;
+    }
+
+  .category-slider-mobile.ivana-overflowing {
+      justify-content: flex-start !important;
       padding-left: 20px;
       padding-right: 20px;
-      padding-bottom: 15px;
     }
 
   .category-slider-mobile::-webkit-scrollbar {
@@ -2499,7 +2505,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   .category-slider-mobile {
       display: flex !important;
       flex-wrap: nowrap !important;
-      justify-content: flex-start !important;
+      justify-content: center !important;
       overflow-x: auto !important;
       -webkit-overflow-scrolling: touch;
       scroll-snap-type: x mandatory;
@@ -2508,9 +2514,15 @@ body:not(.is-using-mouse) .fancybox__container :focus {
       overscroll-behavior-x: contain;
       scroll-padding-inline: 20px;
       width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 15px;
+    }
+
+  .category-slider-mobile.ivana-overflowing {
+      justify-content: flex-start !important;
       padding-left: 20px;
       padding-right: 20px;
-      padding-bottom: 15px;
     }
 
   .category-slider-mobile::-webkit-scrollbar {

@@ -146,10 +146,21 @@ function normalizeIvanaProductCards(root) {
 
 var ivanaProductCardsQueued = false;
 
+function updateIvanaHomeCategoryCarouselOverflow(slider) {
+    if (!slider) {
+        return;
+    }
+
+    var isOverflowing = slider.scrollWidth > (slider.clientWidth + 1);
+    slider.classList.toggle("ivana-overflowing", isOverflowing);
+}
+
 function initializeIvanaHomeCategoryCarouselMouseScroll() {
     var sliders = document.querySelectorAll(".ivana-home-categories-row.category-slider-mobile");
 
     sliders.forEach(function(slider) {
+        updateIvanaHomeCategoryCarouselOverflow(slider);
+
         if (slider.dataset.ivanaMouseScrollBound === "1") {
             return;
         }
@@ -171,6 +182,16 @@ function initializeIvanaHomeCategoryCarouselMouseScroll() {
             slider.scrollLeft += delta;
         }, { passive: false });
     });
+
+    if (!window.ivanaHomeCategoryOverflowResizeBound) {
+        window.ivanaHomeCategoryOverflowResizeBound = true;
+
+        window.addEventListener("resize", function() {
+            document.querySelectorAll(".ivana-home-categories-row.category-slider-mobile").forEach(function(slider) {
+                updateIvanaHomeCategoryCarouselOverflow(slider);
+            });
+        });
+    }
 }
 
 function queueIvanaProductCardNormalization() {
