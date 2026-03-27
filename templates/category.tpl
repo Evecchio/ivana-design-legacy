@@ -34,7 +34,7 @@
 							<div class="ivana-category-title-block">
 								<h1 class="ivana-category-title mb-0">{{ normalized_category_name }}</h1>
 								{% if normalized_category_description %}
-									<p class="font-small mt-2 mb-0 ivana-category-meta">{{ normalized_category_description }}</p>
+									<p class="font-small mt-2 mb-0 ivana-category-meta"{% if category.handle == 'lenceria' %} style="text-transform: none !important;"{% endif %}>{{ normalized_category_description }}</p>
 								{% endif %}
 							</div>
 						</div>
