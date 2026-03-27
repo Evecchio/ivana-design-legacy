@@ -3986,14 +3986,17 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
 
 @media (min-width: 768px) {
   .ivana-category-heading {
-    display: block !important;
-    position: relative;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     min-height: 5.5rem;
+    align-items: center;
   }
 
   .ivana-category-copy {
-    max-width: none;
-    width: 100%;
+    grid-column: 2;
+    width: auto;
+    max-width: min(100%, 54rem);
+    justify-self: center;
   }
 
   .ivana-category-title-row {
@@ -4001,10 +4004,10 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   }
 
   .ivana-category-title-block {
-    width: 100%;
-    max-width: none;
-    margin-left: auto;
-    margin-right: auto;
+    width: auto;
+    max-width: 54rem;
+    margin-left: 0;
+    margin-right: 0;
     text-align: center;
   }
 
@@ -4016,14 +4019,15 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
     margin-left: auto;
     margin-right: auto;
     text-align: center !important;
-    max-width: none;
+    max-width: 38rem;
   }
 
   .ivana-category-toolbar {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    grid-column: 3;
+    position: static;
+    justify-self: end;
+    align-self: center;
+    transform: none;
   }
 }
 
