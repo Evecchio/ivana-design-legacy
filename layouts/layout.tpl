@@ -42,7 +42,7 @@
 
 		{# Load async styling not mandatory for first meaningfull paint #}
 
-		<link rel="stylesheet" href="{{ 'css/style-async.scss' | static_url }}" media="print" onload="this.media='all'">
+		<link rel="stylesheet" href="{{ 'css/style-async.scss' | static_url }}?v=20260327-1" media="print" onload="this.media='all'">
 
 		{# Loads custom CSS added from Advanced Settings on the adminÂ´s theme customization screen #}
 
@@ -78,7 +78,7 @@
 
 		{{ component('structured-data') }}
 
-		<link rel="stylesheet" href="{{ 'css/ivana-design.css' | static_url }}">
+		<link rel="stylesheet" href="{{ 'css/ivana-design.css' | static_url }}?v=20260327-1">
 		<style>
 			/* REFUERZO DE CENTRADO — Para asegurar que el título se vea centrado en la home */
 			.ivana-home-section-title {
