@@ -4787,7 +4787,6 @@ h3,
 .ivana-category-copy .ivana-category-title,
 .ivana-category-copy .ivana-category-count,
 .ivana-category-copy .ivana-category-meta {
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
 }
 

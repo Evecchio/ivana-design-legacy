@@ -12,9 +12,6 @@
 {% set category_banner = (category.images is not empty) or ("banner-products.jpg" | has_custom_image) %}
 {% set normalized_category_name = category.name | lower | capitalize %}
 {% set normalized_category_description = category.description %}
-{% if category.handle == 'lenceria' %}
-	{% set normalized_category_description = 'Lencería exquisita de Ivana Design: elegancia y sensualidad garantizadas.' %}
-{% endif %}
 
 {% if not show_help %}
 	<section class="category-body ivana-category-shell" data-store="category-grid-{{ category.id }}">
@@ -34,7 +31,7 @@
 							<div class="ivana-category-title-block">
 								<h1 class="ivana-category-title mb-0">{{ normalized_category_name }}</h1>
 								{% if normalized_category_description %}
-									<p class="font-small mt-2 mb-0 ivana-category-meta"{% if category.handle == 'lenceria' %} style="text-transform: none !important;"{% endif %}>{{ normalized_category_description }}</p>
+									<p class="font-small mt-2 mb-0 ivana-category-meta">{{ normalized_category_description }}</p>
 								{% endif %}
 							</div>
 						</div>
