@@ -1553,7 +1553,7 @@ DOMContentLoaded.addEventOrExecute(() => {
 
     {% endif %}
 
-    {% set has_item_slider = settings.product_item_slider %}
+    {% set has_item_slider = template == 'category' or template == 'search' %}
 
     {% if settings.quick_shop or settings.product_color_variants %}
         LS.registerOnChangeVariant(function(variant){
