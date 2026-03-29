@@ -23,13 +23,13 @@
 				{% include 'snipplets/category-banner.tpl' %}
 			{% endif %}
 			<div class="ivana-category-header">
+				<div class="ivana-breadcrumbs ivana-category-breadcrumbs-row font-small mb-2">
+					<a class="crumb" href="{{ store.url }}" title="{{ store.name }}">{{ 'Inicio' | translate }}</a>
+					<span class="separator">/</span>
+					<span class="crumb active">{{ normalized_category_name }}</span>
+				</div>
 				<div class="grid grid-md-auto mb-md-4 align-items-end ivana-category-heading">
 					<div class="mb-1 ivana-category-copy">
-						<div class="ivana-breadcrumbs font-small mb-2">
-							<a class="crumb" href="{{ store.url }}" title="{{ store.name }}">{{ 'Inicio' | translate }}</a>
-							<span class="separator">/</span>
-							<span class="crumb active">{{ normalized_category_name }}</span>
-						</div>
 						<div class="grid grid-1-auto align-items-end ivana-category-title-row">
 							<div class="ivana-category-title-block">
 								<h1 class="ivana-category-title mb-0">{{ normalized_category_name }}</h1>

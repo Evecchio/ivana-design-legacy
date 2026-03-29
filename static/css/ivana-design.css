@@ -3963,6 +3963,11 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   max-width: 54rem;
 }
 
+.ivana-category-breadcrumbs-row {
+  width: 100%;
+  text-align: left;
+}
+
 .ivana-category-title {
   text-align: left !important;
 }
@@ -3997,6 +4002,10 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
     width: auto;
     max-width: min(100%, 54rem);
     justify-self: center;
+  }
+
+  .ivana-category-breadcrumbs-row {
+    margin-bottom: 0.75rem !important;
   }
 
   .ivana-category-title-row {
@@ -4766,11 +4775,13 @@ h3,
 }
 
 /* Category/page header casing */
-.ivana-category-copy .ivana-breadcrumbs,
-.ivana-category-copy .ivana-breadcrumbs a,
+.ivana-category-header .ivana-breadcrumbs,
+.ivana-category-header .ivana-breadcrumbs a,
+.ivana-category-header .crumb,
+.ivana-category-header .crumb.active,
+.ivana-category-header .separator,
 .ivana-category-copy .crumb,
 .ivana-category-copy .crumb.active,
-.ivana-category-copy .separator,
 .ivana-category-copy .ivana-category-kicker,
 .ivana-category-copy .ivana-category-title,
 .ivana-category-copy .ivana-category-count,

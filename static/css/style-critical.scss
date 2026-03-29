@@ -4537,8 +4537,11 @@ h1, h2, .ivana-home-category-name {
 }
 
 /* Category/page header casing */
-.ivana-category-copy .ivana-breadcrumbs,
-.ivana-category-copy .ivana-breadcrumbs a,
+.ivana-category-header .ivana-breadcrumbs,
+.ivana-category-header .ivana-breadcrumbs a,
+.ivana-category-header .crumb,
+.ivana-category-header .crumb.active,
+.ivana-category-header .separator,
 .ivana-category-copy .crumb,
 .ivana-category-copy .crumb.active,
 .ivana-category-copy .ivana-category-kicker,
