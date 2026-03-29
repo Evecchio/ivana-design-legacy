@@ -3969,6 +3969,7 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
 }
 
 .ivana-category-title {
+  font-weight: 700 !important;
   text-align: left !important;
 }
 
