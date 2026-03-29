@@ -4542,6 +4542,10 @@ h1, h2, .ivana-home-category-name {
 .ivana-category-header .crumb,
 .ivana-category-header .crumb.active,
 .ivana-category-header .separator,
+.ivana-category-copy .ivana-category-meta {
+  text-transform: none !important;
+}
+
 .ivana-category-copy .crumb,
 .ivana-category-copy .crumb.active,
 .ivana-category-copy .ivana-category-kicker,
