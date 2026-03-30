@@ -3415,6 +3415,40 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 .js-product-container:hover .product-item-image-container img {
   transform: none !important;
 }
+
+.ivana-card .product-item-slider-controls-container {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-top: 0 !important;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111111 !important;
+  box-shadow: 0 8px 24px rgba(17, 17, 17, 0.14);
+  opacity: 1 !important;
+  z-index: 3;
+}
+
+.ivana-card .product-item-slider-controls-container.swiper-button-prev {
+  left: 0.75rem;
+}
+
+.ivana-card .product-item-slider-controls-container.swiper-button-next {
+  right: 0.75rem;
+}
+
+.ivana-card .product-item-slider-controls-container.swiper-button-disabled {
+  opacity: 0.35 !important;
+}
+
+.ivana-card .product-item-slider-controls-container svg,
+.ivana-card .product-item-slider-controls-container .icon-inline {
+  width: 1rem;
+  height: 1rem;
+}
 .product-labels {
   display: flex !important;
   flex-wrap: wrap !important;
