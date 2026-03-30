@@ -3396,6 +3396,13 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   font-weight: 600 !important;
 }
 
+.js-item-product .product-item-image-secondary,
+.js-item-product .product-item-image-secondary.fade-in.lazyloaded {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
 .product-item-secondary-images-loaded:not(
     .product-item-secondary-images-disabled
   ):hover
@@ -3409,7 +3416,9 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   ):hover
   .product-item-image-featured
   ~ .product-item-image-secondary {
+  display: none !important;
   opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 .js-product-container:hover .product-item-image-container img {

@@ -3042,16 +3042,17 @@ input[type="number"] {
 
 .product-item-image-secondary,
 .product-item-image-secondary.fade-in.lazyloaded {
-  display: none;
-  opacity: 0;
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 .product-item-secondary-images-loaded:not(
     .product-item-secondary-images-disabled
   ):hover
   .product-item-image-featured {
-  opacity: 1;
-  transition-delay: 0s;
+  opacity: 1 !important;
+  transition-delay: 0s !important;
 }
 
 .product-item-secondary-images-loaded:not(
@@ -3059,7 +3060,9 @@ input[type="number"] {
   ):hover
   .product-item-image-featured
   ~ .product-item-image-secondary {
-  opacity: 0;
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 .product-item-link {
