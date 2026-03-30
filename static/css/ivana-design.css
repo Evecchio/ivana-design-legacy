@@ -3434,6 +3434,26 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   display: none !important;
 }
 
+.product-item-secondary-images-loaded:not(
+    .product-item-secondary-images-disabled
+  ):hover
+  .product-item-image-featured {
+  opacity: 1 !important;
+  transition-delay: 0s !important;
+}
+
+.product-item-secondary-images-loaded:not(
+    .product-item-secondary-images-disabled
+  ):hover
+  .product-item-image-featured
+  ~ .product-item-image-secondary {
+  opacity: 0 !important;
+}
+
+.js-product-container:hover .product-item-image-container img {
+  transform: none !important;
+}
+
 .product-labels {
   display: flex !important;
   flex-wrap: wrap !important;
