@@ -932,7 +932,7 @@ footer .accordion-container {
 .price-filter-container .filter-input-price-container {
   position: relative;
   display: inline-block;
-  width: calc(50% - 40px);
+  width: calc((100% - 44px) / 2);
   vertical-align: bottom;
 }
 

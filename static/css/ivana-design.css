@@ -1146,6 +1146,17 @@
 
 .ivana-category-filter-card .price-filter-container {
   padding-top: 0.25rem !important;
+  white-space: nowrap !important;
+}
+
+.ivana-category-filter-card .price-filter-container .filter-input-price-container {
+  width: calc((100% - 44px - 2mm) / 2) !important;
+  vertical-align: bottom !important;
+}
+
+.ivana-category-filter-card .price-filter-container .form-group {
+  display: inline-table !important;
+  width: 100% !important;
 }
 
 .ivana-category-filter-card input:not([type="checkbox"]):not([type="radio"]),
