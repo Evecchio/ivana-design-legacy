@@ -1146,24 +1146,26 @@
 
 .ivana-category-filter-card .price-filter-container {
   padding-top: 0.25rem !important;
-  position: relative !important;
-  display: block !important;
-  padding-right: calc(44px + 2mm) !important;
   white-space: normal !important;
 }
 
+.ivana-category-filter-card .price-filter-container .form-group {
+  display: flex !important;
+  align-items: flex-end !important;
+  flex-wrap: nowrap !important;
+  gap: 2mm !important;
+  width: 100% !important;
+  margin-bottom: 0 !important;
+}
+
 .ivana-category-filter-card .price-filter-container .filter-input-price-container {
-  display: inline-block !important;
-  width: 50% !important;
+  display: flex !important;
+  flex: 1 1 0 !important;
+  flex-direction: column !important;
+  width: auto !important;
   min-width: 0 !important;
   box-sizing: border-box !important;
   vertical-align: bottom !important;
-}
-
-.ivana-category-filter-card .price-filter-container .form-group {
-  display: block !important;
-  width: 100% !important;
-  margin-bottom: 0 !important;
 }
 
 .ivana-category-filter-card input:not([type="checkbox"]):not([type="radio"]),
@@ -1178,8 +1180,11 @@
 .ivana-category-filter-card .price-filter-btn,
 .ivana-category-filter-card .btn-default {
   display: inline-flex !important;
+  position: static !important;
   align-items: center;
   justify-content: center;
+  flex: 0 0 44px !important;
+  align-self: flex-end !important;
   min-height: 44px !important;
   padding: 0 1rem !important;
   border-radius: 999px !important;
@@ -1192,9 +1197,6 @@
   line-height: 0 !important;
   text-indent: -9999px !important;
   overflow: hidden !important;
-  position: absolute !important;
-  right: 0 !important;
-  bottom: 0 !important;
   margin: 0 !important;
   vertical-align: bottom !important;
 }
