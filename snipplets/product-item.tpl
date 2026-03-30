@@ -24,13 +24,15 @@
 
 {% set show_image_slider = 
     (template == 'category' or template == 'search')
+    and settings.product_item_slider
     and not reduced_item
     and not slide_item
-    and product.images_count > 1
+    and not has_filters
+    and product.other_images
 %}
 
 {% if show_image_slider %}
-    {% set slider_controls_container_class = 'product-item-slider-controls-container svg-icon-text' %}
+    {% set slider_controls_container_class = 'product-item-slider-controls-container svg-icon-text d-none d-md-block' %}
     {% set control_next_svg_id = 'arrow-long' %}
     {% set control_prev_svg_id = 'arrow-long' %}
 {% endif %}
@@ -150,7 +152,9 @@
     {% endif %}
 {% endset %}
 
-{% set image_overlay %}{% endset %}
+{% set image_overlay %}
+	<div class="placeholder placeholder-fade"></div>
+{% endset %}
 
 {{ component(
 	'product-item', {
