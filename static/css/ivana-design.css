@@ -1167,21 +1167,34 @@
   border-radius: 999px !important;
   background: #111827 !important;
   color: #fff !important;
-  font-size: 1.2rem !important;
-  font-weight: 700 !important;
-  line-height: 1 !important;
-  text-align: center !important;
-  letter-spacing: 0 !important;
-  opacity: 1 !important;
-  -webkit-text-fill-color: #ffffff !important;
-  text-shadow: 0 0 0 #ffffff !important;
-  text-indent: 0 !important;
+  width: 44px !important;
+  min-width: 44px !important;
+  padding: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  text-indent: -9999px !important;
   overflow: visible !important;
+  margin-left: 2mm !important;
 }
 
 .ivana-category-filter-card .price-filter-btn::before,
 .ivana-category-filter-card .btn-default::before {
-  display: none !important;
+  content: "" !important;
+  display: block !important;
+  width: 16px !important;
+  height: 16px !important;
+  background-color: #ffffff !important;
+  -webkit-mask-image: var(--chevron) !important;
+  -ms-mask-image: var(--chevron) !important;
+  -moz-mask-image: var(--chevron) !important;
+  -o-mask-image: var(--chevron) !important;
+  mask-image: var(--chevron) !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important;
+  mask-position: center !important;
+  -webkit-mask-size: contain !important;
+  mask-size: contain !important;
 }
 
 .ivana-category-content {

@@ -4191,23 +4191,29 @@ input[type="number"] {
   .price-filter-btn {
     width: 43px;
     height: 43px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1;
+    font-size: 0;
+    line-height: 0;
     padding: 0;
+    text-indent: -9999px;
   }
 
   .price-filter-btn:before {
-    display: none;
-    width: 100%;
-    height: 18px;
-    margin-top: 10px;
-    color: var(--main-foreground);
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: 0 auto;
+    background-color: #fff;
     -webkit-mask-image: var(--chevron);
     -ms-mask-image: var(--chevron);
     -moz-mask-image: var(--chevron);
     -o-mask-image: var(--chevron);
     mask-image: var(--chevron);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
   }
 
   /* Product */
