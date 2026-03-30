@@ -3260,7 +3260,7 @@ div.js-product-item-private.product-item.ivana-card,
 
 div.js-product-item-private.product-item.ivana-card:hover,
 .js-item-product.ivana-card:hover {
-  transform: translateY(-4px);
+  transform: none;
   box-shadow: none !important;
 }
 
