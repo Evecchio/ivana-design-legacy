@@ -96,7 +96,7 @@
 			</div>
 		{% endif %}
 
-		{% if not product.available and show_installments_line %}
+		{% if show_installments_line %}
 			{{ component('installments', {
 				location: 'product_list',
 				short_wording: true,
@@ -167,7 +167,7 @@
 		secondary_image: show_secondary_image_settings_value,
 		image_slider: show_image_slider,
 		image_slider_pagination_container: true,
-		installments: show_installments_settings_value,
+		installments: false,
 		color_variants: show_color_variants_settings_value,
 		quick_shop: show_quick_shop_settings_value,
 		modal_trigger_data: 'data-target=' ~ modal_trigger_data,
