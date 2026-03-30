@@ -172,7 +172,7 @@
 		labels: labels_value,
 		price_compare: price_compare_value,
 		product_item_classes: {
-			item: 'ivana-card js-product-container js-item-product ' ~ item_spacing_classes ~ slide_item_class ~ reduced_item_classes ~ discount_state_class,
+			item: 'ivana-card js-product-container js-item-product product-item-secondary-images-disabled ' ~ item_spacing_classes ~ slide_item_class ~ reduced_item_classes ~ discount_state_class,
 			name: 'ivana-card-name ' ~ item_name_classes,
 			image: image_classes,
 			information: 'ivana-card-info d-flex flex-column pt-3 pb-2',
