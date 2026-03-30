@@ -1,9 +1,9 @@
-{% set show_installments_settings_value = (settings.product_installments ? true : false) and not reduced_item %}
+{% set show_installments_settings_value = product.display_price %}
 {% set show_color_variants_settings_value = settings.product_color_variants and not reduced_item %}
 {% set show_quick_shop_settings_value = settings.quick_shop and not reduced_item and template != 'home' %}
 {% set show_secondary_image_settings_value = false %}
 {% set has_real_discount = product.compare_at_price and product.compare_at_price > product.price %}
-{% set show_installments_line = settings.product_installments and not reduced_item and product.display_price %}
+{% set show_installments_line = product.display_price %}
 {% set labels_value = reduced_item ? false : has_real_discount %}
 {% set price_compare_value = reduced_item ? false : has_real_discount %}
 {% set discount_rate_value = reduced_item ? false : has_real_discount %}
@@ -104,6 +104,12 @@
 					installment: 'ivana-card-installments custom-installments mt-1'
 				}
 			}) }}
+		{% endif %}
+
+		{% if product.display_price %}
+			<div class="ivana-card-payment-discount js-ivana-card-payment-discount">
+				<span class="ivana-card-payment-discount-value">10% de descuento</span> por transferencia
+			</div>
 		{% endif %}
 
 		{% set product_available_with_price = product.available and product.display_price %}

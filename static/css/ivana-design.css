@@ -2367,19 +2367,21 @@ span.js-compare-price-display.product-item-price-compare:empty {
 }
 
 /* Precio con descuento por transferencia */
-div.js-product-item-private.product-item.ivana-card .js-payment-discount-price-product-container.payment-discount-price-product-container {
+div.js-product-item-private.product-item.ivana-card .js-payment-discount-price-product-container.payment-discount-price-product-container,
+div.js-product-item-private.product-item.ivana-card .ivana-card-payment-discount {
   font-size: 0.8125rem !important;
-  font-weight: 600 !important;
-  color: #00a650 !important;
+  font-weight: 700 !important;
+  color: #1b5e20 !important;
   margin-top: 4px !important;
   display: block !important;
   white-space: normal !important;
-  word-spacing: 0.15em !important;
+  line-height: 1.45 !important;
 }
 
-div.js-product-item-private.product-item.ivana-card .js-payment-discount-price-product-container.payment-discount-price-product-container span {
-  color: #00a650 !important;
-  font-weight: 600 !important;
+div.js-product-item-private.product-item.ivana-card .js-payment-discount-price-product-container.payment-discount-price-product-container span,
+div.js-product-item-private.product-item.ivana-card .ivana-card-payment-discount span {
+  color: #1b5e20 !important;
+  font-weight: 700 !important;
   display: inline !important;
   white-space: normal !important;
 }
