@@ -1167,6 +1167,21 @@
   border-radius: 999px !important;
   background: #111827 !important;
   color: #fff !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  letter-spacing: 0 !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: 0 0 0 #ffffff !important;
+  text-indent: 0 !important;
+  overflow: visible !important;
+}
+
+.ivana-category-filter-card .price-filter-btn::before,
+.ivana-category-filter-card .btn-default::before {
+  display: none !important;
 }
 
 .ivana-category-content {
