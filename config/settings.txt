@@ -1492,9 +1492,6 @@ Listado de productos
 	title
 		title = Fotos del producto
 	checkbox
-		name = product_hover
-		description = Mostrar la segunda foto al posar el mouse
-	checkbox
 		name = product_item_slider
 		description = Mostrar las fotos en un carrusel para cada producto
 	subtitle

@@ -1590,11 +1590,6 @@ DOMContentLoaded.addEventOrExecute(() => {
                 }
             {% endif %}
 
-            {% if settings.product_hover %}
-                {# Remove secondary feature on image updated from changeVariant #}
-                productContainer.find(".js-product-item-private-with-secondary-images").addClass("product-item-secondary-images-disabled");
-            {% endif %}
-
         });
     {% endif %}
 
