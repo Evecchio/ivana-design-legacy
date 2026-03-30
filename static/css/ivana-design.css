@@ -1146,17 +1146,25 @@
 
 .ivana-category-filter-card .price-filter-container {
   padding-top: 0.25rem !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  flex-wrap: nowrap !important;
+  gap: 0 !important;
   white-space: nowrap !important;
 }
 
 .ivana-category-filter-card .price-filter-container .filter-input-price-container {
-  width: calc((100% - 44px - 2mm) / 2) !important;
+  display: block !important;
+  flex: 1 1 0 !important;
+  width: auto !important;
+  min-width: 0 !important;
   vertical-align: bottom !important;
 }
 
 .ivana-category-filter-card .price-filter-container .form-group {
-  display: inline-table !important;
+  display: block !important;
   width: 100% !important;
+  margin-bottom: 0 !important;
 }
 
 .ivana-category-filter-card input:not([type="checkbox"]):not([type="radio"]),
@@ -1171,6 +1179,8 @@
 .ivana-category-filter-card .price-filter-btn,
 .ivana-category-filter-card .btn-default {
   display: inline-flex !important;
+  flex: 0 0 44px !important;
+  align-self: flex-end !important;
   align-items: center;
   justify-content: center;
   min-height: 44px !important;
@@ -1184,8 +1194,10 @@
   font-size: 0 !important;
   line-height: 0 !important;
   text-indent: -9999px !important;
-  overflow: visible !important;
+  overflow: hidden !important;
   margin-left: 2mm !important;
+  margin-top: 0 !important;
+  vertical-align: bottom !important;
 }
 
 .ivana-category-filter-card .price-filter-btn::before,

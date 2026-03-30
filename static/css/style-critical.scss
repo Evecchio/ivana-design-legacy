@@ -4189,12 +4189,15 @@ input[type="number"] {
   }
 
   .price-filter-btn {
+    flex: 0 0 43px;
+    align-self: flex-end;
     width: 43px;
     height: 43px;
     font-size: 0;
     line-height: 0;
     padding: 0;
     text-indent: -9999px;
+    margin-top: 0;
   }
 
   .price-filter-btn:before {

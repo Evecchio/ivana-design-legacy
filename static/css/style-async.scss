@@ -929,10 +929,18 @@ footer .accordion-container {
   padding-right: var(--spacing-4);
 }
 
+.price-filter-container {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+}
+
 .price-filter-container .filter-input-price-container {
   position: relative;
-  display: inline-block;
-  width: calc((100% - 44px) / 2);
+  display: block;
+  flex: 1 1 0;
+  width: auto;
+  min-width: 0;
   vertical-align: bottom;
 }
 
@@ -951,7 +959,8 @@ footer .accordion-container {
 }
 
 .price-filter-container .form-group {
-  display: inline-table;
+  display: block;
+  width: 100%;
 }
 
 /*============================================================================
