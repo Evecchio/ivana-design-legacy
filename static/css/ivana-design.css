@@ -3392,6 +3392,12 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   font-weight: 400 !important;
 }
 
+.ivana-installments-anchor {
+  display: block;
+  min-height: 22px;
+  margin-top: 4px;
+}
+
 .ivana-card .text-accent {
   color: var(--ivana-text-soft) !important;
   font-size: 0.72rem !important;

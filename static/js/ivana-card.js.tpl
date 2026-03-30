@@ -93,14 +93,26 @@ function normalizeIvanaProductCards(root) {
             priceContainer.parentNode.insertBefore(installmentsContainer, priceContainer.nextSibling);
         }
 
+        var installmentsAnchor = installmentsContainer;
+        if (!installmentsAnchor && priceContainer && priceContainer.parentNode) {
+            installmentsAnchor = card.querySelector(".ivana-installments-anchor");
+
+            if (!installmentsAnchor) {
+                installmentsAnchor = document.createElement("div");
+                installmentsAnchor.className = "ivana-installments-anchor";
+            }
+
+            priceContainer.parentNode.insertBefore(installmentsAnchor, priceContainer.nextSibling);
+        }
+
         var paymentDiscountContainer = card.querySelector(".js-ivana-card-payment-discount, .js-payment-discount-price-product-container");
-        if (paymentDiscountContainer && installmentsContainer && installmentsContainer.parentNode) {
-            installmentsContainer.parentNode.insertBefore(paymentDiscountContainer, installmentsContainer.nextSibling);
+        if (paymentDiscountContainer && installmentsAnchor && installmentsAnchor.parentNode) {
+            installmentsAnchor.parentNode.insertBefore(paymentDiscountContainer, installmentsAnchor.nextSibling);
         } else if (paymentDiscountContainer && priceContainer && priceContainer.parentNode) {
             priceContainer.parentNode.insertBefore(paymentDiscountContainer, priceContainer.nextSibling);
         }
 
-        var commercialAnchor = paymentDiscountContainer || installmentsContainer || priceContainer;
+        var commercialAnchor = paymentDiscountContainer || installmentsAnchor || priceContainer;
 
         // Ubicar badges de estado justo después del bloque comercial
         var lowStockBadge = card.querySelector(".ivana-low-stock-badge");
