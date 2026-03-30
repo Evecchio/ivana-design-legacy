@@ -4860,3 +4860,10 @@ h3,
   text-transform: none !important;
 }
 
+.ivana-category-header p.ivana-category-meta,
+.ivana-category-copy p.ivana-category-meta,
+.ivana-category-header p.ivana-category-meta *,
+.ivana-category-copy p.ivana-category-meta * {
+  text-transform: none !important;
+}
+
