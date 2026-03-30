@@ -353,7 +353,7 @@ h1, h2, h3, h4, h5, h6,
 
 .js-product-container .product-item-image-container { overflow: hidden; }
 .js-product-container .product-item-image-container img { transition: transform 0.55s ease; }
-.js-product-container:hover .product-item-image-container img { transform: scale(1.04); }
+.js-product-container:hover .product-item-image-container img { transform: none; }
 
 /* Contener el badge dentro del slider de imágenes */
 .product-images-slider {
