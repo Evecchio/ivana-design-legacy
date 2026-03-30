@@ -1937,7 +1937,7 @@ DOMContentLoaded.addEventOrExecute(() => {
             {%  else %}
             var installments_to_use = max_installments_without_interests[0] > 1 ? max_installments_without_interests : max_installments_with_interests;
 
-            if(installments_to_use[0] <= 1 ) {
+            if(installments_to_use[0] <= 0 ) {
             {% endif %}
                 $installments_container.hide();
                 $installments_modal_link.hide();
