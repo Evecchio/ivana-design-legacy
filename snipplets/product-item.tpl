@@ -42,6 +42,13 @@
 
 {% set custom_content %}
 	{% if not reduced_item %}
+		{# Badge "Ahorrás $X" — franja entre imagen e info, solo con descuento real #}
+		{% if has_real_discount %}
+			<div class="ivana-savings-badge">
+				Ahorrás {{ (product.compare_at_price - product.price) | money }}
+			</div>
+		{% endif %}
+
 		{# Subscription-only: inject subscription price in custom_content #}
 		{% if is_subscription_only %}
 			{{ component('subscriptions/subscription-price', {
