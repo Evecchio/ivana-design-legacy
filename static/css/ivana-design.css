@@ -434,15 +434,15 @@
 }
 
 .ivana-home-category-circle {
-  width: 102px !important;
-  height: 102px !important;
+  width: 153px !important;
+  height: 153px !important;
   border: 2px solid rgba(17, 17, 17, 0.08) !important;
   box-shadow: 0 12px 32px rgba(17, 17, 17, 0.06);
   background: #fff;
 }
 
 .ivana-home-category-name {
-  font-size: clamp(0.68rem, 0.95vw, 0.78rem) !important;
+  font-size: clamp(1.02rem, 1.425vw, 1.17rem) !important;
   color: #111 !important;
   text-transform: lowercase !important;
   text-transform: capitalize !important;
@@ -547,8 +547,8 @@
   }
 
   .ivana-home-category-circle {
-    width: 88px !important;
-    height: 88px !important;
+    width: 132px !important;
+    height: 132px !important;
   }
 }
 
@@ -667,8 +667,8 @@
 }
 
 .ivana-home-categories .js-home-category {
-  flex: 0 0 clamp(108px, 13vw, 200px) !important;
-  max-width: clamp(108px, 13vw, 200px) !important;
+  flex: 0 0 clamp(162px, 13vw, 300px) !important;
+  max-width: clamp(162px, 13vw, 300px) !important;
 }
 
 .ivana-home-category-name {
@@ -705,14 +705,14 @@
   }
 
   .ivana-home-categories .js-home-category {
-    flex: 0 0 28% !important;
-    max-width: 28% !important;
+    flex: 0 0 42% !important;
+    max-width: 42% !important;
     margin-right: 15px !important;
   }
 
   .ivana-home-category-name {
     min-height: 3.2em;
-    font-size: 0.68rem !important;
+    font-size: 1.05rem !important;
   }
 }
 
