@@ -4193,6 +4193,9 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
 .ivana-category-filter-card {
   position: sticky;
   top: 142px;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   background: linear-gradient(180deg, #ffffff, #fbf7f8);
   border: 1px solid var(--ivana-border);
   box-shadow: var(--ivana-shadow-card);
