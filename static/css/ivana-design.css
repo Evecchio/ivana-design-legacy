@@ -3639,17 +3639,17 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
    Cambiá los números para reposicionar elementos.
    Los números más bajos aparecen primero.
    ===================================================== */
-div.ivana-card .ivana-card-info {
-  .ivana-savings-badge                                        { order: 1 !important; } /* Badge "Ahorrás $X"            */
-  .product-item-colors                                        { order: 2 !important; } /* Bullets de color              */
-  .ivana-card-name, .js-item-name                            { order: 3 !important; } /* Nombre del producto           */
-  .product-item-price-container                              { order: 4 !important; } /* Precio, tachado, % OFF        */
-  .ivana-card-installments                                   { order: 5 !important; } /* Cuotas                        */
-  .ivana-card-payment-discount,
-  .js-payment-discount-price-product-container               { order: 6 !important; } /* 10% descuento transferencia   */
-  .js-item-submit-container                                  { order: 7 !important; margin-top: auto !important; } /* Botón agregar al carrito */
-  .ivana-low-stock-badge, .ivana-out-of-stock-badge          { order: 8 !important; } /* Badges de stock               */
-}
+div.ivana-card .ivana-card-info .ivana-savings-badge                              { order: 1 !important; } /* Badge "Ahorrás $X"            */
+div.ivana-card .ivana-card-info .product-item-colors                              { order: 2 !important; } /* Bullets de color              */
+div.ivana-card .ivana-card-info .ivana-card-name,
+div.ivana-card .ivana-card-info .js-item-name                                    { order: 3 !important; } /* Nombre del producto           */
+div.ivana-card .ivana-card-info .product-item-price-container                    { order: 4 !important; } /* Precio, tachado, % OFF        */
+div.ivana-card .ivana-card-info .ivana-card-installments                          { order: 5 !important; } /* Cuotas                        */
+div.ivana-card .ivana-card-info .ivana-card-payment-discount,
+div.ivana-card .ivana-card-info .js-payment-discount-price-product-container     { order: 6 !important; } /* 10% descuento transferencia   */
+div.ivana-card .ivana-card-info .js-item-submit-container                        { order: 7 !important; margin-top: auto !important; } /* Botón agregar al carrito */
+div.ivana-card .ivana-card-info .ivana-low-stock-badge,
+div.ivana-card .ivana-card-info .ivana-out-of-stock-badge                        { order: 8 !important; } /* Badges de stock               */
 
 div.js-product-item-private.product-item.ivana-card span.js-price-display.product-item-price,
 .js-item-product.ivana-card span.js-price-display.product-item-price,
