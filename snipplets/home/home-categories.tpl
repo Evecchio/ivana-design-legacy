@@ -35,7 +35,7 @@
 	<section class="section-home section-categories-home ivana-home-categories overflow-none py-10">
 		<div class="container">
 			<div class="ivana-home-section-head text-center w-100" style="margin-bottom: var(--spacing-5) !important;">
-				<h2 class="ivana-home-section-title mb-0" style="display: inline-block !important; text-align: center !important; width: auto !important;">Colección</h2>
+				<h2 class="ivana-home-section-title mb-0" style="display: inline-block !important; text-align: center !important; width: auto !important;">Colección Destacada</h2>
 				<div class="ivana-home-section-divider"></div>
 			</div>
 			<div class="d-flex justify-content-center align-items-start gap-4 pb-4 ivana-home-categories-row category-slider-mobile">
