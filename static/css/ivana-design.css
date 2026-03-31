@@ -3639,7 +3639,7 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
    Cambiá los números para reposicionar elementos.
    Los números más bajos aparecen primero.
    ===================================================== */
-.ivana-card-info {
+div.ivana-card .ivana-card-info {
   .ivana-savings-badge                                        { order: 1 !important; } /* Badge "Ahorrás $X"            */
   .product-item-colors                                        { order: 2 !important; } /* Bullets de color              */
   .ivana-card-name, .js-item-name                            { order: 3 !important; } /* Nombre del producto           */
