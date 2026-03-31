@@ -7,7 +7,7 @@
 	{% if item.subitems %}
 		<div class="nav-item item-with-subitems" data-component="menu.item">
 			<button class="js-modal-open-private nav-list-link {{ item.current ? 'selected' : '' }}" data-target="#{{ nav_panel_id }}" data-modal-url="#{{ nav_panel_id }}">
-				{{ item.name }}
+				{{ item.name == 'Productos' ? 'Colección' : item.name }}
 				<span class="nav-list-arrow">
 					<svg class="icon-inline icon-lg"><use xlink:href="#chevron"/></svg>
 				</span>
@@ -62,7 +62,7 @@
 		</div>
 	{% else %}
 		<div class="nav-item" data-component="menu.item">
-			<a class="nav-list-link {{ item.current ? 'selected' : '' }}" href="{% if item.url %}{{ item.url | setting_url }}{% else %}#{% endif %}">{{ item.name }}</a>
+			<a class="nav-list-link {{ item.current ? 'selected' : '' }}" href="{% if item.url %}{{ item.url | setting_url }}{% else %}#{% endif %}">{{ item.name == 'Productos' ? 'Colección' : item.name }}</a>
 		</div>
 	{% endif %}
 {% endfor %}

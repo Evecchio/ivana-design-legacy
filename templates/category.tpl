@@ -11,6 +11,7 @@
 
 {% set category_banner = (category.images is not empty) or ("banner-products.jpg" | has_custom_image) %}
 {% set normalized_category_name = category.name | lower | capitalize %}
+{% if normalized_category_name == 'Productos' %}{% set normalized_category_name = 'Colección' %}{% endif %}
 {% set normalized_category_description = category.description %}
 
 {% if not show_help %}
