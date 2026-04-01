@@ -194,25 +194,6 @@
   padding-bottom: clamp(1rem, 3vw, 2rem);
 }
 
-.ivana-cart-page {
-  display: grid;
-  gap: clamp(1.25rem, 3vw, 2rem);
-}
-
-.ivana-cart-page-content {
-  display: grid;
-  gap: clamp(1.25rem, 3vw, 2rem);
-}
-
-.ivana-cart-intro-card {
-  max-width: 48rem;
-  background: linear-gradient(180deg, #fffdfd 0%, #fff7fb 100%);
-  border: 1px solid rgba(17, 17, 17, 0.08);
-  border-radius: 28px;
-  padding: clamp(1rem, 2.5vw, 1.5rem);
-  box-shadow: 0 20px 60px rgba(17, 17, 17, 0.04);
-}
-
 .ivana-cart-shell .cart-page-content {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
@@ -674,29 +655,20 @@
   align-items: center;
 }
 
-.ivana-home-categories-slider {
-  width: 100%;
-  padding: 0 clamp(2.5rem, 5vw, 4rem);
-}
-
-.ivana-home-categories-swiper {
-  width: 100%;
-  overflow: hidden;
-}
-
 .ivana-home-categories-row {
+  display: flex !important;
+  justify-content: center !important;
   align-items: flex-start !important;
+  flex-wrap: wrap !important;
+  gap: clamp(1.5rem, 2.5vw, 3rem) clamp(2rem, 4vw, 5rem) !important;
+  min-width: 0 !important;
   padding-bottom: 0 !important;
-}
-
-.ivana-home-category-slide {
-  width: clamp(108px, 13vw, 200px) !important;
-  margin-right: clamp(1.5rem, 2.5vw, 3rem);
+  width: 100%;
 }
 
 .ivana-home-categories .js-home-category {
-  display: flex !important;
-  width: 100%;
+  flex: 0 0 clamp(108px, 13vw, 200px) !important;
+  max-width: clamp(108px, 13vw, 200px) !important;
 }
 
 .ivana-home-category-name {
@@ -705,11 +677,6 @@
   min-height: 2.8em;
   line-height: 1.35 !important;
   text-wrap: balance;
-}
-
-.ivana-home-categories .swiper-button-prev,
-.ivana-home-categories .swiper-button-next {
-  color: #111 !important;
 }
 
 @media (max-width: 991px) {
@@ -725,26 +692,22 @@
 
 @media (max-width: 767px) {
   .ivana-home-categories .container {
-    overflow: visible !important;
-  }
-
-  .ivana-home-categories-slider {
-    padding: 0;
-  }
-
-  .ivana-home-categories-swiper {
-    overflow: visible;
+    overflow-x: auto !important;
   }
 
   .ivana-home-categories-row {
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    min-width: max-content !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
     padding-bottom: 15px !important;
   }
 
-  .ivana-home-category-slide {
-    width: 28% !important;
-    margin-right: 15px;
+  .ivana-home-categories .js-home-category {
+    flex: 0 0 28% !important;
+    max-width: 28% !important;
+    margin-right: 15px !important;
   }
 
   .ivana-home-category-name {
@@ -1183,6 +1146,26 @@
 
 .ivana-category-filter-card .price-filter-container {
   padding-top: 0.25rem !important;
+  white-space: normal !important;
+}
+
+.ivana-category-filter-card .price-filter-container .form-group {
+  display: flex !important;
+  align-items: flex-end !important;
+  flex-wrap: nowrap !important;
+  gap: 2mm !important;
+  width: 100% !important;
+  margin-bottom: 0 !important;
+}
+
+.ivana-category-filter-card .price-filter-container .filter-input-price-container {
+  display: flex !important;
+  flex: 1 1 0 !important;
+  flex-direction: column !important;
+  width: auto !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  vertical-align: bottom !important;
 }
 
 .ivana-category-filter-card input:not([type="checkbox"]):not([type="radio"]),
@@ -1197,13 +1180,45 @@
 .ivana-category-filter-card .price-filter-btn,
 .ivana-category-filter-card .btn-default {
   display: inline-flex !important;
+  position: static !important;
   align-items: center;
   justify-content: center;
+  flex: 0 0 44px !important;
+  align-self: flex-end !important;
   min-height: 44px !important;
   padding: 0 1rem !important;
   border-radius: 999px !important;
   background: #111827 !important;
   color: #fff !important;
+  width: 44px !important;
+  min-width: 44px !important;
+  padding: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  vertical-align: bottom !important;
+}
+
+.ivana-category-filter-card .price-filter-btn::before,
+.ivana-category-filter-card .btn-default::before {
+  content: "" !important;
+  display: block !important;
+  width: 16px !important;
+  height: 16px !important;
+  background-color: #ffffff !important;
+  -webkit-mask-image: var(--chevron) !important;
+  -ms-mask-image: var(--chevron) !important;
+  -moz-mask-image: var(--chevron) !important;
+  -o-mask-image: var(--chevron) !important;
+  mask-image: var(--chevron) !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important;
+  mask-position: center !important;
+  -webkit-mask-size: contain !important;
+  mask-size: contain !important;
 }
 
 .ivana-category-content {
@@ -1904,17 +1919,9 @@
   margin-bottom: 1rem !important;
 }
 
-.ivana-cart-shell .ivana-cart-form > .alert {
-  margin-bottom: 1rem;
-}
-
 .ivana-cart-shell .cart-page-products,
 .ivana-cart-shell .cart-page-summary {
   padding: clamp(1.25rem, 2.5vw, 2rem);
-}
-
-.ivana-cart-shell .cart-page-products {
-  background: linear-gradient(180deg, #ffffff 0%, #fcfcfc 100%);
 }
 
 .ivana-cart-shell .ivana-cart-table-header {
@@ -1940,11 +1947,6 @@
   align-items: start;
   padding: 1.5rem 0;
   margin-bottom: 0 !important;
-  border-radius: 22px;
-  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
-  border: 1px solid rgba(17, 17, 17, 0.06);
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .ivana-cart-shell .cart-item-image-container {
@@ -2073,11 +2075,6 @@
   margin-top: 1.25rem;
   padding-top: 1.25rem;
   border-top: 1px solid rgba(17, 17, 17, 0.08);
-  background: linear-gradient(180deg, #fffafa 0%, #ffffff 100%);
-  border-radius: 22px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 1rem;
 }
 
 .ivana-cart-shell .cart-fulfillment-info,
@@ -2099,16 +2096,6 @@
   border-radius: 28px;
   padding: clamp(1.25rem, 3vw, 2rem);
   box-shadow: 0 24px 80px rgba(17, 17, 17, 0.05);
-}
-
-.ivana-cart-summary-lines {
-  margin-top: 1rem;
-}
-
-.ivana-cart-shell .ivana-cart-summary-sticky .btn-primary {
-  min-height: 50px;
-  border-radius: 16px !important;
-  box-shadow: 0 14px 28px rgba(17, 17, 17, 0.16);
 }
 
 .ivana-cart-summary-head {
@@ -2285,25 +2272,7 @@ div.js-product-item-private.product-item.ivana-card .product-ver-overlay {
 /* Zona de información */
 div.js-product-item-private.product-item.ivana-card .product-item-information.ivana-card-info.d-flex.flex-column.pt-3.pb-2 {
   padding: 20px !important;
-  gap: 0.45rem !important;
-  min-height: 100%;
-  display: grid !important;
-  grid-template-rows: minmax(8.8em, auto) minmax(1.5rem, auto) minmax(1.8rem, auto) minmax(2rem, auto) minmax(2.5rem, auto);
-  align-content: start;
-}
-
-div.js-product-item-private.product-item.ivana-card .product-item-link,
-div.js-product-item-private.product-item.ivana-card .item-link {
-  display: grid !important;
-  grid-template-rows: minmax(1.4rem, auto) minmax(2.7em, auto) minmax(1.4rem, auto) minmax(2rem, auto);
-  row-gap: 0.35rem;
-  align-content: start;
-  grid-row: 1;
-}
-
-div.js-product-item-private.product-item.ivana-card .labels.order-first,
-div.js-product-item-private.product-item.ivana-card .product-labels {
-  grid-row: 1;
+  gap: 0 !important;
 }
 
 /* Nombre del producto — solo primera letra mayúscula */
@@ -2316,26 +2285,22 @@ div.js-product-item-private.product-item.ivana-card .js-item-name.product-item-n
   text-transform: lowercase !important;
   text-transform: capitalize !important;
   letter-spacing: 0 !important;
-  margin-bottom: 0 !important;
+  margin-bottom: 8px !important;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   min-height: 2.7em !important;
-  grid-row: 2;
 }
 
 /* Contenedor de precios — layout wrap */
 div.js-product-item-private.product-item.ivana-card .product-item-price-container {
   display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  gap: 0.15rem !important;
-  margin-bottom: 0 !important;
-  min-height: 2rem;
-  grid-row: 3 / span 2;
-  justify-content: flex-start;
+  flex-wrap: wrap !important;
+  align-items: baseline !important;
+  gap: 3mm !important;
+  margin-bottom: 2px !important;
 }
 
 /* Precio tachado (compare) — itálica, gris, mismo tamaño que precio actual */
@@ -2353,7 +2318,6 @@ div.js-product-item-private.product-item.ivana-card span.js-compare-price-displa
   margin-right: 0 !important;
   width: 100% !important;
   line-height: 1.2 !important;
-  min-height: 1.2rem;
 }
 
 /* Precio principal — rojo negrita */
@@ -2364,7 +2328,6 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   color: #E53935 !important;
   line-height: 1.2 !important;
   letter-spacing: -0.02em !important;
-  min-height: 1.4rem;
 }
 
 /* Fila fija: precio + sticker de descuento */
@@ -2386,9 +2349,9 @@ div.js-product-item-private.product-item.ivana-card span.product-item-discount {
   background: #E53935 !important;
   padding: 2px 8px !important;
   border-radius: 4px !important;
-  margin-left: 8px !important;
+  margin-left: 0 !important;
   white-space: nowrap;
-  order: 2 !important;
+  order: 3 !important;
   display: inline-block !important;
   line-height: 1.4 !important;
   vertical-align: middle !important;
@@ -2408,11 +2371,8 @@ div.js-product-item-private.product-item.ivana-card .js-max-installments-contain
 }
 
 div.js-product-item-private.product-item.ivana-card .js-max-installments-container.ivana-card-installments {
-  margin-top: 0 !important;
+  margin-top: 4px !important;
   margin-bottom: 0 !important;
-  order: 2 !important;
-  min-height: 1.5rem;
-  grid-row: 2;
 }
 
 /* Sin descuento: precio negro, cuotas gris */
@@ -2445,12 +2405,12 @@ span.js-compare-price-display.product-item-price-compare:empty {
   font-weight: 700 !important;
   padding: 6px 20px !important;
   border-radius: 0 !important;
-  margin: 0 !important;
+  margin: -20px -20px 12px !important;
   letter-spacing: 0.02em !important;
   text-transform: none !important;
   line-height: 1.4 !important;
   text-align: center !important;
-  width: 100% !important;
+  width: calc(100% + 40px) !important;
 }
 
 .ivana-savings-badge svg {
@@ -2458,31 +2418,23 @@ span.js-compare-price-display.product-item-price-compare:empty {
 }
 
 /* Precio con descuento por transferencia */
-div.js-product-item-private.product-item.ivana-card .js-payment-discount-price-product-container.payment-discount-price-product-container {
+div.js-product-item-private.product-item.ivana-card .js-payment-discount-price-product-container.payment-discount-price-product-container,
+div.js-product-item-private.product-item.ivana-card .ivana-card-payment-discount {
   font-size: 0.8125rem !important;
-  font-weight: 600 !important;
-  color: #00a650 !important;
+  font-weight: 700 !important;
+  color: #1b5e20 !important;
   margin-top: 4px !important;
   display: block !important;
   white-space: normal !important;
-  word-spacing: 0.15em !important;
-  min-height: 1.8rem;
-  margin-top: 0 !important;
-  grid-row: 3;
+  line-height: 1.45 !important;
 }
 
-div.js-product-item-private.product-item.ivana-card .js-payment-discount-price-product-container.payment-discount-price-product-container span {
-  color: #00a650 !important;
-  font-weight: 600 !important;
+div.js-product-item-private.product-item.ivana-card .js-payment-discount-price-product-container.payment-discount-price-product-container span,
+div.js-product-item-private.product-item.ivana-card .ivana-card-payment-discount span {
+  color: #1b5e20 !important;
+  font-weight: 700 !important;
   display: inline !important;
   white-space: normal !important;
-}
-
-.ivana-card-stock-row {
-  min-height: 2rem;
-  display: flex;
-  align-items: flex-start;
-  grid-row: 4;
 }
 
 /* Stock y últimas unidades */
@@ -2529,43 +2481,7 @@ div.js-product-item-private.product-item.ivana-card .labels.order-first {
 }
 
 div.js-product-item-private.product-item.ivana-card .label-accent {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-height: 1.4rem;
-}
-
-.ivana-card-action-row {
-  min-height: 2.5rem;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  grid-row: 5;
-}
-
-.ivana-card-buy-button {
-  width: auto;
-  min-width: 112px;
-  min-height: 34px;
-  padding: 0.5rem 0.9rem !important;
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px !important;
-  background: linear-gradient(180deg, #1f1f1f 0%, #090909 100%) !important;
-  border: 1px solid rgba(15, 15, 15, 0.92) !important;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.14);
-  color: #ffffff !important;
-  font-size: 0.66rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.1em !important;
-  text-transform: none !important;
-}
-
-.ivana-card-buy-button:hover,
-.ivana-card-buy-button:focus {
-  color: #ffffff !important;
-  background: linear-gradient(180deg, #2a2a2a 0%, #111111 100%) !important;
+  display: none !important;
 }
 
 /* Responsive mobile */
@@ -2589,6 +2505,11 @@ div.js-product-item-private.product-item.ivana-card .label-accent {
 
   div.js-product-item-private.product-item.ivana-card .js-item-name.product-item-name.ivana-card-name {
     font-size: clamp(0.82rem, 1.8vw, 0.92rem) !important;
+  }
+
+  .ivana-savings-badge {
+    margin: -12px -16px 10px !important;
+    width: calc(100% + 32px) !important;
   }
 }
 
@@ -3397,7 +3318,7 @@ div.js-product-item-private.product-item.ivana-card,
 
 div.js-product-item-private.product-item.ivana-card:hover,
 .js-item-product.ivana-card:hover {
-  transform: translateY(-4px);
+  transform: none;
   box-shadow: none !important;
 }
 
@@ -3429,10 +3350,207 @@ div.js-product-item-private.product-item.ivana-card:hover,
   padding: 1rem 1.05rem 1.15rem !important;
 }
 
+.ivana-card-name,
+.js-item-product .item-name,
+.js-item-product a[class*="name"],
+.js-item-product [class*="item-name"] {
+  font-family: "Manrope", var(--body-font), sans-serif !important;
+  color: #111111 !important;
+  font-size: clamp(0.82rem, 1vw, 0.95rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.45 !important;
+  letter-spacing: 0 !important;
+  text-transform: lowercase !important;
+  text-transform: capitalize !important;
+  margin-bottom: 0 !important;
+  display: -webkit-box !important;
+  overflow: hidden !important;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  min-height: 2.9em !important;
+}
 
+div.js-product-item-private.product-item.ivana-card .product-item-price-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: baseline !important;
+  gap: 3mm !important;
+  margin-bottom: 0 !important;
+}
 
+div.js-product-item-private.product-item.ivana-card span.js-compare-price-display.product-item-price-compare,
+.ivana-card .price-compare {
+  order: 0 !important;
+  flex-basis: auto !important;
+  margin: 0 !important;
+  color: #999999 !important;
+  font-size: clamp(0.95rem, 1.35vw, 1.125rem) !important;
+  font-weight: 700 !important;
+  font-style: italic !important;
+  text-decoration: line-through !important;
+  text-decoration-thickness: 1px !important;
+  width: 100% !important;
+}
 
+div.js-product-item-private.product-item.ivana-card span.js-price-display.product-item-price,
+.ivana-card [class*="price"]:not([class*="compare"]) {
+  order: 1 !important;
+  color: #E53935 !important;
+  font-size: clamp(0.95rem, 1.45vw, 1.125rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+}
 
+/* Sin descuento: precio negro */
+.ivana-card.ivana-no-discount [class*="price"]:not([class*="compare"]) {
+  color: #111111 !important;
+}
+
+div.js-product-item-private.product-item.ivana-card .product-item-discount,
+.ivana-card [class*="discount-rate"] {
+  order: 3 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  border-radius: 4px !important;
+  background: #E53935 !important;
+  color: #FFFFFF !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  padding: 2px 8px !important;
+  text-transform: lowercase !important;
+  text-transform: capitalize !important;
+}
+
+.ivana-card-installments,
+.ivana-card .custom-installments,
+.ivana-card [class*="installments"] {
+  color: #E53935 !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  margin-top: 0 !important;
+}
+
+/* Sin descuento: cuotas en rojo y negrita */
+.ivana-card.ivana-no-discount .ivana-card-installments,
+.ivana-card.ivana-no-discount [class*="installments"] {
+  color: #E53935 !important;
+  font-weight: 700 !important;
+}
+
+.ivana-card-installments .product-installment-amount,
+.ivana-card-installments .product-installment-value,
+.ivana-card .custom-installments .product-installment-amount,
+.ivana-card .custom-installments .product-installment-value {
+  color: inherit !important;
+  font-weight: 400 !important;
+}
+
+.ivana-installments-anchor {
+  display: block;
+  min-height: 22px;
+  margin-top: 4px;
+}
+
+.ivana-card .text-accent {
+  color: var(--ivana-text-soft) !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+}
+
+.js-item-product .product-item-image-secondary,
+.js-item-product .product-item-image-secondary.fade-in.lazyloaded {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.product-item-secondary-images-loaded:not(
+    .product-item-secondary-images-disabled
+  ):hover
+  .product-item-image-featured {
+  opacity: 1 !important;
+  transition-delay: 0s !important;
+}
+
+.product-item-secondary-images-loaded:not(
+    .product-item-secondary-images-disabled
+  ):hover
+  .product-item-image-featured
+  ~ .product-item-image-secondary {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.js-product-container:hover .product-item-image-container img {
+  transform: none !important;
+}
+
+.ivana-card .product-item-slider-controls-container {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-top: 0 !important;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111111 !important;
+  box-shadow: 0 8px 24px rgba(17, 17, 17, 0.14);
+  opacity: 1 !important;
+  z-index: 3;
+}
+
+.ivana-card .product-item-slider-controls-container.swiper-button-prev {
+  left: 0.75rem;
+}
+
+.ivana-card .product-item-slider-controls-container.swiper-button-next {
+  right: 0.75rem;
+}
+
+.ivana-card .product-item-slider-controls-container.swiper-button-disabled {
+  opacity: 0.35 !important;
+}
+
+.ivana-card .product-item-slider-controls-container svg,
+.ivana-card .product-item-slider-controls-container .icon-inline {
+  width: 1rem;
+  height: 1rem;
+}
+.product-labels {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.35rem !important;
+  margin-bottom: 0 !important;
+}
+
+.product-labels .label-accent,
+.shipping-label,
+.ivana-card [class*="label-no-stock"],
+.ivana-card [class*="no-stock"] {
+  border-radius: 999px !important;
+  background: rgba(17, 17, 17, 0.06) !important;
+  color: #151417 !important;
+  font-size: 0.64rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.1em !important;
+  padding: 0.28rem 0.55rem !important;
+  text-transform: lowercase !important;
+  text-transform: capitalize !important;
+}
+
+.ivana-card .text-stock,
+.ivana-card .js-last-product,
+.ivana-card .js-latest-products-available {
+  color: var(--ivana-text-soft) !important;
+  font-size: 0.72rem !important;
+  font-style: normal !important;
+}
 
 .js-item-submit-container {
   margin-top: auto !important;
@@ -3446,6 +3564,7 @@ div.js-product-item-private.product-item.ivana-card:hover,
   font-size: 0 !important;
   font-weight: 800 !important;
   letter-spacing: 0.14em !important;
+  text-transform: lowercase !important;
   text-transform: capitalize !important;
 }
 
@@ -3465,6 +3584,7 @@ div.js-product-item-private.product-item.ivana-card:hover,
   display: none !important;
 }
 
+/* Ocultar badge de descuento y badge de ahorro en tarjetas sin descuento */
 .ivana-no-discount .product-item-discount,
 .ivana-no-discount [class*="discount-rate"],
 .ivana-no-discount .ivana-savings-badge {
@@ -3489,7 +3609,6 @@ div.js-product-item-private.product-item.ivana-card:hover,
   line-height: 1.4 !important;
   text-align: center !important;
   width: 100% !important;
-  order: 999 !important;
   margin-top: 0.45rem !important;
 }
 
@@ -3510,9 +3629,25 @@ div.js-product-item-private.product-item.ivana-card:hover,
   line-height: 1.4 !important;
   text-align: center !important;
   width: 100% !important;
-  order: 999 !important;
   margin-top: 0.45rem !important;
 }
+
+/* =====================================================
+   ORDEN DE ELEMENTOS EN TARJETA DE PRODUCTO
+   Cambiá los números para reposicionar elementos.
+   Los números más bajos aparecen primero.
+   ===================================================== */
+div.ivana-card .ivana-card-info .ivana-savings-badge                              { order: 1 !important; } /* Badge "Ahorrás $X"            */
+div.ivana-card .ivana-card-info .product-item-colors                              { order: 2 !important; } /* Bullets de color              */
+div.ivana-card .ivana-card-info .ivana-card-name,
+div.ivana-card .ivana-card-info .js-item-name                                    { order: 3 !important; } /* Nombre del producto           */
+div.ivana-card .ivana-card-info .product-item-price-container                    { order: 4 !important; } /* Precio, tachado, % OFF        */
+div.ivana-card .ivana-card-info .ivana-card-installments                          { order: 5 !important; } /* Cuotas                        */
+div.ivana-card .ivana-card-info .ivana-card-payment-discount,
+div.ivana-card .ivana-card-info .js-payment-discount-price-product-container     { order: 6 !important; } /* 10% descuento transferencia   */
+div.ivana-card .ivana-card-info .js-item-submit-container                        { order: 7 !important; margin-top: auto !important; } /* Botón agregar al carrito */
+div.ivana-card .ivana-card-info .ivana-low-stock-badge,
+div.ivana-card .ivana-card-info .ivana-out-of-stock-badge                        { order: 8 !important; } /* Badges de stock               */
 
 div.js-product-item-private.product-item.ivana-card span.js-price-display.product-item-price,
 .js-item-product.ivana-card span.js-price-display.product-item-price,
@@ -3969,8 +4104,18 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   max-width: 54rem;
 }
 
+.ivana-category-breadcrumbs-row {
+  width: 100%;
+  text-align: left;
+}
+
 .ivana-category-title {
+  font-weight: 700 !important;
   text-align: left !important;
+}
+
+.ivana-category-title-row {
+  position: relative;
 }
 
 .ivana-category-meta {
@@ -3984,6 +4129,57 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   color: var(--ivana-text-soft) !important;
   white-space: nowrap;
   align-self: end;
+}
+
+@media (min-width: 768px) {
+  .ivana-category-heading {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    min-height: 5.5rem;
+    align-items: center;
+  }
+
+  .ivana-category-copy {
+    grid-column: 2;
+    width: auto;
+    max-width: min(100%, 54rem);
+    justify-self: center;
+  }
+
+  .ivana-category-breadcrumbs-row {
+    margin-bottom: 0.75rem !important;
+  }
+
+  .ivana-category-title-row {
+    display: block !important;
+  }
+
+  .ivana-category-title-block {
+    width: auto;
+    max-width: 54rem;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .ivana-category-title {
+    text-align: center !important;
+  }
+
+  .ivana-category-meta {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center !important;
+    max-width: 38rem;
+  }
+
+  .ivana-category-toolbar {
+    grid-column: 3;
+    position: static;
+    justify-self: end;
+    align-self: center;
+    transform: none;
+  }
 }
 
 .ivana-category-toolbar {
@@ -4016,6 +4212,9 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
 .ivana-category-filter-card {
   position: sticky;
   top: 142px;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   background: linear-gradient(180deg, #ffffff, #fbf7f8);
   border: 1px solid var(--ivana-border);
   box-shadow: var(--ivana-shadow-card);
@@ -4417,16 +4616,22 @@ h3,
 .ivana-home-categories-row.category-slider-mobile {
   display: flex !important;
   flex-wrap: nowrap !important;
-  justify-content: flex-start !important;
+  justify-content: center !important;
   align-items: flex-start !important;
   overflow-x: auto !important;
   background: transparent !important;
   width: 100% !important;
   min-width: 0 !important;
-  padding-left: 20px !important;
-  padding-right: 20px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   padding-bottom: 15px !important;
   gap: clamp(1rem, 2.2vw, 1.5rem) !important;
+}
+
+.ivana-home-categories-row.category-slider-mobile.ivana-overflowing {
+  justify-content: flex-start !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
 }
 
 .ivana-home-categories .container,
@@ -4461,19 +4666,24 @@ h3,
 .section-home.section-categories-home.ivana-home-categories .ivana-home-categories-row.category-slider-mobile {
   display: flex !important;
   flex-wrap: nowrap !important;
-  justify-content: flex-start !important;
+  justify-content: center !important;
   align-items: flex-start !important;
   overflow-x: auto !important;
   overflow-y: hidden !important;
   width: 100% !important;
   min-width: 0 !important;
-  padding: 0 20px 15px !important;
+  padding: 0 0 15px !important;
   gap: 1.25rem !important;
   background: transparent !important;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   touch-action: pan-x;
+}
+
+.section-home.section-categories-home.ivana-home-categories .ivana-home-categories-row.category-slider-mobile.ivana-overflowing {
+  justify-content: flex-start !important;
+  padding: 0 20px 15px !important;
 }
 
 .section-home.section-categories-home.ivana-home-categories .ivana-home-categories-row.category-slider-mobile::-webkit-scrollbar {
@@ -4635,11 +4845,6 @@ h3,
   display: inline-block !important;
   text-align: center !important;
   width: auto !important;
-  text-transform: lowercase !important;
-}
-
-.ivana-home-section-title::first-letter {
-  text-transform: lowercase !important;
   text-transform: capitalize !important;
 }
 
@@ -4715,16 +4920,24 @@ h3,
 }
 
 /* Category/page header casing */
-.ivana-category-copy .ivana-breadcrumbs,
-.ivana-category-copy .ivana-breadcrumbs a,
+.ivana-category-header .ivana-breadcrumbs,
+.ivana-category-header .ivana-breadcrumbs a,
+.ivana-category-header .crumb,
+.ivana-category-header .crumb.active,
+.ivana-category-header .separator,
 .ivana-category-copy .crumb,
 .ivana-category-copy .crumb.active,
-.ivana-category-copy .separator,
 .ivana-category-copy .ivana-category-kicker,
 .ivana-category-copy .ivana-category-title,
 .ivana-category-copy .ivana-category-count,
 .ivana-category-copy .ivana-category-meta {
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
+}
+
+.ivana-category-header p.ivana-category-meta,
+.ivana-category-copy p.ivana-category-meta,
+.ivana-category-header p.ivana-category-meta *,
+.ivana-category-copy p.ivana-category-meta * {
+  text-transform: none !important;
 }
 

@@ -93,17 +93,38 @@ function normalizeIvanaProductCards(root) {
             priceContainer.parentNode.insertBefore(installmentsContainer, priceContainer.nextSibling);
         }
 
+        var installmentsAnchor = installmentsContainer;
+        if (!installmentsAnchor && priceContainer && priceContainer.parentNode) {
+            installmentsAnchor = card.querySelector(".ivana-installments-anchor");
+
+            if (!installmentsAnchor) {
+                installmentsAnchor = document.createElement("div");
+                installmentsAnchor.className = "ivana-installments-anchor";
+            }
+
+            priceContainer.parentNode.insertBefore(installmentsAnchor, priceContainer.nextSibling);
+        }
+
+        var paymentDiscountContainer = card.querySelector(".js-ivana-card-payment-discount, .js-payment-discount-price-product-container");
+        if (paymentDiscountContainer && installmentsAnchor && installmentsAnchor.parentNode) {
+            installmentsAnchor.parentNode.insertBefore(paymentDiscountContainer, installmentsAnchor.nextSibling);
+        } else if (paymentDiscountContainer && priceContainer && priceContainer.parentNode) {
+            priceContainer.parentNode.insertBefore(paymentDiscountContainer, priceContainer.nextSibling);
+        }
+
+        var commercialAnchor = paymentDiscountContainer || installmentsAnchor || priceContainer;
+
         // Ubicar badges de estado justo después del bloque comercial
         var lowStockBadge = card.querySelector(".ivana-low-stock-badge");
-        if (lowStockBadge && installmentsContainer && installmentsContainer.parentNode) {
-            installmentsContainer.parentNode.insertBefore(lowStockBadge, installmentsContainer.nextSibling);
+        if (lowStockBadge && commercialAnchor && commercialAnchor.parentNode) {
+            commercialAnchor.parentNode.insertBefore(lowStockBadge, commercialAnchor.nextSibling);
         } else if (lowStockBadge && priceContainer && priceContainer.parentNode) {
             priceContainer.parentNode.insertBefore(lowStockBadge, priceContainer.nextSibling);
         }
 
         var outOfStockBadge = card.querySelector(".ivana-out-of-stock-badge");
-        if (outOfStockBadge && installmentsContainer && installmentsContainer.parentNode) {
-            installmentsContainer.parentNode.insertBefore(outOfStockBadge, installmentsContainer.nextSibling);
+        if (outOfStockBadge && commercialAnchor && commercialAnchor.parentNode) {
+            commercialAnchor.parentNode.insertBefore(outOfStockBadge, commercialAnchor.nextSibling);
         } else if (outOfStockBadge && priceContainer && priceContainer.parentNode) {
             priceContainer.parentNode.insertBefore(outOfStockBadge, priceContainer.nextSibling);
         }
@@ -146,10 +167,21 @@ function normalizeIvanaProductCards(root) {
 
 var ivanaProductCardsQueued = false;
 
+function updateIvanaHomeCategoryCarouselOverflow(slider) {
+    if (!slider) {
+        return;
+    }
+
+    var isOverflowing = slider.scrollWidth > (slider.clientWidth + 1);
+    slider.classList.toggle("ivana-overflowing", isOverflowing);
+}
+
 function initializeIvanaHomeCategoryCarouselMouseScroll() {
     var sliders = document.querySelectorAll(".ivana-home-categories-row.category-slider-mobile");
 
     sliders.forEach(function(slider) {
+        updateIvanaHomeCategoryCarouselOverflow(slider);
+
         if (slider.dataset.ivanaMouseScrollBound === "1") {
             return;
         }
@@ -171,6 +203,16 @@ function initializeIvanaHomeCategoryCarouselMouseScroll() {
             slider.scrollLeft += delta;
         }, { passive: false });
     });
+
+    if (!window.ivanaHomeCategoryOverflowResizeBound) {
+        window.ivanaHomeCategoryOverflowResizeBound = true;
+
+        window.addEventListener("resize", function() {
+            document.querySelectorAll(".ivana-home-categories-row.category-slider-mobile").forEach(function(slider) {
+                updateIvanaHomeCategoryCarouselOverflow(slider);
+            });
+        });
+    }
 }
 
 function queueIvanaProductCardNormalization() {

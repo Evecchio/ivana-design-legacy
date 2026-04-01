@@ -1590,11 +1590,6 @@ DOMContentLoaded.addEventOrExecute(() => {
                 }
             {% endif %}
 
-            {% if settings.product_hover %}
-                {# Remove secondary feature on image updated from changeVariant #}
-                productContainer.find(".js-product-item-private-with-secondary-images").addClass("product-item-secondary-images-disabled");
-            {% endif %}
-
         });
     {% endif %}
 
@@ -1942,7 +1937,7 @@ DOMContentLoaded.addEventOrExecute(() => {
             {%  else %}
             var installments_to_use = max_installments_without_interests[0] > 1 ? max_installments_without_interests : max_installments_with_interests;
 
-            if(installments_to_use[0] <= 1 ) {
+            if(installments_to_use[0] <= 0 ) {
             {% endif %}
                 $installments_container.hide();
                 $installments_modal_link.hide();
@@ -2973,19 +2968,7 @@ DOMContentLoaded.addEventOrExecute(() => {
         e.preventDefault();
 
         {# Take the Zip code to all shipping calculators on screen #}
-        let $shipping_form = jQueryNuvem(e.currentTarget).closest(".js-shipping-calculator-form");
-        let shipping_input_val = $shipping_form.find(".js-shipping-input").val();
-        let shipping_input_trimmed = shipping_input_val ? shipping_input_val.trim() : "";
-
-        $shipping_form.find(".js-ship-calculator-empty-field").hide();
-
-        if (!shipping_input_trimmed.length) {
-            $shipping_form.find(".js-ship-calculator-empty-field").show();
-            $shipping_form.find(".js-shipping-input").trigger("focus");
-            return;
-        }
-
-        shipping_input_val = shipping_input_trimmed;
+        let shipping_input_val = jQueryNuvem(e.currentTarget).closest(".js-shipping-calculator-form").find(".js-shipping-input").val();
 
         jQueryNuvem(".js-shipping-input").val(shipping_input_val);
 
@@ -3013,10 +2996,6 @@ DOMContentLoaded.addEventOrExecute(() => {
                 jQueryNuvem(e.currentTarget).trigger('blur');
             }
         }
-    });
-
-    jQueryNuvem(".js-shipping-input").on("input", function () {
-        jQueryNuvem(this).closest(".js-shipping-calculator-form").find(".js-ship-calculator-empty-field").hide();
     });
 
     {# /* // Shipping and branch click */ #}

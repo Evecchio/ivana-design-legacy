@@ -1,9 +1,9 @@
-{% set show_installments_settings_value = (settings.product_installments ? true : false) and not reduced_item %}
+{% set show_installments_settings_value = product.display_price %}
 {% set show_color_variants_settings_value = settings.product_color_variants and not reduced_item %}
 {% set show_quick_shop_settings_value = settings.quick_shop and not reduced_item and template != 'home' %}
 {% set show_secondary_image_settings_value = false %}
 {% set has_real_discount = product.compare_at_price and product.compare_at_price > product.price %}
-{% set show_installments_line = settings.product_installments and not reduced_item and product.display_price %}
+{% set show_installments_line = product.display_price %}
 {% set labels_value = reduced_item ? false : has_real_discount %}
 {% set price_compare_value = reduced_item ? false : has_real_discount %}
 {% set discount_rate_value = reduced_item ? false : has_real_discount %}
@@ -24,7 +24,7 @@
 
 {% set show_image_slider = 
     (template == 'category' or template == 'search')
-    and settings.product_item_slider 
+    and settings.product_item_slider
     and not reduced_item
     and not slide_item
     and not has_filters
@@ -37,11 +37,18 @@
     {% set control_prev_svg_id = 'arrow-long' %}
 {% endif %}
 
-{% set image_classes = 'img-absolute img-absolute-centered fade-in' %}
+{% set image_classes = 'img-absolute img-absolute-centered' %}
 {% set data_expand = show_image_slider ? '50' %}
 
 {% set custom_content %}
 	{% if not reduced_item %}
+		{# Badge "Ahorrás $X" — franja entre imagen e info, solo con descuento real #}
+		{% if has_real_discount %}
+			<div class="ivana-savings-badge">
+				Ahorrás {{ (product.compare_at_price - product.price) | money }}
+			</div>
+		{% endif %}
+
 		{# Subscription-only: inject subscription price in custom_content #}
 		{% if is_subscription_only %}
 			{{ component('subscriptions/subscription-price', {
@@ -79,8 +86,24 @@
 				})
 			}}
 		{% endif %}
+		{# Badge de pocas unidades — pie de tarjeta #}
+		{% if product.stock is not null and product.stock > 0 and product.stock < 5 %}
+			<div class="ivana-low-stock-badge">
+				{% if product.stock == 1 %}
+					¡Última unidad!
+				{% else %}
+					¡Quedan solo {{ product.stock }} unidades!
+				{% endif %}
+			</div>
+		{% endif %}
 
-		{% if not product.available and show_installments_line %}
+		{% if not product.available %}
+			<div class="ivana-out-of-stock-badge">
+				Sin stock por el momento
+			</div>
+		{% endif %}
+
+		{% if show_installments_line %}
 			{{ component('installments', {
 				location: 'product_list',
 				short_wording: true,
@@ -90,28 +113,13 @@
 			}) }}
 		{% endif %}
 
-		<div class="ivana-card-stock-row">
-			{% if product.stock is not null and product.stock > 0 and product.stock < 5 %}
-				<div class="ivana-low-stock-badge">
-					{% if product.stock == 1 %}
-						¡Última unidad!
-					{% else %}
-						¡Quedan solo {{ product.stock }} unidades!
-					{% endif %}
-				</div>
-			{% elseif not product.available %}
-				<div class="ivana-out-of-stock-badge">
-					Sin stock por el momento
-				</div>
-			{% endif %}
-		</div>
+		{% if product.display_price %}
+			<div class="ivana-card-payment-discount js-ivana-card-payment-discount">
+				<span class="ivana-card-payment-discount-value">10% de descuento</span> por transferencia
+			</div>
+		{% endif %}
 
 		{% set product_available_with_price = product.available and product.display_price %}
-		{% set product_action_text = product_available_with_price ? 'Comprar' : 'Ver producto' %}
-
-		<div class="ivana-card-action-row">
-			<a href="{{ product.url }}" class="btn btn-primary ivana-card-buy-button">{{ product_action_text | translate }}</a>
-		</div>
 
 		{% if 
 			((settings.quick_shop and not product.isSubscribable()) or settings.product_color_variants)
@@ -166,7 +174,7 @@
 		secondary_image: show_secondary_image_settings_value,
 		image_slider: show_image_slider,
 		image_slider_pagination_container: true,
-		installments: show_installments_settings_value,
+		installments: false,
 		color_variants: show_color_variants_settings_value,
 		quick_shop: show_quick_shop_settings_value,
 		modal_trigger_data: 'data-target=' ~ modal_trigger_data,

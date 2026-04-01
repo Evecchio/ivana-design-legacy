@@ -2,7 +2,7 @@
 <ul class="nav-categories-mobile list-unstyled list-horizontal {{ nav_text_class }}">
 	{% for category in categories %}
 		<li class="nav-item list-item {% if loop.first %}ml-2{% endif %}">
-			<a class="nav-list-link" href="{{ category.url }}">{{ category.name }}</a>
+			<a class="nav-list-link" href="{{ category.url }}">{{ category.name == 'Productos' ? 'Colección' : category.name }}</a>
 		</li>
 	{% endfor %}
 </ul>

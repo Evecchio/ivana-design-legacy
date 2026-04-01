@@ -1,0 +1,11 @@
+# Notas y archivos solo locales
+acceso-ftp.txt
+
+# Artefactos de herramientas locales
+.playwright-cli/
+output/
+*.log
+solution.js
+
+# Configuración de editor (no va al servidor)
+.vscode/

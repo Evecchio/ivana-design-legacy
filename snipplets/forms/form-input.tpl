@@ -36,7 +36,7 @@
 
 <div class="form-group {{ input_group_custom_class }}">
     {% if input_label_text %}
-        <label {% if input_label_id %}id="{{ input_label_id }}"{% endif %} class="form-label {{ input_label_custom_class }}" {% if input_for %}for="{{ input_name }}"{% endif %}>{{ input_label_text }}{% if input_required %}<span class="form-required-mark">*</span>{% endif %}</label>
+        <label {% if input_label_id %}id="{{ input_label_id }}"{% endif %} class="form-label {{ input_label_custom_class }}" {% if input_for %}for="{{ input_name }}"{% endif %}>{{ input_label_text }}</label>
     {% endif %}
     {% block input_prepend_content %}
     {% endblock input_prepend_content %}
@@ -96,4 +96,5 @@
     {% block input_form_alert %}
     {% endblock input_form_alert %}
 </div>
+
 
