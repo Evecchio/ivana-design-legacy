@@ -1225,6 +1225,14 @@
   min-width: 0;
 }
 
+.ivana-category-collection-nav {
+  margin: 0 0 clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.ivana-category-collection-nav .category-slider-mobile {
+  padding-top: 0.25rem !important;
+}
+
 .ivana-category-products .js-product-table {
   gap: clamp(1rem, 1.7vw, 1.5rem) !important;
 }
@@ -1310,6 +1318,10 @@
 }
 
 @media (max-width: 767px) {
+
+  .ivana-category-collection-nav {
+    margin-bottom: 1.25rem;
+  }
 
   .ivana-category-products,
   .ivana-category-filter-card {
