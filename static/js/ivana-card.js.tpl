@@ -81,7 +81,7 @@ function normalizeIvanaProductCards(root) {
             priceRow.appendChild(discountBadge);
         }
 
-        card.querySelectorAll(".custom-installments, .text-accent").forEach(function(node) {
+        card.querySelectorAll(".text-accent").forEach(function(node) {
             if (!node.textContent || !node.textContent.trim()) {
                 node.style.display = "none";
             }
@@ -89,6 +89,19 @@ function normalizeIvanaProductCards(root) {
 
         // Move installments block right after price container
         var installmentsContainer = card.querySelector(".js-max-installments-container");
+        if (installmentsContainer) {
+            var installmentAmount = installmentsContainer.querySelector(".js-installment-amount");
+            var installmentPrice = installmentsContainer.querySelector(".js-installment-price");
+            var hasInstallmentContent = !!(
+                (installmentAmount && installmentAmount.textContent && installmentAmount.textContent.trim()) ||
+                (installmentPrice && installmentPrice.textContent && installmentPrice.textContent.trim())
+            );
+
+            if (hasInstallmentContent) {
+                installmentsContainer.style.display = "";
+            }
+        }
+
         if (installmentsContainer && priceContainer && priceContainer.parentNode) {
             priceContainer.parentNode.insertBefore(installmentsContainer, priceContainer.nextSibling);
         }
@@ -238,6 +251,7 @@ if (!window.ivanaProductCardObserver) {
 
     window.ivanaProductCardObserver.observe(document.body, {
         childList: true,
+        characterData: true,
         subtree: true
     });
 }
