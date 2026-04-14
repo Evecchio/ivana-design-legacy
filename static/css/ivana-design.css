@@ -4953,3 +4953,93 @@ h3,
   text-transform: none !important;
 }
 
+/* Product cards: larger and easier to scan on category grids */
+@media (min-width: 1200px) {
+  .ivana-category-products .js-product-table.grid-md-5,
+  .ivana-category-products .js-product-table.grid-md-6 {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
+.ivana-category-products .js-item-product.ivana-card,
+.ivana-category-products div.js-product-item-private.product-item.ivana-card {
+  min-height: 100% !important;
+}
+
+.ivana-category-products .js-item-product .product-item-image-container,
+.ivana-category-products .js-item-product .js-product-item-image-container {
+  aspect-ratio: 0.82 !important;
+}
+
+.ivana-category-products .ivana-card-info,
+.ivana-category-products .js-item-product .information {
+  padding: 1.15rem 1.1rem 1.2rem !important;
+  gap: 0.55rem !important;
+}
+
+.ivana-category-products .ivana-card-name,
+.ivana-category-products .js-item-product .item-name,
+.ivana-category-products .js-item-product a[class*="name"],
+.ivana-category-products .js-item-product [class*="item-name"] {
+  font-size: clamp(0.92rem, 0.9vw, 1rem) !important;
+  line-height: 1.42 !important;
+  min-height: 3em !important;
+}
+
+.ivana-category-products div.js-product-item-private.product-item.ivana-card .product-item-price-container,
+.ivana-category-products .ivana-card .product-item-price-container {
+  gap: 0.3rem 0.55rem !important;
+}
+
+.ivana-category-products div.js-product-item-private.product-item.ivana-card span.js-price-display.product-item-price,
+.ivana-category-products .ivana-card [class*="price"]:not([class*="compare"]) {
+  font-size: clamp(1.08rem, 1.2vw, 1.22rem) !important;
+  line-height: 1.08 !important;
+}
+
+.ivana-category-products div.js-product-item-private.product-item.ivana-card span.js-compare-price-display.product-item-price-compare,
+.ivana-category-products .ivana-card .price-compare {
+  font-size: clamp(0.88rem, 0.95vw, 1rem) !important;
+}
+
+.ivana-category-products .ivana-card .product-item-discount,
+.ivana-category-products .ivana-card [class*="discount-rate"] {
+  font-size: 0.64rem !important;
+  padding: 0.2rem 0.45rem !important;
+}
+
+.ivana-category-products .ivana-card-installments,
+.ivana-category-products .ivana-card .custom-installments,
+.ivana-category-products .ivana-card [class*="installments"] {
+  font-size: 0.76rem !important;
+  line-height: 1.45 !important;
+}
+
+.ivana-category-products .ivana-card-payment-discount,
+.ivana-category-products .ivana-card .js-payment-discount-price-product-container {
+  font-size: 0.74rem !important;
+  line-height: 1.45 !important;
+}
+
+.ivana-category-products .ivana-low-stock-badge,
+.ivana-category-products .ivana-out-of-stock-badge {
+  margin-top: 0.15rem !important;
+  font-size: 0.72rem !important;
+}
+
+@media (max-width: 767px) {
+  .ivana-category-products .ivana-card-info,
+  .ivana-category-products .js-item-product .information {
+    padding: 0.95rem !important;
+    gap: 0.45rem !important;
+  }
+
+  .ivana-category-products .ivana-card-name,
+  .ivana-category-products .js-item-product .item-name,
+  .ivana-category-products .js-item-product a[class*="name"],
+  .ivana-category-products .js-item-product [class*="item-name"] {
+    font-size: 0.88rem !important;
+    min-height: 2.9em !important;
+  }
+}
+

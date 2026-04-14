@@ -1,3 +1,5 @@
+{% set reduced_item = reduced_item | default(false) %}
+{% set slide_item = slide_item | default(false) %}
 {% set show_installments_settings_value = product.display_price %}
 {% set show_color_variants_settings_value = settings.product_color_variants and not reduced_item %}
 {% set show_quick_shop_settings_value = settings.quick_shop and not reduced_item and template != 'home' %}
@@ -7,7 +9,6 @@
 {% set labels_value = reduced_item ? false : has_real_discount %}
 {% set price_compare_value = reduced_item ? false : has_real_discount %}
 {% set discount_rate_value = reduced_item ? false : has_real_discount %}
-{% set slide_item = slide_item | default(false) %}
 {% set slide_item_class = slide_item ? 'js-item-slide swiper-slide ' %}
 {% set reduced_item_classes = reduced_item ? 'product-item-reduced' %}
 {% set discount_state_class = has_real_discount ? '' : ' ivana-no-discount' %}
@@ -19,22 +20,38 @@
 
 {# Subscription only detection #}
 {% set is_subscription_only = product.isSubscriptionOnly() %}
+{% set show_savings_badge = not reduced_item and has_real_discount %}
+{% set show_subscription_price = not reduced_item and is_subscription_only %}
+{% set label_accent_classes = 'label-accent mb-2' %}
+{% set percentage_off_custom_label = product.getPriceDiscountCustomLabel %}
+{% set has_custom_percentage_off_promotion_label = percentage_off_custom_label and percentage_off_custom_label | trim %}
+{% set promotion_only_value = has_custom_percentage_off_promotion_label ? false : true %}
+{% set offer_only_value = has_custom_percentage_off_promotion_label ? true : false %}
+{% set show_promotion_labels = not reduced_item and (has_custom_percentage_off_promotion_label or has_real_discount) %}
+{% set show_low_stock_badge = not reduced_item and product.stock is not null and product.stock > 0 and product.stock < 5 %}
+{% set show_out_of_stock_badge = not reduced_item and not product.available %}
+{% set show_payment_discount = not reduced_item and product.display_price %}
+{% set show_variants_form = not reduced_item
+	and ((settings.quick_shop and not product.isSubscribable()) or settings.product_color_variants)
+	and product.available
+	and product.display_price
+	and product.variations
+%}
 
 {# Item image slider #}
-
-{% set show_image_slider = 
-    (template == 'category' or template == 'search')
-    and settings.product_item_slider
-    and not reduced_item
-    and not slide_item
-    and not has_filters
-    and product.other_images
+{% set show_image_slider =
+	(template == 'category' or template == 'search')
+	and settings.product_item_slider
+	and not reduced_item
+	and not slide_item
+	and not has_filters
+	and product.other_images
 %}
 
 {% if show_image_slider %}
-    {% set slider_controls_container_class = 'product-item-slider-controls-container svg-icon-text d-none d-md-block' %}
-    {% set control_next_svg_id = 'arrow-long' %}
-    {% set control_prev_svg_id = 'arrow-long' %}
+	{% set slider_controls_container_class = 'product-item-slider-controls-container svg-icon-text d-none d-md-block' %}
+	{% set control_next_svg_id = 'arrow-long' %}
+	{% set control_prev_svg_id = 'arrow-long' %}
 {% endif %}
 
 {% set image_classes = 'img-absolute img-absolute-centered' %}
@@ -42,94 +59,92 @@
 
 {% set custom_content %}
 	{% if not reduced_item %}
-		{# Badge "Ahorrás $X" — franja entre imagen e info, solo con descuento real #}
-		{% if has_real_discount %}
-			<div class="ivana-savings-badge">
-				Ahorrás {{ (product.compare_at_price - product.price) | money }}
+		{% if show_savings_badge %}
+			<div class="ivana-card-block ivana-card-block-savings">
+				<div class="ivana-savings-badge">
+					<span class="ivana-savings-text">AhorrÃ¡s {{ (product.compare_at_price - product.price) | money }}</span>
+					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"></path>
+						<path d="M7 7h.01"></path>
+					</svg>
+				</div>
 			</div>
 		{% endif %}
 
-		{# Subscription-only: inject subscription price in custom_content #}
-		{% if is_subscription_only %}
-			{{ component('subscriptions/subscription-price', {
-				location: 'product_list',
-				subscription_classes: {
-					container: '',
-					prices_container: 'd-flex flex-wrap align-items-center',
-					price_compare: 'js-compare-price-display price-compare font-medium order-first w-100 mb-1',
-					price_with_subscription: 'js-price-display font-weight-bold',
-					discount: 'font-medium text-accent ml-2',
-				},
-			}) }}
-		{% endif %}
-
-		{% set label_accent_classes = 'label-accent mb-2' %}
-
-		{# Custom percentage off promotion label visibility #}
-
-		{% set percentage_off_custom_label = product.getPriceDiscountCustomLabel %}
-		{% set has_custom_percentage_off_promotion_label = percentage_off_custom_label and percentage_off_custom_label | trim %}
-		{% set promotion_only_value = has_custom_percentage_off_promotion_label ? false : true %}
-		{% set offer_only_value = has_custom_percentage_off_promotion_label ? true : false %}
-		
-		{% if has_custom_percentage_off_promotion_label or product.compare_at_price > product.price %}
-			{{ component(
-				'labels', {
-					promotion_only: promotion_only_value,
-					offer_only: offer_only_value,
-					group_data_store: false,
-					labels_classes: {
-						group: 'order-first product-labels',
-						promotion: label_accent_classes,
-						offer: label_accent_classes,
+		{% if show_subscription_price %}
+			<div class="ivana-card-block ivana-card-block-subscription-price">
+				{{ component('subscriptions/subscription-price', {
+					location: 'product_list',
+					subscription_classes: {
+						container: '',
+						prices_container: 'd-flex flex-wrap align-items-center',
+						price_compare: 'js-compare-price-display price-compare font-medium order-first w-100 mb-1',
+						price_with_subscription: 'js-price-display font-weight-bold',
+						discount: 'font-medium text-accent ml-2',
 					},
-				})
-			}}
-		{% endif %}
-		{# Badge de pocas unidades — pie de tarjeta #}
-		{% if product.stock is not null and product.stock > 0 and product.stock < 5 %}
-			<div class="ivana-low-stock-badge">
-				{% if product.stock == 1 %}
-					¡Última unidad!
-				{% else %}
-					¡Quedan solo {{ product.stock }} unidades!
-				{% endif %}
+				}) }}
 			</div>
 		{% endif %}
 
-		{% if not product.available %}
-			<div class="ivana-out-of-stock-badge">
-				Sin stock por el momento
+		{% if show_promotion_labels %}
+			<div class="ivana-card-block ivana-card-block-labels">
+				{{ component(
+					'labels', {
+						promotion_only: promotion_only_value,
+						offer_only: offer_only_value,
+						group_data_store: false,
+						labels_classes: {
+							group: 'order-first product-labels',
+							promotion: label_accent_classes,
+							offer: label_accent_classes,
+						},
+					})
+				}}
 			</div>
 		{% endif %}
 
 		{% if show_installments_line %}
-			{{ component('installments', {
-				location: 'product_list',
-				short_wording: true,
-				container_classes: {
-					installment: 'ivana-card-installments custom-installments mt-1'
-				}
-			}) }}
-		{% endif %}
-
-		{% if product.display_price %}
-			<div class="ivana-card-payment-discount js-ivana-card-payment-discount">
-				<span class="ivana-card-payment-discount-value">10% de descuento</span> por transferencia
+			<div class="ivana-card-block ivana-card-block-installments">
+				{{ component('installments', {
+					location: 'product_list',
+					short_wording: true,
+					container_classes: {
+						installment: 'ivana-card-installments custom-installments mt-1'
+					}
+				}) }}
 			</div>
 		{% endif %}
 
-		{% set product_available_with_price = product.available and product.display_price %}
+		{% if show_payment_discount %}
+			<div class="ivana-card-block ivana-card-block-payment-discount">
+				<div class="ivana-card-payment-discount js-ivana-card-payment-discount">
+					<span class="ivana-card-payment-discount-value">10% de descuento</span> por transferencia
+				</div>
+			</div>
+		{% endif %}
 
-		{% if 
-			((settings.quick_shop and not product.isSubscribable()) or settings.product_color_variants)
-			and product.available 
-			and product.display_price 
-			and product.variations 
-		%}
+		{% if show_low_stock_badge or show_out_of_stock_badge %}
+			<div class="ivana-card-block ivana-card-block-stock-status">
+				{% if show_low_stock_badge %}
+					<div class="ivana-low-stock-badge">
+						{% if product.stock == 1 %}
+							Â¡Ãšltima unidad!
+						{% else %}
+							Â¡Quedan solo {{ product.stock }} unidades!
+						{% endif %}
+					</div>
+				{% endif %}
 
+				{% if show_out_of_stock_badge %}
+					<div class="ivana-out-of-stock-badge">
+						Sin stock por el momento
+					</div>
+				{% endif %}
+			</div>
+		{% endif %}
+
+		{% if show_variants_form %}
 	        {# Hidden product form to update item image and variants: Also this is used for quickshop popup #}
-
 	        <div class="js-item-variants hidden">
 	            <form class="js-product-form" method="post" action="{{ store.cart_url }}">
 	                <input type="hidden" name="add_to_cart" value="{{product.id}}" />
@@ -140,29 +155,24 @@
 	                {% set texts = {'cart': "Agregar al carrito", 'contact': "Consultar precio", 'nostock': "Sin stock", 'catalog': "Consultar"} %}
 
 	                {# Add to cart CTA #}
-
 	                {% set show_product_quantity = product.available and product.display_price %}
 
 	                <div class="{% if show_product_quantity %}grid grid-auto-1{% endif %} mb-4">
-
 	                    {% if show_product_quantity %}
 	                        {% include "snipplets/product/product-quantity.tpl" with {quickshop: true} %}
 	                    {% endif %}
 
 	                    <div class="cart-button-container">
-
 	                        <input type="submit" class="js-addtocart js-prod-submit-form btn btn-primary w-100 {{ state }}" value="{{ texts[state] | translate }}" {% if state == 'nostock' %}disabled{% endif %} />
 
 	                        {# Fake add to cart CTA visible during add to cart event #}
-
 	                        {% include 'snipplets/placeholders/button-placeholder.tpl' with {custom_class: 'w-100'} %}
 	                    </div>
 	                </div>
 	            </form>
 	        </div>
-
 	    {% endif %}
-    {% endif %}
+	{% endif %}
 {% endset %}
 
 {% set image_overlay %}
