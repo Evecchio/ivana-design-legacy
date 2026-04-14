@@ -13,7 +13,6 @@
 {% set normalized_category_name = category.name | lower | capitalize %}
 {% if normalized_category_name == 'Productos' %}{% set normalized_category_name = 'Colección' %}{% endif %}
 {% set normalized_category_description = category.description %}
-{% set show_collection_cards = category.name | lower | trim == 'productos' %}
 
 {% if not show_help %}
 	<section class="category-body ivana-category-shell" data-store="category-grid-{{ category.id }}">
@@ -69,76 +68,6 @@
 				{% endif %}
 				<div class="ivana-category-content">
 					<div class="ivana-category-products ivana-category-grid">
-						{% if show_collection_cards %}
-							{% set allowed_categories = ['tops', 'capris', 'short', 'leggings'] %}
-							{% set unique_home_subcategories = [] %}
-							{% set all_subcategories = [] %}
-							{% for nav_item in navigation %}
-								{% if nav_item.isCategory and nav_item.subitems %}
-									{% for subcategory in nav_item.subitems %}
-										{% if subcategory.isCategory %}
-											{% set all_subcategories = all_subcategories | merge([subcategory]) %}
-										{% endif %}
-										{% if subcategory.subitems %}
-											{% for nested_subcategory in subcategory.subitems %}
-												{% if nested_subcategory.isCategory %}
-													{% set all_subcategories = all_subcategories | merge([nested_subcategory]) %}
-												{% endif %}
-											{% endfor %}
-										{% endif %}
-									{% endfor %}
-								{% endif %}
-							{% endfor %}
-							{% for allowed_name in allowed_categories %}
-								{% for subcategory in all_subcategories %}
-									{% if subcategory.name | lower | trim == allowed_name %}
-										{% if subcategory not in unique_home_subcategories %}
-											{% set unique_home_subcategories = unique_home_subcategories | merge([subcategory]) %}
-										{% endif %}
-									{% endif %}
-								{% endfor %}
-							{% endfor %}
-							{% if unique_home_subcategories is not empty %}
-								<div class="ivana-category-collection-nav">
-									<div class="d-flex justify-content-center align-items-start gap-4 pb-2 ivana-home-categories-row category-slider-mobile">
-										{% for subcategory in unique_home_subcategories %}
-											{% set subcategory_handle = subcategory.url | split('://') | last | trim('/') | split('/') | last | trim %}
-											{% set fallback_slide_image = false %}
-											{% for slide in settings.slider_categories %}
-												{% if slide.link %}
-													{% set slide_handle = slide.link | split('://') | last | trim('/') | split('/') | last | trim %}
-													{% if slide_handle == subcategory_handle %}
-														{% set fallback_slide_image = slide.image %}
-													{% endif %}
-												{% endif %}
-											{% endfor %}
-											<a href="{{ subcategory.url }}" class="js-home-category d-flex flex-column align-items-center group shrink-0 text-decoration-none category-item" aria-label="{{ subcategory.name }}">
-												<div class="home-category-image-border ivana-home-category-circle w-28 h-28 md:w-36 md:h-36 rounded-circle overflow-hidden p-1 transition-all">
-													<div class="w-100 h-100 rounded-circle overflow-hidden">
-														{% if fallback_slide_image %}
-															{{ component(
-																'image',{
-																	image_name: fallback_slide_image,
-																	image_classes: 'd-block w-100 h-100 object-cover fade-in',
-																	image_lazy: true,
-																	image_lazy_js: true,
-																	image_alt: subcategory.name,
-																})
-															}}
-														{% else %}
-															<div class="ivana-home-category-placeholder" aria-hidden="true"></div>
-														{% endif %}
-													</div>
-												</div>
-												<span class="mt-3 font-bold tracking-widest text-center ivana-home-category-name">
-													{{ subcategory.name | lower }}
-												</span>
-											</a>
-										{% endfor %}
-									</div>
-								</div>
-							{% endif %}
-						{% endif %}
 						{% if not has_filters_available %}
 							{% include 'snipplets/grid/filters-controls.tpl' %}
 						{% endif %}
