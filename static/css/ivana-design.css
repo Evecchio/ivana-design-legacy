@@ -4930,3 +4930,134 @@ h3,
   text-transform: none !important;
 }
 
+/* ═══════════════════════════════════════════════════════════════════
+   3. PRODUCT CARD REDESIGN — Jerarquía Visual (Ref: Imagen)
+   ═══════════════════════════════════════════════════════════════════ */
+
+.ivana-card-info-container {
+  padding: 15px !important;
+  gap: 4px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* 1. Barra de Ahorro - Degradado Magenta a Naranja */
+.ivana-card-savings-bar {
+  background: linear-gradient(90deg, #FF1493 0%, #FF8C00 100%) !important;
+  color: #ffffff !important;
+  text-align: center !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  padding: 6px !important;
+  margin: -15px -15px 10px -15px !important;
+  width: calc(100% + 30px) !important;
+  letter-spacing: 0.02em;
+}
+
+/* 2. Título - Uppercase y Negrita */
+.ivana-card-title {
+  font-family: "Manrope", var(--body-font), sans-serif !important;
+  font-size: 0.88rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  color: #111111 !important;
+  margin: 4px 0 !important;
+  line-height: 1.2 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  min-height: 2.4em !important;
+}
+
+/* 3. Bloque de Precios */
+.ivana-card-prices-block {
+  display: flex !important;
+  flex-direction: column !important;
+  margin-bottom: 2px !important;
+}
+
+.ivana-card-price-compare {
+  color: #999999 !important;
+  text-decoration: line-through !important;
+  font-size: 0.82rem !important;
+  font-style: italic !important;
+  margin-bottom: 2px !important;
+  font-weight: 600 !important;
+}
+
+.ivana-card-price-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.ivana-card-price-main {
+  color: #FF1493 !important; /* Rosa Ivana */
+  font-size: 1.22rem !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+}
+
+.ivana-card-discount-tag {
+  background: #e31b23 !important; /* Rojo OFF */
+  color: #ffffff !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  padding: 2px 6px !important;
+  border-radius: 3px !important;
+  line-height: 1.2 !important;
+}
+
+/* 4. Cuotas */
+.ivana-card-installments-container {
+  margin-top: 2px;
+}
+
+.ivana-card-installments-text,
+.ivana-card-installments-text * {
+  font-size: 0.78rem !important;
+  color: #666666 !important;
+  margin: 0 !important;
+  font-weight: 500 !important;
+}
+
+/* 5. Transferencia - Texto Verde */
+.ivana-card-transfer-container {
+  font-size: 0.78rem !important;
+  line-height: 1.4 !important;
+  color: #666666 !important;
+}
+
+.ivana-card-transfer-text {
+  color: #00a650 !important; /* Verde Transferencia */
+  font-weight: 700 !important;
+}
+
+/* 6. Barra de Stock - Naranja / Gris */
+.ivana-card-stock-bar {
+  width: calc(100% + 30px) !important;
+  margin: 10px -15px -15px -15px !important;
+  padding: 8px !important;
+  text-align: center !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em;
+}
+
+.ivana-card-stock-bar--low {
+  background: #f58220 !important; /* Naranja Stock */
+}
+
+.ivana-card-stock-bar--out {
+  background: #999999 !important; /* Gris Sin Stock */
+}
+
+/* Ocultar elementos nativos que estamos reemplazando */
+.ivana-card .hidden {
+  display: none !important;
+}
+
