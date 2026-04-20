@@ -44,9 +44,13 @@
         <div class="ivana-card-price-row">
             <span class="ivana-card-price-main js-price-display">{{ product.price | money }}</span>
             {% if has_real_discount %}
+                {# Prefer custom label if present; fallback to computed percentage #}
                 {% set percentage_off_custom_label = product.getPriceDiscountCustomLabel %}
+                {% set percentage_off = ((product.compare_at_price - product.price) * 100 / product.compare_at_price) | round %}
                 {% if percentage_off_custom_label and percentage_off_custom_label | trim %}
                     <span class="ivana-card-discount-tag">{{ percentage_off_custom_label }} OFF</span>
+                {% elseif percentage_off and percentage_off > 0 %}
+                    <span class="ivana-card-discount-tag">{{ percentage_off }}% OFF</span>
                 {% endif %}
             {% endif %}
         </div>
