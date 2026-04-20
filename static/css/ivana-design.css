@@ -2234,6 +2234,8 @@
   }
 }
 
+/* Legacy card styles kept for reference but disabled (conflicted with Ivana card system). */
+@supports not (display: block) {
 /* =============================================
    PRODUCT CARD — Estilo MercadoLibre
    ============================================= */
@@ -2514,6 +2516,7 @@ div.js-product-item-private.product-item.ivana-card .label-accent {
     margin: -12px -16px 10px !important;
     width: calc(100% + 32px) !important;
   }
+}
 }
 
 /* ═══════════════════════════════════════════════════════════════════
