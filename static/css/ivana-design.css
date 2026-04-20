@@ -3309,27 +3309,34 @@ div.js-product-item-private.product-item.ivana-card,
   display: flex !important;
   flex-direction: column !important;
   height: 100% !important;
-  background: #ffffff !important;
-  border: 0 !important;
+  position: relative !important;
+  background: linear-gradient(180deg, #ffffff 0%, #fff7fb 100%) !important;
+  border: 1px solid rgba(17, 17, 17, 0.08) !important;
   border-radius: var(--ivana-card-radius) !important;
   overflow: hidden !important;
-  box-shadow: none !important;
+  box-shadow: 0 18px 60px rgba(17, 17, 17, 0.06) !important;
   transition:
     transform 0.25s ease,
-    box-shadow 0.25s ease !important;
+    box-shadow 0.25s ease,
+    border-color 0.25s ease !important;
 }
 
 div.js-product-item-private.product-item.ivana-card:hover,
 .js-item-product.ivana-card:hover {
-  transform: none;
-  box-shadow: none !important;
+  transform: translateY(-4px);
+  border-color: rgba(17, 17, 17, 0.14) !important;
+  box-shadow: 0 28px 90px rgba(17, 17, 17, 0.12) !important;
 }
 
 .js-item-product .product-item-image-container,
 .js-item-product .js-product-item-image-container {
-  aspect-ratio: 0.78;
-  background: #f7f4f5 !important;
+  position: relative !important;
+  aspect-ratio: 4 / 5;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 20, 147, 0.12), transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #f7f4f5 100%) !important;
   overflow: hidden !important;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.06) !important;
 }
 
 .js-item-product .product-item-image-container img,
@@ -3342,6 +3349,7 @@ div.js-product-item-private.product-item.ivana-card:hover,
   height: 100% !important;
   object-fit: cover !important;
   object-position: center top !important;
+  transition: transform 0.35s ease !important;
 }
 
 .ivana-card-info,
@@ -3490,7 +3498,7 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 }
 
 .js-product-container:hover .product-item-image-container img {
-  transform: none !important;
+  transform: scale(1.04) !important;
 }
 
 .ivana-card .product-item-slider-controls-container {
@@ -3525,6 +3533,24 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
 .ivana-card .product-item-slider-controls-container .icon-inline {
   width: 1rem;
   height: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  div.js-product-item-private.product-item.ivana-card,
+  .js-item-product.ivana-card,
+  .js-item-product .product-item-image-container img,
+  .js-item-product .js-product-item-image-container img {
+    transition: none !important;
+  }
+
+  div.js-product-item-private.product-item.ivana-card:hover,
+  .js-item-product.ivana-card:hover {
+    transform: none !important;
+  }
+
+  .js-product-container:hover .product-item-image-container img {
+    transform: none !important;
+  }
 }
 .product-labels {
   display: flex !important;
@@ -4935,125 +4961,146 @@ h3,
    ═══════════════════════════════════════════════════════════════════ */
 
 .ivana-card-info-container {
-  padding: 15px !important;
-  gap: 4px !important;
+  padding: 1rem 1rem 1.1rem !important;
+  gap: 0.55rem !important;
   display: flex !important;
   flex-direction: column !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(12px);
 }
 
-/* 1. Barra de Ahorro - Degradado Magenta a Naranja */
+/* 1. Ahorro (pill sobre la imagen) */
 .ivana-card-savings-bar {
   background: linear-gradient(90deg, #FF1493 0%, #FF8C00 100%) !important;
   color: #ffffff !important;
-  text-align: center !important;
-  font-size: 0.82rem !important;
-  font-weight: 700 !important;
-  padding: 6px !important;
-  margin: -15px -15px 10px -15px !important;
-  width: calc(100% + 30px) !important;
-  letter-spacing: 0.02em;
+  position: absolute !important;
+  top: 0.85rem;
+  left: 0.85rem;
+  z-index: 6;
+  width: auto !important;
+  text-align: left !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  padding: 0.4rem 0.6rem !important;
+  margin: 0 !important;
+  border-radius: 999px !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase !important;
+  box-shadow: 0 14px 36px rgba(17, 17, 17, 0.16) !important;
 }
 
 /* 2. Título - Uppercase y Negrita */
 .ivana-card-title {
-  font-family: "Manrope", var(--body-font), sans-serif !important;
-  font-size: 0.88rem !important;
-  font-weight: 800 !important;
-  text-transform: uppercase !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: 1.12rem !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
   color: #111111 !important;
-  margin: 4px 0 !important;
-  line-height: 1.2 !important;
+  margin: 0 !important;
+  line-height: 1.05 !important;
   display: -webkit-box !important;
   -webkit-line-clamp: 2 !important;
   line-clamp: 2 !important;
   -webkit-box-orient: vertical !important;
   overflow: hidden !important;
-  min-height: 2.4em !important;
+  min-height: 2.1em !important;
 }
 
 /* 3. Bloque de Precios */
 .ivana-card-prices-block {
   display: flex !important;
   flex-direction: column !important;
-  margin-bottom: 2px !important;
+  gap: 0.25rem !important;
+  margin: 0 !important;
 }
 
 .ivana-card-price-compare {
   color: #999999 !important;
   text-decoration: line-through !important;
-  font-size: 0.82rem !important;
+  font-size: 0.84rem !important;
   font-style: italic !important;
-  margin-bottom: 2px !important;
-  font-weight: 600 !important;
+  margin-bottom: 0 !important;
+  font-weight: 700 !important;
 }
 
 .ivana-card-price-row {
   display: flex !important;
   align-items: center !important;
-  gap: 8px !important;
+  justify-content: space-between !important;
+  gap: 0.75rem !important;
 }
 
 .ivana-card-price-main {
-  color: #FF1493 !important; /* Rosa Ivana */
-  font-size: 1.22rem !important;
-  font-weight: 800 !important;
+  color: #111111 !important;
+  font-size: 1.28rem !important;
+  font-weight: 900 !important;
   line-height: 1 !important;
 }
 
 .ivana-card-discount-tag {
-  background: #e31b23 !important; /* Rojo OFF */
-  color: #ffffff !important;
+  background: rgba(255, 20, 147, 0.12) !important;
+  color: #b10d56 !important;
+  border: 1px solid rgba(255, 20, 147, 0.22) !important;
   font-size: 0.68rem !important;
-  font-weight: 700 !important;
-  padding: 2px 6px !important;
-  border-radius: 3px !important;
+  font-weight: 900 !important;
+  padding: 0.22rem 0.55rem !important;
+  border-radius: 999px !important;
   line-height: 1.2 !important;
 }
 
 /* 4. Cuotas */
 .ivana-card-installments-container {
-  margin-top: 2px;
+  margin-top: 0.1rem;
 }
 
 .ivana-card-installments-text,
 .ivana-card-installments-text * {
-  font-size: 0.78rem !important;
-  color: #666666 !important;
+  font-size: 0.82rem !important;
+  color: rgba(17, 17, 17, 0.62) !important;
   margin: 0 !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
 }
 
 /* 5. Transferencia - Texto Verde */
 .ivana-card-transfer-container {
-  font-size: 0.78rem !important;
-  line-height: 1.4 !important;
-  color: #666666 !important;
+  font-size: 0.82rem !important;
+  line-height: 1.25 !important;
+  color: rgba(17, 17, 17, 0.68) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  padding: 0.35rem 0.55rem !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(0, 166, 80, 0.22) !important;
+  background: rgba(0, 166, 80, 0.08) !important;
+  width: fit-content !important;
 }
 
 .ivana-card-transfer-text {
   color: #00a650 !important; /* Verde Transferencia */
-  font-weight: 700 !important;
+  font-weight: 900 !important;
 }
 
 /* 6. Barra de Stock - Naranja / Gris */
 .ivana-card-stock-bar {
-  width: calc(100% + 30px) !important;
-  margin: 10px -15px -15px -15px !important;
-  padding: 8px !important;
-  text-align: center !important;
-  font-size: 0.78rem !important;
-  font-weight: 700 !important;
+  width: fit-content !important;
+  margin: 0.25rem 0 0 !important;
+  padding: 0.35rem 0.55rem !important;
+  text-align: left !important;
+  font-size: 0.72rem !important;
+  font-weight: 900 !important;
   color: #ffffff !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  border-radius: 999px !important;
 }
 
 .ivana-card-stock-bar--low {
-  background: #f58220 !important; /* Naranja Stock */
+  background: linear-gradient(90deg, #ff6b00 0%, #ff9a00 100%) !important;
 }
 
 .ivana-card-stock-bar--out {
-  background: #999999 !important; /* Gris Sin Stock */
+  background: rgba(17, 17, 17, 0.55) !important;
 }
 
 /* Ocultar elementos nativos que estamos reemplazando */
