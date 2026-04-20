@@ -50,17 +50,25 @@
 							{% endif %}
 						{% endif %}
 					{% endfor %}
+
+
+					{# Prefer category image, fallback to slider image #}
+					{% set has_subcategory_image = subcategory.images is not empty %}
+					{% set subcategory_image_name = has_subcategory_image ? (subcategory.images | first) : false %}
+					{% set circle_image_name = subcategory_image_name ? subcategory_image_name : fallback_slide_image %}
+					{% set circle_is_category_image = subcategory_image_name ? true : false %}
 					<a href="{{ subcategory.url }}" class="js-home-category d-flex flex-column align-items-center group shrink-0 text-decoration-none category-item" aria-label="{{ 'Categoría' | translate }} {{ loop.index }}">
 						<div class="home-category-image-border ivana-home-category-circle w-28 h-28 md:w-36 md:h-36 rounded-circle overflow-hidden p-1 transition-all">
 							<div class="w-100 h-100 rounded-circle overflow-hidden">
-								{% if fallback_slide_image %}
+								{% if circle_image_name %}
 									{{ component(
 										'image',{
-											image_name: fallback_slide_image,
+											image_name: circle_image_name,
 											image_classes: 'd-block w-100 h-100 object-cover fade-in',
 											image_lazy: true,
 											image_lazy_js: true,
 											image_alt: subcategory.name,
+											category_image: circle_is_category_image,
 										})
 									}}
 								{% else %}
