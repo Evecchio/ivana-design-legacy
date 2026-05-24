@@ -13,20 +13,24 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Cargar credenciales FTP de produccion
-        run: |
-          echo "FTP_HOST=${{ secrets.FTP_HOST }}" >> $GITHUB_ENV
-          echo "FTP_USER=${{ secrets.FTP_USER }}" >> $GITHUB_ENV
-          echo "FTP_PASSWORD=${{ secrets.FTP_PASSWORD }}" >> $GITHUB_ENV
+        uses: actions/checkout@v5
 
       - name: Install lftp
-        run: sudo apt-get install -y lftp
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
 
       - name: Deploy via FTPS
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -c "
+          : "${FTP_HOST:?Missing FTP_HOST secret}"
+          : "${FTP_USER:?Missing FTP_USER secret}"
+          : "${FTP_PASSWORD:?Missing FTP_PASSWORD secret}"
+
+          lftp -u "$FTP_USER","$FTP_PASSWORD" "ftp://$FTP_HOST:21" <<'LFTP'
             set ftp:ssl-force true;
             set ftp:ssl-protect-data true;
             set ssl:verify-certificate false;
@@ -34,12 +38,15 @@ jobs:
             set net:timeout 30;
             set net:max-retries 3;
             set net:reconnect-interval-base 5;
-            open -u '$FTP_USER','$FTP_PASSWORD' ftp://$FTP_HOST:21;
             mirror --reverse --verbose --no-perms \
               --exclude-glob .git/ \
               --exclude-glob .github/ \
               --exclude-glob .claude/ \
+              --exclude-glob .vscode/ \
               --exclude-glob '*.md' \
+              --exclude-glob '*.vsix' \
+              --exclude-glob acceso-ftp.txt \
+              --exclude-glob solution.js \
               --exclude-glob sesiones/ \
               . /;
-          "
+          LFTP
