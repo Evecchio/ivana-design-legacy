@@ -72,7 +72,7 @@
     {# 5. Transferencia #}
     {% if product.display_price %}
         <div class="ivana-card-transfer-container">
-            <span class="ivana-card-transfer-text">10% de descuento</span> por transferencia
+            <span class="ivana-card-transfer-text">20% de descuento</span> por transferencia
         </div>
     {% endif %}
 
