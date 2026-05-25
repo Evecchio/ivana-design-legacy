@@ -5062,13 +5062,25 @@ h3,
 .desktop-dropdown .nav-item .nav-list-link,
 .desktop-list-subitems .nav-item .nav-list-link {
   position: relative !important;
-  display: inline-flex !important;
+  display: inline-block !important;
+  width: auto !important;
+  max-width: max-content !important;
+  background-image: linear-gradient(#ff1493, #ff1493) !important;
+  background-position: left bottom !important;
+  background-repeat: no-repeat !important;
+  background-size: 0 1px !important;
+  transition: background-size 0.2s ease !important;
 }
 
 .desktop-dropdown .nav-item .nav-list-link::after,
 .desktop-list-subitems .nav-item .nav-list-link::after {
-  left: 0 !important;
-  right: auto !important;
-  width: 100% !important;
-  transform-origin: left center !important;
+  content: none !important;
+  display: none !important;
+}
+
+.desktop-dropdown .nav-item .nav-list-link:hover,
+.desktop-dropdown .nav-item .nav-list-link:focus,
+.desktop-list-subitems .nav-item .nav-list-link:hover,
+.desktop-list-subitems .nav-item .nav-list-link:focus {
+  background-size: 100% 1px !important;
 }
