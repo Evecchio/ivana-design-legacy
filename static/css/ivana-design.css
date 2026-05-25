@@ -5100,3 +5100,19 @@ h3,
   display: none !important;
 }
 
+
+
+/* Fix megamenu underline drift on hover */
+.desktop-dropdown .nav-item .nav-list-link,
+.desktop-list-subitems .nav-item .nav-list-link {
+  position: relative !important;
+  display: inline-flex !important;
+}
+
+.desktop-dropdown .nav-item .nav-list-link::after,
+.desktop-list-subitems .nav-item .nav-list-link::after {
+  left: 0 !important;
+  right: auto !important;
+  width: 100% !important;
+  transform-origin: left center !important;
+}
