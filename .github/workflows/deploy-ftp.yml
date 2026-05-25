@@ -30,23 +30,34 @@ jobs:
           : "${FTP_USER:?Missing FTP_USER secret}"
           : "${FTP_PASSWORD:?Missing FTP_PASSWORD secret}"
 
-          lftp -u "$FTP_USER","$FTP_PASSWORD" "ftp://$FTP_HOST:21" <<'LFTP'
-            set ftp:ssl-force true;
-            set ftp:ssl-protect-data true;
-            set ssl:verify-certificate false;
-            set ftp:use-site-chmod false;
-            set net:timeout 30;
-            set net:max-retries 3;
-            set net:reconnect-interval-base 5;
-            mirror --reverse --verbose --no-perms \
-              --exclude-glob .git/ \
-              --exclude-glob .github/ \
-              --exclude-glob .claude/ \
-              --exclude-glob .vscode/ \
-              --exclude-glob '*.md' \
-              --exclude-glob '*.vsix' \
-              --exclude-glob acceso-ftp.txt \
-              --exclude-glob solution.js \
-              --exclude-glob sesiones/ \
-              . /;
+          for attempt in 1 2 3 4 5; do
+            echo "FTPS deploy attempt $attempt/5"
+
+            if lftp -u "$FTP_USER","$FTP_PASSWORD" "ftp://$FTP_HOST:21" <<'LFTP'
+              set ftp:ssl-force true;
+              set ftp:ssl-protect-data true;
+              set ssl:verify-certificate false;
+              set ftp:use-site-chmod false;
+              set net:timeout 30;
+              set net:max-retries 3;
+              set net:reconnect-interval-base 5;
+              mirror --reverse --verbose --no-perms \
+                --exclude-glob .git/ \
+                --exclude-glob .github/ \
+                --exclude-glob .claude/ \
+                --exclude-glob .vscode/ \
+                --exclude-glob '*.md' \
+                --exclude-glob '*.vsix' \
+                --exclude-glob acceso-ftp.txt \
+                --exclude-glob solution.js \
+                --exclude-glob sesiones/ \
+                . /;
           LFTP
+            then
+              exit 0
+            fi
+
+            sleep 30
+          done
+
+          exit 1
