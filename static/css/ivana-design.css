@@ -5059,12 +5059,19 @@ h3,
 
 
 /* Fix megamenu underline drift on hover */
+.js-nav-desktop-list > .item-with-subitems > .nav-item-container > .nav-list-link::after,
+.nav-desktop-list > .item-with-subitems > .nav-item-container > .nav-list-link::after {
+  content: none !important;
+  display: none !important;
+}
+
 .desktop-dropdown .nav-item .nav-list-link,
 .desktop-list-subitems .nav-item .nav-list-link {
   position: relative !important;
   display: inline-block !important;
   width: auto !important;
   max-width: max-content !important;
+  padding-bottom: 0.28rem !important;
   background-image: linear-gradient(#ff1493, #ff1493) !important;
   background-position: left bottom !important;
   background-repeat: no-repeat !important;
@@ -5076,6 +5083,7 @@ h3,
 .desktop-list-subitems .nav-item .nav-list-link::after {
   content: none !important;
   display: none !important;
+  transform: none !important;
 }
 
 .desktop-dropdown .nav-item .nav-list-link:hover,
