@@ -1280,9 +1280,9 @@ es "Color del ícono para el botón de búsqueda"
 pt "Cor do ícone do botão de pesquisa"
 es_mx "Color del ícono para el botón de búsqueda"
 
-es "Logo y Favicon"
+es "Logo y favicon"
 pt "Logo e Favicon"
-es_mx "Logo y Favicon"
+es_mx "Logo y favicon"
 
 es "Logo"
 pt "Logo"
@@ -1863,9 +1863,9 @@ es "Publicaciones de Instagram"
 pt "Postagens do Instagram"
 es_mx "Publicaciones de Instagram"
 
-es "El Feed de Instagram muestra automáticamente tus últimas publicaciones en la página de inicio de tu tienda. Tu perfil debe ser público."
+es "El feed de Instagram muestra automáticamente tus últimas publicaciones en la página de inicio de tu tienda. Tu perfil debe ser público."
 pt "O feed do Instagram exibe automaticamente suas últimas postagens na página inicial da sua loja. Seu perfil deve ser público."
-es_mx "El Feed de Instagram muestra tus últimas publicaciones en la página de inicio. Tu perfil debe ser público."
+es_mx "El feed de Instagram muestra tus últimas publicaciones en la página de inicio. Tu perfil debe ser público."
 
 es "Mostrar tus publicaciones de Instagram en la página de inicio de tu tienda"
 pt "Exibir suas postagens do Instagram na página inicial da sua loja."
@@ -2708,20 +2708,20 @@ pt "Selos personalizados"
 en "Custom seals"
 es_mx "Sellos personalizados"
 
-es "Podés agregar sellos de dos formas: subiendo una imagen o pegando el código Javascript o HTML"
-pt "Você pode adicionar selos de duas formas: incluindo uma imagem ou adicionando um código HTML/Javascript"
-en "You can add seals through two ways: uploading an image or pasting the Javascript or HTML code"
-es_mx "Agrega sellos subiendo una imagen o pegando un código Javascript/HTML"
+es "Podés agregar sellos de dos formas: subiendo una imagen o pegando el código JavaScript o HTML"
+pt "Você pode adicionar selos de duas formas: incluindo uma imagem ou adicionando um código HTML/JavaScript"
+en "You can add seals through two ways: uploading an image or pasting the JavaScript or HTML code"
+es_mx "Agrega sellos subiendo una imagen o pegando un código JavaScript/HTML"
 
 es "Imagen del sello"
 pt "Imagem do selo"
 en "Seal image"
 es_mx "Imagen del sello"
 
-es "Código Javascript o HTML del sello"
-pt "Código HTML ou Javascript do selo"
-en "HTML or Javascript seal´s code"
-es_mx "Código Javascript o HTML del sello"
+es "Código JavaScript o HTML del sello"
+pt "Código HTML ou JavaScript do selo"
+en "HTML or JavaScript seal´s code"
+es_mx "Código JavaScript o HTML del sello"
 
 --- --- CSS
 
@@ -2909,4 +2909,3 @@ es "Rojo"
 pt "Vermelha"
 en "Red"
 es_mx "Rojo"
-

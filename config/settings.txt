@@ -295,7 +295,7 @@ Encabezado
 		name = search_button_foreground_color
 		description = Color del ícono para el botón de búsqueda
 	collapse
-		title = Logo y Favicon
+		title = Logo y favicon
 	title
 		title = Logo
 	dropdown
@@ -1379,7 +1379,7 @@ Página de inicio
 		title = Publicaciones de Instagram
 		backto = home_order_position	
 	description
-		description = El Feed de Instagram muestra automáticamente tus últimas publicaciones en la página de inicio de tu tienda. Tu perfil debe ser público.
+		description = El feed de Instagram muestra automáticamente tus últimas publicaciones en la página de inicio de tu tienda. Tu perfil debe ser público.
 	checkbox
 		name = show_instafeed
 		description = Mostrar tus publicaciones de Instagram en la página de inicio de tu tienda
@@ -1791,7 +1791,7 @@ Pie de página
 	collapse
 		title = Sellos personalizados
 	description
-		description = Podés agregar sellos de dos formas: subiendo una imagen o pegando el código Javascript o HTML
+		description = Podés agregar sellos de dos formas: subiendo una imagen o pegando el código JavaScript o HTML
 	image
 		title = Imagen del sello
 		original = seal_img.jpg
@@ -1800,7 +1800,7 @@ Pie de página
 		url = seal_url
 		url_description = [Opcional] Página web externa a la que llevará la imagen del sello al hacer clic
 	subtitle
-		subtitle = Código Javascript o HTML del sello
+		subtitle = Código JavaScript o HTML del sello
 	textarea
 		name = custom_seal_code
 

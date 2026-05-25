@@ -33,7 +33,7 @@
   font-size: clamp(2rem, 4vw, 3.4rem) !important;
   line-height: 0.95 !important;
   letter-spacing: -0.04em !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   font-weight: 800 !important;
   margin-bottom: 0.75rem !important;
   text-align: center !important;
@@ -45,8 +45,7 @@
   font-size: clamp(0.62rem, 0.9vw, 0.72rem) !important;
   font-weight: 700 !important;
   letter-spacing: clamp(0.1em, 0.2vw, 0.18em) !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   color: #6b7280 !important;
 }
 
@@ -150,8 +149,7 @@
   min-height: 52px !important;
   font-weight: 800 !important;
   letter-spacing: 0.12em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   box-shadow: 0 18px 40px rgba(17, 17, 17, 0.18) !important;
 }
 
@@ -230,8 +228,7 @@
 .ivana-cart-shell .cart-item-variant,
 .ivana-cart-shell .cart-page-table-header {
   color: #71717a !important;
-  text-transform: lowercase;
-  text-transform: capitalize;
+  text-transform: none;
   letter-spacing: 0.12em;
   font-size: 0.72rem;
 }
@@ -365,8 +362,7 @@
   line-height: 0.92 !important;
   letter-spacing: -0.05em !important;
   color: #fff !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   text-align: left !important;
   margin-bottom: 1rem !important;
 }
@@ -403,15 +399,14 @@
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.2em;
-  text-transform: lowercase;
-  text-transform: capitalize;
+  text-transform: none;
   color: #6b7280;
 }
 
 .ivana-home-section-title {
   font-size: clamp(1.9rem, 4vw, 3rem) !important;
   letter-spacing: -0.04em !important;
-  text-transform: lowercase !important;
+  text-transform: none !important;
   text-align: center !important;
   margin-bottom: 0.5rem !important;
 }
@@ -444,8 +439,7 @@
 .ivana-home-category-name {
   font-size: clamp(0.68rem, 0.95vw, 0.78rem) !important;
   color: #111 !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
 }
 
 .ivana-home-products {
@@ -470,8 +464,7 @@
   border: 2px solid #111 !important;
   background: transparent !important;
   color: #111 !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   letter-spacing: 0.14em !important;
   font-weight: 800 !important;
 }
@@ -523,8 +516,7 @@
 .ivana-home-infos .h6 {
   font-size: 1rem !important;
   letter-spacing: 0.04em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
 }
 
 @media (max-width: 767px) {
@@ -844,8 +836,7 @@
   font-size: 0.9rem !important;
   font-weight: 800 !important;
   letter-spacing: 0.14em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   margin-bottom: 1.5rem !important;
 }
 
@@ -1049,8 +1040,7 @@
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.2em;
-  text-transform: lowercase;
-  text-transform: capitalize;
+  text-transform: none;
   color: #6b7280;
   white-space: nowrap;
 }
@@ -1095,8 +1085,7 @@
   font-size: 0.78rem !important;
   font-weight: 800 !important;
   letter-spacing: 0.18em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   margin-bottom: 1.25rem !important;
 }
 
@@ -1258,8 +1247,7 @@
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.14em;
-  text-transform: lowercase;
-  text-transform: capitalize;
+  text-transform: none;
   background: transparent;
 }
 
@@ -1286,8 +1274,7 @@
   border-radius: 999px !important;
   min-height: 52px !important;
   letter-spacing: 0.14em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   padding: 0 1.75rem !important;
 }
 
@@ -1469,8 +1456,7 @@
   font-size: 0.72rem !important;
   font-weight: 800 !important;
   letter-spacing: 0.16em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   color: #111827 !important;
 }
 
@@ -1587,8 +1573,7 @@
   font-size: clamp(1.5rem, 2.5vw, 2rem) !important;
   line-height: 1.02 !important;
   letter-spacing: -0.04em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   font-weight: 800 !important;
   margin-bottom: 1.25rem !important;
 }
@@ -1628,8 +1613,7 @@
   font-size: clamp(1.2rem, 2.2vw, 1.8rem) !important;
   font-weight: 800 !important;
   letter-spacing: 0.18em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   margin-bottom: 2rem !important;
 }
 
@@ -1988,8 +1972,7 @@
   font-size: 0.72rem !important;
   font-weight: 700;
   letter-spacing: 0.14em;
-  text-transform: lowercase;
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 .ivana-cart-shell .cart-item-label,
@@ -2037,8 +2020,7 @@
   font-size: 0.72rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.12em;
-  text-transform: lowercase;
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 .ivana-cart-shell .cart-item-delete .btn-link:hover,
@@ -2108,8 +2090,7 @@
   font-size: 1.4rem !important;
   line-height: 1.02 !important;
   letter-spacing: -0.04em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   font-weight: 800 !important;
   margin-bottom: 0.5rem !important;
 }
@@ -2152,8 +2133,7 @@
 .ivana-cart-grand-total>span:first-child {
   font-size: 0.78rem;
   letter-spacing: 0.16em;
-  text-transform: lowercase;
-  text-transform: capitalize;
+  text-transform: none;
   color: #111827;
   font-weight: 800;
 }
@@ -2178,8 +2158,7 @@
   font-size: 0.72rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.16em;
-  text-transform: lowercase;
-  text-transform: capitalize;
+  text-transform: none;
   color: #6b7280 !important;
 }
 
@@ -2284,8 +2263,7 @@ div.js-product-item-private.product-item.ivana-card .js-item-name.product-item-n
   font-weight: 600 !important;
   line-height: 1.35 !important;
   color: #111111 !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   letter-spacing: 0 !important;
   margin-bottom: 8px !important;
   display: -webkit-box;
@@ -2470,8 +2448,7 @@ div.js-product-item-private.product-item.ivana-card .labels.product-labels .ship
   font-weight: 700 !important;
   padding: 3px 8px !important;
   border-radius: 4px !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   letter-spacing: 0.04em !important;
 }
 
@@ -2620,8 +2597,7 @@ small,
   font-size: 0.72rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.2em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
 }
 
 .ivana-home-section-title,
@@ -2693,8 +2669,7 @@ small,
   border-radius: 999px !important;
   min-height: 52px !important;
   letter-spacing: 0.16em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   font-size: 0.74rem !important;
   font-weight: 800 !important;
   padding-left: 1.5rem !important;
@@ -2736,8 +2711,7 @@ small,
   letter-spacing: 0.16em !important;
   line-height: 1.5 !important;
   color: var(--ivana-text) !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
 }
 
 .ivana-home-infos .container {
@@ -2778,8 +2752,7 @@ small,
   font-size: 0.8rem !important;
   font-weight: 800 !important;
   letter-spacing: 0.14em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   text-align: left !important;
 }
 
@@ -2902,8 +2875,7 @@ small,
   font-size: 0.75rem !important;
   font-weight: 800 !important;
   letter-spacing: 0.18em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   margin-bottom: 1rem;
 }
 
@@ -3146,8 +3118,7 @@ small,
   font-size: var(--fluid-caption, 0.7rem) !important;
   font-weight: 800 !important;
   letter-spacing: 0.16em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   color: #111111 !important;
 }
 
@@ -3198,8 +3169,7 @@ small,
   font-size: var(--fluid-caption, 0.72rem) !important;
   font-weight: 800 !important;
   letter-spacing: 0.18em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   color: rgba(17, 17, 17, 0.72) !important;
   padding: 0.2rem 0 !important;
   position: relative;
@@ -3377,8 +3347,7 @@ div.js-product-item-private.product-item.ivana-card:hover,
   font-weight: 600 !important;
   line-height: 1.45 !important;
   letter-spacing: 0 !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   margin-bottom: 0 !important;
   display: -webkit-box !important;
   overflow: hidden !important;
@@ -3437,8 +3406,7 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   font-weight: 700 !important;
   letter-spacing: 0.12em !important;
   padding: 2px 8px !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
 }
 
 .ivana-card-installments,
@@ -3578,8 +3546,7 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   font-weight: 800 !important;
   letter-spacing: 0.1em !important;
   padding: 0.28rem 0.55rem !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
 }
 
 .ivana-card .text-stock,
@@ -3602,8 +3569,7 @@ div.js-product-item-private.product-item.ivana-card .product-item-discount,
   font-size: 0 !important;
   font-weight: 800 !important;
   letter-spacing: 0.14em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
 }
 
 .ivana-card-secondary-action::after {
@@ -3752,8 +3718,7 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   font-weight: 800;
   letter-spacing: 0.14em;
   padding: 0.4rem 0.7rem;
-  text-transform: lowercase;
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 .ivana-product-title {
@@ -3799,8 +3764,7 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   font-weight: 800 !important;
   letter-spacing: 0.14em !important;
   padding: clamp(0.18rem, 0.4vw, 0.3rem) clamp(0.4rem, 0.8vw, 0.65rem) !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   white-space: nowrap;
 }
 
@@ -3830,8 +3794,7 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   font-weight: 800 !important;
   letter-spacing: 0.16em !important;
   margin-bottom: clamp(0.4rem, 0.8vw, 0.65rem) !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
 }
 
 .ivana-variation-chip {
@@ -3858,8 +3821,7 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   font-size: 0.72rem !important;
   font-weight: 800 !important;
   letter-spacing: 0.14em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
 }
 
 .ivana-product-stock-note {
@@ -3926,8 +3888,7 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   font-size: clamp(0.65rem, 0.95vw, 0.76rem) !important;
   font-weight: 800 !important;
   letter-spacing: 0.14em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
 }
 
 .ivana-product-support-description {
@@ -3984,8 +3945,7 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   font-size: 0.76rem !important;
   font-weight: 800 !important;
   letter-spacing: 0.14em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
 }
 
 .ivana-product-detail-note p {
@@ -4728,8 +4688,7 @@ h3,
   min-height: 2.8em !important;
   line-height: 1.35 !important;
   letter-spacing: 0.14em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
 }
 
 .section-home.section-categories-home.ivana-home-categories .ivana-home-category-circle,
@@ -4805,8 +4764,7 @@ h3,
   font-size: var(--fluid-caption) !important;
   font-weight: 800 !important;
   letter-spacing: 0.18em !important;
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
   color: rgba(17, 17, 17, 0.72) !important;
   padding: 0.2rem 0 !important;
   position: relative;
@@ -4868,7 +4826,7 @@ h3,
   display: inline-block !important;
   text-align: center !important;
   width: auto !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
 }
 
 /* Espaciado del Menú de Navegación */
@@ -4927,8 +4885,7 @@ h3,
 .js-item-product .item-name,
 .js-item-product a[class*="name"],
 .js-item-product [class*="item-name"] {
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
 }
 
 /* Desktop navigation and megamenu casing */
@@ -4938,8 +4895,7 @@ h3,
 .desktop-dropdown .nav-item,
 .desktop-list-subitems .nav-item .nav-list-link,
 .desktop-list-subitems .nav-item .list-subitems .nav-item .nav-list-link {
-  text-transform: lowercase !important;
-  text-transform: capitalize !important;
+  text-transform: none !important;
 }
 
 /* Category/page header casing */
