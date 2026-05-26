@@ -56,13 +56,13 @@
 	{% endfor %}
 
 	{% if has_grouped_items %}
-		<li class="js-desktop-nav-item js-item-subitems-desktop nav-item-desktop js-nav-main-item nav-dropdown nav-main-item nav-item item-with-subitems" data-component="menu.item" style="margin: 0 14px !important;">
+		<li class="js-desktop-nav-item js-item-subitems-desktop nav-item-desktop js-nav-main-item nav-dropdown nav-main-item nav-item item-with-subitems nav-dropdown-more" data-component="menu.item" style="margin: 0 14px !important;">
 			<div class="nav-item-container">
 				<a class="js-nav-list-link nav-list-link" href="#">Más</a>
 			</div>
 			<div class="js-desktop-dropdown nav-dropdown-content desktop-dropdown">
 				<div class="container desktop-dropdown-container">
-					<ul class="desktop-list-subitems list-subitems">
+					<ul class="desktop-list-subitems desktop-list-subitems-more list-subitems">
 						{% for item in navigation %}
 							{% set item_name = item.name | lower | trim %}
 							{% set is_grouped_item = item_name == 'quiénes somos' or item_name == 'cómo comprar' or item_name == 'guía de talles' or item_name == 'preguntas frecuentes' or item_name == 'contacto' or item_name == 'política de devolución' %}
