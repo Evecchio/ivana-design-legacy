@@ -5070,6 +5070,7 @@ h3,
   position: relative !important;
   display: inline-block !important;
   width: auto !important;
+  width: fit-content !important;
   max-width: max-content !important;
   padding-bottom: 0.28rem !important;
   background-image: linear-gradient(#ff1493, #ff1493) !important;
@@ -5088,7 +5089,9 @@ h3,
 
 .desktop-dropdown .nav-item .nav-list-link:hover,
 .desktop-dropdown .nav-item .nav-list-link:focus,
+.desktop-dropdown .nav-item .nav-list-link.selected,
 .desktop-list-subitems .nav-item .nav-list-link:hover,
-.desktop-list-subitems .nav-item .nav-list-link:focus {
+.desktop-list-subitems .nav-item .nav-list-link:focus,
+.desktop-list-subitems .nav-item .nav-list-link.selected {
   background-size: 100% 1px !important;
 }
