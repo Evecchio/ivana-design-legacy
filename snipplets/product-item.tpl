@@ -59,13 +59,7 @@
     {# 4. Cuotas #}
     {% if product.display_price %}
         <div class="ivana-card-installments-container">
-            {{ component('installments', {
-                location: 'product_list',
-                short_wording: true,
-                container_classes: {
-                    installment: 'ivana-card-installments-text'
-                }
-            }) }}
+            <p class="ivana-card-installments-text">3 cuotas sin interes de <strong>{{ (product.price / 3) | money }}</strong></p>
         </div>
     {% endif %}
 
