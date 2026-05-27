@@ -5143,31 +5143,35 @@ h3,
   margin: 0 !important;
 }
 
-.ivana-card .ivana-card-savings-bar {
+.ivana-card .ivana-card-info-container .ivana-card-savings-bar {
   order: 1 !important;
 }
 
-.ivana-card .ivana-card-title-container {
+.ivana-card .ivana-card-info-container .ivana-card-title-container {
   order: 2 !important;
 }
 
-.ivana-card .ivana-card-prices-block {
+.ivana-card .ivana-card-info-container .ivana-card-prices-block {
   order: 3 !important;
   display: flex !important;
   flex-direction: column !important;
   gap: 0.25rem !important;
   margin: 0 !important;
+  color: #151417 !important;
+  font-size: initial !important;
+  font-weight: initial !important;
+  line-height: normal !important;
 }
 
-.ivana-card .ivana-card-installments-container {
+.ivana-card .ivana-card-info-container .ivana-card-installments-container {
   order: 4 !important;
 }
 
-.ivana-card .ivana-card-transfer-container {
+.ivana-card .ivana-card-info-container .ivana-card-transfer-container {
   order: 5 !important;
 }
 
-.ivana-card .ivana-card-stock-container {
+.ivana-card .ivana-card-info-container .ivana-card-stock-container {
   order: 6 !important;
 }
 
