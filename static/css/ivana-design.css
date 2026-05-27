@@ -5195,8 +5195,8 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   font-size: 1.2rem !important;
   font-weight: 900 !important;
   line-height: 1 !important;
-  flex: 1 1 auto !important;
-  min-width: 0 !important;
+  flex: 0 0 auto !important;
+  min-width: auto !important;
   text-align: left !important;
   white-space: nowrap !important;
 }
