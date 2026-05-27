@@ -5190,6 +5190,7 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
 .js-item-product.ivana-card .ivana-card-price-main,
 .ivana-card.ivana-no-discount .ivana-card-price-main,
 .ivana-card .ivana-card-price-main.js-price-display {
+  order: 0 !important;
   color: #FF1493 !important;
   font-size: 1.2rem !important;
   font-weight: 900 !important;
@@ -5211,6 +5212,7 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
 }
 
 .ivana-card .ivana-card-discount-tag {
+  order: 1 !important;
   background: #e31b23 !important;
   border: 0 !important;
   border-radius: 10px !important;
