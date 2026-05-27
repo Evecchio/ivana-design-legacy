@@ -3381,7 +3381,7 @@ div.js-product-item-private.product-item.ivana-card span.js-compare-price-displa
 }
 
 div.js-product-item-private.product-item.ivana-card span.js-price-display.product-item-price,
-.ivana-card [class*="price"]:not([class*="compare"]) {
+.ivana-card [class*="price"]:not([class*="compare"]):not([class*="transfer"]) {
   order: 1 !important;
   color: #E53935 !important;
   font-size: clamp(0.95rem, 1.45vw, 1.125rem) !important;
@@ -3390,7 +3390,7 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
 }
 
 /* Sin descuento: precio negro */
-.ivana-card.ivana-no-discount [class*="price"]:not([class*="compare"]) {
+.ivana-card.ivana-no-discount [class*="price"]:not([class*="compare"]):not([class*="transfer"]) {
   color: #111111 !important;
 }
 
@@ -5247,6 +5247,8 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
 }
 
 .ivana-card .ivana-card-transfer-row .ivana-card-transfer-price,
+.ivana-card.ivana-no-discount .ivana-card-transfer-row .ivana-card-transfer-price,
+.ivana-card.ivana-no-discount .ivana-card-transfer-price,
 .ivana-card .ivana-card-transfer-price {
   order: 0 !important;
   color: #00a650 !important;
