@@ -5199,6 +5199,7 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   min-width: auto !important;
   text-align: left !important;
   white-space: nowrap !important;
+  transform: translateY(0.6mm) !important;
 }
 
 .ivana-card .ivana-card-price-compare {
@@ -5224,6 +5225,57 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   padding: 0.22rem 0.5rem !important;
   flex: 0 0 auto !important;
   white-space: nowrap !important;
+  transform: translate(-3mm, 0mm) !important;
+}
+
+.ivana-card .ivana-card-transfer-container {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.16rem !important;
+  color: #666666 !important;
+  font-size: 0.78rem !important;
+  line-height: 1.35 !important;
+}
+
+.ivana-card .ivana-card-transfer-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 5mm !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+}
+
+.ivana-card .ivana-card-transfer-price {
+  color: #00a650 !important;
+  flex: 0 0 auto !important;
+  font-size: 1.2rem !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+.ivana-card .ivana-card-transfer-badge {
+  align-items: center !important;
+  background: #008f45 !important;
+  border: 0 !important;
+  border-radius: 10px !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  font-size: 0.68rem !important;
+  font-weight: 900 !important;
+  line-height: 1.2 !important;
+  padding: 0.22rem 0.5rem !important;
+  white-space: nowrap !important;
+  transform: translate(-3mm, -0.2mm) !important;
+}
+
+.ivana-card .ivana-card-transfer-caption {
+  color: #666666 !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
 }
 
 @media (max-width: 767px) {
@@ -5239,5 +5291,17 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   .ivana-card.ivana-no-discount .ivana-card-price-main,
   .ivana-card .ivana-card-price-main.js-price-display {
     font-size: 1.05rem !important;
+  }
+
+  .ivana-card .ivana-card-transfer-row {
+    gap: 5mm !important;
+  }
+
+  .ivana-card .ivana-card-transfer-price {
+    font-size: 1.05rem !important;
+  }
+
+  .ivana-card .ivana-card-transfer-badge {
+    font-size: 0.62rem !important;
   }
 }

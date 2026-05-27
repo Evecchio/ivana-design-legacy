@@ -65,8 +65,14 @@
 
     {# 5. Transferencia #}
     {% if product.display_price %}
+        {% set transfer_discount_percentage = 20 %}
+        {% set transfer_price = product.price * (100 - transfer_discount_percentage) / 100 %}
         <div class="ivana-card-transfer-container">
-            <span class="ivana-card-transfer-text">20% de descuento</span> por transferencia
+            <div class="ivana-card-transfer-row">
+                <span class="ivana-card-transfer-price">{{ transfer_price | money }}</span>
+                <span class="ivana-card-transfer-badge">{{ transfer_discount_percentage }}% OFF</span>
+            </div>
+            <span class="ivana-card-transfer-caption">con transferencia o deposito</span>
         </div>
     {% endif %}
 
