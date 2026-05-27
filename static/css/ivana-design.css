@@ -5179,8 +5179,8 @@ h3,
 .ivana-card .ivana-card-price-row {
   display: flex !important;
   align-items: center !important;
-  justify-content: space-between !important;
-  gap: 0.75rem !important;
+  justify-content: flex-start !important;
+  gap: 5mm !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   width: 100% !important;
@@ -5230,8 +5230,8 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   .ivana-card .ivana-card-price-row {
     align-items: flex-start !important;
     flex-direction: row !important;
-    justify-content: space-between !important;
-    gap: 0.35rem !important;
+    justify-content: flex-start !important;
+    gap: 5mm !important;
   }
 
   div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
