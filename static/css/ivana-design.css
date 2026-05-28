@@ -5155,12 +5155,29 @@ h3,
    ========================================================================== */
 
 .ivana-card .ivana-card-info-container > .product-item-link {
-  display: flex !important;
+  display: grid !important;
   flex: 1 1 auto !important;
-  flex-direction: column !important;
+  grid-auto-rows: min-content !important;
+  align-content: start !important;
   gap: clamp(0.38rem, 1.1vw, 0.52rem) !important;
   color: inherit !important;
   text-decoration: none !important;
+}
+
+.ivana-card .ivana-card-info-container .ivana-card-savings-bar,
+.ivana-card .ivana-card-info-container > .product-item-link .ivana-card-savings-bar {
+  order: 1 !important;
+}
+
+.ivana-card .ivana-card-info-container .ivana-card-title-container,
+.ivana-card .ivana-card-info-container > .product-item-link .ivana-card-title-container {
+  order: 2 !important;
+  margin-top: -0.18rem !important;
+}
+
+.ivana-card .ivana-card-info-container .ivana-card-prices-block,
+.ivana-card .ivana-card-info-container > .product-item-link .ivana-card-prices-block {
+  order: 3 !important;
 }
 
 .ivana-card .ivana-card-info-container .hidden,
