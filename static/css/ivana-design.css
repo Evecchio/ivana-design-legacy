@@ -3332,6 +3332,11 @@ div.js-product-item-private.product-item.ivana-card:hover,
   background: linear-gradient(90deg, #FF1493 0%, #FF8C00 72%, #00a650 100%) !important;
 }
 
+.ivana-card .label-offer-percentage,
+.ivana-card .js-offer-percentage {
+  display: none !important;
+}
+
 .ivana-card .product-item-image-container img,
 .ivana-card .js-product-item-image-container img,
 .ivana-card .js-product-item-image-container-private.product-item-image-container img,
@@ -4962,7 +4967,7 @@ h3,
   font-size: 0.74rem !important;
   font-weight: 800 !important;
   padding: 0.45rem 0.6rem !important;
-  margin: 0 !important;
+  margin: -2mm 0 0 !important;
   border-radius: 14px !important;
   letter-spacing: 0.02em;
   overflow-wrap: anywhere !important;
