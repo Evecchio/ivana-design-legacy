@@ -129,6 +129,13 @@ function normalizeIvanaProductCards(root) {
             priceContainer.parentNode.insertBefore(outOfStockBadge, priceContainer.nextSibling);
         }
 
+        {# COMENTADO: No reposicionar el badge de ahorro.
+           El orden está definido en product-item.tpl:
+           1. Badge de ahorro
+           2. Título del producto
+           3. Precios
+           4. etc.
+        
         // Create "Ahorras" savings badge — barra full-width ENTRE imagen e info
         var existingBadge = card.querySelector(".ivana-savings-badge");
         if (!hideComparePrice && !hideDiscount && comparePriceValue && currentPriceValue && comparePriceValue > currentPriceValue) {
@@ -149,7 +156,7 @@ function normalizeIvanaProductCards(root) {
                 existingBadge = document.createElement("div");
                 existingBadge.className = "ivana-savings-badge";
                 // Icono de etiqueta SVG
-                var tagIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>';
+                var tagIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v20h20V12M12 2v20M12 2h10"/></svg>';
                 existingBadge.innerHTML = '<span class="ivana-savings-text"></span> ' + tagIcon;
             }
             existingBadge.querySelector(".ivana-savings-text").textContent = "Ahorr\u00e1s " + formattedSavings;
@@ -162,6 +169,7 @@ function normalizeIvanaProductCards(root) {
         } else if (existingBadge) {
             existingBadge.style.display = "none";
         }
+        #}
     });
 }
 
