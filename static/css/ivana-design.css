@@ -5204,6 +5204,33 @@ div.js-product-item-private.product-item.ivana-card
   overflow: hidden !important;
 }
 
+div.js-product-item-private.product-item.ivana-card
+  div.product-item-information.ivana-card-info-container
+  a.product-item-link
+  .product-item-price-container.hidden,
+div.js-product-item-private.product-item.ivana-card
+  div.product-item-information.ivana-card-info-container
+  a.product-item-link
+  .js-item-name.hidden,
+div.js-product-item-private.product-item.ivana-card
+  div.product-item-information.ivana-card-info-container
+  a.product-item-link
+  .product-item-price.hidden,
+div.js-product-item-private.product-item.ivana-card
+  div.product-item-information.ivana-card-info-container
+  a.product-item-link
+  .product-item-price-compare.hidden {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+}
+
 .ivana-card .ivana-card-info-container .ivana-card-savings-bar {
   order: 1 !important;
 }
