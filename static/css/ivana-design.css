@@ -3333,7 +3333,8 @@ div.js-product-item-private.product-item.ivana-card:hover,
 }
 
 .ivana-card .label-offer-percentage,
-.ivana-card .js-offer-percentage {
+.ivana-card .js-offer-percentage,
+.ivana-card .label-offer-percentage-text {
   display: none !important;
 }
 
