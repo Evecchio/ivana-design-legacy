@@ -5177,6 +5177,7 @@ h3,
 
 .ivana-card .ivana-card-info-container .ivana-card-title-container {
   order: 2 !important;
+  margin-top: -0.18rem !important;
 }
 
 .ivana-card .ivana-card-info-container .ivana-card-prices-block {

@@ -3,6 +3,10 @@
 {% set is_low_stock = product.stock is not null and product.stock > 0 and product.stock < 5 %}
 {% set slide_item = slide_item | default(false) %}
 {% set slide_item_class = slide_item ? 'js-item-slide swiper-slide ' : '' %}
+{% set transfer_discount_percentage = 20 %}
+{% set transfer_price = product.price * (100 - transfer_discount_percentage) / 100 %}
+{% set savings_reference_price = has_real_discount ? product.compare_at_price : product.price %}
+{% set max_savings = savings_reference_price - transfer_price %}
 
 {# Item image slider logic #}
 {% set show_image_slider = 
@@ -25,9 +29,9 @@
 {% set information_content %}
     
     {# 1. Barra de Ahorro (Debajo de la imagen) #}
-    {% if has_real_discount %}
+    {% if product.display_price and max_savings > 0 %}
         <div class="ivana-card-savings-bar">
-            Ahorrás {{ (product.compare_at_price - product.price) | money }}
+            Ahorra hasta {{ max_savings | money }}
         </div>
     {% endif %}
 
@@ -65,8 +69,6 @@
 
     {# 5. Transferencia #}
     {% if product.display_price %}
-        {% set transfer_discount_percentage = 20 %}
-        {% set transfer_price = product.price * (100 - transfer_discount_percentage) / 100 %}
         <div class="ivana-card-transfer-container">
             <div class="ivana-card-transfer-row">
                 <span class="ivana-card-transfer-price">{{ transfer_price | money }}</span>
