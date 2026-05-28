@@ -5145,11 +5145,11 @@ h3,
 }
 
 .ivana-card .ivana-card-info-container .ivana-card-savings-bar {
-  order: 2 !important;
+  order: 1 !important;
 }
 
 .ivana-card .ivana-card-info-container .ivana-card-title-container {
-  order: 1 !important;
+  order: 2 !important;
 }
 
 .ivana-card .ivana-card-info-container .ivana-card-prices-block {
