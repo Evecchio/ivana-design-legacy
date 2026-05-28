@@ -3334,8 +3334,17 @@ div.js-product-item-private.product-item.ivana-card:hover,
 
 .ivana-card .label-offer-percentage,
 .ivana-card .js-offer-percentage,
-.ivana-card .label-offer-percentage-text {
+.ivana-card .label-offer-percentage-text,
+.ivana-card .js-offer-label-private,
+.ivana-card [data-store="product-item-offer-label"] {
   display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
 }
 
 .ivana-card .product-item-image-container img,
