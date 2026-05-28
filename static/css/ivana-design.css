@@ -3400,7 +3400,7 @@ div.js-product-item-private.product-item.ivana-card span.js-compare-price-displa
 }
 
 div.js-product-item-private.product-item.ivana-card span.js-price-display.product-item-price,
-.ivana-card [class*="price"]:not([class*="compare"]):not([class*="transfer"]) {
+.ivana-card [class*="price"]:not([class*="compare"]):not([class*="transfer"]):not([class*="ivana-card-price-main"]) {
   order: 1 !important;
   color: #E53935 !important;
   font-size: clamp(0.95rem, 1.45vw, 1.125rem) !important;
@@ -3409,7 +3409,7 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
 }
 
 /* Sin descuento: precio negro */
-.ivana-card.ivana-no-discount [class*="price"]:not([class*="compare"]):not([class*="transfer"]) {
+.ivana-card.ivana-no-discount [class*="price"]:not([class*="compare"]):not([class*="transfer"]):not([class*="ivana-card-price-main"]) {
   color: #111111 !important;
 }
 
