@@ -28,14 +28,14 @@
 
 {% set information_content %}
     
-    {# 1. Barra de Ahorro (primero) #}
+    {# 1. BADGE DE AHORRO (PRIMERO) #}
     {% if product.display_price and max_savings > 0 %}
         <div class="ivana-card-savings-bar">
             Ahorra hasta {{ max_savings | money }}
         </div>
     {% endif %}
 
-    {# 2. Título (después del ahorro) #}
+    {# 2. TÍTULO DEL PRODUCTO (SEGUNDO) #}
     <div class="ivana-card-title-container">
         <h3 class="ivana-card-title">{{ product.name }}</h3>
     </div>
