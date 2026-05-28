@@ -5188,6 +5188,22 @@ h3,
   margin: 0 !important;
 }
 
+div.js-product-item-private.product-item.ivana-card
+  .product-item-information.ivana-card-info-container
+  .product-item-link
+  > .product-item-price-container.hidden,
+div.js-product-item-private.product-item.ivana-card
+  .product-item-information.ivana-card-info-container
+  .product-item-link
+  > .js-item-name.hidden {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
 .ivana-card .ivana-card-info-container .ivana-card-savings-bar {
   order: 1 !important;
 }
