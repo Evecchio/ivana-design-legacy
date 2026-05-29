@@ -5222,6 +5222,7 @@ h3,
     "prices"
     "installments"
     "transfer"
+    "colors"
     "stock" !important;
   grid-auto-rows: min-content !important;
   align-content: start !important;
@@ -5250,6 +5251,10 @@ h3,
 
 .ivana-card .ivana-card-content-stack > .ivana-card-transfer-container {
   grid-area: transfer !important;
+}
+
+.ivana-card .ivana-card-content-stack > .ivana-card-colors-container {
+  grid-area: colors !important;
 }
 
 .ivana-card .ivana-card-content-stack > .ivana-card-stock-container {
@@ -5346,14 +5351,19 @@ div.js-product-item-private.product-item.ivana-card
 
 .ivana-card .ivana-card-info-container .ivana-card-installments-container {
   order: 4 !important;
+  margin-top: calc(0.16rem - 2mm) !important;
 }
 
 .ivana-card .ivana-card-info-container .ivana-card-transfer-container {
   order: 5 !important;
 }
 
-.ivana-card .ivana-card-info-container .ivana-card-stock-container {
+.ivana-card .ivana-card-info-container .ivana-card-colors-container {
   order: 6 !important;
+}
+
+.ivana-card .ivana-card-info-container .ivana-card-stock-container {
+  order: 7 !important;
 }
 
 .ivana-card .ivana-card-price-row {
@@ -5459,6 +5469,63 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   font-size: 0.72rem !important;
   font-weight: 600 !important;
   line-height: 1.25 !important;
+}
+
+.ivana-card .ivana-card-colors-container {
+  align-items: center !important;
+  display: flex !important;
+  gap: 0.55rem !important;
+  justify-content: space-between !important;
+  min-width: 0 !important;
+  padding-top: 0.08rem !important;
+}
+
+.ivana-card .ivana-card-colors-label {
+  color: rgba(17, 17, 17, 0.56) !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+}
+
+.ivana-card .ivana-card-color-list {
+  align-items: center !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.26rem !important;
+  justify-content: flex-end !important;
+  min-width: 0 !important;
+}
+
+.ivana-card .ivana-card-color-dot {
+  align-items: center !important;
+  background: var(--color, #f5f5f5) !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 999px !important;
+  box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.16) !important;
+  color: rgba(17, 17, 17, 0.62) !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  font-size: 0.52rem !important;
+  font-weight: 800 !important;
+  height: 0.78rem !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  transition: transform 0.18s ease, box-shadow 0.18s ease !important;
+  width: 0.78rem !important;
+}
+
+.ivana-card .ivana-card-color-dot:hover,
+.ivana-card .ivana-card-color-dot:focus-visible {
+  box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.22), 0 4px 10px rgba(17, 17, 17, 0.12) !important;
+  outline: none !important;
+  transform: translateY(-1px) scale(1.08) !important;
+}
+
+.ivana-card .ivana-card-color-initial {
+  pointer-events: none !important;
 }
 
 @media (max-width: 767px) {
