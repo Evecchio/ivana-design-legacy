@@ -27,6 +27,7 @@
 {# --- CONSTRUCCIÓN DE CONTENIDO PERSONALIZADO --- #}
 
 {% set information_content %}
+    <div class="ivana-card-content-stack">
     
     {# 1. BADGE DE AHORRO (PRIMERO) #}
     {% if product.display_price and max_savings > 0 %}
@@ -87,6 +88,8 @@
                 {% if product.stock == 1 %}¡Última unidad!{% else %}¡Quedan solo {{ product.stock }} unidades!{% endif %}
             </div>
         {% endif %}
+    </div>
+
     </div>
 
 {% endset %}

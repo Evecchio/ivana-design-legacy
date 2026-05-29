@@ -5185,6 +5185,46 @@ h3,
   text-decoration: none !important;
 }
 
+.ivana-card .ivana-card-content-stack {
+  display: grid !important;
+  grid-template-areas:
+    "savings"
+    "title"
+    "prices"
+    "installments"
+    "transfer"
+    "stock" !important;
+  grid-auto-rows: min-content !important;
+  align-content: start !important;
+  gap: clamp(0.38rem, 1.1vw, 0.52rem) !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.ivana-card .ivana-card-content-stack > .ivana-card-savings-bar {
+  grid-area: savings !important;
+}
+
+.ivana-card .ivana-card-content-stack > .ivana-card-title-container {
+  grid-area: title !important;
+}
+
+.ivana-card .ivana-card-content-stack > .ivana-card-prices-block {
+  grid-area: prices !important;
+}
+
+.ivana-card .ivana-card-content-stack > .ivana-card-installments-container {
+  grid-area: installments !important;
+}
+
+.ivana-card .ivana-card-content-stack > .ivana-card-transfer-container {
+  grid-area: transfer !important;
+}
+
+.ivana-card .ivana-card-content-stack > .ivana-card-stock-container {
+  grid-area: stock !important;
+}
+
 .ivana-card .ivana-card-info-container .ivana-card-savings-bar,
 .ivana-card .ivana-card-info-container > .product-item-link .ivana-card-savings-bar {
   order: 1 !important;
