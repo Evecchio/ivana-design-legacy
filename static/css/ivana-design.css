@@ -4601,8 +4601,7 @@ div.js-product-item-private.product-item.ivana-card span.js-price-display.produc
   /* Centra el texto internamente */
 }
 
-.js-products-sale-title::after,
-.ivana-home-section-divider {
+.js-products-sale-title::after {
   display: none !important;
 }
 
@@ -4893,6 +4892,11 @@ h3,
       rgba(255, 20, 147, 0.9) 48%,
       rgba(17, 17, 17, 0.8) 52%,
       rgba(17, 17, 17, 0)) !important;
+}
+
+.ivana-home-categories .ivana-home-section-divider,
+.ivana-home-products-sale .ivana-home-section-divider {
+  display: block !important;
 }
 
 /* Espaciado del Menú de Navegación */
