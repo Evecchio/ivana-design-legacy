@@ -453,6 +453,10 @@
   border-bottom: 1px solid rgba(17, 17, 17, 0.05);
 }
 
+.ivana-home-products-sale .ivana-home-section-head {
+  margin-top: -1cm !important;
+}
+
 .ivana-home-products .js-products-sale-grid,
 .ivana-home-products .js-products-featured-grid,
 .ivana-home-products .js-products-new-grid {
