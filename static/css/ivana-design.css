@@ -4977,7 +4977,7 @@ h3,
   font-size: 0.74rem !important;
   font-weight: 800 !important;
   padding: 0.45rem 0.6rem !important;
-  margin: -2mm 0 0 !important;
+  margin: 0 !important;
   border-radius: 14px !important;
   letter-spacing: 0.02em;
   overflow-wrap: anywhere !important;
@@ -5182,7 +5182,7 @@ h3,
 .ivana-card .ivana-card-info-container .ivana-card-title-container,
 .ivana-card .ivana-card-info-container > .product-item-link .ivana-card-title-container {
   order: 2 !important;
-  margin-top: -0.18rem !important;
+  margin: 0 !important;
 }
 
 .ivana-card .ivana-card-info-container .ivana-card-prices-block,
@@ -5247,7 +5247,7 @@ div.js-product-item-private.product-item.ivana-card
 
 .ivana-card .ivana-card-info-container .ivana-card-title-container {
   order: 2 !important;
-  margin-top: -0.18rem !important;
+  margin: 0 !important;
 }
 
 .ivana-card .ivana-card-info-container .ivana-card-prices-block {
