@@ -20,7 +20,7 @@
 	{% set section_slider_id = 'featured' %}
 	{% set raw_featured_title = settings.featured_products_title ? settings.featured_products_title : 'Destacados' | translate %}
 	{% set normalized_featured_title = raw_featured_title | trim | lower %}
-	{% set section_title = normalized_featured_title == 'super descuentos' ? 'Super descuentos' : raw_featured_title %}
+	{% set section_title = normalized_featured_title == 'super descuentos' ? 'Super Descuentos' : raw_featured_title %}
 	{% set section_kicker = 'Seleccion curada' | translate %}
 {% endif %}
 {% if new_products %}
@@ -48,9 +48,9 @@
 	{% set section_slider_mobile_only = settings.sale_products_format_mobile == 'slider' and settings.sale_products_format_desktop != 'slider' %}
 	{% set section_slider_desktop_only = settings.sale_products_format_desktop == 'slider' and settings.sale_products_format_mobile != 'slider' %}
 	{% set section_slider_id = 'sale' %}
-	{% set raw_sale_title = settings.sale_products_title ? settings.sale_products_title : 'Super descuentos' %}
+	{% set raw_sale_title = settings.sale_products_title ? settings.sale_products_title : 'Super Descuentos' %}
 	{% set normalized_sale_title = raw_sale_title | trim | lower %}
-	{% set section_title = normalized_sale_title == 'super descuentos' ? 'Super descuentos' : raw_sale_title %}
+	{% set section_title = normalized_sale_title == 'super descuentos' ? 'Super Descuentos' : raw_sale_title %}
 	{% set section_kicker = 'Precio especial por tiempo limitado' %}
 {% endif %}
 

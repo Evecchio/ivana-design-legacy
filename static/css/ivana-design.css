@@ -4874,6 +4874,27 @@ h3,
   text-transform: none !important;
 }
 
+.ivana-home-section-title::after,
+.js-products-featured-title::after,
+.js-products-new-title::after,
+.js-products-sale-title::after {
+  content: none !important;
+  display: none !important;
+}
+
+.ivana-home-section-head .ivana-home-section-divider {
+  display: block !important;
+  width: clamp(72px, 18vw, 128px) !important;
+  height: 3px !important;
+  margin: 0.72rem auto 0 !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg,
+      rgba(255, 20, 147, 0),
+      rgba(255, 20, 147, 0.9) 48%,
+      rgba(17, 17, 17, 0.8) 52%,
+      rgba(17, 17, 17, 0)) !important;
+}
+
 /* Espaciado del Menú de Navegación */
 .js-nav-desktop-list > .nav-item-desktop {
   margin-left: 14px !important;
