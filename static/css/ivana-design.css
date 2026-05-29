@@ -976,7 +976,7 @@
   .ivana-home-products .js-products-sale-grid.grid,
   .ivana-home-products .js-products-featured-grid.grid,
   .ivana-home-products .js-products-new-grid.grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   }
 }
 
@@ -3270,6 +3270,17 @@ small,
   gap: clamp(1rem, 2vw, 1.45rem) !important;
 }
 
+.ivana-category-products .js-product-table.grid-md-5,
+.ivana-category-products .js-product-table.grid-md-6,
+.js-products-featured-grid.grid-md-5,
+.js-products-featured-grid.grid-md-6,
+.js-products-new-grid.grid-md-5,
+.js-products-new-grid.grid-md-6,
+.js-products-sale-grid.grid-md-5,
+.js-products-sale-grid.grid-md-6 {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
 .js-product-list>li,
 .product-list>li,
 .js-product-table>li {
@@ -5380,6 +5391,23 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
 }
 
 @media (max-width: 767px) {
+  .ivana-category-products .js-product-table.grid,
+  .ivana-home-products .js-products-sale-grid.grid,
+  .ivana-home-products .js-products-featured-grid.grid,
+  .ivana-home-products .js-products-new-grid.grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .ivana-category-products .js-product-table > li,
+  .ivana-home-products .js-products-sale-grid > li,
+  .ivana-home-products .js-products-featured-grid > li,
+  .ivana-home-products .js-products-new-grid > li {
+    max-width: 420px !important;
+    width: 100% !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
   .ivana-card .ivana-card-price-row {
     align-items: flex-start !important;
     flex-direction: row !important;
