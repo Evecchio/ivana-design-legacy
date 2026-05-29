@@ -5208,6 +5208,7 @@ h3,
 
 .ivana-card .ivana-card-content-stack > .ivana-card-title-container {
   grid-area: title !important;
+  margin-top: 1mm !important;
 }
 
 .ivana-card .ivana-card-content-stack > .ivana-card-prices-block {
