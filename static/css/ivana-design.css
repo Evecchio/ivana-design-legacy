@@ -5196,13 +5196,14 @@ h3,
     "stock" !important;
   grid-auto-rows: min-content !important;
   align-content: start !important;
-  gap: clamp(0.38rem, 1.1vw, 0.52rem) !important;
+  gap: 2mm !important;
   min-width: 0 !important;
   width: 100% !important;
 }
 
 .ivana-card .ivana-card-content-stack > .ivana-card-savings-bar {
   grid-area: savings !important;
+  margin-top: -1mm !important;
 }
 
 .ivana-card .ivana-card-content-stack > .ivana-card-title-container {
