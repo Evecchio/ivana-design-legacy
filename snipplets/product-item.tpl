@@ -79,33 +79,7 @@
         </div>
     {% endif %}
 
-    {# 6. Colores #}
-    {% for variation in product.variations %}
-        {% if variation.name in ['Color', 'Cor'] and variation.options is not empty %}
-            <div class="ivana-card-colors-container" aria-label="Colores disponibles">
-                <span class="ivana-card-colors-label">Colores</span>
-                <div class="ivana-card-color-list">
-                    {% for option in variation.options %}
-                        {% set color_variant = false %}
-                        {% for variant in product.variants if not color_variant and ((variant.option1 == option.id) or (variant.option2 == option.id) or (variant.option3 == option.id)) %}
-                            {% set color_variant = variant %}
-                        {% endfor %}
-                        <span
-                            class="ivana-card-color-dot js-ivana-card-color-link"
-                            style="--color: {{ option.custom_data ? option.custom_data : '#f5f5f5' }};"
-                            title="{{ option.name }}"
-                            role="link"
-                            tabindex="0"
-                            data-href="{{ product.url }}{% if color_variant and color_variant.id %}?variant={{ color_variant.id }}{% endif %}">
-                            {% if not option.custom_data %}<span class="ivana-card-color-initial">{{ option.name | slice(0, 1) }}</span>{% endif %}
-                        </span>
-                    {% endfor %}
-                </div>
-            </div>
-        {% endif %}
-    {% endfor %}
-
-    {# 7. Barra de Stock #}
+    {# 6. Barra de Stock #}
     <div class="ivana-card-stock-container">
         {% if is_out_of_stock %}
             <div class="ivana-card-stock-bar ivana-card-stock-bar--out">Sin stock por el momento</div>

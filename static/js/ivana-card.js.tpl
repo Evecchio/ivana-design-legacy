@@ -170,33 +170,6 @@ function normalizeIvanaProductCards(root) {
             existingBadge.style.display = "none";
         }
         #}
-
-        card.querySelectorAll(".js-ivana-card-color-link[data-href]").forEach(function(colorDot) {
-            if (colorDot.dataset.ivanaColorLinkBound === "1") {
-                return;
-            }
-
-            colorDot.dataset.ivanaColorLinkBound = "1";
-
-            var openColorProduct = function(event) {
-                var href = colorDot.dataset.href;
-
-                if (!href) {
-                    return;
-                }
-
-                event.preventDefault();
-                event.stopPropagation();
-                window.location.href = href;
-            };
-
-            colorDot.addEventListener("click", openColorProduct);
-            colorDot.addEventListener("keydown", function(event) {
-                if (event.key === "Enter" || event.key === " ") {
-                    openColorProduct(event);
-                }
-            });
-        });
     });
 }
 
