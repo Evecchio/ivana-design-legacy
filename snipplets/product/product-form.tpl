@@ -113,7 +113,7 @@
 				location: 'product',
 				container_classes: "mt-1 mb-3 font-big text-accent",
 				text_classes: {
-					price: 'h5 font-family-body'
+					price: 'h5 font-family-body ivana-product-transfer-price'
 				}
 			})
 		}}

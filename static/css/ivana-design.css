@@ -1411,6 +1411,10 @@
   color: #16a34a !important;
 }
 
+.ivana-product-shell .ivana-product-transfer-price::before {
+  content: "+ ";
+}
+
 .ivana-product-shell .ivana-product-payments-box {
   padding: 1rem 1.1rem !important;
   border: 1px solid rgba(17, 17, 17, 0.08);
