@@ -5426,7 +5426,7 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
-  gap: 0.35rem 3mm !important;
+  gap: 0 !important;
   flex-direction: row !important;
   flex-wrap: wrap !important;
 }
@@ -5435,7 +5435,7 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
 .ivana-card.ivana-no-discount .ivana-card-transfer-row .ivana-card-transfer-price,
 .ivana-card.ivana-no-discount .ivana-card-transfer-price,
 .ivana-card .ivana-card-transfer-price {
-  order: 0 !important;
+  order: 3 !important;
   color: #00a650 !important;
   flex: 0 0 auto !important;
   font-size: clamp(1.05rem, 1.4vw, 1.2rem) !important;
@@ -5446,7 +5446,7 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
 
 .ivana-card .ivana-card-transfer-row .ivana-card-transfer-badge,
 .ivana-card .ivana-card-transfer-badge {
-  order: 2 !important;
+  order: 1 !important;
   align-items: center !important;
   background: #008f45 !important;
   border: 0 !important;
@@ -5459,11 +5459,13 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   line-height: 1.2 !important;
   padding: 0.22rem 0.5rem !important;
   white-space: nowrap !important;
+  margin-right: 2mm !important;
 }
 
 .ivana-card .ivana-card-transfer-row .ivana-card-transfer-plus,
-.ivana-card .ivana-card-transfer-plus {
-  order: 1 !important;
+.ivana-card .ivana-card-transfer-plus,
+.ivana-card .ivana-card-transfer-row .ivana-card-transfer-equals,
+.ivana-card .ivana-card-transfer-equals {
   color: #008f45 !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -5471,8 +5473,19 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   font-weight: 900 !important;
   -webkit-text-stroke: 0.65px currentColor;
   line-height: 1 !important;
-  margin-right: -2mm !important;
   text-shadow: 0.4px 0 0 currentColor, -0.4px 0 0 currentColor;
+}
+
+.ivana-card .ivana-card-transfer-row .ivana-card-transfer-plus,
+.ivana-card .ivana-card-transfer-plus {
+  order: 0 !important;
+  margin-right: 1mm !important;
+}
+
+.ivana-card .ivana-card-transfer-row .ivana-card-transfer-equals,
+.ivana-card .ivana-card-transfer-equals {
+  order: 2 !important;
+  margin-right: 2mm !important;
 }
 
 .ivana-card .ivana-card-transfer-caption {
@@ -5515,7 +5528,7 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   }
 
   .ivana-card .ivana-card-transfer-row {
-    gap: 0.32rem 1.5mm !important;
+    gap: 0 !important;
   }
 
   .ivana-card .ivana-card-transfer-row .ivana-card-transfer-price,
@@ -5529,8 +5542,9 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   }
 
   .ivana-card .ivana-card-transfer-row .ivana-card-transfer-plus,
-  .ivana-card .ivana-card-transfer-plus {
+  .ivana-card .ivana-card-transfer-plus,
+  .ivana-card .ivana-card-transfer-row .ivana-card-transfer-equals,
+  .ivana-card .ivana-card-transfer-equals {
     font-size: 1.1rem !important;
-    margin-right: -0.5mm !important;
   }
 }
