@@ -5471,7 +5471,7 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   font-weight: 900 !important;
   -webkit-text-stroke: 0.65px currentColor;
   line-height: 1 !important;
-  margin-right: -2.5mm !important;
+  margin-right: -2mm !important;
   text-shadow: 0.4px 0 0 currentColor, -0.4px 0 0 currentColor;
 }
 
@@ -5531,6 +5531,6 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   .ivana-card .ivana-card-transfer-row .ivana-card-transfer-plus,
   .ivana-card .ivana-card-transfer-plus {
     font-size: 1.1rem !important;
-    margin-right: 0.5mm !important;
+    margin-right: -0.5mm !important;
   }
 }
