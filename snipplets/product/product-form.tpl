@@ -148,7 +148,7 @@
 		{% set hideDiscountDisclaimer = not product.showMaxPaymentDiscountNotCombinableDisclaimer %}
 
 		<div class="js-product-discount-container mb-2 font-medium" {% if hideDiscountContainer %}style="display: none;"{% endif %}>
-			<span class="text-accent">{{ product.maxPaymentDiscount.value }}% {{'de descuento' | translate }}</span> {{'pagando con' | translate }} {{ product.maxPaymentDiscount.paymentProviderName }}
+			<span class="text-accent">+ {{ product.maxPaymentDiscount.value }}% {{'de descuento' | translate }}</span> {{'pagando con' | translate }} {{ product.maxPaymentDiscount.paymentProviderName }}
 			<div class="js-product-discount-disclaimer font-small mt-1 opacity-60" {% if hideDiscountDisclaimer %}style="display: none;"{% endif %}>
                 {{ (product.showMaxPaymentDiscountCombinesWithSomeDiscounts
                     ? "No acumulable con algunas promociones"

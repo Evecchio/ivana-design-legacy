@@ -72,8 +72,8 @@
     {% if product.display_price %}
         <div class="ivana-card-transfer-container">
             <div class="ivana-card-transfer-row">
-                <span class="ivana-card-transfer-price">+ {{ transfer_price | money }}</span>
-                <span class="ivana-card-transfer-badge">{{ transfer_discount_percentage }}% OFF</span>
+                <span class="ivana-card-transfer-price">{{ transfer_price | money }}</span>
+                <span class="ivana-card-transfer-badge">+ {{ transfer_discount_percentage }}% OFF</span>
             </div>
             <span class="ivana-card-transfer-caption">Con transferencia o deposito</span>
         </div>

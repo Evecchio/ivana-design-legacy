@@ -1411,11 +1411,6 @@
   color: #16a34a !important;
 }
 
-.ivana-product-shell .ivana-product-transfer-price::before {
-  content: "+ ";
-  font-weight: 900;
-}
-
 .ivana-product-shell .ivana-product-transfer-price {
   font-weight: 900 !important;
 }
