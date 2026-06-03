@@ -1418,6 +1418,8 @@
 .ivana-product-shell .ivana-product-transfer-plus {
   color: #008f45 !important;
   font-weight: 900 !important;
+  -webkit-text-stroke: 0.35px currentColor;
+  text-shadow: 0 0 0 currentColor;
 }
 
 .ivana-product-shell .ivana-product-payments-box {
@@ -5465,10 +5467,12 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   color: #008f45 !important;
   display: inline-flex !important;
   align-items: center !important;
-  font-size: clamp(0.95rem, 1.2vw, 1.05rem) !important;
+  font-size: clamp(1rem, 1.25vw, 1.1rem) !important;
   font-weight: 900 !important;
+  -webkit-text-stroke: 0.35px currentColor;
   line-height: 1 !important;
-  margin-right: -1.5mm !important;
+  margin-right: -2.5mm !important;
+  text-shadow: 0 0 0 currentColor;
 }
 
 .ivana-card .ivana-card-transfer-caption {
