@@ -5079,7 +5079,7 @@ h3,
 
 .ivana-card-price-main {
   color: #FF1493 !important;
-  font-size: 29px !important;
+  font-size: 33px !important;
   font-weight: 950 !important;
   line-height: 1 !important;
 }
@@ -5088,16 +5088,17 @@ h3,
   background: #e31b23 !important;
   color: #ffffff !important;
   border: 0 !important;
-  font-size: 15px !important;
-  font-weight: 950 !important;
-  min-width: 99px !important;
-  height: 36px !important;
-  padding: 0 12px !important;
-  border-radius: 999px !important;
-  line-height: 1 !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+  font-size: 15px !important;
+  font-weight: 950 !important;
+  min-width: 99px !important;
+  height: 31px !important;
+  padding: 0 12px !important;
+  border-radius: 999px !important;
+  line-height: 1 !important;
+  transform: translate(-1mm, 0) !important;
 }
 
 /* 4. Cuotas */
@@ -5282,7 +5283,7 @@ h3,
 .ivana-card .ivana-card-info-container .ivana-card-title-container,
 .ivana-card .ivana-card-info-container > .product-item-link .ivana-card-title-container {
   order: 2 !important;
-  margin: 0 !important;
+  margin: 1mm 0 0 !important;
 }
 
 .ivana-card .ivana-card-info-container .ivana-card-prices-block,
@@ -5390,7 +5391,7 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
 .ivana-card .ivana-card-price-main.js-price-display {
   order: 0 !important;
   color: #FF1493 !important;
-  font-size: 29px !important;
+  font-size: 33px !important;
   font-weight: 950 !important;
   line-height: 1 !important;
   flex: 0 0 auto !important;
@@ -5415,14 +5416,17 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   border: 0 !important;
   border-radius: 10px !important;
   color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   flex: 0 0 auto !important;
   font-size: 15px !important;
   font-weight: 950 !important;
   min-width: 99px !important;
-  height: 36px !important;
+  height: 31px !important;
   line-height: 1 !important;
   padding: 0 12px !important;
-  flex: 0 0 auto !important;
+  transform: translate(-1mm, 0) !important;
   white-space: nowrap !important;
 }
 
@@ -5552,7 +5556,11 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   .js-item-product.ivana-card .ivana-card-price-main,
   .ivana-card.ivana-no-discount .ivana-card-price-main,
   .ivana-card .ivana-card-price-main.js-price-display {
-    font-size: 27px !important;
+    font-size: 31px !important;
+  }
+
+  .ivana-card .ivana-card-discount-tag {
+    height: 29px !important;
   }
 
   .ivana-card .ivana-card-transfer-row {
