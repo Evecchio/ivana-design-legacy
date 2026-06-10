@@ -6015,3 +6015,44 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
     grid-column: 2 !important;
   }
 }
+
+/* Keep reference-card colors even when legacy scripts add ivana-no-discount. */
+div.js-product-item-private.product-item.ivana-card .ivana-card-installments-text,
+div.js-product-item-private.product-item.ivana-card .ivana-card-installments-text *,
+.js-item-product.ivana-card .ivana-card-installments-text,
+.js-item-product.ivana-card .ivana-card-installments-text *,
+.ivana-card.ivana-no-discount .ivana-card-installments-text,
+.ivana-card.ivana-no-discount .ivana-card-installments-text * {
+  color: #706b67 !important;
+  font-weight: 400 !important;
+}
+
+div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-container,
+.js-item-product.ivana-card .ivana-card-transfer-container,
+.ivana-card.ivana-no-discount .ivana-card-transfer-container {
+  background: #f1eeeb !important;
+  border: 0 !important;
+  color: #231f1c !important;
+}
+
+div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-caption,
+.js-item-product.ivana-card .ivana-card-transfer-caption,
+.ivana-card.ivana-no-discount .ivana-card-transfer-caption {
+  color: #5e5854 !important;
+  font-weight: 400 !important;
+}
+
+div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-price,
+.js-item-product.ivana-card .ivana-card-transfer-price,
+.ivana-card.ivana-no-discount .ivana-card-transfer-price {
+  color: #171514 !important;
+  font-weight: 400 !important;
+}
+
+div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-badge,
+.js-item-product.ivana-card .ivana-card-transfer-badge,
+.ivana-card.ivana-no-discount .ivana-card-transfer-badge {
+  background: transparent !important;
+  color: #57514d !important;
+  font-weight: 400 !important;
+}
