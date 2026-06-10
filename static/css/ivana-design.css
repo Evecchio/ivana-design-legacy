@@ -6659,3 +6659,24 @@ body.template-product .ivana-product-shell .cart-button-container input[type="su
   background: #f1eeeb !important;
   color: #817870 !important;
 }
+
+/* Product related carousel: keep external swiper controls from widening desktop pages. */
+body.template-product .ivana-product-related,
+body.template-product #complementary-products {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body.template-product .ivana-product-related .container,
+body.template-product #complementary-products .container {
+  max-width: min(1366px, calc(100vw - 72px)) !important;
+  width: min(1366px, calc(100vw - 72px)) !important;
+}
+
+body.template-product .products-section-prev-container.swiper-button-outside {
+  left: 8px !important;
+}
+
+body.template-product .products-section-next-container.swiper-button-outside {
+  right: 8px !important;
+}
