@@ -5656,7 +5656,7 @@ div.js-product-item-private.product-item.ivana-card:hover,
 .ivana-card .product-item-image-container,
 .ivana-card .js-product-item-image-container,
 .ivana-card .js-product-item-image-container-private.product-item-image-container {
-  aspect-ratio: 1.42 / 1 !important;
+  aspect-ratio: 1.58 / 1 !important;
   background: #ddd8d4 !important;
   border-bottom: 0 !important;
   overflow: hidden !important;
@@ -5709,14 +5709,14 @@ div.js-product-item-private.product-item.ivana-card:hover,
 .ivana-card .ivana-card-content-stack {
   align-content: start !important;
   display: grid !important;
-  gap: 18px !important;
+  gap: 14px !important;
   grid-template-areas:
     "title"
     "prices"
     "installments"
     "transfer"
     "stock" !important;
-  padding: 27px 28px 30px !important;
+  padding: 22px 28px 24px !important;
   width: 100% !important;
 }
 
@@ -5849,10 +5849,10 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   gap: 14px !important;
   grid-area: transfer !important;
   grid-template-columns: 34px minmax(0, 1fr) auto !important;
-  margin: 8px 0 0 !important;
+  margin: 4px 0 0 !important;
   max-width: none !important;
-  min-height: 84px !important;
-  padding: 18px 20px !important;
+  min-height: 76px !important;
+  padding: 14px 18px !important;
   width: 100% !important;
 }
 
@@ -5929,6 +5929,7 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
 
 .ivana-card .ivana-card-stock-container {
   grid-area: stock !important;
+  display: none !important;
 }
 
 .ivana-card .ivana-card-stock-bar {
@@ -5984,8 +5985,8 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   }
 
   .ivana-card .ivana-card-content-stack {
-    gap: 16px !important;
-    padding: 22px 22px 24px !important;
+    gap: 13px !important;
+    padding: 20px 22px 22px !important;
   }
 
   .ivana-card .ivana-card-title {
@@ -6008,7 +6009,8 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   .ivana-card .ivana-card-transfer-container {
     grid-template-columns: 28px minmax(0, 1fr) !important;
     gap: 10px !important;
-    padding: 17px 20px !important;
+    min-height: 74px !important;
+    padding: 14px 18px !important;
   }
 
   .ivana-card .ivana-card-transfer-badge {
