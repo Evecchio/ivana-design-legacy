@@ -320,6 +320,20 @@ function normalizeIvanaProductDetailCommercial(root) {
     discountContainer.dataset.ivanaTransferRendered = "1";
 }
 
+function normalizeIvanaProductDetailCta(root) {
+    var scope = root || document;
+    var button = scope.querySelector(".ivana-product-shell .js-prod-submit-form");
+
+    if (!button) {
+        return;
+    }
+
+    button.style.setProperty("background", "#151412", "important");
+    button.style.setProperty("background-color", "#151412", "important");
+    button.style.setProperty("border-color", "#151412", "important");
+    button.style.setProperty("color", "#ffffff", "important");
+}
+
 function queueIvanaProductCardNormalization() {
     if (ivanaProductCardsQueued) {
         return;
@@ -331,6 +345,7 @@ function queueIvanaProductCardNormalization() {
         normalizeIvanaProductCards(document);
         normalizeIvanaProductDetailTitle(document);
         normalizeIvanaProductDetailCommercial(document);
+        normalizeIvanaProductDetailCta(document);
         initializeIvanaHomeCategoryCarouselMouseScroll();
         ivanaProductCardsQueued = false;
     });
