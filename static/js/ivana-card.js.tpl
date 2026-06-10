@@ -305,6 +305,13 @@ function normalizeIvanaProductDetailCommercial(root) {
         return;
     }
 
+    if (percent <= 0) {
+        discountContainer.style.display = "none";
+        discountContainer.classList.add("ivana-hidden-zero-discount");
+        discountContainer.setAttribute("aria-hidden", "true");
+        return;
+    }
+
     if (discountContainer.dataset.ivanaTransferRendered === "1") {
         return;
     }
@@ -318,6 +325,27 @@ function normalizeIvanaProductDetailCommercial(root) {
         '<span class="ivana-product-detail-transfer-badge">' + Math.round(percent) + '% OFF</span>'
     ].join("");
     discountContainer.dataset.ivanaTransferRendered = "1";
+}
+
+function normalizeIvanaProductDetailDiscountBadges(root) {
+    var scope = root || document;
+    var shell = scope.querySelector(".ivana-product-shell");
+
+    if (!shell) {
+        return;
+    }
+
+    shell.querySelectorAll(".ivana-product-price-badge, .product-discount-badge, .product-price-badge").forEach(function(badge) {
+        var text = (badge.textContent || "").replace(/\s+/g, " ").trim();
+        var match = text.match(/\d+(?:[.,]\d+)?/);
+        var discount = match ? parseFloat(match[0].replace(",", ".")) : null;
+
+        if (discount !== null && discount <= 0) {
+            badge.style.display = "none";
+            badge.classList.add("ivana-hidden-zero-discount");
+            badge.setAttribute("aria-hidden", "true");
+        }
+    });
 }
 
 function normalizeIvanaProductDetailCta(root) {
@@ -345,6 +373,7 @@ function queueIvanaProductCardNormalization() {
         normalizeIvanaProductCards(document);
         normalizeIvanaProductDetailTitle(document);
         normalizeIvanaProductDetailCommercial(document);
+        normalizeIvanaProductDetailDiscountBadges(document);
         normalizeIvanaProductDetailCta(document);
         initializeIvanaHomeCategoryCarouselMouseScroll();
         ivanaProductCardsQueued = false;

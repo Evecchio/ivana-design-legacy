@@ -1,4 +1,63 @@
-/* Product mobile responsive overrides. Versioned file name forces a fresh CDN asset. */
+/* Product responsive overrides. Versioned file name forces a fresh CDN asset. */
+body.template-product .ivana-product-shell .ivana-breadcrumbs,
+body.template-product .ivana-product-shell .breadcrumbs {
+  display: none !important;
+}
+
+body.template-product .ivana-product-gallery .slider-slide,
+body.template-product .ivana-product-gallery .js-product-slide-link,
+body.template-product .ivana-product-thumbs .product-thumb,
+body.template-product .ivana-product-thumbs .product-thumb-container {
+  background: #f7f5f3 !important;
+}
+
+body.template-product .ivana-product-gallery .product-slider-image,
+body.template-product .ivana-product-gallery .js-product-slide-img,
+body.template-product .ivana-product-gallery .slider-slide img,
+body.template-product .ivana-product-gallery .js-product-slide-link img,
+body.template-product .ivana-product-thumbs .product-thumb img,
+body.template-product .ivana-product-thumbs .js-product-thumb img {
+  background: #f7f5f3 !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  transform: none !important;
+}
+
+body.template-product .ivana-product-shell .text-accent,
+body.template-product .ivana-product-shell .ivana-product-discount-note,
+body.template-product .ivana-product-shell .ivana-product-payments-box,
+body.template-product .ivana-product-shell .ivana-product-payments-box .product-installments,
+body.template-product .ivana-product-shell .ivana-product-payments-box .js-installments-container,
+body.template-product .ivana-product-shell .ivana-product-payments-box .js-max-installments,
+body.template-product .ivana-product-shell .ivana-product-detail-transfer-caption,
+body.template-product .ivana-product-shell .ivana-product-detail-transfer-badge,
+body.template-product .ivana-product-shell .free-shipping-message,
+body.template-product .ivana-product-shell .free-shipping-message * {
+  color: #706b67 !important;
+}
+
+body.template-product .ivana-product-shell .js-price-display,
+body.template-product .ivana-product-shell [data-component="price.value"],
+body.template-product .ivana-product-shell .ivana-product-detail-transfer-price,
+body.template-product .ivana-product-shell .ivana-product-payments-box strong,
+body.template-product .ivana-product-shell .free-shipping-message .text-accent {
+  color: #171514 !important;
+}
+
+body.template-product .ivana-product-shell .ivana-product-price-badge,
+body.template-product .ivana-product-shell .ivana-product-price-badge *,
+body.template-product .ivana-product-shell .ivana-product-price-row .text-accent {
+  background: #151412 !important;
+  color: #ffffff !important;
+}
+
+body.template-product .ivana-product-shell .ivana-product-price-badge[data-discount="0"],
+body.template-product .ivana-product-shell .ivana-product-price-badge.ivana-hidden-zero-discount,
+body.template-product .ivana-product-shell .product-discount-badge.ivana-hidden-zero-discount,
+body.template-product .ivana-product-shell .product-price-badge.ivana-hidden-zero-discount {
+  display: none !important;
+}
+
 @media (max-width: 767px) {
   body.template-product .ivana-product-shell,
   body.template-product .ivana-product-related,
