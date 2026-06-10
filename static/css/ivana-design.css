@@ -6625,6 +6625,15 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-badge,
 .ivana-product-shell input.js-prod-submit-form.btn-primary,
 .ivana-product-shell .cart-button-container .btn-primary {
   background: #151412 !important;
+  background-color: #151412 !important;
+  border-color: #151412 !important;
+  color: #ffffff !important;
+}
+
+body.template-product .ivana-product-shell input[type="submit"].js-addtocart.js-prod-submit-form.btn.btn-primary.btn-big.btn-block,
+body.template-product .ivana-product-shell .cart-button-container input[type="submit"].btn-primary {
+  background: #151412 !important;
+  background-color: #151412 !important;
   border-color: #151412 !important;
   color: #ffffff !important;
 }
