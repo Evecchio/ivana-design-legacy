@@ -6604,3 +6604,47 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-badge,
     grid-template-columns: 1fr !important;
   }
 }
+
+/* Product detail hard overrides for legacy accent leftovers. */
+.ivana-product-shell .product-discount-overlay,
+.ivana-product-shell .product-discount-badge,
+.ivana-product-shell .product-price-badge {
+  display: none !important;
+}
+
+.ivana-product-shell .ivana-product-price-badge,
+.ivana-product-shell .ivana-product-price-badge.text-accent,
+.ivana-product-shell .ivana-product-price-badge *,
+.ivana-product-shell .ivana-product-price-row .text-accent {
+  background: #151412 !important;
+  color: #ffffff !important;
+  border: 0 !important;
+}
+
+.ivana-product-shell input.js-addtocart.js-prod-submit-form.btn.btn-primary,
+.ivana-product-shell input.js-prod-submit-form.btn-primary,
+.ivana-product-shell .cart-button-container .btn-primary {
+  background: #151412 !important;
+  border-color: #151412 !important;
+  color: #ffffff !important;
+}
+
+.ivana-product-shell .btn-variant.selected,
+.ivana-product-shell .btn-variant.selected:hover,
+.ivana-product-shell .btn-variant.selected .btn-variant-content,
+.ivana-product-shell .btn-variant.selected:hover .btn-variant-content {
+  background: #151412 !important;
+  border-color: #151412 !important;
+  color: #ffffff !important;
+}
+
+.ivana-product-shell .btn-variant:not(.selected),
+.ivana-product-shell .btn-variant:not(.selected) .btn-variant-content {
+  background: #ffffff !important;
+  color: #211f1d !important;
+}
+
+.ivana-product-shell .ivana-product-support-icon {
+  background: #f1eeeb !important;
+  color: #817870 !important;
+}
