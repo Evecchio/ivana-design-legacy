@@ -5,8 +5,6 @@
 {% set slide_item_class = slide_item ? 'js-item-slide swiper-slide ' : '' %}
 {% set transfer_discount_percentage = 20 %}
 {% set transfer_price = product.price * (100 - transfer_discount_percentage) / 100 %}
-{% set savings_reference_price = has_real_discount ? product.compare_at_price : product.price %}
-{% set max_savings = savings_reference_price - transfer_price %}
 
 {# Item image slider logic #}
 {% set show_image_slider = 
@@ -29,13 +27,6 @@
 {% set information_content %}
     <div class="ivana-card-content-stack">
     
-    {# 1. BADGE DE AHORRO (PRIMERO) #}
-    {% if product.display_price and max_savings > 0 %}
-        <div class="ivana-card-savings-bar">
-            Ahorra hasta {{ max_savings | money }}
-        </div>
-    {% endif %}
-
     {# 2. TÍTULO DEL PRODUCTO (SEGUNDO) #}
     <div class="ivana-card-title-container">
         <h3 class="ivana-card-title">{{ product.name }}</h3>
@@ -71,14 +62,19 @@
     {# 5. Transferencia #}
     {% if product.display_price %}
         <div class="ivana-card-transfer-container">
-            <div class="ivana-card-transfer-row">
-                <span class="ivana-card-transfer-plus">+</span>
-                <span class="ivana-card-transfer-badge">{{ transfer_discount_percentage }}% OFF</span>
-                <span class="ivana-card-transfer-equals">=</span>
+            <span class="ivana-card-transfer-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                    <rect x="3" y="6" width="18" height="12" rx="1.8"></rect>
+                    <path d="M3 10h18"></path>
+                    <path d="M7 15h3"></path>
+                    <path d="M14 15h3"></path>
+                </svg>
+            </span>
+            <span class="ivana-card-transfer-copy">
+                <span class="ivana-card-transfer-caption">Transferencia o deposito</span>
                 <span class="ivana-card-transfer-price">{{ transfer_price | money }}</span>
-            </div>
-
-            <span class="ivana-card-transfer-caption">Con transferencia o deposito</span>
+            </span>
+            <span class="ivana-card-transfer-badge">{{ transfer_discount_percentage }}% OFF</span>
         </div>
     {% endif %}
 
@@ -105,7 +101,7 @@
         image_lazy: true,
         image_lazy_js: true,
         product_item_classes: {
-            item: 'ivana-card js-product-container js-item-product ' ~ slide_item_class,
+            item: 'ivana-card ' ~ (has_real_discount ? 'ivana-has-discount ' : 'ivana-no-discount ') ~ 'js-product-container js-item-product ' ~ slide_item_class,
             information: 'ivana-card-info-container d-flex flex-column',
             name: 'hidden', 
             price: 'hidden',
