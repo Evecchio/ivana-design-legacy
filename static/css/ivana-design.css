@@ -6680,3 +6680,109 @@ body.template-product .products-section-prev-container.swiper-button-outside {
 body.template-product .products-section-next-container.swiper-button-outside {
   right: 8px !important;
 }
+
+/* Product detail mobile alignment pass. */
+@media (max-width: 767px) {
+  body.template-product .ivana-product-shell,
+  body.template-product .ivana-product-related,
+  body.template-product #complementary-products {
+    overflow-x: clip !important;
+  }
+
+  body.template-product .ivana-product-shell .container,
+  body.template-product .ivana-product-related .container,
+  body.template-product #complementary-products .container {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: calc(100vw - 32px) !important;
+    width: calc(100vw - 32px) !important;
+  }
+
+  body.template-product .ivana-product-shell .product-columns,
+  body.template-product .ivana-product-shell .product-images,
+  body.template-product .ivana-product-shell .product-info {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  body.template-product .ivana-product-title,
+  body.template-product .ivana-product-shell .js-product-name {
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  body.template-product .ivana-product-shell .ivana-product-price-row {
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  body.template-product .ivana-product-shell .ivana-product-price-badge {
+    flex: 0 0 auto !important;
+  }
+
+  body.template-product .ivana-product-shell .free-shipping-message {
+    align-items: start !important;
+    display: grid !important;
+    gap: 6px !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  body.template-product .ivana-product-shell .free-shipping-message * {
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+
+  body.template-product #complementary-products .products-section-slider-container {
+    overflow: hidden !important;
+  }
+
+  body.template-product #complementary-products .products-section-slider-wrapper {
+    align-items: stretch !important;
+  }
+
+  body.template-product #complementary-products .swiper-slide,
+  body.template-product #complementary-products .js-item-slide {
+    max-width: min(300px, calc(100vw - 64px)) !important;
+    min-width: min(300px, calc(100vw - 64px)) !important;
+    width: min(300px, calc(100vw - 64px)) !important;
+  }
+
+  body.template-product #complementary-products .ivana-card {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  body.template-product #complementary-products .ivana-card .ivana-card-content-stack {
+    gap: 12px !important;
+    padding: 18px 20px 20px !important;
+  }
+
+  body.template-product #complementary-products .ivana-card .ivana-card-title {
+    font-size: 0.9rem !important;
+    line-height: 1.28 !important;
+  }
+
+  body.template-product #complementary-products .ivana-card .ivana-card-price-row {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  body.template-product #complementary-products .ivana-card .ivana-card-price-main.js-price-display {
+    font-size: 1.45rem !important;
+  }
+
+  body.template-product #complementary-products .ivana-card .ivana-card-transfer-container {
+    grid-template-columns: 28px minmax(0, 1fr) auto !important;
+    min-height: 70px !important;
+  }
+
+  body.template-product #complementary-products .ivana-card .ivana-card-transfer-copy {
+    min-width: 0 !important;
+  }
+
+  body.template-product #complementary-products .ivana-card .ivana-card-transfer-caption {
+    white-space: normal !important;
+  }
+}
