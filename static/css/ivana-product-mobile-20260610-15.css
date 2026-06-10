@@ -20,6 +20,13 @@ body.template-product .ivana-product-thumbs .js-product-thumb img {
   background: #f7f5f3 !important;
   object-fit: contain !important;
   object-position: center center !important;
+}
+
+body.template-product .ivana-product-gallery .product-slider-image,
+body.template-product .ivana-product-gallery .js-product-slide-img {
+  left: 0 !important;
+  right: auto !important;
+  -webkit-transform: none !important;
   transform: none !important;
 }
 
@@ -40,6 +47,8 @@ body.template-product .ivana-product-shell .js-price-display,
 body.template-product .ivana-product-shell [data-component="price.value"],
 body.template-product .ivana-product-shell .ivana-product-detail-transfer-price,
 body.template-product .ivana-product-shell .ivana-product-payments-box strong,
+body.template-product .ivana-product-shell .ivana-product-payments-box .js-installment-price,
+body.template-product .ivana-product-shell .ivana-product-payments-box .product-installment-value,
 body.template-product .ivana-product-shell .free-shipping-message .text-accent {
   color: #171514 !important;
 }
