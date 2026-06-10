@@ -348,6 +348,49 @@ function normalizeIvanaProductDetailDiscountBadges(root) {
     });
 }
 
+function normalizeIvanaProductDescription(root) {
+    var scope = root || document;
+    var copy = scope.querySelector(".ivana-product-description-copy");
+
+    if (!copy || copy.dataset.ivanaDescriptionFormatted === "1") {
+        return;
+    }
+
+    var currentList = null;
+
+    Array.prototype.slice.call(copy.children).forEach(function(node) {
+        var text = (node.textContent || "").replace(/\s+/g, " ").trim();
+
+        if (!text) {
+            node.style.display = "none";
+            currentList = null;
+            return;
+        }
+
+        if (node.tagName === "P" && /^[-–]\s*\S+/.test(text)) {
+            if (!currentList) {
+                currentList = document.createElement("ul");
+                currentList.className = "ivana-product-description-generated-list";
+                copy.insertBefore(currentList, node);
+            }
+
+            var item = document.createElement("li");
+            item.textContent = text.replace(/^[-–]\s*/, "");
+            currentList.appendChild(item);
+            node.parentNode.removeChild(node);
+            return;
+        }
+
+        currentList = null;
+
+        if (node.tagName === "P" && /^[A-ZÁÉÍÓÚÜÑ0-9\s]+:?$/.test(text) && text.length <= 34) {
+            node.classList.add("ivana-product-description-section-label");
+        }
+    });
+
+    copy.dataset.ivanaDescriptionFormatted = "1";
+}
+
 function normalizeIvanaProductDetailCta(root) {
     var scope = root || document;
     var button = scope.querySelector(".ivana-product-shell .js-prod-submit-form");
@@ -374,6 +417,7 @@ function queueIvanaProductCardNormalization() {
         normalizeIvanaProductDetailTitle(document);
         normalizeIvanaProductDetailCommercial(document);
         normalizeIvanaProductDetailDiscountBadges(document);
+        normalizeIvanaProductDescription(document);
         normalizeIvanaProductDetailCta(document);
         initializeIvanaHomeCategoryCarouselMouseScroll();
         ivanaProductCardsQueued = false;

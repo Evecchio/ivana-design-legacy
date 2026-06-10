@@ -67,6 +67,106 @@ body.template-product .ivana-product-shell .product-price-badge.ivana-hidden-zer
   display: none !important;
 }
 
+body.template-product .ivana-product-description-card {
+  background: #fbfaf9 !important;
+  border: 1px solid #ebe6e2 !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  margin-top: 40px !important;
+  padding: clamp(22px, 3vw, 32px) !important;
+}
+
+body.template-product .ivana-product-description-intro {
+  margin-bottom: 22px !important;
+}
+
+body.template-product .ivana-product-description-intro .ivana-kicker {
+  display: none !important;
+}
+
+body.template-product .ivana-product-description-title {
+  color: #171514 !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1.25 !important;
+  margin: 0 0 14px !important;
+  text-align: left !important;
+  text-transform: none !important;
+}
+
+body.template-product .ivana-product-description-summary,
+body.template-product .ivana-product-description-copy,
+body.template-product .ivana-product-description-copy p,
+body.template-product .ivana-product-description-copy li,
+body.template-product .ivana-product-description-aside p {
+  color: #4f4a46 !important;
+  font-size: 15px !important;
+  line-height: 1.72 !important;
+}
+
+body.template-product .ivana-product-description-layout {
+  align-items: start !important;
+  display: grid !important;
+  gap: clamp(24px, 4vw, 54px) !important;
+  grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr) !important;
+}
+
+body.template-product .ivana-product-description-copy p {
+  margin: 0 0 14px !important;
+}
+
+body.template-product .ivana-product-description-copy p:empty {
+  display: none !important;
+}
+
+body.template-product .ivana-product-description-copy strong,
+body.template-product .ivana-product-description-section-label {
+  color: #211f1d !important;
+  font-weight: 600 !important;
+}
+
+body.template-product .ivana-product-description-section-label {
+  font-size: 13px !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1.45 !important;
+  margin: 22px 0 10px !important;
+  text-transform: uppercase !important;
+}
+
+body.template-product .ivana-product-description-copy ul,
+body.template-product .ivana-product-description-generated-list {
+  margin: 0 0 18px !important;
+  padding-left: 18px !important;
+}
+
+body.template-product .ivana-product-description-copy li,
+body.template-product .ivana-product-description-generated-list li {
+  margin: 0 0 8px !important;
+}
+
+body.template-product .ivana-product-description-aside {
+  display: grid !important;
+  gap: 14px !important;
+}
+
+body.template-product .ivana-product-detail-note {
+  background: #ffffff !important;
+  border: 1px solid #ebe6e2 !important;
+  border-radius: 8px !important;
+  padding: 18px !important;
+}
+
+body.template-product .ivana-product-detail-note-title {
+  color: #171514 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1.35 !important;
+  margin: 0 0 8px !important;
+  text-transform: none !important;
+}
+
 @media (max-width: 767px) {
   body.template-product .ivana-product-shell,
   body.template-product .ivana-product-related,
@@ -372,5 +472,19 @@ body.template-product .ivana-product-shell .product-price-badge.ivana-hidden-zer
 
   body.template-product #complementary-products .ivana-card .ivana-card-transfer-caption {
     white-space: normal !important;
+  }
+
+  body.template-product .ivana-product-description-card {
+    margin-top: 28px !important;
+    padding: 20px 18px !important;
+  }
+
+  body.template-product .ivana-product-description-layout {
+    gap: 22px !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  body.template-product .ivana-product-description-title {
+    font-size: 20px !important;
   }
 }

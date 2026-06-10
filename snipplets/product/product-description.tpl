@@ -3,7 +3,6 @@
 
 	{% if product.description is not empty %}
 		<div class="ivana-product-description-intro mb-4">
-			<p class="ivana-kicker mb-2">{{ "Detalles del producto" | translate }}</p>
 			<h2 class="ivana-product-description-title mb-2">{{ "Descripcion" | translate }}</h2>
 			<p class="ivana-product-description-summary mb-0">Materiales, calce y recomendaciones para decidir la compra con mas claridad.</p>
 		</div>
