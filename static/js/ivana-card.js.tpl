@@ -320,9 +320,11 @@ function normalizeIvanaProductDetailCommercial(root) {
         '<span class="ivana-product-detail-transfer-icon" aria-hidden="true"></span>',
         '<span class="ivana-product-detail-transfer-copy">',
             '<span class="ivana-product-detail-transfer-caption">Transferencia o deposito</span>',
-            '<span class="ivana-product-detail-transfer-price">' + formatIvanaMoneyARS(price * (100 - percent) / 100) + '</span>',
-        '</span>',
-        '<span class="ivana-product-detail-transfer-badge">' + Math.round(percent) + '% OFF</span>'
+            '<span class="ivana-product-detail-transfer-row">',
+                '<span class="ivana-product-detail-transfer-price">' + formatIvanaMoneyARS(price * (100 - percent) / 100) + '</span>',
+                '<span class="ivana-product-detail-transfer-badge">' + Math.round(percent) + '% OFF</span>',
+            '</span>',
+        '</span>'
     ].join("");
     discountContainer.dataset.ivanaTransferRendered = "1";
 }

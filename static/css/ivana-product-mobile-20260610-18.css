@@ -67,6 +67,30 @@ body.template-product .ivana-product-shell .product-price-badge.ivana-hidden-zer
   display: none !important;
 }
 
+body.template-product .ivana-product-payments-box .js-product-discount-container {
+  grid-template-columns: 34px minmax(0, 1fr) !important;
+}
+
+body.template-product .ivana-product-detail-transfer-row {
+  align-items: center !important;
+  display: inline-flex !important;
+  gap: 11px !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  vertical-align: middle !important;
+}
+
+body.template-product .ivana-product-detail-transfer-badge {
+  align-items: center !important;
+  align-self: center !important;
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  transform: translateY(1px) !important;
+  white-space: nowrap !important;
+}
+
 body.template-product .ivana-product-description-card {
   background: #fbfaf9 !important;
   border: 1px solid #ebe6e2 !important;
@@ -217,7 +241,7 @@ body.template-product .ivana-product-detail-note-title {
   body.template-product .ivana-product-payments-box .js-product-discount-container {
     align-items: center !important;
     column-gap: 12px !important;
-    grid-template-columns: 28px minmax(0, 1fr) minmax(58px, auto) !important;
+    grid-template-columns: 28px minmax(0, 1fr) !important;
     min-width: 0 !important;
     padding: 18px 16px !important;
   }
@@ -240,9 +264,9 @@ body.template-product .ivana-product-detail-note-title {
   body.template-product .ivana-product-detail-transfer-badge {
     align-self: center !important;
     display: inline-flex !important;
-    justify-content: flex-end !important;
+    justify-content: center !important;
     line-height: 1 !important;
-    min-width: 58px !important;
+    min-width: 0 !important;
     text-align: right !important;
     white-space: nowrap !important;
     word-break: keep-all !important;
