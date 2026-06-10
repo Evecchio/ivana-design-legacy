@@ -1,4 +1,4 @@
-/* Emergency product mobile overrides. File name is versioned to force a CDN miss. */
+/* Product mobile emergency overrides. Versioned file name forces a fresh CDN asset. */
 @media (max-width: 767px) {
   body.template-product .ivana-product-shell,
   body.template-product .ivana-product-related,
@@ -32,23 +32,69 @@
 
   body.template-product .ivana-product-shell .ivana-product-price-row {
     align-items: center !important;
-    gap: 10px !important;
+    column-gap: 12px !important;
+    row-gap: 8px !important;
   }
 
   body.template-product .ivana-product-shell .ivana-product-price-badge {
     flex: 0 0 auto !important;
+    white-space: nowrap !important;
+  }
+
+  body.template-product .ivana-product-payments-box {
+    margin-top: 18px !important;
+    max-width: 100% !important;
+  }
+
+  body.template-product .ivana-product-payments-box .js-product-discount-container {
+    align-items: center !important;
+    column-gap: 12px !important;
+    grid-template-columns: 28px minmax(0, 1fr) minmax(58px, auto) !important;
+    min-width: 0 !important;
+    padding: 18px 16px !important;
+  }
+
+  body.template-product .ivana-product-detail-transfer-copy {
+    min-width: 0 !important;
+  }
+
+  body.template-product .ivana-product-detail-transfer-caption {
+    line-height: 1.22 !important;
+    white-space: normal !important;
+  }
+
+  body.template-product .ivana-product-detail-transfer-price {
+    font-size: clamp(28px, 8vw, 36px) !important;
+    line-height: 1.05 !important;
+    white-space: nowrap !important;
+  }
+
+  body.template-product .ivana-product-detail-transfer-badge {
+    align-self: center !important;
+    display: inline-flex !important;
+    justify-content: flex-end !important;
+    line-height: 1 !important;
+    min-width: 58px !important;
+    text-align: right !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
   }
 
   body.template-product .ivana-product-shell .free-shipping-message {
-    align-items: start !important;
-    display: grid !important;
-    gap: 6px !important;
-    grid-template-columns: 1fr !important;
+    display: none !important;
   }
 
-  body.template-product .ivana-product-shell .free-shipping-message * {
-    max-width: 100% !important;
-    white-space: normal !important;
+  body.template-product .ivana-product-fulfillment {
+    display: none !important;
+  }
+
+  body.template-product .ivana-product-shell .ivana-product-purchase-form .grid.grid-auto-1 {
+    margin-bottom: 30px !important;
+  }
+
+  body.template-product .btn-whatsapp {
+    bottom: 86px !important;
+    right: 18px !important;
   }
 
   body.template-product #complementary-products .products-section-slider-container {
