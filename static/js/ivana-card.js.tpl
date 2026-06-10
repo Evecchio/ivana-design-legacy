@@ -223,6 +223,103 @@ function initializeIvanaHomeCategoryCarouselMouseScroll() {
     }
 }
 
+function formatIvanaEditorialTitle(text) {
+    var smallWords = {
+        "a": true,
+        "al": true,
+        "con": true,
+        "de": true,
+        "del": true,
+        "e": true,
+        "el": true,
+        "en": true,
+        "la": true,
+        "las": true,
+        "los": true,
+        "o": true,
+        "para": true,
+        "por": true,
+        "sin": true,
+        "un": true,
+        "una": true,
+        "y": true
+    };
+
+    return String(text || "")
+        .replace(/\s+/g, " ")
+        .trim()
+        .replace(/\bc\s*\/\s*/gi, "con ")
+        .toLowerCase()
+        .split(" ")
+        .map(function(word, index) {
+            if (!word) {
+                return word;
+            }
+
+            if (index > 0 && smallWords[word]) {
+                return word;
+            }
+
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        })
+        .join(" ");
+}
+
+function normalizeIvanaProductDetailTitle(root) {
+    var scope = root || document;
+    var title = scope.querySelector(".ivana-product-shell .ivana-product-title.js-product-name");
+
+    if (!title || title.dataset.ivanaEditorialTitle === "1") {
+        return;
+    }
+
+    title.textContent = formatIvanaEditorialTitle(title.textContent);
+    title.dataset.ivanaEditorialTitle = "1";
+}
+
+function formatIvanaMoneyARS(value) {
+    var rounded = Math.round(value || 0).toString();
+    return "$" + rounded.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+function normalizeIvanaProductDetailCommercial(root) {
+    var scope = root || document;
+    var shell = scope.querySelector(".ivana-product-shell");
+
+    if (!shell) {
+        return;
+    }
+
+    var priceDisplay = shell.querySelector("#price_display, .js-price-display");
+    var discountContainer = shell.querySelector(".js-product-discount-container");
+
+    if (!priceDisplay || !discountContainer) {
+        return;
+    }
+
+    var price = parseIvanaMoneyValue(priceDisplay.textContent);
+    var percentMatch = (discountContainer.textContent || "").match(/\d+(?:[.,]\d+)?/);
+    var percent = percentMatch ? parseFloat(percentMatch[0].replace(",", ".")) : null;
+
+    if (price === null || percent === null) {
+        return;
+    }
+
+    if (discountContainer.dataset.ivanaTransferRendered === "1") {
+        return;
+    }
+
+    discountContainer.innerHTML = [
+        '<span class="ivana-product-detail-transfer-icon" aria-hidden="true"></span>',
+        '<span class="ivana-product-detail-transfer-copy">',
+            '<span class="ivana-product-detail-transfer-caption">Transferencia o deposito</span>',
+            '<span class="ivana-product-detail-transfer-price">' + formatIvanaMoneyARS(price * (100 - percent) / 100) + '</span>',
+        '</span>',
+        '<span class="ivana-product-detail-transfer-badge">' + Math.round(percent) + '% OFF</span>'
+    ].join("");
+    discountContainer.dataset.ivanaTransferRendered = "1";
+}
+
 function queueIvanaProductCardNormalization() {
     if (ivanaProductCardsQueued) {
         return;
@@ -232,6 +329,8 @@ function queueIvanaProductCardNormalization() {
 
     window.requestAnimationFrame(function() {
         normalizeIvanaProductCards(document);
+        normalizeIvanaProductDetailTitle(document);
+        normalizeIvanaProductDetailCommercial(document);
         initializeIvanaHomeCategoryCarouselMouseScroll();
         ivanaProductCardsQueued = false;
     });
