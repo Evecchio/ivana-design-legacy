@@ -3570,6 +3570,12 @@ select:focus {
   text-align: left !important;
 }
 
+.ivana-search-shell .ivana-category-title,
+.ivana-search-shell .ivana-category-title span {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 .ivana-category-title-row {
   position: relative;
 }
