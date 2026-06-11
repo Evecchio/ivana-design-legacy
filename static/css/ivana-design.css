@@ -1297,6 +1297,13 @@
 }
 
 @media (max-width: 767px) {
+  .ivana-category-layout.ivana-category-layout-filters {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .ivana-category-layout .ivana-category-sidebar {
+    display: none !important;
+  }
 
   .ivana-category-products,
   .ivana-category-filter-card {

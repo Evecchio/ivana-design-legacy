@@ -58,7 +58,7 @@
 			{% include 'snipplets/grid/filters-modals.tpl' %}
 			<div class="ivana-category-layout{% if products and has_filters_available %} ivana-category-layout-filters{% endif %}">
 				{% if products and has_filters_available %}
-					<aside class="ivana-category-sidebar">
+					<aside class="ivana-category-sidebar d-none d-md-block">
 						<div class="ivana-category-filter-card">
 							{% include 'snipplets/grid/filters-controls.tpl' %}
 						</div>
