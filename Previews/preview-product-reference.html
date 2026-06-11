@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preview producto</title>
+  <style>
+    :root {
+      --page: #f5f1ef;
+      --surface: #fbfaf9;
+      --surface-soft: #f1eeeb;
+      --ink: #171514;
+      --muted: #706b67;
+      --line: #ebe6e2;
+      --black: #151412;
+      --accent: #4f4a46;
+      --success: #148447;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: Inter, Montserrat, Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .topbar {
+      min-height: 36px;
+      display: grid;
+      place-items: center;
+      padding: 8px 18px;
+      background: #141312;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 160px minmax(240px, 620px) 160px;
+      align-items: center;
+      gap: 28px;
+      padding: 28px clamp(24px, 5vw, 72px);
+      background: #fbf9f8;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      color: #151412;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+    }
+
+    .brand-main {
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 300;
+    }
+
+    .brand-sub {
+      margin-top: 5px;
+      padding-left: 45px;
+      font-size: 9px;
+      letter-spacing: 0.38em;
+    }
+
+    .search {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f3f0ee;
+      color: #8a827c;
+      padding: 0 16px 0 22px;
+    }
+
+    .icons {
+      justify-self: end;
+      display: flex;
+      gap: 18px;
+    }
+
+    .icon-button {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .page {
+      width: min(1320px, calc(100vw - 64px));
+      margin: 36px auto 72px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(390px, 0.96fr);
+      gap: clamp(28px, 4vw, 56px);
+      align-items: start;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 76px minmax(0, 1fr);
+      gap: 16px;
+      position: sticky;
+      top: 24px;
+    }
+
+    .thumbs {
+      display: grid;
+      align-content: start;
+      gap: 12px;
+    }
+
+    .thumb {
+      width: 100%;
+      aspect-ratio: 1 / 1.24;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #f7f5f3;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .thumb.active {
+      border-color: var(--black);
+      box-shadow: 0 0 0 1px var(--black);
+    }
+
+    .thumb img,
+    .main-photo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .main-photo {
+      margin: 0;
+      overflow: hidden;
+      aspect-ratio: 0.92 / 1;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f7f5f3;
+    }
+
+    .main-photo img {
+      object-position: center center;
+    }
+
+    .purchase {
+      display: grid;
+      gap: 18px;
+    }
+
+    .summary {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      padding: clamp(24px, 3vw, 36px);
+    }
+
+    .product-title {
+      margin: 0;
+      max-width: 10em;
+      color: #252220;
+      font-size: clamp(31px, 3.5vw, 48px);
+      font-weight: 400;
+      line-height: 1.08;
+    }
+
+    .price-area {
+      display: grid;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .compare-price {
+      color: #aaa39f;
+      font-size: 18px;
+      text-decoration: line-through;
+    }
+
+    .price-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .price {
+      color: var(--ink);
+      font-size: clamp(34px, 4vw, 52px);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0.08em;
+    }
+
+    .discount {
+      border-radius: 4px;
+      background: var(--black);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .discount[data-discount="0"],
+    .discount.is-hidden {
+      display: none;
+    }
+
+    .installments {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .installments strong {
+      color: var(--ink);
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .transfer-box {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 14px;
+      margin-top: 18px;
+      border-radius: 8px;
+      background: var(--surface-soft);
+      padding: 18px;
+    }
+
+    .transfer-icon {
+      color: #817870;
+    }
+
+    .transfer-caption {
+      display: block;
+      color: #5e5854;
+      font-size: 14px;
+      line-height: 1.25;
+    }
+
+    .transfer-price {
+      display: block;
+      margin-top: 4px;
+      color: var(--ink);
+      font-size: clamp(25px, 3vw, 32px);
+      line-height: 1;
+    }
+
+    .transfer-badge {
+      color: #57514d;
+      font-size: 12px;
+      line-height: 1;
+      text-align: right;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .form-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      padding: clamp(20px, 2.5vw, 28px);
+    }
+
+    .option-group {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .option-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      color: #3a3531;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .chips {
+      display: grid;
+      gap: 10px;
+    }
+
+    .chip {
+      min-height: 48px;
+      border: 1px solid #d8d0ca;
+      border-radius: 4px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .chip.selected {
+      border-color: var(--black);
+      background: var(--black);
+      color: #fff;
+    }
+
+    .buy-row {
+      display: grid;
+      grid-template-columns: 112px minmax(0, 1fr);
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .quantity {
+      min-height: 52px;
+      display: grid;
+      grid-template-columns: 40px 1fr 40px;
+      align-items: center;
+      border: 1px solid #d8d0ca;
+      border-radius: 4px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .qty-btn {
+      height: 100%;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      font-size: 22px;
+    }
+
+    .quantity span {
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .add {
+      min-height: 52px;
+      border: 0;
+      border-radius: 4px;
+      background: var(--black);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .status {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .support-card,
+    .shipping-card,
+    .description-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .support-card {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+    }
+
+    .support-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--surface-soft);
+      color: #817870;
+    }
+
+    .support-card strong,
+    .shipping-card strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .support-card span,
+    .shipping-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .shipping-card {
+      padding: 18px;
+    }
+
+    .shipping-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .zip-link {
+      color: var(--ink);
+      font-size: 13px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      white-space: nowrap;
+    }
+
+    .shipping-form {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .shipping-form input {
+      min-width: 0;
+      height: 44px;
+      border: 1px solid #d8d0ca;
+      border-radius: 4px;
+      background: #fff;
+      padding: 0 12px;
+    }
+
+    .shipping-form button {
+      height: 44px;
+      border: 0;
+      border-radius: 4px;
+      background: var(--black);
+      color: #fff;
+      padding: 0 14px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .shipping-links {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .description-card {
+      margin-top: 40px;
+      padding: clamp(22px, 3vw, 32px);
+    }
+
+    .description-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(24px, 4vw, 54px);
+    }
+
+    .description-card h2 {
+      margin: 0 0 14px;
+      font-size: 20px;
+      letter-spacing: 0.08em;
+    }
+
+    .description-card p,
+    .description-card li {
+      color: #4f4a46;
+      font-size: 15px;
+      line-height: 1.72;
+    }
+
+    .description-card ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .sticky-mobile-bar {
+      display: none;
+    }
+
+    @media (max-width: 980px) {
+      .header {
+        grid-template-columns: 44px 1fr 44px;
+        gap: 14px;
+        padding: 22px 16px 18px;
+      }
+
+      .brand {
+        justify-self: center;
+      }
+
+      .brand-main {
+        font-size: 24px;
+      }
+
+      .brand-sub {
+        padding-left: 38px;
+      }
+
+      .search {
+        grid-column: 1 / -1;
+        width: min(100%, 420px);
+        justify-self: center;
+      }
+
+      .icons {
+        justify-self: end;
+      }
+
+      .icons .icon-button:first-child {
+        display: none;
+      }
+
+      .page {
+        width: calc(100vw - 32px);
+        margin-top: 18px;
+        margin-bottom: 48px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .gallery {
+        position: static;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .main-photo {
+        aspect-ratio: 1 / 1.04;
+        grid-row: 1;
+      }
+
+      .thumbs {
+        grid-row: 2;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .summary,
+      .form-card,
+      .description-card {
+        padding: 20px 18px;
+      }
+
+      .product-title {
+        max-width: 100%;
+        font-size: 30px;
+      }
+
+      .price {
+        font-size: 34px;
+      }
+
+      .transfer-box {
+        grid-template-columns: 30px minmax(0, 1fr) auto;
+        padding: 16px 14px;
+      }
+
+      .buy-row {
+        grid-template-columns: 1fr;
+      }
+
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .description-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .topbar {
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        line-height: 1.45;
+      }
+
+      .header {
+        padding-top: 18px;
+      }
+
+      .summary {
+        margin-top: 4px;
+      }
+
+      .product-title {
+        font-size: 28px;
+      }
+
+      .price-row {
+        gap: 10px;
+      }
+
+      .price {
+        font-size: 32px;
+        letter-spacing: 0.06em;
+      }
+
+      .discount {
+        padding: 10px 14px;
+      }
+
+      .transfer-box {
+        grid-template-columns: 28px minmax(0, 1fr) minmax(54px, auto);
+        gap: 10px;
+      }
+
+      .transfer-price {
+        font-size: 28px;
+      }
+
+      .transfer-badge {
+        font-size: 11px;
+      }
+
+      .shipping-form {
+        grid-template-columns: 1fr;
+      }
+
+      .shipping-form button {
+        width: 100%;
+      }
+
+      .sticky-mobile-bar {
+        position: sticky;
+        bottom: 0;
+        z-index: 20;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+        align-items: center;
+        margin: 32px -16px 0;
+        padding: 12px 16px;
+        border-top: 1px solid var(--line);
+        background: rgba(251, 250, 249, 0.96);
+        backdrop-filter: blur(8px);
+      }
+
+      .sticky-mobile-bar strong {
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      .sticky-mobile-bar button {
+        min-height: 44px;
+        border: 0;
+        border-radius: 4px;
+        background: var(--black);
+        color: #fff;
+        padding: 0 16px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Envios a todo el pais | 3 cuotas sin interes | cambios faciles</div>
+
+  <header class="header">
+    <button class="icon-button" aria-label="Menu">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+    </button>
+    <div class="brand" aria-label="Ivana Design">
+      <div class="brand-main">Ivana</div>
+      <div class="brand-sub">Design</div>
+    </div>
+    <div class="icons">
+      <button class="icon-button" aria-label="Cuenta">
+        <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21a8 8 0 0 0-16 0"></path><circle cx="12" cy="8" r="4"></circle></svg>
+      </button>
+      <button class="icon-button" aria-label="Carrito">
+        <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8h12l-1 13H7L6 8Z"></path><path d="M9 8a3 3 0 0 1 6 0"></path></svg>
+      </button>
+    </div>
+    <div class="search">
+      <span>Que estas buscando?</span>
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4 4"></path></svg>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="product-grid" aria-label="Producto">
+      <div class="gallery">
+        <div class="thumbs" aria-label="Imagenes del producto">
+          <button class="thumb active"><img src="https://dcdn-us.mitiendanube.com/stores/872/079/products/a92bb9f9-1b31-42a7-b7d1-c1f4f452050c-09ae1885f284cd5f5617724849821020-1024-1024.webp" alt=""></button>
+          <button class="thumb"><img src="https://dcdn-us.mitiendanube.com/stores/872/079/products/86e5b5a3-50aa-45fc-bef6-34c8f9982cb5-7ee03e80746d0c359c17803325043854-1024-1024.webp" alt=""></button>
+          <button class="thumb"><img src="https://dcdn-us.mitiendanube.com/stores/872/079/products/4cb5a451-3cc8-4b78-abc4-6622483f81f4-60ceee3c5a8ca1636c17722109562123-1024-1024.webp" alt=""></button>
+          <button class="thumb"><img src="https://dcdn-us.mitiendanube.com/stores/872/079/products/a92bb9f9-1b31-42a7-b7d1-c1f4f452050c-09ae1885f284cd5f5617724849821020-1024-1024.webp" alt=""></button>
+        </div>
+        <figure class="main-photo">
+          <img src="https://dcdn-us.mitiendanube.com/stores/872/079/products/a92bb9f9-1b31-42a7-b7d1-c1f4f452050c-09ae1885f284cd5f5617724849821020-1024-1024.webp" alt="Top con frunce en delantero terciopelo">
+        </figure>
+      </div>
+
+      <div class="purchase">
+        <section class="summary">
+          <h1 class="product-title">Top con Frunce en Delantero Terciopelo</h1>
+
+          <div class="price-area">
+            <span class="compare-price">$39.990</span>
+            <div class="price-row">
+              <span class="price">$23.990</span>
+              <span class="discount" data-discount="40">40% off</span>
+            </div>
+            <div class="installments">3 cuotas sin interes de <strong>$7.996,67</strong></div>
+          </div>
+
+          <div class="transfer-box">
+            <span class="transfer-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="6" width="18" height="12" rx="2"></rect><path d="M3 10h18M7 15h3M13 15h4"></path></svg>
+            </span>
+            <span>
+              <span class="transfer-caption">Transferencia o deposito</span>
+              <span class="transfer-price">$19.192</span>
+            </span>
+            <span class="transfer-badge">20% off</span>
+          </div>
+        </section>
+
+        <section class="form-card">
+          <div class="option-group">
+            <div class="option-head"><span>Color</span><span>Fondo negro c/estampa</span></div>
+            <div class="chips">
+              <button class="chip selected">Fondo negro c/estampa</button>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <div class="option-head"><span>Talle</span><span>Large</span></div>
+            <div class="chips">
+              <button class="chip selected">Large</button>
+              <button class="chip">Small</button>
+              <button class="chip">Extra small</button>
+            </div>
+          </div>
+
+          <div class="buy-row">
+            <div class="quantity" aria-label="Cantidad">
+              <button class="qty-btn">-</button>
+              <span>1</span>
+              <button class="qty-btn">+</button>
+            </div>
+            <button class="add">Agregar al carrito</button>
+          </div>
+          <div class="status">Ya agregaste este producto. <u>Ver carrito</u></div>
+        </section>
+
+        <section class="support-grid" aria-label="Beneficios">
+          <div class="support-card">
+            <span class="support-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path><path d="m9 12 2 2 4-5"></path></svg>
+            </span>
+            <span><strong>Compra protegida</strong><span>Tus datos cuidados durante toda la compra.</span></span>
+          </div>
+          <div class="support-card">
+            <span class="support-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h12a5 5 0 1 1 0 10H7"></path><path d="M7 11 3 7l4-4"></path></svg>
+            </span>
+            <span><strong>Cambios y devoluciones</strong><span>Si no te gusta, podes cambiarlo por otro o devolverlo.</span></span>
+          </div>
+        </section>
+
+        <section class="shipping-card">
+          <div class="shipping-head">
+            <strong>Entregas para el CP 1026</strong>
+            <a class="zip-link" href="#">Cambiar CP</a>
+          </div>
+          <p>Calcula opciones de envio y retiro sin que el bloque tape otros controles.</p>
+          <div class="shipping-form">
+            <input value="1026" aria-label="Codigo postal">
+            <button>Calcular</button>
+          </div>
+          <div class="shipping-links">No se mi codigo postal</div>
+        </section>
+      </div>
+    </section>
+
+    <section class="description-card">
+      <div class="description-layout">
+        <div>
+          <h2>Descripcion</h2>
+          <p>Materiales, calce y recomendaciones para decidir la compra con mas claridad.</p>
+          <p>Prenda deportiva de calidad premium, confeccionada con tela respirable, fresca y pensada para entrenar con comodidad.</p>
+        </div>
+        <div>
+          <h2>Cuidados</h2>
+          <ul>
+            <li>Lavar a mano.</li>
+            <li>No usar blanqueadores.</li>
+            <li>Secado delicado.</li>
+            <li>No planchar.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="sticky-mobile-bar" aria-label="Compra rapida">
+      <strong>$23.990</strong>
+      <button>Agregar</button>
+    </div>
+  </main>
+  <script>
+    const discount = new URLSearchParams(window.location.search).get("discount");
+    if (discount === "0") {
+      document.querySelectorAll(".discount").forEach((badge) => {
+        badge.dataset.discount = "0";
+        badge.textContent = "";
+      });
+    }
+  </script>
+</body>
+</html>

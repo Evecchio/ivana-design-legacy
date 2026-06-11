@@ -77,7 +77,7 @@ ivana-design-legacy/
 │   ├── translations.txt        # Textos traducibles (es/pt)
 │   ├── sections.txt            # Secciones configurables
 │   └── variants.txt            # Variantes del tema
-├── preview-redesign.html       # HTML standalone de preview del rediseño (no deployado)
+├── Previews/                   # HTML/CSS standalone de referencia visual (no deployado)
 ├── .github/
 │   └── workflows/
 │       └── deploy-ftp.yml      # CI/CD: deploy automático vía FTPS
@@ -171,8 +171,8 @@ No hay `npm install`, `webpack`, ni paso de compilación local. El flujo es:
 El workflow `.github/workflows/deploy-ftp.yml`:
 - Se usa con push a `main` para publicar en producciÃ³n
 - Instala `lftp` y hace mirror inverso del repo al servidor FTP
-- **Excluye**: `.git/`, `.github/`, `.claude/`, archivos `*.md`
-- **No sube**: `preview-redesign.html` (es excluido por la regla `*.md` no, pero tampoco es parte del tema funcional)
+- **Excluye**: `.git/`, `.github/`, `.claude/`, `.codex-remote-attachments/`, `.vscode/`, `docs/`, `Previews/`, `output/`, `screenshots/`, archivos `*.md` y otros artefactos locales
+- **No sube**: los previews standalone de `Previews/`, porque son referencia visual y no parte del theme funcional
 - Usa FTPS con SSL forzado (`ftp:ssl-force true`, `ftp:ssl-protect-data true`)
 
 ### Comandos git habituales
@@ -259,8 +259,8 @@ git push origin main
 ## Notas importantes
 
 1. **No hay linter ni tests locales** — validar cambios visualmente en el entorno de Tiendanube
-2. **El archivo `preview-redesign.html`** es un prototipo HTML standalone (no se deploya como parte del tema)
-3. **Los archivos `.md` no se despliegan** — el `deploy-ftp.yml` los excluye
+2. **La carpeta `Previews/`** contiene prototipos standalone y referencias visuales (no se deployan como parte del tema)
+3. **Los archivos `.md` y `docs/` no se despliegan** — el `deploy-ftp.yml` los excluye
 4. **Los secrets FTP** están configurados en GitHub Secrets del repo, no en el código
 5. **Tiendanube compila el SCSS** — no se necesita compilar localmente
 6. **La barra promo** usa `--brand-dark: #cc007a`, no el `--brand` principal

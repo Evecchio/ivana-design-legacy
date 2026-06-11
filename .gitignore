@@ -3,9 +3,15 @@ acceso-ftp.txt
 
 # Artefactos de herramientas locales
 .playwright-cli/
+.codex-remote-attachments/
 output/
 *.log
 solution.js
+
+# Capturas y reportes temporales de QA local
+screenshots/
+tmp/
+temp/
 
 # Configuración de editor (no va al servidor)
 .vscode/

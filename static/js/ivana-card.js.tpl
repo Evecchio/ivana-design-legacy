@@ -112,64 +112,7 @@ function normalizeIvanaProductCards(root) {
             priceContainer.parentNode.insertBefore(paymentDiscountContainer, priceContainer.nextSibling);
         }
 
-        var commercialAnchor = paymentDiscountContainer || installmentsAnchor || priceContainer;
 
-        // Ubicar badges de estado justo después del bloque comercial
-        var lowStockBadge = card.querySelector(".ivana-low-stock-badge");
-        if (lowStockBadge && commercialAnchor && commercialAnchor.parentNode) {
-            commercialAnchor.parentNode.insertBefore(lowStockBadge, commercialAnchor.nextSibling);
-        } else if (lowStockBadge && priceContainer && priceContainer.parentNode) {
-            priceContainer.parentNode.insertBefore(lowStockBadge, priceContainer.nextSibling);
-        }
-
-        var outOfStockBadge = card.querySelector(".ivana-out-of-stock-badge");
-        if (outOfStockBadge && commercialAnchor && commercialAnchor.parentNode) {
-            commercialAnchor.parentNode.insertBefore(outOfStockBadge, commercialAnchor.nextSibling);
-        } else if (outOfStockBadge && priceContainer && priceContainer.parentNode) {
-            priceContainer.parentNode.insertBefore(outOfStockBadge, priceContainer.nextSibling);
-        }
-
-        {# COMENTADO: No reposicionar el badge de ahorro.
-           El orden está definido en product-item.tpl:
-           1. Badge de ahorro
-           2. Título del producto
-           3. Precios
-           4. etc.
-        
-        // Create "Ahorras" savings badge — barra full-width ENTRE imagen e info
-        var existingBadge = card.querySelector(".ivana-savings-badge");
-        if (!hideComparePrice && !hideDiscount && comparePriceValue && currentPriceValue && comparePriceValue > currentPriceValue) {
-            var savings = comparePriceValue - currentPriceValue;
-            var priceText = (currentPrice.textContent || "").trim();
-            var currencySymbol = priceText.replace(/[\d.,\s]/g, "") || "$";
-            var usesDotThousands = /\d\.\d{3}/.test(priceText);
-            var usesCommaThousands = /\d,\d{3}/.test(priceText);
-            var savingsRound = Math.round(savings);
-            var savingsStr = savingsRound.toString();
-            if (usesDotThousands) {
-                savingsStr = savingsStr.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-            } else if (usesCommaThousands) {
-                savingsStr = savingsStr.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            }
-            var formattedSavings = currencySymbol + savingsStr;
-            if (!existingBadge) {
-                existingBadge = document.createElement("div");
-                existingBadge.className = "ivana-savings-badge";
-                // Icono de etiqueta SVG
-                var tagIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v20h20V12M12 2v20M12 2h10"/></svg>';
-                existingBadge.innerHTML = '<span class="ivana-savings-text"></span> ' + tagIcon;
-            }
-            existingBadge.querySelector(".ivana-savings-text").textContent = "Ahorr\u00e1s " + formattedSavings;
-            existingBadge.style.display = "";
-            // Insertar ENTRE la imagen y el contenedor de info
-            var infoContainer = card.querySelector(".ivana-card-info") || card.querySelector(".product-item-information") || card.querySelector(".information");
-            if (infoContainer && existingBadge.parentNode !== card) {
-                card.insertBefore(existingBadge, infoContainer);
-            }
-        } else if (existingBadge) {
-            existingBadge.style.display = "none";
-        }
-        #}
     });
 }
 

@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preview - Coleccion destacada +50%</title>
+  <style>
+    :root {
+      --ink: #171514;
+      --muted: #706b67;
+      --line: #ebe6e2;
+      --surface: #fbfaf9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f6f2ef;
+      color: var(--ink);
+      font-family: Montserrat, Arial, sans-serif;
+    }
+
+    .preview-shell {
+      min-height: 100vh;
+      padding: 24px 16px 48px;
+    }
+
+    .phone {
+      width: min(390px, 100%);
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 48px rgba(20, 16, 14, 0.08);
+      overflow: hidden;
+    }
+
+    .topbar {
+      background: #11100f;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      line-height: 1.45;
+      padding: 10px 18px;
+      text-align: center;
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 42px 1fr 42px;
+      align-items: center;
+      gap: 12px;
+      padding: 22px 18px 14px;
+      border-bottom: 1px solid #f0ece9;
+    }
+
+    .icon {
+      width: 26px;
+      height: 26px;
+      border: 1px solid transparent;
+      position: relative;
+    }
+
+    .icon.menu::before,
+    .icon.menu::after,
+    .icon.menu span {
+      content: "";
+      position: absolute;
+      left: 2px;
+      width: 22px;
+      height: 1px;
+      background: #171514;
+    }
+
+    .icon.menu::before {
+      top: 7px;
+    }
+
+    .icon.menu span {
+      top: 13px;
+    }
+
+    .icon.menu::after {
+      top: 19px;
+    }
+
+    .bag {
+      border: 1px solid #ded8d3;
+      border-radius: 50%;
+      justify-self: end;
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 18px;
+      letter-spacing: 0.36em;
+      font-weight: 400;
+    }
+
+    .logo small {
+      display: block;
+      margin-top: 3px;
+      font-size: 6px;
+      letter-spacing: 0.48em;
+    }
+
+    .search {
+      width: calc(100% - 64px);
+      margin: 12px auto 22px;
+      border: 1px solid #e7e1dd;
+      border-radius: 999px;
+      color: #9c9691;
+      font-size: 13px;
+      padding: 13px 20px;
+      text-align: left;
+    }
+
+    .section {
+      padding: 0 16px 28px;
+    }
+
+    .section-head {
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .section-title {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .divider {
+      width: 42px;
+      height: 1px;
+      margin: 9px auto 0;
+      background: var(--ink);
+      opacity: 0.25;
+    }
+
+    .category-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      overflow-x: auto;
+      padding: 0 4px 6px;
+      scrollbar-width: none;
+    }
+
+    .category-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .category {
+      flex: 0 0 140px;
+      min-width: 140px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .circle {
+      width: 112px;
+      height: 112px;
+      margin: 0 auto;
+      border: 1px solid #ebe6e2;
+      border-radius: 50%;
+      overflow: hidden;
+      padding: 2px;
+      background: #ffffff;
+    }
+
+    .circle-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .category:nth-child(1) .circle-inner {
+      background: radial-gradient(circle at 48% 34%, #f4d7c8 0 18%, transparent 19%), linear-gradient(135deg, #32362d, #8aa36b 48%, #f1efe9 49%);
+    }
+
+    .category:nth-child(2) .circle-inner {
+      background: linear-gradient(140deg, #f6f4ef 0 22%, #2b2b31 23% 44%, #a9b9d8 45% 64%, #ece5dd 65%);
+    }
+
+    .category:nth-child(3) .circle-inner {
+      background: linear-gradient(135deg, #f5f0ea 0 18%, #c9b1a5 19% 42%, #171514 43% 58%, #ece8e4 59%);
+    }
+
+    .category:nth-child(4) .circle-inner {
+      background: linear-gradient(135deg, #ece8e4, #88a36e 38%, #1f2522 39% 58%, #f5f2ef 59%);
+    }
+
+    .category-name {
+      display: block;
+      margin-top: 10px;
+      min-height: 2.6em;
+      color: #211f1d;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    .mock-products {
+      margin-top: 0;
+      padding: 25px 0 0;
+      border-top: 1px solid #f0ece9;
+    }
+
+    .mock-title {
+      margin: 0 0 14px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .card {
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .thumb {
+      aspect-ratio: 1 / 1.15;
+      border-radius: 6px;
+      background: #e6ded8;
+    }
+
+    .card p {
+      margin: 0 0 8px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      line-height: 1.35;
+    }
+
+    .price {
+      font-size: 18px;
+      letter-spacing: 0.14em;
+    }
+
+    @media (min-width: 768px) {
+      .phone {
+        width: min(860px, 100%);
+      }
+
+      .category {
+        flex-basis: 162px;
+        min-width: 162px;
+      }
+
+      .circle {
+        width: 130px;
+        height: 130px;
+      }
+
+      .category-name {
+        font-size: 11px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="preview-shell">
+    <div class="phone">
+      <div class="topbar">ENVIOS A TODO EL PAIS | 3 CUOTAS SIN INTERES</div>
+      <header class="header">
+        <div class="icon menu"><span></span></div>
+        <div class="logo">IVANA<small>DESIGN</small></div>
+        <div class="icon bag"></div>
+      </header>
+      <div class="search">¿Qué estás buscando?</div>
+
+      <section class="section" aria-label="Coleccion destacada">
+        <div class="section-head">
+          <h1 class="section-title">Colección Destacada</h1>
+          <div class="divider"></div>
+        </div>
+
+        <div class="category-row">
+          <a class="category" href="#">
+            <div class="circle"><div class="circle-inner"></div></div>
+            <span class="category-name">Tops</span>
+          </a>
+          <a class="category" href="#">
+            <div class="circle"><div class="circle-inner"></div></div>
+            <span class="category-name">Capris</span>
+          </a>
+          <a class="category" href="#">
+            <div class="circle"><div class="circle-inner"></div></div>
+            <span class="category-name">Short</span>
+          </a>
+          <a class="category" href="#">
+            <div class="circle"><div class="circle-inner"></div></div>
+            <span class="category-name">Leggings</span>
+          </a>
+        </div>
+
+        <div class="mock-products">
+          <h2 class="mock-title">Super Descuentos</h2>
+          <div class="cards">
+            <article class="card">
+              <div class="thumb"></div>
+              <div>
+                <p>Top c/frunce en delantero terciopelo</p>
+                <strong class="price">$23.990</strong>
+              </div>
+            </article>
+            <article class="card">
+              <div class="thumb"></div>
+              <div>
+                <p>Short cinta recta morley</p>
+                <strong class="price">$31.190</strong>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

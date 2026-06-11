@@ -45,7 +45,12 @@ jobs:
                 --exclude-glob .git/ \
                 --exclude-glob .github/ \
                 --exclude-glob .claude/ \
+                --exclude-glob .codex-remote-attachments/ \
                 --exclude-glob .vscode/ \
+                --exclude-glob docs/ \
+                --exclude-glob Previews/ \
+                --exclude-glob output/ \
+                --exclude-glob screenshots/ \
                 --exclude-glob '*.md' \
                 --exclude-glob '*.vsix' \
                 --exclude-glob acceso-ftp.txt \
