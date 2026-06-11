@@ -2910,6 +2910,9 @@ select:focus {
   align-items: center !important;
   gap: clamp(0.3rem, 0.5vw, 0.65rem) !important;
   color: #111111 !important;
+  min-height: var(--utility-size, clamp(34px, 2vw + 16px, 44px)) !important;
+  min-width: var(--utility-size, clamp(34px, 2vw + 16px, 44px)) !important;
+  justify-content: center !important;
   text-decoration: none !important;
 }
 
@@ -3073,6 +3076,19 @@ select:focus {
   .search-container {
     max-width: 100% !important;
     margin-top: 0 !important;
+  }
+
+  .menu-container .header-utility,
+  .ivana-header-layout .head-slot-utilities .header-utility {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+
+  .ivana-header-layout .head-slot-search,
+  .ivana-header-layout .head-slot-search .search-container,
+  .ivana-header-layout .head-slot-search .js-search-form,
+  .ivana-header-layout .head-slot-search [class*="search-form"] {
+    width: 100% !important;
   }
 
   /* Textos de utilidad ocultos en mobile (paradigma app: solo iconos) */
@@ -3943,6 +3959,16 @@ select:focus {
   width: var(--search-icon) !important;
   height: var(--search-icon) !important;
   opacity: 1 !important;
+}
+
+@media (max-width: 767px) {
+  .ivana-header-layout .head-slot-search,
+  .ivana-header-layout .head-slot-search .search-container,
+  .ivana-header-layout .head-slot-search .js-search-form,
+  .ivana-header-layout .head-slot-search [class*="search-form"] {
+    max-width: none !important;
+    width: 100% !important;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
