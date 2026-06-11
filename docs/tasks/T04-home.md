@@ -1,6 +1,6 @@
 # T04 - Home comercial
 
-Estado: `pending`
+Estado: `done`
 
 ## Objetivo
 
@@ -67,3 +67,25 @@ Redisenar la home modular para mejorar descubrimiento, claridad comercial y conv
 - Estado actualizado a `done`.
 - Resumen de secciones tocadas.
 - QA de secciones principales y estados vacios/preview.
+
+## Cierre T04
+
+Cambios realizados:
+
+- Compactada la grilla de productos de home en mobile entre 360px y 767px a 2 columnas.
+- Ajustada la card solo dentro de `.ivana-home-products` para mantener legibles nombre, precio, descuento, cuotas y transferencia en columnas compactas.
+- Conservadas las grillas de categoria/busqueda sin cambios.
+- Preservado el orden modular `settings.home_order_position_1..18`, los `data-store`, los estados de ayuda/preview y la logica de `sections.primary`, `sections.new` y `sections.sale`.
+- Actualizado `asset_version` en `layouts/layout.tpl` a `20260611-04` para publicar el CSS sin cache viejo.
+
+Validaciones post-deploy:
+
+- Home mobile 390px: productos destacados en 2 columnas, 8 cards, seccion reducida de ~4488px a ~1994px.
+- Home desktop 1366px: productos destacados en 3 columnas, 8 cards, sin errores JS.
+- Categoria mobile: se mantiene en 1 columna y 60 cards.
+- Busqueda `/search/?q=bikini`: 60 cards, sin errores JS.
+- Carrito modal: abre `#modal-cart` y conserva `.js-ajax-cart-list`.
+
+Riesgo residual:
+
+- `scrollWidth` mobile queda 1px por encima del viewport por sliders Swiper duplicados fuera de pantalla; no se origina en la grilla de productos de home.

@@ -304,6 +304,16 @@ Estado: implementado.
 - Actualizado `asset_version` en `layouts/layout.tpl` a `20260611-03` para bustear cache del CSS principal.
 - Validado post-deploy: menu mobile abre, busqueda navega a `/search/?q=bikini`, carrito modal abre y desktop nav permanece visible.
 
+### Cierre T04 - Home comercial
+
+Estado: implementado.
+
+- Compactada la grilla de productos de home en mobile entre 360px y 767px a 2 columnas, sin modificar categoria ni busqueda.
+- Ajustadas cards solo bajo `.ivana-home-products` para preservar legibilidad comercial en mobile.
+- Preservados `settings.home_order_position_1..18`, `data-store`, help/preview y logica de productos `sections.primary`, `sections.new` y `sections.sale`.
+- Actualizado `asset_version` en `layouts/layout.tpl` a `20260611-04`.
+- Validado post-deploy: home mobile 390px baja la seccion de destacados de ~4488px a ~1994px; desktop, categoria, busqueda y carrito modal siguen funcionando sin errores JS visibles.
+
 QA minimo:
 
 - Capturas antes/despues.
