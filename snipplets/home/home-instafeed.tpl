@@ -8,18 +8,11 @@
 					<h2 class="h4 instafeed-user mb-0">{{ 'Seguinos en' | translate }} @{{ instuser }}</h2>
 				</div>
 			</a>
-			<div class="js-ig-success js-swiper-instafeed swiper-container">
-				<div class="swiper-wrapper"
-					data-ig-feed
-					data-ig-items-count="6"
-					data-ig-item-class="swiper-slide"
-					data-ig-link-class="instafeed-link m-md-0"
-					data-ig-image-class="instafeed-img"
-					data-ig-aria-label="{{ 'Publicación de Instagram de' | translate }} {{ store.name }}"
-					style="display: none;">
-				</div>
-				<div class="js-swiper-instafeed-pagination swiper-pagination swiper-pagination-bullets swiper-pagination-outside w-100 mt-2 d-md-none"></div>
-			</div>
+			<p class="mb-0">
+				<a target="_blank" href="{{ store.instagram }}" class="btn-link">
+					{{ 'Ver publicaciones en Instagram' | translate }}
+				</a>
+			</p>
 		</div>
 	</div>
 </section>
