@@ -6,57 +6,74 @@
 	{% paginate by 60 %}
 {% endif %}
 
-<section class="category-body">
-	<div class="container{% if has_filters_available or has_applied_filters %} py-4{% endif %}">
-		<div class="{% if has_filters_available or has_applied_filters %}grid grid-md-auto mb-md-4 align-items-end {% endif %}py-4">
-			<div class="mb-1">
+<section class="category-body ivana-category-shell ivana-search-shell" data-store="search-grid-shell">
+	<div class="container py-4">
+		<div class="ivana-category-header">
+			<div class="ivana-breadcrumbs ivana-category-breadcrumbs-row font-small mb-2">
 				{% snipplet "breadcrumbs.tpl" %}
-				<div class="grid grid-1-auto align-items-end">
-					<h1 class="h4 mb-2 mb-md-0">
-						{% if products or has_applied_filters %}
-							{{ "Resultados de búsqueda" | translate }}
-						{% else %}
-							{{ "No encontramos nada para" | translate }}<span class="ml-2">"{{ query }}"</span>
-						{% endif %}
-					</h1>
-				</div>
 			</div>
-			{% if products %}
-				<div class="d-none d-md-block">
-					{{ component(
-						'sort-by',{
-							sort_by_classes: {
-								container: 'mb-1',
-								select_group: "d-inline-block w-auto mb-0",
-								select_label: "font-small d-block mb-1",
-								select: "form-select-small",
-								select_svg: "icon-inline icon-xs icon-w-14 svg-icon-text",
-							},
-							select_svg_id: 'chevron-down'
-						}) 
-					}}
+			<div class="grid grid-md-auto mb-md-4 align-items-end ivana-category-heading">
+				<div class="mb-1 ivana-category-copy">
+					<div class="grid grid-1-auto align-items-end ivana-category-title-row">
+						<div class="ivana-category-title-block">
+							<h1 class="ivana-category-title mb-0">
+								{% if products or has_applied_filters %}
+									{{ "Resultados de búsqueda" | translate }}
+								{% else %}
+									{{ "No encontramos nada para" | translate }}<span class="ml-2">"{{ query }}"</span>
+								{% endif %}
+							</h1>
+							{% if products %}
+								<p class="font-small mt-2 mb-0 ivana-category-meta">
+									{{ "Mostrando" | translate }} <strong>{{ products_count }}</strong>
+									{% if products | length > 1 %}
+										{{ "resultados para" | translate }}
+									{% else %}
+										{{ "resultado para" | translate }}
+									{% endif %}
+									<span class="font-weight-bold">"{{ query }}"</span>
+								</p>
+							{% endif %}
+						</div>
+					</div>
 				</div>
-			{% endif %}
-		</div>
-		{% if products %}
-			<h2 class="font-body font-family-body mb-4 pb-2 font-weight-normal">
-				{{ "Mostrando" | translate }} <strong>{{ products_count }}</strong>
-				{% if products | length > 1 %}
-					{{ "resultados para" | translate }}
-				{% else %}
-					{{ "resultado para" | translate }}
+				{% if products %}
+					<div class="d-none d-md-block ivana-category-toolbar">
+						{{ component(
+							'sort-by',{
+								sort_by_classes: {
+									container: 'mb-1 ivana-sort-box',
+									select_group: "d-inline-block w-auto mb-0",
+									select_label: "font-small d-block mb-1 ivana-category-toolbar-label",
+									select: "form-select-small",
+									select_svg: "icon-inline icon-xs icon-w-14 svg-icon-text",
+								},
+								select_svg_id: 'chevron-down'
+							})
+						}}
+					</div>
 				{% endif %}
-				<span class="font-weight-bold">"{{ query }}"</span>
-			</h2>
-		{% endif %}
-    {% include 'snipplets/grid/filters-modals.tpl' %}
-		{% if products %}
-			<div class="grid{% if products and has_filters_available %} grid-md-auto-4{% endif %}">
-		{% endif %}
-				{% include 'snipplets/grid/filters-controls.tpl' %}
-				{% include 'snipplets/grid/products-list.tpl' %}
-		{% if products %}
 			</div>
-		{% endif %}
+		</div>
+		{% include 'snipplets/grid/filters-modals.tpl' %}
+		<div class="ivana-category-layout{% if products and has_filters_available %} ivana-category-layout-filters{% endif %}">
+			{% if products and has_filters_available %}
+				<aside class="ivana-category-sidebar">
+					<div class="ivana-category-filter-card">
+						{% include 'snipplets/grid/filters-controls.tpl' %}
+					</div>
+				</aside>
+			{% else %}
+				<div class="ivana-category-sidebar d-none"></div>
+			{% endif %}
+			<div class="ivana-category-content">
+				<div class="ivana-category-products ivana-category-grid">
+					{% if not has_filters_available %}
+						{% include 'snipplets/grid/filters-controls.tpl' %}
+					{% endif %}
+					{% include 'snipplets/grid/products-list.tpl' %}
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
