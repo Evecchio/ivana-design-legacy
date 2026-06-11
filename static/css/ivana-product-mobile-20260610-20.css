@@ -67,6 +67,55 @@ body.template-product .ivana-product-shell .product-price-badge.ivana-hidden-zer
   display: none !important;
 }
 
+.ivana-card .ivana-card-transfer-container,
+div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-container,
+.js-item-product.ivana-card .ivana-card-transfer-container {
+  align-items: center !important;
+  column-gap: 10px !important;
+  display: grid !important;
+  grid-template-areas:
+    "icon caption caption"
+    "icon price badge" !important;
+  grid-template-columns: 28px minmax(0, max-content) auto !important;
+  grid-template-rows: auto auto !important;
+  row-gap: 6px !important;
+}
+
+.ivana-card .ivana-card-transfer-icon {
+  grid-area: icon !important;
+}
+
+.ivana-card .ivana-card-transfer-copy {
+  display: contents !important;
+}
+
+.ivana-card .ivana-card-transfer-caption {
+  grid-area: caption !important;
+  min-width: 0 !important;
+}
+
+.ivana-card .ivana-card-transfer-price,
+div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-price,
+.js-item-product.ivana-card .ivana-card-transfer-price {
+  grid-area: price !important;
+  line-height: 1.05 !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+}
+
+.ivana-card .ivana-card-transfer-badge,
+div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-badge,
+.js-item-product.ivana-card .ivana-card-transfer-badge {
+  align-self: center !important;
+  display: inline-flex !important;
+  grid-area: badge !important;
+  justify-self: start !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+}
+
 body.template-product .ivana-product-payments-box .js-product-discount-container {
   grid-template-columns: 34px minmax(0, 1fr) !important;
 }
@@ -494,7 +543,7 @@ body.template-product .ivana-product-detail-note-title {
   }
 
   body.template-product #complementary-products .ivana-card .ivana-card-transfer-container {
-    grid-template-columns: 28px minmax(0, 1fr) auto !important;
+    grid-template-columns: 28px minmax(0, max-content) auto !important;
     min-height: 70px !important;
   }
 
