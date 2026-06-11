@@ -1,6 +1,6 @@
 # T03 - Header, navegacion mobile y buscador
 
-Estado: `pending`
+Estado: `done`
 
 ## Objetivo
 
@@ -67,3 +67,26 @@ Mejorar header, navegacion mobile, utilidades y buscador para que sean claros, t
 - Estado actualizado a `done`.
 - Resumen de cambios de header/nav/search.
 - Validaciones de navegacion y buscador documentadas.
+
+## Cierre T03
+
+Cambios realizados:
+
+- Ajustados los targets tactiles del header mobile para menu y carrito a 44x44px sin modificar los hooks nativos.
+- Ampliado el buscador mobile para ocupar el ancho util del grid del header.
+- Preservado `component('search/search-form')`, `component('notification')`, `js-head-main`, `js-head-row`, `js-main-categories-container`, `#nav-hamburger` y `#modal-cart`.
+- Actualizado `asset_version` en `layouts/layout.tpl` a `20260611-03` para evitar cache viejo del CSS principal.
+
+Validaciones post-deploy:
+
+- Mobile 320px: menu 44x44, carrito 44x44, buscador 291px, sin errores JS.
+- Mobile 375px: menu 44x44, carrito 44x44, buscador 344px, sin errores JS.
+- Mobile 390px: menu 44x44, carrito 44x44, buscador 358px, sin errores JS.
+- Desktop 1024/1366px: nav desktop visible y buscador alineado.
+- Menu mobile abre `#nav-hamburger` y muestra navegacion principal.
+- Busqueda desde header navega a `/search/?q=bikini` y renderiza resultados.
+- Carrito abre `#modal-cart` y conserva `.js-ajax-cart-list`.
+
+Riesgo residual:
+
+- `scrollWidth` mobile queda 1-3px por encima del viewport por slides duplicados de Swiper fuera de pantalla, no por el header. Revisar junto con T04/T05 si aparece scroll horizontal perceptible.

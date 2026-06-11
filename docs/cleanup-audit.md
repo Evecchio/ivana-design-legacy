@@ -294,6 +294,16 @@ Estado: implementado.
 - Validacion post-deploy: home, categoria, busqueda, producto relacionado y carrito modal renderizan sin errores JS visibles.
 - Riesgo residual: en mobile se detecto `scrollWidth` 1px mayor que viewport por imagenes escaladas dentro de contenedores con `overflow:hidden`; revisar en T05 si aparece scroll horizontal perceptible.
 
+### Cierre T03 - Header, navegacion mobile y buscador
+
+Estado: implementado.
+
+- Ajustados targets tactiles de menu y carrito mobile a 44x44px.
+- Ampliado el buscador mobile al ancho util del header sin reemplazar `component('search/search-form')`.
+- Preservados modales nativos `#nav-hamburger` y `#modal-cart`, notificaciones y hooks `js-head-main`, `js-head-row` y `js-main-categories-container`.
+- Actualizado `asset_version` en `layouts/layout.tpl` a `20260611-03` para bustear cache del CSS principal.
+- Validado post-deploy: menu mobile abre, busqueda navega a `/search/?q=bikini`, carrito modal abre y desktop nav permanece visible.
+
 QA minimo:
 
 - Capturas antes/despues.
