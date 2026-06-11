@@ -282,6 +282,17 @@ Estado:
 - Retiradas `.ivana-card-info` y `.ivana-card-name` de listas CSS, conservando selectores nativos/genericos como `.js-item-product .information`, `.js-item-product .item-name`, `.js-item-name` y `.product-item-name`.
 - No se tocaron hooks `js-*`, templates ni JS.
 
+### Cierre T02 - Card de producto
+
+Estado: implementado.
+
+- Consolidada la card en `static/css/ivana-design.css` dejando una sola capa activa: `Product cards - active implementation`.
+- Eliminadas dos generaciones anteriores de CSS de card que duplicaban reglas de imagen, precio, descuento, cuotas, transferencia, stock y responsive.
+- Se preservo `snipplets/product-item.tpl`, `component('product-item')`, `js-product-container`, `js-item-product`, `js-price-display` y `js-compare-price-display`.
+- No se modifico `static/js/ivana-card.js.tpl`.
+- CSS reducido en 736 lineas y `!important` bajo de 2053 a 1732 despues de T01/T02, manteniendo balance de llaves.
+- Riesgo residual: validar visualmente post-deploy que slider de imagen, relacionados, busqueda e infinite scroll sigan sin regresiones.
+
 QA minimo:
 
 - Capturas antes/despues.

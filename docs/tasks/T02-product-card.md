@@ -1,6 +1,6 @@
 # T02 - Card de producto
 
-Estado: `pending`
+Estado: `done`
 
 ## Objetivo
 
@@ -67,3 +67,23 @@ Redisenar la card de producto para que sea consistente, comercial y mobile-first
 - Estado actualizado a `done`.
 - Resumen de cambios visuales en card.
 - Evidencia de QA por contexto de render.
+
+## Cierre T02
+
+Cambios realizados:
+
+- Consolidada la card en una sola capa activa dentro de `static/css/ivana-design.css`.
+- Eliminadas dos generaciones anteriores de CSS de card que redefinian imagen, precio, cuotas, transferencia, stock, hover y responsive con valores contradictorios.
+- Conservadas las reglas de grilla, el markup de `snipplets/product-item.tpl`, `component('product-item')` y todos los hooks criticos `js-*`.
+- Reintegradas en la capa activa las propiedades estructurales necesarias de la card: `display:flex`, `height:100%`, `position:relative`, `box-sizing` y posicionamiento relativo del contenedor de imagen.
+
+Validaciones:
+
+- CSS balanceado despues de la poda.
+- `!important` reducido sin modificar hooks funcionales.
+- `static/js/ivana-card.js.tpl` no fue modificado.
+- Pendiente de cierre operativo: smoke post-deploy en home, categoria, busqueda, producto relacionado y carrito modal.
+
+Riesgo residual:
+
+- Medio-bajo hasta validar visualmente en produccion, porque la limpieza removio CSS duplicado amplio aunque la capa activa mantiene la presentacion vigente.
