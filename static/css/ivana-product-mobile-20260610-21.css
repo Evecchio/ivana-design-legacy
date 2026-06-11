@@ -67,6 +67,18 @@ body.template-product .ivana-product-shell .product-price-badge.ivana-hidden-zer
   display: none !important;
 }
 
+.section-home.section-categories-home.ivana-home-categories .ivana-home-category-circle,
+.section-home.section-categories-home.ivana-home-categories .home-category-image-border {
+  height: 130px !important;
+  width: 130px !important;
+}
+
+.section-home.section-categories-home.ivana-home-categories .js-home-category {
+  max-width: 150px !important;
+  min-width: 150px !important;
+  width: 150px !important;
+}
+
 .ivana-card .ivana-card-transfer-container,
 div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-container,
 .js-item-product.ivana-card .ivana-card-transfer-container {
@@ -496,6 +508,18 @@ body.template-product .ivana-product-detail-note-title {
 
   body.template-product .ivana-product-shell .ivana-product-purchase-form .grid.grid-auto-1 {
     margin-bottom: 30px !important;
+  }
+
+  .section-home.section-categories-home.ivana-home-categories .ivana-home-category-circle,
+  .section-home.section-categories-home.ivana-home-categories .home-category-image-border {
+    height: 112px !important;
+    width: 112px !important;
+  }
+
+  .section-home.section-categories-home.ivana-home-categories .js-home-category {
+    max-width: 140px !important;
+    min-width: 140px !important;
+    width: 140px !important;
   }
 
   body.template-product .btn-whatsapp {
