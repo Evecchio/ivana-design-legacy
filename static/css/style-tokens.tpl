@@ -303,6 +303,10 @@
   --ivana-shell-radius:      32px;
   --ivana-card-radius:       24px;
   --ivana-card-radius-mobile: 20px;
+  --ivana-radius-sm:         8px;
+  --ivana-radius-md:         12px;
+  --ivana-radius-pill:       999px;
+  --ivana-control-height:    48px;
   --ivana-surface:           #ffffff;
   --ivana-surface-soft:      #fbf7f8;
   --ivana-surface-tint:      #fff1f6;
@@ -310,8 +314,14 @@
   --ivana-border-strong:     rgba(17, 17, 17, 0.14);
   --ivana-text:              #151417;
   --ivana-text-soft:         #655f66;
+  --ivana-text-muted:        #8a8388;
+  --ivana-success:           #008f45;
+  --ivana-warning:           #f57c00;
+  --ivana-danger:            #d32f2f;
+  --ivana-focus-ring:        0 0 0 3px rgba(255, 20, 147, 0.22);
   --ivana-shadow-soft:       0 26px 72px rgba(17, 17, 17, 0.08);
   --ivana-shadow-card:       0 18px 46px rgba(17, 17, 17, 0.06);
+  --ivana-shadow-focus:      0 0 0 3px rgba(255, 20, 147, 0.22);
 
 }
 

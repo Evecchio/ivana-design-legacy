@@ -322,10 +322,17 @@ No se debe eliminar si:
 
 ## Proxima accion recomendada
 
-Ejecutar etapa 1 conservadora:
+T01 - Fundacion visual:
+
+- Se agregaron tokens fundacionales en `static/css/style-tokens.tpl`: radios, altura de controles, colores semanticos, foco y sombra de foco.
+- Se agrego base reusable en `static/css/ivana-design.css` para focus visible, botones, formularios, badges, alerts y disabled.
+- Se marco `docs/tasks/T01-foundation-visual.md` como `done`.
+
+Proxima accion recomendada:
+
+Ejecutar T02 - Product card:
 
 1. Tomar baseline visual publicado.
-2. Verificar que `ivana-orchestrator.css` no este cargado en HTML publicado.
-3. Decidir si se elimina o se mueve a referencia.
-4. Mover el parche inline de `.ivana-home-section-title` a CSS cargado si no cambia visualmente.
-5. Cerrar con QA de home, categoria, producto y carrito.
+2. Consolidar estilos activos de cards sin tocar hooks Tiendanube.
+3. Validar cards en home, categoria, busqueda y relacionados.
+4. Revisar precios, descuentos, cuotas, transferencia y stock.

@@ -1,6 +1,6 @@
 # T01 - Fundacion visual
 
-Estado: `pending`
+Estado: `done`
 
 ## Objetivo
 
@@ -64,3 +64,26 @@ Consolidar la base visual del redisenio: tokens, escala tipografica, espaciados,
 - Estado actualizado a `done`.
 - Resumen de tokens/componentes base agregados o consolidados.
 - Lista de validaciones realizadas y riesgos pendientes.
+
+## Cierre
+
+Completado en la limpieza/fundacion inicial del theme.
+
+Resumen:
+
+- Se agregaron tokens base para radios, control height, foco, colores semanticos y sombras de foco en `style-tokens.tpl`.
+- Se consolidaron estados base de focus visible, botones, formularios, badges, alerts y disabled en `ivana-design.css`.
+- Se retiro deuda visual no usada antes de cerrar la fundacion: CSS legacy de cards, selectores obsoletos, parche inline de layout y JS comentado/no ejecutado.
+- Se separaron previews y documentacion del deploy productivo.
+
+Validaciones:
+
+- Deploy previo de limpieza inicial completo con exito.
+- HTML/DOM publicado validado en home, categoria y producto para clases activas de cards.
+- CSS con llaves balanceadas.
+- `ivana-card.js.tpl` validado con `node --check` sobre copia temporal.
+
+Riesgos pendientes:
+
+- La validacion visual completa post-fundacion debe repetirse despues del proximo deploy.
+- La consolidacion profunda de cards queda para T02.
