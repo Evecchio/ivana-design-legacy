@@ -82,8 +82,8 @@ Validaciones:
 - CSS balanceado despues de la poda.
 - `!important` reducido sin modificar hooks funcionales.
 - `static/js/ivana-card.js.tpl` no fue modificado.
-- Pendiente de cierre operativo: smoke post-deploy en home, categoria, busqueda, producto relacionado y carrito modal.
+- Smoke post-deploy ejecutado en home, categoria, busqueda, producto relacionado y carrito modal sin errores JS visibles.
 
 Riesgo residual:
 
-- Medio-bajo hasta validar visualmente en produccion, porque la limpieza removio CSS duplicado amplio aunque la capa activa mantiene la presentacion vigente.
+- Bajo. En mobile se detecto `scrollWidth` 1px mayor que viewport en categoria/busqueda por imagenes escaladas dentro de contenedores con `overflow:hidden`; vigilar en T05 si aparece scroll horizontal perceptible.

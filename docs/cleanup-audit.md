@@ -291,7 +291,8 @@ Estado: implementado.
 - Se preservo `snipplets/product-item.tpl`, `component('product-item')`, `js-product-container`, `js-item-product`, `js-price-display` y `js-compare-price-display`.
 - No se modifico `static/js/ivana-card.js.tpl`.
 - CSS reducido en 736 lineas y `!important` bajo de 2053 a 1732 despues de T01/T02, manteniendo balance de llaves.
-- Riesgo residual: validar visualmente post-deploy que slider de imagen, relacionados, busqueda e infinite scroll sigan sin regresiones.
+- Validacion post-deploy: home, categoria, busqueda, producto relacionado y carrito modal renderizan sin errores JS visibles.
+- Riesgo residual: en mobile se detecto `scrollWidth` 1px mayor que viewport por imagenes escaladas dentro de contenedores con `overflow:hidden`; revisar en T05 si aparece scroll horizontal perceptible.
 
 QA minimo:
 
