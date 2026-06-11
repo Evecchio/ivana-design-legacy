@@ -43,6 +43,13 @@ function normalizeIvanaProductCards(root) {
         var discountBadge = card.querySelector(".product-item-discount");
         var comparePrice = card.querySelector("span.js-compare-price-display.product-item-price-compare");
         var currentPrice = card.querySelector("span.js-price-display.product-item-price");
+        var customDiscountBadge = card.querySelector(".ivana-card-discount-tag");
+
+        if (customDiscountBadge) {
+            card.querySelectorAll(".js-offer-label-private, .js-offer-label").forEach(function(nativeOfferLabel) {
+                nativeOfferLabel.remove();
+            });
+        }
 
         if (!priceContainer) {
             return;
