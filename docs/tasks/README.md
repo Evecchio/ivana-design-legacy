@@ -23,11 +23,11 @@ Este directorio convierte la especificacion madre en tareas chicas, verificables
 
 | Orden | Tarea | Estado | Objetivo |
 | --- | --- | --- | --- |
-| 1 | [T01-foundation-visual](T01-foundation-visual.md) | pending | Consolidar tokens, base visual y componentes comunes. |
-| 2 | [T02-product-card](T02-product-card.md) | pending | Redisenar card de producto sin romper grillas, sliders ni precios. |
-| 3 | [T03-header-mobile-search](T03-header-mobile-search.md) | pending | Mejorar header, navegacion mobile y buscador. |
-| 4 | [T04-home](T04-home.md) | pending | Redisenar home modular y secciones comerciales. |
-| 5 | [T05-category-search](T05-category-search.md) | pending | Mejorar categoria, filtros, ordenamiento, busqueda y grilla. |
+| 1 | [T01-foundation-visual](T01-foundation-visual.md) | done | Consolidar tokens, base visual y componentes comunes. |
+| 2 | [T02-product-card](T02-product-card.md) | done | Redisenar card de producto sin romper grillas, sliders ni precios. |
+| 3 | [T03-header-mobile-search](T03-header-mobile-search.md) | done | Mejorar header, navegacion mobile y buscador. |
+| 4 | [T04-home](T04-home.md) | done | Redisenar home modular y secciones comerciales. |
+| 5 | [T05-category-search](T05-category-search.md) | done | Mejorar categoria, filtros, ordenamiento, busqueda y grilla. |
 | 6 | [T06-product-page](T06-product-page.md) | pending | Redisenar producto preservando variantes, stock, precio y add to cart. |
 | 7 | [T07-cart](T07-cart.md) | pending | Mejorar carrito, resumen, cantidades, envios y checkout handoff. |
 | 8 | [T08-footer-institutional](T08-footer-institutional.md) | pending | Mejorar footer, pages, contacto, blog y cuenta con cambios seguros. |

@@ -314,6 +314,17 @@ Estado: implementado.
 - Actualizado `asset_version` en `layouts/layout.tpl` a `20260611-04`.
 - Validado post-deploy: home mobile 390px baja la seccion de destacados de ~4488px a ~1994px; desktop, categoria, busqueda y carrito modal siguen funcionando sin errores JS visibles.
 
+### Cierre T05 - Categoria, filtros y busqueda
+
+Estado: implementado.
+
+- Unificado el layout visual de busqueda con el shell de categoria, manteniendo la logica nativa de Tiendanube para filtros, ordenamiento, paginacion y listado de productos.
+- Preservados `component('sort-by')`, `filters-modals.tpl`, `filters-controls.tpl`, `products-list.tpl`, `settings.pagination` y comportamiento de busqueda nativa.
+- Corregido overflow en titulos de busquedas largas con reglas acotadas a `.ivana-search-shell`.
+- Actualizado `asset_version` en `layouts/layout.tpl` a `20260611-05`.
+- Validado post-deploy: categoria mobile, busqueda con resultados, busqueda sin resultados, modales de filtros/sort y carrito modal funcionan sin errores JS visibles.
+- Riesgo residual: persiste una diferencia menor de 1px de `scrollWidth` en mobile, asociada a redondeo/layout existente; el overflow critico de query larga quedo resuelto.
+
 QA minimo:
 
 - Capturas antes/despues.

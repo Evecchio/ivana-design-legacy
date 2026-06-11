@@ -1,6 +1,6 @@
 # T05 - Categoria, filtros y busqueda
 
-Estado: `pending`
+Estado: `done`
 
 ## Objetivo
 
@@ -71,3 +71,26 @@ Mejorar categoria/listado y busqueda para que explorar, filtrar, ordenar y compa
 - Estado actualizado a `done`.
 - Resumen de mejoras en categoria/search.
 - QA documentado para filtros, sort y paginacion.
+
+## Cierre T05
+
+Estado: implementado.
+
+Cambios realizados:
+
+- Unificado `templates/search.tpl` con la estructura visual de categoria usando `ivana-category-shell` e `ivana-search-shell`.
+- Preservados `component('sort-by')`, filtros, modales, controles, paginacion, `products-list.tpl`, `settings.pagination` y la busqueda nativa de Tiendanube.
+- Conservado `templates/category.tpl` sin cambios productivos, porque ya tenia el shell visual principal aplicado.
+- Corregido overflow en busquedas largas con reglas acotadas a `.ivana-search-shell .ivana-category-title`.
+- Actualizado `asset_version` en `layouts/layout.tpl` a `20260611-05`.
+
+Validacion realizada:
+
+- Categoria mobile `/productos/`: shell visual activo, toolbar visible, filtros y ordenamiento abren sus modales, grilla renderiza 60 cards y no hay errores JS visibles.
+- Busqueda con resultados `/search/?q=bikini`: shell visual activo, toolbar visible, filtros y ordenamiento disponibles, grilla renderiza 60 cards y no hay errores JS visibles.
+- Busqueda sin resultados `/search/?q=zzzinexistenteivanadesign`: no genera overflow por query larga, muestra sugeridos y no hay errores JS visibles.
+- Carrito modal: `#modal-cart` y `.js-ajax-cart-list` siguen disponibles despues de los cambios.
+
+Riesgo residual:
+
+- En mobile se observa una diferencia menor de 1px entre `scrollWidth` y viewport en algunas paginas, consistente con redondeos/elementos existentes. El overflow critico de busqueda vacia bajo de 523px a 391px en viewport de 390px y no queda bloqueante para T05.
