@@ -4,7 +4,7 @@
 
 		{{ component('head-tags') }}
 
-		{% set asset_version = '20260610-21' %}
+		{% set asset_version = '20260610-22' %}
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -81,7 +81,7 @@
 		{{ component('structured-data') }}
 
 		<link rel="stylesheet" href="{{ 'css/ivana-design.css' | static_url }}?v={{ asset_version }}">
-		<link rel="stylesheet" href="{{ 'css/ivana-product-mobile-20260610-21.css' | static_url }}?v={{ asset_version }}">
+		<link rel="stylesheet" href="{{ 'css/ivana-product-mobile-20260610-22.css' | static_url }}?v={{ asset_version }}">
 		<style>
 			/* REFUERZO DE CENTRADO — Para asegurar que el título se vea centrado en la home */
 			.ivana-home-section-title {

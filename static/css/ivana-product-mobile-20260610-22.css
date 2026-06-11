@@ -79,6 +79,14 @@ body.template-product .ivana-product-shell .product-price-badge.ivana-hidden-zer
   width: 150px !important;
 }
 
+.section-home.section-categories-home.ivana-home-categories {
+  padding-bottom: 0 !important;
+}
+
+.section-home.section-featured-home.section-featured-products-home {
+  padding-top: 0 !important;
+}
+
 .ivana-card .ivana-card-transfer-container,
 div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-container,
 .js-item-product.ivana-card .ivana-card-transfer-container {
