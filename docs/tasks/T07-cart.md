@@ -1,6 +1,6 @@
 # T07 - Carrito y conversion final
 
-Estado: `pending`
+Estado: `done`
 
 ## Objetivo
 
@@ -73,3 +73,25 @@ Mejorar carrito para revisar productos, editar cantidades, ver totales/envios y 
 - Estado actualizado a `done`.
 - Resumen de cambios en carrito.
 - QA de flujo compra desde producto hasta checkout.
+
+## Cierre
+
+Cambios implementados:
+
+- Se ajusto el resumen del carrito para no mostrar precio sin impuestos ni barra de envio gratis cuando el carrito esta vacio.
+- Se agrego CTA `Ver productos` al estado vacio del carrito AJAX.
+- Se preservaron `form action="{{ store.cart_url }}" method="post"`, `data-store="cart-form"`, `data-component="cart"`, `.js-ajax-cart-list`, clases `js-visible-on-cart-filled` y estructura funcional de cantidades.
+
+Validaciones realizadas en tienda publicada:
+
+- Carrito vacio: muestra mensaje y CTA `Ver productos`; no muestra checkout, `Precio sin impuestos: $0` ni barra de envio gratis.
+- Carrito con producto: muestra item, variante, precio, subtotal, total, medios de envio y CTA de compra.
+- Cantidad: incrementar actualiza contador y totales.
+- Envio: CP `1414` devuelve opciones de envio/retiro.
+- Eliminacion: eliminar item deja contador en `0` y vuelve al estado vacio.
+- Checkout handoff: desde carrito con producto navega a `/checkout/v3/start/...` sin romper el flujo.
+
+Riesgos restantes:
+
+- La pagina directa `/carrito/` responde 404 en la tienda publicada; el flujo activo de la tienda usa modal AJAX y handoff por `/comprar/`/checkout.
+- Errores de integraciones externas deben revisarse aparte si reaparecen, ya que no hay referencias `googleAnalytics` dentro del theme.
