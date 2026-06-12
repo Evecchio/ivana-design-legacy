@@ -45,4 +45,10 @@ Decidir si `static/css/ivana-product-mobile-20260610-24.css` queda como override
 - Se actualizo `layouts/layout.tpl`; el cache busting queda en `asset_version`.
 - Se documento el mapa y la estrategia en `docs/maintenance-product-mobile-override.md`.
 - No se consolido contenido en `ivana-design.css` porque el archivo protege producto, cards, relacionados, home categories, transferencia, envio e imagenes completas.
-- Validacion requerida al desplegar: producto mobile/desktop, add to cart, carrito, relacionados y home mobile.
+- Validacion post-deploy:
+  - `ivana-product-overrides.css` carga en producto publicado.
+  - `ivana-product-mobile-20260610-24.css` ya no aparece en el HTML publicado.
+  - Producto mobile y desktop mantienen imagen completa con `object-fit: contain`.
+  - Producto mobile y desktop no presentan scroll horizontal.
+  - Mobile: add to cart suma item al carrito y muestra checkout disponible.
+  - Desktop: el boton de add to cart esta disponible, pero la variante visible respondio `out_of_stock`; queda registrado como condicion de stock, no como regresion de CSS.
