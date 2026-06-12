@@ -34,7 +34,7 @@
 {% if unique_home_subcategories is not empty %}
 	<section class="section-home section-categories-home ivana-home-categories overflow-none py-10">
 		<div class="container">
-			<div class="ivana-home-section-head text-center w-100" style="margin-bottom: 24px !important;">
+			<div class="ivana-home-section-head text-center w-100" style="margin-bottom: 44px !important;">
 				<h2 class="ivana-home-section-title mb-0" style="display: inline-block !important; text-align: center !important; width: auto !important;">Colección Destacada</h2>
 				<div class="ivana-home-section-divider"></div>
 			</div>
