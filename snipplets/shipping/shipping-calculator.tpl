@@ -61,7 +61,7 @@
 							store.country == 'BR' ? 'http://www.buscacep.correios.com.br/sistemas/buscacep/' :
 							store.country == 'MX' ? 'https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/Descarga.aspx'
 						%}
-						<a class="{% if product_detail %}js-shipping-zipcode-help{% endif %} btn btn-link font-small" href="{{ zipcode_help }}" target="_blank">{{ "No sé mi código postal" | translate }}</a>
+						<a class="{% if product_detail %}js-shipping-zipcode-help{% endif %} btn btn-link font-small" href="{{ zipcode_help }}" target="_blank" rel="noopener noreferrer">{{ "No sé mi código postal" | translate }}</a>
 					{% endif %}
 				{% endblock input_append_content%}
 				

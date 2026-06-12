@@ -57,7 +57,7 @@
 					{% set subcategory_image_name = has_subcategory_image ? (subcategory.images | first) : false %}
 					{% set circle_image_name = subcategory_image_name ? subcategory_image_name : fallback_slide_image %}
 					{% set circle_is_category_image = subcategory_image_name ? true : false %}
-					<a href="{{ subcategory.url }}" class="js-home-category d-flex flex-column align-items-center group shrink-0 text-decoration-none category-item" aria-label="{{ 'Categoría' | translate }} {{ loop.index }}">
+					<a href="{{ subcategory.url }}" class="js-home-category d-flex flex-column align-items-center group shrink-0 text-decoration-none category-item" aria-label="{{ 'Ver categoría' | translate }} {{ subcategory.name }}">
 						<div class="home-category-image-border ivana-home-category-circle w-28 h-28 md:w-36 md:h-36 rounded-circle overflow-hidden p-1 transition-all">
 							<div class="w-100 h-100 rounded-circle overflow-hidden">
 								{% if circle_image_name %}

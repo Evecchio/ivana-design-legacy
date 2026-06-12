@@ -37,7 +37,7 @@
 			<ul class="list list-unstyled">
 				{% for item in menus[footer_menu] %}
 					<li {% if not loop.last %}class="mb-3"{% endif %}>
-						<a href="{{ item.url }}" {% if item.url | is_external %}target="_blank"{% endif %}>{{ item.name }}</a>
+						<a href="{{ item.url }}" {% if item.url | is_external %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ item.name }}</a>
 					</li>
 				{% endfor %}
 			</ul>

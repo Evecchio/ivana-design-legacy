@@ -7,7 +7,7 @@
 	<span class="js-header-utility-icon js-header-utility-icon-only header-utility">
 		{% set account_url = not customer ? store.customer_login_url : store.customer_home_url %}
 		<span class="font-medium">
-			<svg class="icon-inline utility-icon icon-lg"><use xlink:href="#user"/></svg>
+			<svg class="icon-inline utility-icon icon-lg" aria-hidden="true" focusable="false"><use xlink:href="#user"/></svg>
 			{% if not customer %}
 				{{ "Mi cuenta" | translate | a_tag(store.customer_login_url, '', 'ml-1') }}
 			{% else %}
@@ -24,9 +24,9 @@
 	
 	{% if not customer %}
 		{# Entrar #}
-		<a href="{{ store.customer_login_url }}" class="header-utility d-none d-md-flex mr-3">
+		<a href="{{ store.customer_login_url }}" class="header-utility d-none d-md-flex mr-3" aria-label="{{ 'Mi cuenta' | translate }}">
 			<span class="js-header-utility-icon {{ utility_icon_md_color_class }}">
-				<svg class="icon-inline utility-icon icon-lg"><use xlink:href="#user"/></svg>
+				<svg class="icon-inline utility-icon icon-lg" aria-hidden="true" focusable="false"><use xlink:href="#user"/></svg>
 			</span>
 			{#<span class="utility-text font-weight-bold">{{ "Entrar" | translate }}</span>#}
 		</a>
@@ -35,7 +35,7 @@
 		{# Logged in state #}
 		<span class="header-utility d-none d-md-flex">
 			<span class="js-header-utility-icon {{ utility_icon_md_color_class }}">
-				<svg class="icon-inline utility-icon icon-lg"><use xlink:href="#user"/></svg>
+				<svg class="icon-inline utility-icon icon-lg" aria-hidden="true" focusable="false"><use xlink:href="#user"/></svg>
 			</span>
 			<span class="utility-text">
 				{% set customer_short_name = customer.name|split(' ')|slice(0, 1)|join %} 

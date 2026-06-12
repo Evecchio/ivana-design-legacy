@@ -51,7 +51,7 @@
 					{% if "seal_img.jpg" | has_custom_image %}
 						<div class="footer-logo custom-seal">
 							{% if settings.seal_url != '' %}
-								<a href="{{ settings.seal_url | setting_url }}" target="_blank">
+								<a href="{{ settings.seal_url | setting_url }}" target="_blank" rel="noopener noreferrer">
 							{% endif %}
 								{{ component(
 									'image',{

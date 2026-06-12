@@ -54,7 +54,7 @@
 
 		{# Search #}
 
-		<div class="search-container head-slot head-slot-search">
+		<div class="search-container head-slot head-slot-search" role="search" aria-label="{{ 'Buscar productos' | translate }}">
 			{{ component('search/search-form', {
 				form_classes: { 
 					input_group: 'position-relative m-0', 

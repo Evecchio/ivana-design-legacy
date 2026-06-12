@@ -29,7 +29,7 @@ Este backlog es post-release. No reemplaza el spec de redisenio: lo cuida. Su fu
 | 4 | [M04-product-mobile-override](M04-product-mobile-override.md) | done | Definir estrategia del CSS mobile/producto versionado. |
 | 5 | [M05-card-js-audit](M05-card-js-audit.md) | done | Auditar `ivana-card.js.tpl` y sus responsabilidades reales. |
 | 6 | [M06-performance-assets](M06-performance-assets.md) | done | Medir y optimizar peso de assets/carga visual. |
-| 7 | [M07-accessibility-seo](M07-accessibility-seo.md) | pending | Mejorar accesibilidad basica y SEO tecnico sin redisenio. |
+| 7 | [M07-accessibility-seo](M07-accessibility-seo.md) | in_progress | Mejorar accesibilidad basica y SEO tecnico sin redisenio. |
 | 8 | [M08-cache-404-monitoring](M08-cache-404-monitoring.md) | pending | Revisar cache/404 y comportamiento residual Tiendanube. |
 
 ## Comando sugerido

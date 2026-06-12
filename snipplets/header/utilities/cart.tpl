@@ -14,9 +14,10 @@
 			href="{{ store.cart_url }}" 
 		{% endif %}
 		class="{% if settings.ajax_cart and template != 'cart' %}js-modal-open-private{% endif %} header-utility"
+		aria-label="{{ 'Carrito' | translate }}"
 		>
 		<span class="js-header-utility-icon header-icon-big {{ utility_icon_md_color_class }} {{ utility_icon_only_md_color_class }}">
-			<svg class="js-utility-cart-icon icon-inline utility-icon icon-lg"><use xlink:href="#{{ cart_icon }}"/></svg>
+			<svg class="js-utility-cart-icon icon-inline utility-icon icon-lg" aria-hidden="true" focusable="false"><use xlink:href="#{{ cart_icon }}"/></svg>
 			<span class="js-cart-widget-amount badge {{ utility_badge_md_spacing_class }} {% if settings.utilities_type_desktop == 'icons_text' %}d-md-none{% endif %}">{{ "{1}" | translate(cart.items_count ) }}</span>
 		</span>
 		{% if settings.utilities_type_desktop == 'icons_text' or params.preview %}
