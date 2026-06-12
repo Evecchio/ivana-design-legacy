@@ -1,6 +1,6 @@
 # M03 - Reduccion de important
 
-Estado: `pending`
+Estado: `done`
 
 ## Objetivo
 
@@ -33,3 +33,10 @@ Reducir `!important` en un dominio de bajo riesgo manteniendo la misma aparienci
 - Contacto.
 - Pagina institucional.
 - Blog.
+
+## Resultado
+
+- Corte aplicado sobre el bloque legacy de footer en `static/css/ivana-design.css`.
+- Conteo global de `!important`: 1822 -> 1784.
+- No se tocaron producto, categoria, cards, carrito, variantes, stock, precios, checkout ni envios.
+- Validacion requerida al desplegar: home/footer, contacto, pagina institucional, blog y 404 en mobile/desktop.
