@@ -45,4 +45,9 @@ Auditar `static/js/ivana-card.js.tpl` para confirmar que responsabilidades sigue
 - Se documento el mapa de responsabilidades en `docs/maintenance-card-js-audit.md`.
 - Se corrigio un estado inconsistente: cards con `.ivana-card-discount-tag` ya no deben quedar clasificadas como `ivana-no-discount`.
 - No se modificaron precios, porcentajes, cuotas, transferencia ni links de producto.
-- Validacion requerida al desplegar: home, categoria, busqueda y relacionados en mobile/desktop.
+- Validacion post-deploy:
+  - Home, categoria, busqueda y relacionados en mobile/desktop.
+  - Cards con descuento custom inconsistentes: 0 en todos los escenarios probados.
+  - Producto mantiene transferencia renderizada y descripcion formateada.
+  - Sin scroll horizontal en las paginas probadas.
+  - Sin errores JS propios detectados; solo warnings externos conocidos de web-share/YouTube en home.
