@@ -7,6 +7,29 @@ body.template-product .ivana-product-shell .breadcrumbs {
   display: none !important;
 }
 
+/* Header logo refinement: 10% larger and visually transparent white background. */
+.ivana-header-layout .head-slot-logo,
+.ivana-logo-wrap,
+.ivana-logo-link {
+  overflow: visible !important;
+}
+
+.ivana-header-layout .ivana-logo-img {
+  background: transparent !important;
+  mix-blend-mode: multiply !important;
+  transform: scale(1.1) !important;
+  transform-origin: left center !important;
+}
+
+.logo-center .ivana-logo-img,
+.logo-md-center .ivana-logo-img {
+  transform-origin: center center !important;
+}
+
+.logo-container a:hover .ivana-logo-img {
+  transform: scale(1.12) !important;
+}
+
 /* Compact product card layout promoted from preview option A.
    Applies the category desktop proportions across product grids. */
 .ivana-category-products .js-product-table,
