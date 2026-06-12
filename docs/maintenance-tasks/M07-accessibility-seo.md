@@ -1,6 +1,6 @@
 # M07 - Accesibilidad y SEO tecnico
 
-Estado: `in_progress`
+Estado: `done`
 
 ## Objetivo
 
