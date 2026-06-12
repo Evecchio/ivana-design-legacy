@@ -5893,3 +5893,57 @@ body.template-product .products-section-next-container.swiper-button-outside {
 .ivana-category-products {
   margin-top: 0 !important;
 }
+
+/* Product media - active implementation.
+   Keep catalog and product detail images fully visible inside their frames. */
+.ivana-card .product-item-image-container,
+.ivana-card .js-product-item-image-container,
+.ivana-card .js-product-item-image-container-private.product-item-image-container {
+  background: #f7f5f3 !important;
+}
+
+.ivana-card .product-item-image-container img,
+.ivana-card .js-product-item-image-container img,
+.ivana-card .js-product-item-image-container-private.product-item-image-container img,
+.ivana-card .js-product-item-image,
+.ivana-card .product-item-image,
+.ivana-card .js-product-item-image-private.product-item-image,
+.ivana-card .img-absolute,
+.ivana-card .img-absolute-centered-vertically {
+  background: #f7f5f3 !important;
+  height: 100% !important;
+  left: 50% !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  transform-origin: center center !important;
+  transition: none !important;
+  width: 100% !important;
+}
+
+.js-product-container:hover .product-item-image-container img,
+.ivana-card:hover .js-product-item-image-container-private.product-item-image-container img {
+  transform: translate(-50%, -50%) !important;
+}
+
+body.template-product .ivana-product-gallery,
+body.template-product .ivana-product-gallery .slider-slide,
+body.template-product .ivana-product-gallery .js-product-slide-link,
+body.template-product .ivana-product-thumbs .product-thumb,
+body.template-product .ivana-product-thumbs .js-product-thumb {
+  background: #f7f5f3 !important;
+}
+
+body.template-product .ivana-product-gallery .product-slider-image,
+body.template-product .ivana-product-gallery .js-product-slide-img,
+body.template-product .ivana-product-gallery .slider-slide img,
+body.template-product .ivana-product-gallery .js-product-slide-link img,
+body.template-product .ivana-product-thumbs .product-thumb img,
+body.template-product .ivana-product-thumbs .js-product-thumb img {
+  background: #f7f5f3 !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  transform: none !important;
+}
