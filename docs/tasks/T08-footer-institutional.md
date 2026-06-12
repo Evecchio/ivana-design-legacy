@@ -1,6 +1,6 @@
 # T08 - Footer e institucionales
 
-Estado: `pending`
+Estado: `done`
 
 ## Objetivo
 
@@ -74,3 +74,28 @@ Mejorar footer, paginas institucionales, contacto, blog y cuenta con una capa vi
 - Estado actualizado a `done`.
 - Resumen de cambios en footer/institucionales.
 - QA de formularios y contenido administrable.
+
+## Cierre
+
+Cambios implementados:
+
+- Se reforzo la capa visual del footer: grilla responsive, redes, newsletter, medios de pago/envio y legales.
+- Se mantuvo `data-store="footer"` y no se modifico `snipplets/forms/newsletter.tpl`.
+- Se envolvieron blog y blog post en shells visuales consistentes con paginas institucionales.
+- Se agrego una capa de compatibilidad para la 404 publica servida por Tiendanube, evitando scroll horizontal y mejorando legibilidad.
+- Se incremento `asset_version` para invalidar cache del CSS.
+
+Validaciones realizadas en tienda publicada:
+
+- Footer mobile y desktop presente con `data-store="footer"`.
+- Newsletter conserva `action="/winnie-pooh"`, `data-store="newsletter-form"`, input email y submit.
+- Contacto conserva `action="/winnie-pooh"`, `data-store="contact-form"`, `type=contact` y campos `name`, `email`, `phone`, `message`.
+- Pagina generica `quienes-somos` renderiza contenido rico sin scroll horizontal.
+- Blog renderiza con shell visual y footer.
+- Login/cuenta renderiza formulario y footer sin errores JS.
+- 404 devuelve status HTTP 404 esperado, mantiene footer y no genera scroll horizontal.
+
+Riesgos restantes:
+
+- La 404 publica mantiene markup propio/cacheado de Tiendanube y no reflejo inmediatamente el cambio estructural de `templates/404.tpl`; por eso el cierre se valido con CSS compatible sobre `#page-error`.
+- No se envio newsletter ni formulario de contacto para evitar registros reales; se valido estructura, action y campos.
