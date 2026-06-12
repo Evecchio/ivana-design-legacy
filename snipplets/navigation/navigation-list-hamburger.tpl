@@ -3,11 +3,13 @@
 {% for item in navigation %}
 	
 	{% set nav_panel_id = 'nav-panel-id-' ~ random() %}
+	{% set formatted_item_name %}{% include 'snipplets/category-titlecase.tpl' with { category_name: item.name } %}{% endset %}
+	{% set formatted_item_name = formatted_item_name | trim %}
 
 	{% if item.subitems %}
 		<div class="nav-item item-with-subitems" data-component="menu.item">
 			<button class="js-modal-open-private nav-list-link {{ item.current ? 'selected' : '' }}" data-target="#{{ nav_panel_id }}" data-modal-url="#{{ nav_panel_id }}">
-				{{ item.name == 'Productos' ? 'Colección' : item.name }}
+				{{ formatted_item_name }}
 				<span class="nav-list-arrow">
 					<svg class="icon-inline icon-lg"><use xlink:href="#chevron"/></svg>
 				</span>
@@ -20,7 +22,7 @@
 							{% if item.isRootCategory %}
 								{{ 'Ver todos los productos' | translate }}
 							{% else %}
-								{{ 'Ver todo en' | translate }} {{ item.name }}
+								{{ 'Ver todo en' | translate }} {{ formatted_item_name }}
 							{% endif %}
 						</a>
 					</div>
@@ -41,7 +43,7 @@
 					},
 					content: {
 						back_button: true,
-						title: item.name,
+						title: formatted_item_name,
 						body: navigation_panel,
 					},
 					icons: {
@@ -62,7 +64,7 @@
 		</div>
 	{% else %}
 		<div class="nav-item" data-component="menu.item">
-			<a class="nav-list-link {{ item.current ? 'selected' : '' }}" href="{% if item.url %}{{ item.url | setting_url }}{% else %}#{% endif %}">{{ item.name == 'Productos' ? 'Colección' : item.name }}</a>
+			<a class="nav-list-link {{ item.current ? 'selected' : '' }}" href="{% if item.url %}{{ item.url | setting_url }}{% else %}#{% endif %}">{{ formatted_item_name }}</a>
 		</div>
 	{% endif %}
 {% endfor %}

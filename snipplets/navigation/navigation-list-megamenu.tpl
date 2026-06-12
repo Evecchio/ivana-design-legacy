@@ -14,13 +14,15 @@
 	{% endif %}
 
 	{% set item_name = item.name | lower | trim %}
+	{% set formatted_item_name %}{% include 'snipplets/category-titlecase.tpl' with { category_name: item.name } %}{% endset %}
+	{% set formatted_item_name = formatted_item_name | trim %}
 	{% set is_grouped_item = item_name == 'quiénes somos' or item_name == 'cómo comprar' or item_name == 'guía de talles' or item_name == 'preguntas frecuentes' or item_name == 'contacto' or item_name == 'política de devolución' %}
 	{%- if not (not subitem and is_grouped_item) -%}
 
 	{% if item.subitems %}
 		<li class="js-desktop-nav-item js-item-subitems-desktop nav-item-desktop {% if not subitem %}js-nav-main-item nav-dropdown nav-main-item {% endif %} nav-item item-with-subitems" data-component="menu.item" {% if not subitem %}style="margin: 0 14px !important;"{% endif %}>
 			<div class="nav-item-container">
-				<a class="js-nav-list-link nav-list-link {{ featured_link_classes }} {{ featured_link_color_classes }} {{ item.current ? 'selected' : '' }}" href="{% if item.url %}{{ item.url }}{% else %}#{% endif %}" data-url-cleaned="{{ link_url }}">{{ item.name == 'Productos' ? 'Colección' : item.name | lower | capitalize }}
+				<a class="js-nav-list-link nav-list-link {{ featured_link_classes }} {{ featured_link_color_classes }} {{ item.current ? 'selected' : '' }}" href="{% if item.url %}{{ item.url }}{% else %}#{% endif %}" data-url-cleaned="{{ link_url }}">{{ formatted_item_name }}
 				</a>
 			</div>
 			{% if not subitem %}
@@ -39,7 +41,7 @@
 	{% else %}
 		<li class="js-desktop-nav-item {% if not subitem %}js-nav-main-item nav-main-item{% endif %} nav-item-desktop nav-item" data-component="menu.item" {% if not subitem %}style="margin: 0 14px !important;"{% endif %}>
 			<div class="nav-item-container">
-				<a class="js-nav-list-link nav-list-link {{ featured_link_classes }} {{ featured_link_color_classes }} {{ item.current ? 'selected' : '' }}" href="{% if item.url %}{{ item.url | setting_url }}{% else %}#{% endif %}" data-url-cleaned="{{ link_url }}">{{ item.name == 'Productos' ? 'Colección' : item.name | lower | capitalize }}</a>
+				<a class="js-nav-list-link nav-list-link {{ featured_link_classes }} {{ featured_link_color_classes }} {{ item.current ? 'selected' : '' }}" href="{% if item.url %}{{ item.url | setting_url }}{% else %}#{% endif %}" data-url-cleaned="{{ link_url }}">{{ formatted_item_name }}</a>
 			</div>
 		</li>
 	{% endif %}
@@ -65,11 +67,13 @@
 					<ul class="desktop-list-subitems desktop-list-subitems-more list-subitems">
 						{% for item in navigation %}
 							{% set item_name = item.name | lower | trim %}
+							{% set formatted_item_name %}{% include 'snipplets/category-titlecase.tpl' with { category_name: item.name } %}{% endset %}
+							{% set formatted_item_name = formatted_item_name | trim %}
 							{% set is_grouped_item = item_name == 'quiénes somos' or item_name == 'cómo comprar' or item_name == 'guía de talles' or item_name == 'preguntas frecuentes' or item_name == 'contacto' or item_name == 'política de devolución' %}
 							{% if is_grouped_item %}
 								{% set link_url = item.url | split('://') | last | split('/') | slice(1) | join('/') | trim('/') %}
 								<li class="js-desktop-nav-item nav-item-desktop nav-item" data-component="menu.item">
-									<a class="js-nav-list-link nav-list-link {{ item.current ? 'selected' : '' }}" href="{% if item.url %}{{ item.url | setting_url }}{% else %}#{% endif %}" data-url-cleaned="{{ link_url }}">{{ item.name | lower | capitalize }}</a>
+									<a class="js-nav-list-link nav-list-link {{ item.current ? 'selected' : '' }}" href="{% if item.url %}{{ item.url | setting_url }}{% else %}#{% endif %}" data-url-cleaned="{{ link_url }}">{{ formatted_item_name }}</a>
 								</li>
 							{% endif %}
 						{% endfor %}

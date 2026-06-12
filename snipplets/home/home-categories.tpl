@@ -40,6 +40,8 @@
 			</div>
 			<div class="d-flex justify-content-center align-items-start gap-4 pb-4 ivana-home-categories-row category-slider-mobile">
 				{% for subcategory in unique_home_subcategories %}
+					{% set formatted_subcategory_name %}{% include 'snipplets/category-titlecase.tpl' with { category_name: subcategory.name } %}{% endset %}
+					{% set formatted_subcategory_name = formatted_subcategory_name | trim %}
 					{% set subcategory_handle = subcategory.url | split('://') | last | trim('/') | split('/') | last | trim %}
 					{% set fallback_slide_image = false %}
 					{% for slide in settings.slider_categories %}
@@ -57,7 +59,7 @@
 					{% set subcategory_image_name = has_subcategory_image ? (subcategory.images | first) : false %}
 					{% set circle_image_name = subcategory_image_name ? subcategory_image_name : fallback_slide_image %}
 					{% set circle_is_category_image = subcategory_image_name ? true : false %}
-					<a href="{{ subcategory.url }}" class="js-home-category d-flex flex-column align-items-center group shrink-0 text-decoration-none category-item" aria-label="{{ 'Ver categoría' | translate }} {{ subcategory.name }}">
+					<a href="{{ subcategory.url }}" class="js-home-category d-flex flex-column align-items-center group shrink-0 text-decoration-none category-item" aria-label="{{ 'Ver categoría' | translate }} {{ formatted_subcategory_name }}">
 						<div class="home-category-image-border ivana-home-category-circle w-28 h-28 md:w-36 md:h-36 rounded-circle overflow-hidden p-1 transition-all">
 							<div class="w-100 h-100 rounded-circle overflow-hidden">
 								{% if circle_image_name %}
@@ -77,7 +79,7 @@
 							</div>
 						</div>
 						<span class="mt-3 font-bold tracking-widest text-center ivana-home-category-name">
-							{{ subcategory.name | lower | capitalize }}
+							{{ formatted_subcategory_name }}
 						</span>
 					</a>
 				{% endfor %}
