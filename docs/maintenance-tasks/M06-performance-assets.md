@@ -45,4 +45,9 @@ Medir y optimizar carga de assets sin cambiar el diseno aprobado.
 - Se genero reporte local en `output/maintenance-baseline/m06-performance-assets/report.json`.
 - Se retiro un preload redundante de Google Fonts en `layouts/layout.tpl`.
 - Se mantuvieron `preconnect`, `component('fonts')`, preloads de imagen LCP y scripts funcionales.
-- Validacion requerida al desplegar: home, categoria y producto en mobile/desktop.
+- Validacion post-deploy:
+  - Home, categoria y producto responden 200 en mobile/desktop.
+  - Preload de Google Fonts detectado: 0.
+  - Fuentes computadas siguen aplicadas en titulos/producto.
+  - Sin scroll horizontal en paginas probadas.
+  - Sin errores JS propios; solo warnings externos conocidos de YouTube/web-share en home desktop.
