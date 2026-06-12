@@ -81,7 +81,7 @@
 		{{ component('structured-data') }}
 
 		<link rel="stylesheet" href="{{ 'css/ivana-design.css' | static_url }}?v={{ asset_version }}">
-		<link rel="stylesheet" href="{{ 'css/ivana-product-mobile-20260610-24.css' | static_url }}?v={{ asset_version }}">
+		<link rel="stylesheet" href="{{ 'css/ivana-product-overrides.css' | static_url }}?v={{ asset_version }}">
 	</head>
 	<body class="{% if customer %}customer-logged-in{% endif %} template-{{ template | replace('.', '-') }}">
 

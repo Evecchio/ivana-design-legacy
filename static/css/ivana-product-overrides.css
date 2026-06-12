@@ -1,4 +1,7 @@
-/* Product responsive overrides. Versioned file name forces a fresh CDN asset. */
+/* Product and card overrides loaded after ivana-design.css.
+   Keep this file small and explicit: product media, product mobile,
+   related product cards and home-category hotfixes only. Cache is handled
+   by layout.tpl asset_version, so the filename should stay stable. */
 body.template-product .ivana-product-shell .ivana-breadcrumbs,
 body.template-product .ivana-product-shell .breadcrumbs {
   display: none !important;

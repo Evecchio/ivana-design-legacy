@@ -17,9 +17,9 @@ Objetivo: reducir deuda tecnica, peso visual, duplicacion y riesgo operativo sin
 
 ## Estado actual relevado
 
-- `static/css/ivana-design.css`: ~172 KB, 1822 usos de `!important`.
-- `static/css/ivana-product-mobile-20260610-24.css`: ~24 KB, 307 usos de `!important`.
-- `layouts/layout.tpl` carga un CSS principal Ivana y un override mobile/producto versionado.
+- `static/css/ivana-design.css`: ~172 KB, 1784 usos de `!important`.
+- `static/css/ivana-product-overrides.css`: ~24 KB, 307 usos de `!important`.
+- `layouts/layout.tpl` carga un CSS principal Ivana y un override producto/cards estable con cache busting por `asset_version`.
 - `docs/cleanup-audit.md` ya identifica la deuda principal: CSS acumulado, override mobile temporal, `ivana-card.js.tpl` como normalizador de cards y riesgo de cache en 404.
 - El cierre `T09` valido compra, producto, carrito, categoria, busqueda, contacto, footer y login en produccion.
 
@@ -41,7 +41,7 @@ Prioridad alta.
 - Mapear `ivana-design.css` por dominios reales: base, header, cards, home, categoria, producto, carrito, footer, institucionales, responsive, hotfixes.
 - Eliminar duplicados obvios solo con evidencia de cascada.
 - Reducir `!important` por grupos acotados.
-- Decidir si `ivana-product-mobile-20260610-24.css` sigue como override temporal o se consolida.
+- Mantener `ivana-product-overrides.css` separado hasta consolidar por dominios con QA especifico.
 
 ### 2. JavaScript
 
