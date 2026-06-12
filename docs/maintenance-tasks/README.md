@@ -24,7 +24,7 @@ Este backlog es post-release. No reemplaza el spec de redisenio: lo cuida. Su fu
 | Orden | Tarea | Estado | Objetivo |
 | --- | --- | --- | --- |
 | 1 | [M01-baseline-maintenance](M01-baseline-maintenance.md) | done | Crear baseline tecnico/visual post-release. |
-| 2 | [M02-css-map-and-dead-rules](M02-css-map-and-dead-rules.md) | pending | Mapear CSS y detectar reglas muertas o duplicadas. |
+| 2 | [M02-css-map-and-dead-rules](M02-css-map-and-dead-rules.md) | done | Mapear CSS y detectar reglas muertas o duplicadas. |
 | 3 | [M03-css-important-reduction](M03-css-important-reduction.md) | pending | Reducir `!important` en un dominio de bajo riesgo. |
 | 4 | [M04-product-mobile-override](M04-product-mobile-override.md) | pending | Definir estrategia del CSS mobile/producto versionado. |
 | 5 | [M05-card-js-audit](M05-card-js-audit.md) | pending | Auditar `ivana-card.js.tpl` y sus responsabilidades reales. |
