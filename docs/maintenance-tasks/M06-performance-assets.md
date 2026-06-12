@@ -1,6 +1,6 @@
 # M06 - Performance y assets
 
-Estado: `pending`
+Estado: `done`
 
 ## Objetivo
 
@@ -38,3 +38,11 @@ Medir y optimizar carga de assets sin cambiar el diseno aprobado.
 - Categoria.
 - Producto.
 - Mobile y desktop.
+
+## Resultado
+
+- Se documento la medicion en `docs/maintenance-performance-assets.md`.
+- Se genero reporte local en `output/maintenance-baseline/m06-performance-assets/report.json`.
+- Se retiro un preload redundante de Google Fonts en `layouts/layout.tpl`.
+- Se mantuvieron `preconnect`, `component('fonts')`, preloads de imagen LCP y scripts funcionales.
+- Validacion requerida al desplegar: home, categoria y producto en mobile/desktop.

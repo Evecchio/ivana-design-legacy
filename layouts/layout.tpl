@@ -13,7 +13,6 @@
 
 		{% snipplet 'preload-images.tpl' %}
 
-		<link rel="preload" as="style" href="{{ [settings.font_headings, settings.font_rest] | google_fonts_url('400,700') }}" />
 		<link rel="preload" href="{{ 'css/style-critical.scss' | static_url }}" as="style" />
 		<link rel="preload" href="{{ 'css/style-utilities.scss' | static_url }}" as="style" />
 		<link rel="preload" href="{{ 'js/external-no-dependencies.js.tpl' | static_url }}" as="script" />
