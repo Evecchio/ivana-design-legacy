@@ -1,6 +1,6 @@
 # T06 - Pagina de producto
 
-Estado: `pending`
+Estado: `done`
 
 ## Objetivo
 
@@ -75,3 +75,28 @@ Redisenar la pagina de producto preservando variantes, stock, precios, cuotas, t
 - Estado actualizado a `done`.
 - Resumen de cambios en producto.
 - QA funcional de variantes, stock, add to cart y envios.
+
+## Cierre T06
+
+Estado: implementado y validado.
+
+- No se hicieron cambios productivos nuevos en esta tarea: la pagina de producto ya estaba redisenada en `templates/product.tpl`, `snipplets/product/*`, `static/css/ivana-design.css` y `static/css/ivana-product-mobile-20260610-24.css`.
+- Se preservaron los hooks criticos: `id="single-product"`, `data-variants`, `data-store="product-detail"`, `js-product-detail`, `js-product-container`, `js-product-name`, `js-price-display`, `js-compare-price-display`, `js-prod-submit-form`, variantes, cantidad y formulario de compra.
+- Validado producto con multiples variantes: `Legging Cint Recta con Recorte de Costura`.
+- Validado producto con una variante y descuento: `Pollera con Short Mini Leopardo`.
+- Galeria y miniaturas cargan en mobile y desktop, con imagen completa usando `object-fit: contain`.
+- Variantes responden al cambio de seleccion y la cantidad cambia correctamente.
+- Add to cart validado con user-agent mobile normal: `/comprar/` respondio `success: true`, badge de carrito paso a `1` y se renderizo el item en carrito.
+- Relacionados renderizan con la card consistente de T02.
+- Descripcion se mantiene legible en el bloque redisenado.
+
+QA ejecutado:
+
+- Mobile 390px y desktop 1366px sobre producto con variantes.
+- Add to cart en producto con una variante disponible.
+- Revision de consola JS visible.
+
+Riesgo residual:
+
+- En un producto aparece un error externo por contenido con ruta local `file:///E:/Ivana Design/...`; corresponde a una imagen cargada en contenido/admin de Tiendanube, no a un archivo del theme.
+- La calculadora de envio no se cerro como validacion completa de tarifa porque depende de servicios/envios externos y codigos postales reales; el bloque se mantiene renderizado y no se modifico su markup.

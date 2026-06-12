@@ -381,9 +381,9 @@ Validacion requerida antes de cerrar:
 
 ## Proxima accion recomendada
 
-Ejecutar T06 - Pagina de producto:
+Ejecutar T07 - Carrito y conversion final:
 
-1. Relevar `docs/spec-driven-redesign.md` y `docs/tasks/T06-product-page.md`.
-2. Tomar baseline de producto publicado.
-3. Mejorar la pagina de producto preservando variantes, stock, precio y add to cart.
+1. Relevar `docs/spec-driven-redesign.md` y `docs/tasks/T07-cart.md`.
+2. Tomar baseline de carrito publicado con item agregado y carrito vacio.
+3. Mejorar carrito preservando cantidades, stock, envios, totales y checkout handoff.
 4. Separar cualquier propuesta visual adicional para aprobacion antes de subirla a produccion.

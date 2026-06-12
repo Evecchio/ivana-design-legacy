@@ -28,7 +28,7 @@ Este directorio convierte la especificacion madre en tareas chicas, verificables
 | 3 | [T03-header-mobile-search](T03-header-mobile-search.md) | done | Mejorar header, navegacion mobile y buscador. |
 | 4 | [T04-home](T04-home.md) | done | Redisenar home modular y secciones comerciales. |
 | 5 | [T05-category-search](T05-category-search.md) | done | Mejorar categoria, filtros, ordenamiento, busqueda y grilla. |
-| 6 | [T06-product-page](T06-product-page.md) | pending | Redisenar producto preservando variantes, stock, precio y add to cart. |
+| 6 | [T06-product-page](T06-product-page.md) | done | Redisenar producto preservando variantes, stock, precio y add to cart. |
 | 7 | [T07-cart](T07-cart.md) | pending | Mejorar carrito, resumen, cantidades, envios y checkout handoff. |
 | 8 | [T08-footer-institutional](T08-footer-institutional.md) | pending | Mejorar footer, pages, contacto, blog y cuenta con cambios seguros. |
 | 9 | [T09-qa-release](T09-qa-release.md) | pending | Validacion integral, performance, compatibilidad y cierre de release. |
