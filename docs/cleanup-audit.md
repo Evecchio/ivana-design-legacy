@@ -363,19 +363,27 @@ No se debe eliminar si:
 - Participa en producto, variantes, stock, precio, carrito, envio o checkout.
 - Solo "parece viejo" pero corrige un bug visual reciente.
 
+## Limpieza post T05 - Home/categoria
+
+Estado: implementado.
+
+- Retiradas 145 lineas de `static/css/ivana-design.css` correspondientes a generaciones anteriores de categorias home.
+- Retirado el bloque intermedio de filtros para `768px-1199px`, reemplazado por la implementacion activa `Category filters - active implementation`, que usa controles modales en todos los anchos.
+- Preservados los hooks y templates de Tiendanube: `filters-modals.tpl`, `filters-controls.tpl`, `component('sort-by')`, `js-category-controls`, `js-home-category` y estructura de navegacion/categorias.
+- Actualizado `asset_version` en `layouts/layout.tpl` a `20260612-01`.
+
+Validacion requerida antes de cerrar:
+
+- Home mobile y desktop: colecciones destacadas mantienen espaciado aprobado.
+- Categoria mobile, desktop-mode y desktop: filtros siguen como controles modales.
+- Busqueda con resultados y sin resultados no pierde layout.
+- Consola JS sin errores del theme.
+
 ## Proxima accion recomendada
 
-T01 - Fundacion visual:
+Ejecutar T06 - Pagina de producto:
 
-- Se agregaron tokens fundacionales en `static/css/style-tokens.tpl`: radios, altura de controles, colores semanticos, foco y sombra de foco.
-- Se agrego base reusable en `static/css/ivana-design.css` para focus visible, botones, formularios, badges, alerts y disabled.
-- Se marco `docs/tasks/T01-foundation-visual.md` como `done`.
-
-Proxima accion recomendada:
-
-Ejecutar T02 - Product card:
-
-1. Tomar baseline visual publicado.
-2. Consolidar estilos activos de cards sin tocar hooks Tiendanube.
-3. Validar cards en home, categoria, busqueda y relacionados.
-4. Revisar precios, descuentos, cuotas, transferencia y stock.
+1. Relevar `docs/spec-driven-redesign.md` y `docs/tasks/T06-product-page.md`.
+2. Tomar baseline de producto publicado.
+3. Mejorar la pagina de producto preservando variantes, stock, precio y add to cart.
+4. Separar cualquier propuesta visual adicional para aprobacion antes de subirla a produccion.

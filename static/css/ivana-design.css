@@ -419,29 +419,6 @@
   background: linear-gradient(90deg, #111 0%, #ff1493 100%);
 }
 
-.ivana-home-categories {
-  padding-top: clamp(2rem, 5vw, 4rem) !important;
-  padding-bottom: clamp(1.5rem, 4vw, 3rem) !important;
-}
-
-.ivana-home-categories-row {
-  min-width: max-content;
-}
-
-.ivana-home-category-circle {
-  width: 102px !important;
-  height: 102px !important;
-  border: 2px solid rgba(17, 17, 17, 0.08) !important;
-  box-shadow: 0 12px 32px rgba(17, 17, 17, 0.06);
-  background: #fff;
-}
-
-.ivana-home-category-name {
-  font-size: clamp(0.68rem, 0.95vw, 0.78rem) !important;
-  color: #111 !important;
-  text-transform: none !important;
-}
-
 .ivana-home-products {
   padding-top: clamp(2rem, 5vw, 4rem) !important;
   padding-bottom: clamp(2rem, 5vw, 4rem) !important;
@@ -640,37 +617,6 @@
   gap: 0.45rem !important;
 }
 
-.ivana-home-categories .container {
-  overflow-x: visible !important;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.ivana-home-categories-row {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: flex-start !important;
-  flex-wrap: wrap !important;
-  gap: clamp(1.5rem, 2.5vw, 3rem) clamp(2rem, 4vw, 5rem) !important;
-  min-width: 0 !important;
-  padding-bottom: 0 !important;
-  width: 100%;
-}
-
-.ivana-home-categories .js-home-category {
-  flex: 0 0 clamp(108px, 13vw, 200px) !important;
-  max-width: clamp(108px, 13vw, 200px) !important;
-}
-
-.ivana-home-category-name {
-  display: block !important;
-  width: 100% !important;
-  min-height: 2.8em;
-  line-height: 1.35 !important;
-  text-wrap: balance;
-}
-
 @media (max-width: 991px) {
   .js-head-row {
     grid-template-columns: auto 1fr auto !important;
@@ -679,32 +625,6 @@
 
   .search-container {
     max-width: none;
-  }
-}
-
-@media (max-width: 767px) {
-  .ivana-home-categories .container {
-    overflow-x: auto !important;
-  }
-
-  .ivana-home-categories-row {
-    justify-content: flex-start !important;
-    flex-wrap: nowrap !important;
-    min-width: max-content !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    padding-bottom: 15px !important;
-  }
-
-  .ivana-home-categories .js-home-category {
-    flex: 0 0 28% !important;
-    max-width: 28% !important;
-    margin-right: 15px !important;
-  }
-
-  .ivana-home-category-name {
-    min-height: 3.2em;
-    font-size: 0.68rem !important;
   }
 }
 
@@ -1293,44 +1213,6 @@
 
   .ivana-category-sidebar {
     position: static;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1199px) {
-  .ivana-category-layout.ivana-category-layout-filters {
-    grid-template-columns: minmax(0, 1fr) !important;
-  }
-
-  .ivana-category-layout .ivana-category-sidebar,
-  .ivana-category-toolbar {
-    display: none !important;
-  }
-
-  .ivana-category-shell .js-category-controls {
-    background: #ffffff !important;
-    border: 1px solid rgba(17, 17, 17, 0.1) !important;
-    border-radius: 18px !important;
-    box-shadow: 0 16px 42px rgba(17, 17, 17, 0.06) !important;
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    margin: 16px 0 20px !important;
-    overflow: hidden !important;
-  }
-
-  .ivana-category-shell .js-category-controls button {
-    background: #ffffff !important;
-    border: 0 !important;
-    font-size: 13px !important;
-    letter-spacing: 0.04em !important;
-    min-height: 52px !important;
-  }
-
-  .ivana-category-shell .js-category-controls button + button {
-    border-left: 1px solid rgba(17, 17, 17, 0.1) !important;
-  }
-
-  .ivana-category-products {
-    margin-top: 0 !important;
   }
 }
 
@@ -2561,33 +2443,6 @@ select:focus {
 .ivana-home-products-link:hover {
   background: #111111 !important;
   color: #ffffff !important;
-}
-
-.ivana-home-categories {
-  padding-top: clamp(0.75rem, 2vw, 1.25rem) !important;
-}
-
-.ivana-home-categories-row {
-  gap: clamp(1rem, 2.2vw, 1.5rem) !important;
-}
-
-.js-home-category {
-  min-width: 106px;
-}
-
-.ivana-home-category-circle,
-.home-category-image-border {
-  background: linear-gradient(180deg, #ffffff, #fff5f8) !important;
-  border: 1px solid var(--ivana-border) !important;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
-}
-
-.ivana-home-category-name {
-  font-size: clamp(0.68rem, 0.95vw, 0.78rem) !important;
-  letter-spacing: 0.16em !important;
-  line-height: 1.5 !important;
-  color: var(--ivana-text) !important;
-  text-transform: none !important;
 }
 
 .ivana-home-infos .container {
