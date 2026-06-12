@@ -30,7 +30,7 @@ Este backlog es post-release. No reemplaza el spec de redisenio: lo cuida. Su fu
 | 5 | [M05-card-js-audit](M05-card-js-audit.md) | done | Auditar `ivana-card.js.tpl` y sus responsabilidades reales. |
 | 6 | [M06-performance-assets](M06-performance-assets.md) | done | Medir y optimizar peso de assets/carga visual. |
 | 7 | [M07-accessibility-seo](M07-accessibility-seo.md) | done | Mejorar accesibilidad basica y SEO tecnico sin redisenio. |
-| 8 | [M08-cache-404-monitoring](M08-cache-404-monitoring.md) | pending | Revisar cache/404 y comportamiento residual Tiendanube. |
+| 8 | [M08-cache-404-monitoring](M08-cache-404-monitoring.md) | done | Revisar cache/404 y comportamiento residual Tiendanube. |
 
 ## Comando sugerido
 
