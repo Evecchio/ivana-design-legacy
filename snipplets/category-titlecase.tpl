@@ -41,7 +41,7 @@
   {%- for word in lower_category_title | split(' ') -%}
     {%- set clean_word = word | trim -%}
     {%- if clean_word -%}
-      {%- if not loop.first -%} {% endif -%}
+      {{- not loop.first ? ' ' : '' -}}
       {%- if not loop.first and clean_word in minor_words -%}
         {{- clean_word -}}
       {%- else -%}
