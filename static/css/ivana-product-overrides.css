@@ -1055,18 +1055,14 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-home-products .ivana-card .ivana-card-transfer-container,
   .ivana-home-products div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-container,
   .ivana-home-products .js-item-product.ivana-card .ivana-card-transfer-container {
-    column-gap: 5px !important;
-    display: grid !important;
-    grid-template-areas:
-      "icon caption caption"
-      "icon price badge" !important;
-    grid-template-columns: 18px minmax(0, max-content) max-content !important;
+    align-items: center !important;
+    column-gap: 4px !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
     justify-content: center !important;
-    justify-items: start !important;
     min-height: 0 !important;
     overflow: hidden !important;
-    padding: 8px 6px !important;
-    row-gap: 3px !important;
+    padding: 8px 5px !important;
   }
 
   .ivana-card .ivana-card-transfer-icon,
@@ -1076,16 +1072,30 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-home-products div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-icon,
   .ivana-home-products .js-item-product.ivana-card .ivana-card-transfer-icon {
     display: inline-flex !important;
-    grid-area: icon !important;
-    height: 18px !important;
-    width: 18px !important;
+    flex: 0 0 16px !important;
+    height: 16px !important;
+    width: 16px !important;
   }
 
   .ivana-card .ivana-card-transfer-icon svg,
   div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-icon svg,
   .js-item-product.ivana-card .ivana-card-transfer-icon svg {
-    height: 18px !important;
-    width: 18px !important;
+    height: 16px !important;
+    width: 16px !important;
+  }
+
+  .ivana-card .ivana-card-transfer-copy,
+  div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-copy,
+  .js-item-product.ivana-card .ivana-card-transfer-copy,
+  .ivana-home-products .ivana-card .ivana-card-transfer-copy,
+  .ivana-home-products div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-copy,
+  .ivana-home-products .js-item-product.ivana-card .ivana-card-transfer-copy {
+    align-items: flex-start !important;
+    display: flex !important;
+    flex: 0 1 auto !important;
+    flex-direction: column !important;
+    gap: 3px !important;
+    min-width: 0 !important;
   }
 
   .ivana-card .ivana-card-transfer-caption,
@@ -1094,11 +1104,13 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-home-products .ivana-card .ivana-card-transfer-caption,
   .ivana-home-products div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-caption,
   .ivana-home-products .js-item-product.ivana-card .ivana-card-transfer-caption {
-    font-size: 0.46rem !important;
-    grid-area: caption !important;
+    font-size: 0.42rem !important;
     letter-spacing: 0.04em !important;
     line-height: 1 !important;
+    max-width: 72px !important;
+    overflow: hidden !important;
     text-align: left !important;
+    text-overflow: ellipsis !important;
     white-space: nowrap !important;
   }
 
@@ -1108,9 +1120,7 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-home-products .ivana-card .ivana-card-transfer-price,
   .ivana-home-products div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-price,
   .ivana-home-products .js-item-product.ivana-card .ivana-card-transfer-price {
-    font-size: 0.76rem !important;
-    grid-area: price !important;
-    justify-self: start !important;
+    font-size: 0.68rem !important;
     letter-spacing: 0.02em !important;
     line-height: 1 !important;
     white-space: nowrap !important;
@@ -1122,10 +1132,9 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-home-products .ivana-card .ivana-card-transfer-badge,
   .ivana-home-products div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-badge,
   .ivana-home-products .js-item-product.ivana-card .ivana-card-transfer-badge {
-    align-self: center !important;
-    font-size: 0.44rem !important;
-    grid-area: badge !important;
-    justify-self: start !important;
+    align-self: flex-end !important;
+    flex: 0 0 auto !important;
+    font-size: 0.36rem !important;
     letter-spacing: 0.03em !important;
     line-height: 1 !important;
     white-space: nowrap !important;
