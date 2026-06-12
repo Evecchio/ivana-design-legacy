@@ -8,7 +8,10 @@
 </div>
 <div class="js-empty-ajax-cart" {% if cart.items_count > 0 %}style="display:none;"{% endif %}>
 	{# Cart panel empty #}
-	<div class="alert alert-info text-center" data-component="cart.empty-message">{{ "El carrito de compras está vacío." | translate }} </div>
+	<div class="alert alert-info text-center" data-component="cart.empty-message">
+		{{ "El carrito de compras está vacío." | translate }}
+		<a href="{{ store.products_url }}" class="btn btn-primary d-inline-block mt-2">{{ "Ver productos" | translate }}</a>
+	</div>
 </div>
 <div id="error-ajax-stock" style="display: none;">
 	<div class="alert alert-warning m-3">
