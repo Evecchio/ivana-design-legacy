@@ -22,14 +22,16 @@
 
   {# Price without taxes #}
 
-  {{ component('price-without-taxes', {
-      location: 'cart',
-      container_classes: price_without_taxes_container_classes,
-      text_classes: {
-        price: price_without_taxes_price_classes,
-      },
-    })
-  }}
+  <div class="js-visible-on-cart-filled" {% if cart.items_count == 0 %}style="display:none;"{% endif %}>
+    {{ component('price-without-taxes', {
+        location: 'cart',
+        container_classes: price_without_taxes_container_classes,
+        text_classes: {
+          price: price_without_taxes_price_classes,
+        },
+      })
+    }}
+  </div>
 {% endif %}
 
 

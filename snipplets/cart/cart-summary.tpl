@@ -13,7 +13,7 @@
 
 {% if not cart_page %}
   
-  {% if has_free_shipping_bar %}
+  {% if has_free_shipping_bar and cart.items_count > 0 %}
     {# includes free shipping progress bar: only if store has free shipping with a minimum #}
     <div class="mx-neg-3 mt-2 mb-3">
       {% include "snipplets/shipping/shipping-free-rest.tpl" %}
@@ -36,7 +36,7 @@
       <p class="ivana-cart-summary-copy mb-0">{{ 'Revisa tus totales antes de iniciar la compra.' | translate }}</p>
     </div>
 
-    {% if has_free_shipping_bar %}
+    {% if has_free_shipping_bar and cart.items_count > 0 %}
       <div class="mb-3 d-none d-md-block">
         {% include "snipplets/shipping/shipping-free-rest.tpl" %}
       </div>
