@@ -2169,6 +2169,20 @@ textarea {
 
 body {
   background: #ffffff !important;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.swiper-container,
+.swiper-wrapper,
+.ivana-home-shell,
+#page-error {
+  max-width: 100%;
 }
 
 h1,
