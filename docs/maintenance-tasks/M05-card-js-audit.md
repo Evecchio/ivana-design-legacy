@@ -1,6 +1,6 @@
 # M05 - Auditoria JS de cards
 
-Estado: `pending`
+Estado: `done`
 
 ## Objetivo
 
@@ -39,3 +39,10 @@ Auditar `static/js/ivana-card.js.tpl` para confirmar que responsabilidades sigue
 - Busqueda.
 - Home.
 - Relacionados de producto.
+
+## Resultado
+
+- Se documento el mapa de responsabilidades en `docs/maintenance-card-js-audit.md`.
+- Se corrigio un estado inconsistente: cards con `.ivana-card-discount-tag` ya no deben quedar clasificadas como `ivana-no-discount`.
+- No se modificaron precios, porcentajes, cuotas, transferencia ni links de producto.
+- Validacion requerida al desplegar: home, categoria, busqueda y relacionados en mobile/desktop.

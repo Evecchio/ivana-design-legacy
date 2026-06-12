@@ -63,9 +63,13 @@ function normalizeIvanaProductCards(root) {
             var discountText = (discountBadge.textContent || "").replace(/\s+/g, " ").trim();
             var discountMatch = discountText.match(/\d+(?:[.,]\d+)?/);
             discountValue = discountMatch ? parseFloat(discountMatch[0].replace(",", ".")) : null;
+        } else if (customDiscountBadge) {
+            var customDiscountText = (customDiscountBadge.textContent || "").replace(/\s+/g, " ").trim();
+            var customDiscountMatch = customDiscountText.match(/\d+(?:[.,]\d+)?/);
+            discountValue = customDiscountMatch ? parseFloat(customDiscountMatch[0].replace(",", ".")) : null;
         }
 
-        var hideDiscount = !discountBadge || discountValue === null || discountValue <= 0;
+        var hideDiscount = (!discountBadge && !customDiscountBadge) || discountValue === null || discountValue <= 0;
         var hideComparePrice = !comparePrice || comparePriceValue === null || currentPriceValue === null || comparePriceValue <= currentPriceValue;
 
         if (discountBadge) {
