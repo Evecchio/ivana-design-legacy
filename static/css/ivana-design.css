@@ -5947,3 +5947,14 @@ body.template-product .ivana-product-thumbs .js-product-thumb img {
   object-position: center center !important;
   transform: none !important;
 }
+
+/* Home featured collections - active spacing. */
+.section-home.section-categories-home.ivana-home-categories .ivana-home-section-head {
+  margin-bottom: clamp(34px, 4vw, 56px) !important;
+}
+
+@media (max-width: 767px) {
+  .section-home.section-categories-home.ivana-home-categories .ivana-home-section-head {
+    margin-bottom: 34px !important;
+  }
+}
