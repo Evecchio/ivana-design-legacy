@@ -2820,6 +2820,31 @@ select:focus {
   overflow: hidden;
 }
 
+#page-error .js-swiper-featured {
+  max-width: 100%;
+  overflow: hidden !important;
+}
+
+#page-error .js-products-featured-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: clamp(0.85rem, 2vw, 1.25rem);
+  width: 100% !important;
+  transform: none !important;
+}
+
+#page-error .js-products-featured-grid .swiper-slide {
+  width: auto !important;
+  margin-right: 0 !important;
+}
+
+#page-error .js-products-featured-grid .swiper-slide-duplicate,
+#page-error .js-swiper-featured-pagination,
+#page-error .js-swiper-featured-prev,
+#page-error .js-swiper-featured-next {
+  display: none !important;
+}
+
 @media (max-width: 767px) {
 
   .ivana-page-hero,
