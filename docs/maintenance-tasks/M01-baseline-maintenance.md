@@ -1,6 +1,6 @@
 # M01 - Baseline mantenimiento
 
-Estado: `pending`
+Estado: `done`
 
 ## Objetivo
 
@@ -37,3 +37,22 @@ Crear una linea base tecnica y visual post-release para comparar futuras limpiez
 
 - Tienda publicada responde.
 - No se hacen cambios productivos.
+
+## Cierre
+
+Cambios realizados:
+
+- Se genero baseline tecnico versionado en `docs/maintenance-baseline.md`.
+- Se guardaron capturas y reportes locales en `output/maintenance-baseline/`.
+- No se modificaron templates, CSS ni JS productivos.
+
+Validaciones:
+
+- Mobile 390px y desktop 1366px para home, categoria, busqueda, producto, carrito vacio, contacto y 404.
+- Flujo producto -> add to cart -> carrito -> cantidad -> envio CP `1414` -> checkout.
+- Sin errores JS propios ni scroll horizontal en la pasada baseline.
+
+Riesgos:
+
+- La deuda principal sigue concentrada en `static/css/ivana-design.css`: 168.5 KB y 1822 `!important`.
+- El override `static/css/ivana-product-mobile-20260610-24.css` sigue siendo sensible: 23.7 KB y 307 `!important`.
