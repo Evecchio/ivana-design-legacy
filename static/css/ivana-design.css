@@ -6029,3 +6029,26 @@ body.template-product .ivana-product-thumbs .js-product-thumb img {
     margin-bottom: 44px !important;
   }
 }
+
+/* Release QA: the hosted 404 uses a legacy featured-products swiper. Force it into
+   a contained grid so off-canvas swiper transforms cannot widen the page. */
+#page-error .js-swiper-featured .js-products-featured-grid.swiper-wrapper {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+  gap: clamp(0.85rem, 2vw, 1.25rem) !important;
+  width: 100% !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+#page-error .js-swiper-featured .js-products-featured-grid.swiper-wrapper > .swiper-slide {
+  width: auto !important;
+  margin-right: 0 !important;
+}
+
+#page-error .js-swiper-featured .js-products-featured-grid.swiper-wrapper > .swiper-slide-duplicate,
+#page-error .js-swiper-featured-pagination,
+#page-error .js-swiper-featured-prev,
+#page-error .js-swiper-featured-next {
+  display: none !important;
+}
