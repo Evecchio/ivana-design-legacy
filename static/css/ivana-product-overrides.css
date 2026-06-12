@@ -139,6 +139,13 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-badge,
   white-space: nowrap !important;
 }
 
+/* Hide native product-item price rendered by Tiendanube over the image.
+   The visible card price is the custom .ivana-card-prices-block below. */
+.ivana-card .product-item-price-container[data-store^="product-item-price-"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
 body.template-product .ivana-product-payments-box .js-product-discount-container {
   grid-template-columns: 34px minmax(0, 1fr) !important;
 }
