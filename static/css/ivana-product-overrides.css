@@ -1170,3 +1170,342 @@ body.template-product .ivana-product-detail-note-title {
     white-space: nowrap !important;
   }
 }
+
+/* Final product page redesign priority layer. Keep after legacy overrides. */
+body.template-product .ivana-product-shell > .container {
+  max-width: 1366px !important;
+  width: calc(100vw - 40px) !important;
+}
+
+body.template-product .ivana-product-shell .product-columns,
+body.template-product .ivana-product-secondary-grid {
+  align-items: start !important;
+  display: grid !important;
+  gap: clamp(24px, 3vw, 44px) !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  width: 100% !important;
+}
+
+body.template-product .ivana-product-shell .product-images {
+  display: grid !important;
+  gap: 14px !important;
+  grid-template-areas:
+    "main"
+    "thumbs" !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+body.template-product .ivana-product-gallery,
+body.template-product .product-images-slider.ivana-product-gallery,
+body.template-product .ivana-product-shell .product-info {
+  height: clamp(620px, 54vw, 760px) !important;
+  margin: 0 !important;
+  max-height: clamp(620px, 54vw, 760px) !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+body.template-product .ivana-product-gallery,
+body.template-product .product-images-slider.ivana-product-gallery {
+  background: #f4f1ee !important;
+  border: 1px solid #e7dfd9 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 18px 44px rgba(39, 31, 25, 0.07) !important;
+  grid-area: main !important;
+  overflow: hidden !important;
+  padding: 8px !important;
+}
+
+body.template-product .ivana-product-gallery .swiper-container,
+body.template-product .ivana-product-gallery .swiper-wrapper,
+body.template-product .ivana-product-gallery .swiper-slide,
+body.template-product .ivana-product-gallery .slider-slide,
+body.template-product .ivana-product-gallery .js-product-slide-link {
+  height: 100% !important;
+}
+
+body.template-product .ivana-product-gallery .js-product-slide-link {
+  background: #fbfaf9 !important;
+  border-radius: 6px !important;
+  padding-bottom: 0 !important;
+}
+
+body.template-product .ivana-product-gallery .product-slider-image,
+body.template-product .ivana-product-gallery .js-product-slide-img {
+  height: 100% !important;
+  left: 0 !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  position: absolute !important;
+  top: 0 !important;
+  transform: none !important;
+  width: 100% !important;
+}
+
+body.template-product .product-images-thumbs.ivana-product-thumbs,
+body.template-product .ivana-product-thumbs.order-md-first,
+body.template-product .ivana-product-thumbs {
+  grid-area: thumbs !important;
+  height: auto !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+  min-height: 0 !important;
+  order: 2 !important;
+  overflow: hidden !important;
+  text-align: left !important;
+  width: 100% !important;
+}
+
+body.template-product .ivana-product-thumbs .swiper-wrapper {
+  align-items: stretch !important;
+  display: flex !important;
+  gap: 12px !important;
+  height: auto !important;
+  transform: none !important;
+}
+
+body.template-product .ivana-product-thumbs .product-thumb-container,
+body.template-product .ivana-product-thumbs .swiper-slide {
+  background: #fbfaf9 !important;
+  border: 1px solid #e7dfd9 !important;
+  border-radius: 8px !important;
+  flex: 0 0 104px !important;
+  height: 132px !important;
+  margin: 0 !important;
+  max-height: 132px !important;
+  min-height: 132px !important;
+  overflow: hidden !important;
+  padding: 4px !important;
+  width: 104px !important;
+}
+
+body.template-product .ivana-product-thumbs .product-thumb,
+body.template-product .ivana-product-thumbs .js-product-thumb,
+body.template-product .ivana-product-thumbs .product-thumb img,
+body.template-product .ivana-product-thumbs .js-product-thumb img {
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  width: 100% !important;
+}
+
+body.template-product .ivana-product-shell .product-info {
+  align-self: start !important;
+  background: #ffffff !important;
+  border: 1px solid #e9e2dd !important;
+  border-radius: 10px !important;
+  box-shadow: 0 18px 44px rgba(39, 31, 25, 0.06) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  overflow: visible !important;
+  padding: clamp(28px, 3vw, 46px) !important;
+  position: static !important;
+  top: auto !important;
+}
+
+body.template-product .ivana-product-secondary-grid {
+  margin-top: 8px !important;
+}
+
+body.template-product .ivana-product-secondary-grid .ivana-product-description-card,
+body.template-product .ivana-product-logistics-panel {
+  background: #ffffff !important;
+  border: 1px solid #e9e2dd !important;
+  border-radius: 10px !important;
+  box-shadow: 0 12px 30px rgba(39, 31, 25, 0.045) !important;
+  margin: 0 !important;
+  padding: 24px !important;
+  width: 100% !important;
+}
+
+body.template-product .ivana-product-logistics-panel {
+  display: grid !important;
+  gap: 18px !important;
+}
+
+body.template-product .ivana-product-logistics-title {
+  color: #171514 !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+  text-transform: uppercase !important;
+}
+
+body.template-product .ivana-product-logistics-panel .ivana-product-support-cards,
+body.template-product .ivana-product-logistics-panel .ivana-product-fulfillment {
+  margin: 0 !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+body.template-product .ivana-product-logistics-panel .ivana-product-support-card,
+body.template-product .ivana-product-logistics-panel .free-shipping-message,
+body.template-product .ivana-product-logistics-panel .ivana-product-fulfillment .product-shipping-calculator > div {
+  background: #fbfaf9 !important;
+  border: 1px solid #ebe6e2 !important;
+  border-radius: 8px !important;
+  margin: 0 !important;
+  padding: 16px !important;
+}
+
+body.template-product .ivana-product-logistics-panel .grid.grid-auto-1,
+body.template-product .ivana-product-logistics-panel .ivana-product-fulfillment .list,
+body.template-product .ivana-product-logistics-panel .ivana-product-fulfillment .js-shipping-calculator,
+body.template-product .ivana-product-logistics-panel .shipping-calculator-head,
+body.template-product .ivana-product-logistics-panel .shipping-calculator-head > div,
+body.template-product .ivana-product-logistics-panel .js-shipping-calculator-with-zipcode,
+body.template-product .ivana-product-logistics-panel .js-shipping-calculator-form {
+  height: auto !important;
+  inset: auto !important;
+  max-width: 100% !important;
+  min-height: 0 !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+  position: static !important;
+  transform: none !important;
+  width: 100% !important;
+}
+
+body.template-product .ivana-product-logistics-panel .product-shipping-calculator {
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+body.template-product .ivana-product-logistics-panel .form-control-container.input-append {
+  align-items: stretch !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  display: grid !important;
+  gap: 8px !important;
+  grid-template-columns: minmax(0, 1fr) 112px !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+  padding: 0 !important;
+  position: static !important;
+  width: 100% !important;
+}
+
+body.template-product .ivana-product-logistics-panel .form-control,
+body.template-product .ivana-product-logistics-panel .js-shipping-input {
+  border: 1px solid #d8d0ca !important;
+  border-radius: 8px !important;
+  grid-column: 1 !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  min-width: 0 !important;
+  padding: 0 14px !important;
+  position: static !important;
+  width: 100% !important;
+}
+
+body.template-product .ivana-product-logistics-panel .js-calculate-shipping,
+body.template-product .ivana-product-logistics-panel .form-control-container.input-append .btn-inline,
+body.template-product .ivana-product-logistics-panel input[type="submit"],
+body.template-product .ivana-product-logistics-panel button[type="submit"] {
+  align-items: center !important;
+  aspect-ratio: auto !important;
+  border-radius: 4px !important;
+  display: inline-flex !important;
+  grid-column: 2 !important;
+  height: 44px !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  min-height: 44px !important;
+  min-width: 112px !important;
+  padding: 0 18px !important;
+  position: static !important;
+  right: auto !important;
+  top: auto !important;
+  transform: none !important;
+  width: auto !important;
+}
+
+body.template-product .ivana-product-logistics-panel .js-calculate-shipping:before,
+body.template-product .ivana-product-logistics-panel .js-calculate-shipping:after,
+body.template-product .ivana-product-logistics-panel .form-control-container.input-append .btn-inline:before,
+body.template-product .ivana-product-logistics-panel .form-control-container.input-append .btn-inline:after,
+body.template-product .ivana-product-logistics-panel button[type="submit"]:before,
+body.template-product .ivana-product-logistics-panel button[type="submit"]:after {
+  content: none !important;
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  body.template-product .ivana-product-shell > .container {
+    max-width: calc(100vw - 28px) !important;
+    width: calc(100vw - 28px) !important;
+  }
+
+  body.template-product .ivana-product-shell .product-columns,
+  body.template-product .ivana-product-secondary-grid {
+    gap: 18px !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  body.template-product .ivana-product-gallery,
+  body.template-product .product-images-slider.ivana-product-gallery {
+    border-radius: 8px !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 6px !important;
+  }
+
+  body.template-product .ivana-product-gallery .js-product-slide-link {
+    aspect-ratio: 0.78 / 1 !important;
+    height: auto !important;
+  }
+
+  body.template-product .ivana-product-thumbs .swiper-wrapper {
+    gap: 10px !important;
+    overflow-x: auto !important;
+    padding-bottom: 2px !important;
+  }
+
+  body.template-product .ivana-product-thumbs .product-thumb-container,
+  body.template-product .ivana-product-thumbs .swiper-slide {
+    flex: 0 0 78px !important;
+    height: 104px !important;
+    max-height: 104px !important;
+    min-height: 104px !important;
+    width: 78px !important;
+  }
+
+  body.template-product .ivana-product-shell .product-info {
+    border-radius: 8px !important;
+    height: auto !important;
+    justify-content: flex-start !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    padding: 22px 18px !important;
+  }
+
+  body.template-product .ivana-product-secondary-grid .ivana-product-description-card,
+  body.template-product .ivana-product-logistics-panel {
+    border-radius: 8px !important;
+    padding: 20px 18px !important;
+  }
+
+  body.template-product .ivana-product-logistics-panel .form-control-container.input-append {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.template-product .ivana-product-logistics-panel .js-calculate-shipping,
+  body.template-product .ivana-product-logistics-panel .form-control-container.input-append .btn-inline,
+  body.template-product .ivana-product-logistics-panel input[type="submit"],
+  body.template-product .ivana-product-logistics-panel button[type="submit"] {
+    grid-column: 1 !important;
+    width: 100% !important;
+  }
+}

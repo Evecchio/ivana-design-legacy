@@ -8,7 +8,10 @@
 				{% include 'snipplets/product/product-form.tpl' %}
 			</div>
 		</div>
-		{% include 'snipplets/product/product-description.tpl' %}
+		<div class="ivana-product-secondary-grid">
+			{% include 'snipplets/product/product-description.tpl' %}
+			{% include 'snipplets/product/product-logistics.tpl' %}
+		</div>
 	</div>
 </div>
 
