@@ -1201,12 +1201,16 @@ body.template-product .ivana-product-shell .product-images {
 body.template-product .ivana-product-gallery,
 body.template-product .product-images-slider.ivana-product-gallery,
 body.template-product .ivana-product-shell .product-info {
-  height: clamp(620px, 54vw, 760px) !important;
   margin: 0 !important;
-  max-height: clamp(620px, 54vw, 760px) !important;
   max-width: 100% !important;
   min-width: 0 !important;
   width: 100% !important;
+}
+
+body.template-product .ivana-product-gallery,
+body.template-product .product-images-slider.ivana-product-gallery {
+  height: clamp(620px, 54vw, 760px) !important;
+  max-height: clamp(620px, 54vw, 760px) !important;
 }
 
 body.template-product .ivana-product-gallery,
@@ -1297,12 +1301,25 @@ body.template-product .ivana-product-thumbs .swiper-slide {
 }
 
 body.template-product .ivana-product-thumbs .product-thumb,
-body.template-product .ivana-product-thumbs .js-product-thumb,
+body.template-product .ivana-product-thumbs .js-product-thumb {
+  display: block !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  padding-bottom: 0 !important;
+  position: relative !important;
+  width: 100% !important;
+}
+
 body.template-product .ivana-product-thumbs .product-thumb img,
 body.template-product .ivana-product-thumbs .js-product-thumb img {
   height: 100% !important;
+  inset: 0 !important;
+  left: 0 !important;
   object-fit: contain !important;
   object-position: center center !important;
+  position: absolute !important;
+  top: 0 !important;
+  transform: none !important;
   width: 100% !important;
 }
 
@@ -1314,11 +1331,63 @@ body.template-product .ivana-product-shell .product-info {
   box-shadow: 0 18px 44px rgba(39, 31, 25, 0.06) !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: center !important;
+  height: auto !important;
+  justify-content: flex-start !important;
+  max-height: none !important;
+  min-height: 0 !important;
   overflow: visible !important;
   padding: clamp(28px, 3vw, 46px) !important;
   position: static !important;
   top: auto !important;
+}
+
+body.template-product .ivana-product-shell .ivana-variation-select-compact {
+  display: block !important;
+  margin: 0 0 18px !important;
+  position: relative !important;
+  width: 100% !important;
+}
+
+body.template-product .ivana-product-shell .ivana-variation-select-compact .form-label {
+  color: #706b67 !important;
+  display: block !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  line-height: 1.2 !important;
+  margin: 0 0 8px !important;
+  text-transform: uppercase !important;
+}
+
+body.template-product .ivana-product-shell .ivana-variation-select-compact .form-select {
+  appearance: none !important;
+  background: #151211 !important;
+  border: 1px solid #151211 !important;
+  border-radius: 4px !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  height: 48px !important;
+  letter-spacing: 0.08em !important;
+  line-height: 48px !important;
+  padding: 0 42px 0 16px !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  width: 100% !important;
+}
+
+body.template-product .ivana-product-shell .ivana-variation-select-compact .form-select:focus {
+  border-color: #f4a6cf !important;
+  box-shadow: 0 0 0 2px rgba(244, 166, 207, 0.35) !important;
+  outline: 0 !important;
+}
+
+body.template-product .ivana-product-shell .ivana-variation-select-compact .form-select-icon {
+  color: #ffffff !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  right: 16px !important;
+  top: 38px !important;
 }
 
 body.template-product .ivana-product-secondary-grid {
@@ -1371,16 +1440,11 @@ body.template-product .ivana-product-logistics-panel .ivana-product-fulfillment 
 
 body.template-product .ivana-product-logistics-panel .grid.grid-auto-1,
 body.template-product .ivana-product-logistics-panel .ivana-product-fulfillment .list,
-body.template-product .ivana-product-logistics-panel .ivana-product-fulfillment .js-shipping-calculator,
-body.template-product .ivana-product-logistics-panel .shipping-calculator-head,
-body.template-product .ivana-product-logistics-panel .shipping-calculator-head > div,
-body.template-product .ivana-product-logistics-panel .js-shipping-calculator-with-zipcode,
-body.template-product .ivana-product-logistics-panel .js-shipping-calculator-form {
+body.template-product .ivana-product-logistics-panel .ivana-product-fulfillment .js-shipping-calculator {
   height: auto !important;
   inset: auto !important;
   max-width: 100% !important;
   min-height: 0 !important;
-  opacity: 1 !important;
   overflow: visible !important;
   position: static !important;
   transform: none !important;
@@ -1391,6 +1455,67 @@ body.template-product .ivana-product-logistics-panel .product-shipping-calculato
   background: transparent !important;
   border: 0 !important;
   padding: 0 !important;
+}
+
+body.template-product .ivana-product-logistics-panel .shipping-calculator-head {
+  background: transparent !important;
+  border: 0 !important;
+  display: block !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  padding: 0 !important;
+  position: relative !important;
+  width: 100% !important;
+}
+
+body.template-product .ivana-product-logistics-panel .shipping-calculator-head.with-form,
+body.template-product .ivana-product-logistics-panel .shipping-calculator-head.with-error {
+  height: auto !important;
+  min-height: 92px !important;
+}
+
+body.template-product .ivana-product-logistics-panel .shipping-calculator-head.with-zip {
+  height: auto !important;
+  min-height: 44px !important;
+}
+
+body.template-product .ivana-product-logistics-panel .shipping-calculator-head.with-form .js-shipping-calculator-form,
+body.template-product .ivana-product-logistics-panel .shipping-calculator-head.with-error .js-shipping-calculator-form,
+body.template-product .ivana-product-logistics-panel .shipping-calculator-head.with-zip .js-shipping-calculator-with-zipcode {
+  height: auto !important;
+  inset: auto !important;
+  max-width: 100% !important;
+  min-height: 0 !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+  position: static !important;
+  transform: none !important;
+  visibility: visible !important;
+  width: 100% !important;
+}
+
+body.template-product .ivana-product-logistics-panel .shipping-calculator-head.with-form .js-shipping-calculator-with-zipcode,
+body.template-product .ivana-product-logistics-panel .shipping-calculator-head.with-error .js-shipping-calculator-with-zipcode,
+body.template-product .ivana-product-logistics-panel .shipping-calculator-head.with-zip .js-shipping-calculator-form {
+  height: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  transform: translateY(-8px) !important;
+  visibility: hidden !important;
+}
+
+body.template-product .ivana-product-logistics-panel .js-shipping-calculator-with-zipcode .d-grid {
+  align-items: center !important;
+  background: #fbfaf9 !important;
+  border: 1px solid #ebe6e2 !important;
+  border-radius: 8px !important;
+  display: grid !important;
+  gap: 10px !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  padding: 14px !important;
+  width: 100% !important;
 }
 
 body.template-product .ivana-product-logistics-panel .form-control-container.input-append {
@@ -1423,17 +1548,29 @@ body.template-product .ivana-product-logistics-panel .js-shipping-input {
   width: 100% !important;
 }
 
+body.template-product .ivana-product-logistics-panel .form-control.form-control-inline,
+body.template-product .ivana-product-logistics-panel .form-control-container.input-append .form-control-inline {
+  border-radius: 8px !important;
+  padding-right: 14px !important;
+}
+
 body.template-product .ivana-product-logistics-panel .js-calculate-shipping,
 body.template-product .ivana-product-logistics-panel .form-control-container.input-append .btn-inline,
 body.template-product .ivana-product-logistics-panel input[type="submit"],
 body.template-product .ivana-product-logistics-panel button[type="submit"] {
   align-items: center !important;
   aspect-ratio: auto !important;
+  background: #151211 !important;
+  border: 1px solid #151211 !important;
   border-radius: 4px !important;
+  color: #ffffff !important;
   display: inline-flex !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
   grid-column: 2 !important;
   height: 44px !important;
   justify-content: center !important;
+  letter-spacing: 0.02em !important;
   line-height: 1 !important;
   min-height: 44px !important;
   min-width: 112px !important;
@@ -1443,6 +1580,28 @@ body.template-product .ivana-product-logistics-panel button[type="submit"] {
   top: auto !important;
   transform: none !important;
   width: auto !important;
+}
+
+body.template-product .ivana-product-logistics-panel .js-calculate-shipping *,
+body.template-product .ivana-product-logistics-panel .form-control-container.input-append .btn-inline * {
+  color: #ffffff !important;
+}
+
+body.template-product .ivana-product-logistics-panel .js-calculate-shipping-wording,
+body.template-product .ivana-product-logistics-panel .js-calculating-shipping-wording {
+  background: transparent !important;
+  border: 0 !important;
+  height: auto !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.template-product .ivana-product-logistics-panel .js-calculate-shipping.btn-inline,
+body.template-product .ivana-product-logistics-panel .form-control-container.input-append .btn-inline {
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  margin: 0 !important;
 }
 
 body.template-product .ivana-product-logistics-panel .js-calculate-shipping:before,
@@ -1502,6 +1661,10 @@ body.template-product .ivana-product-logistics-panel button[type="submit"]:after
     max-height: none !important;
     min-height: 0 !important;
     padding: 22px 18px !important;
+  }
+
+  body.template-product .ivana-product-logistics-panel {
+    order: -1 !important;
   }
 
   body.template-product .ivana-product-secondary-grid .ivana-product-description-card,

@@ -6,8 +6,18 @@
 		{% set hidden_variant_select = ' mb-0' %}
 	{% endif %}
 	{% for variation in product.variations %}
-		{% if variation.name in ['Talle', 'Talla', 'Tamanho', 'Size'] %}
+		{% set is_size_variation = variation.name in ['Talle', 'Talla', 'Tamanho', 'Size'] %}
+		{% set use_compact_variant_select = not quickshop and settings.bullet_variants and is_size_variation and variation.options | length > 5 %}
+		{% if is_size_variation %}
 			{% set has_size_variations = true %}
+		{% endif %}
+
+		{% if use_compact_variant_select %}
+			{% set hidden_variant_select = ' d-block ivana-variation-select-compact' %}
+		{% elseif settings.bullet_variants %}
+			{% set hidden_variant_select = ' d-none' %}
+		{% else %}
+			{% set hidden_variant_select = ' mb-0' %}
 		{% endif %}
 
 		{% set is_hidden_select = false %}
@@ -20,7 +30,7 @@
 			{% endif %}
 		{% endif %}
 
-		{% set is_button_variant = (variation.name in ['Color', 'Cor']) or settings.bullet_variants %}
+		{% set is_button_variant = ((variation.name in ['Color', 'Cor']) or settings.bullet_variants) and not use_compact_variant_select %}
 
 		<div class="js-product-variants-group ivana-variation-group {% if variation.name in ['Color', 'Cor'] %}js-color-variants-container{% endif %} {% if is_button_variant and show_size_guide and settings.size_guide_url and has_size_variations and loop.last %}mb-0{% endif %} {% if settings.bullet_variants %}mb-3{% endif %}" data-variation-id="{{ variation.id }}">
 			{% if quickshop %}
