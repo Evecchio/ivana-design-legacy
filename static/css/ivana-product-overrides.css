@@ -1260,12 +1260,25 @@ body.template-product .ivana-product-thumbs {
   width: 100% !important;
 }
 
+body.template-product .ivana-product-thumbs .swiper-product-thumb,
+body.template-product .ivana-product-thumbs .js-swiper-product-thumbs,
+body.template-product .ivana-product-thumbs .swiper-container-vertical {
+  height: auto !important;
+  max-height: none !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+  width: 100% !important;
+}
+
+body.template-product .ivana-product-thumbs .swiper-container-vertical > .swiper-wrapper,
 body.template-product .ivana-product-thumbs .swiper-wrapper {
   align-items: stretch !important;
   display: flex !important;
+  flex-direction: row !important;
   gap: 12px !important;
   height: auto !important;
   transform: none !important;
+  width: 100% !important;
 }
 
 body.template-product .ivana-product-thumbs .product-thumb-container,
