@@ -6,7 +6,9 @@
 		{% set hidden_variant_select = ' mb-0' %}
 	{% endif %}
 	{% for variation in product.variations %}
-		{% set is_size_variation = variation.name in ['Talle', 'Talla', 'Tamanho', 'Size'] %}
+		{% set variation_name = variation.name | lower %}
+		{% set is_size_variation = variation_name in ['talle', 'talla', 'tamanho', 'size'] %}
+		{% set is_color_variation = variation_name in ['color', 'cor'] %}
 		{% set use_compact_variant_select = not quickshop and settings.bullet_variants and is_size_variation and variation.options | length > 5 %}
 		{% if is_size_variation %}
 			{% set has_size_variations = true %}
@@ -22,7 +24,7 @@
 
 		{% set is_hidden_select = false %}
 		{% if settings.image_color_variants and not (settings.bullet_variants)  %}
-			{% if variation.name in ['Color', 'Cor'] %}
+			{% if is_color_variation %}
 				{% set hidden_variant_select = ' d-none' %}
 				{% set is_hidden_select = true %}
 			{% else %}
@@ -30,9 +32,9 @@
 			{% endif %}
 		{% endif %}
 
-		{% set is_button_variant = ((variation.name in ['Color', 'Cor']) or settings.bullet_variants) and not use_compact_variant_select %}
+		{% set is_button_variant = (is_color_variation or settings.bullet_variants) and not use_compact_variant_select %}
 
-		<div class="js-product-variants-group ivana-variation-group {% if variation.name in ['Color', 'Cor'] %}js-color-variants-container{% endif %} {% if is_button_variant and show_size_guide and settings.size_guide_url and has_size_variations and loop.last %}mb-0{% endif %} {% if settings.bullet_variants %}mb-3{% endif %}" data-variation-id="{{ variation.id }}">
+		<div class="js-product-variants-group ivana-variation-group {% if is_color_variation %}js-color-variants-container{% endif %} {% if is_button_variant and show_size_guide and settings.size_guide_url and has_size_variations and loop.last %}mb-0{% endif %} {% if settings.bullet_variants %}mb-3{% endif %}" data-variation-id="{{ variation.id }}">
 			{% if quickshop %}
 				{% embed "snipplets/forms/form-select.tpl" with{select_label: true, select_label_name: '' ~ variation.name ~ '', select_for: 'variation_' ~ loop.index , select_id: 'variation_' ~ loop.index, select_name: 'variation' ~ '[' ~ variation.id ~ ']', select_group_custom_class: hidden_variant_select, select_custom_class: 'js-variation-option js-refresh-installment-data'} %}
 					{% block select_options %}
@@ -53,9 +55,9 @@
 			{% if is_button_variant %}
 				<label class="form-label ivana-variation-label">{{ variation.name }}: <strong class="js-insta-variation-label">{{ product.default_options[variation.id] }}</strong></label>
 				{% for option in variation.options %}
-					<a data-option="{{ option.id }}" class="js-insta-variant btn btn-variant ivana-variation-chip{% if product.default_options[variation.id] is same as(option.id) %} selected{% endif %}{% if variation.name in ['Color', 'Cor'] and (option.custom_data or settings.image_color_variants) %} btn-variant-color{% endif %}" title="{{ option.name }}" data-option="{{ option.id }}" data-variation-id="{{ variation.id }}">
-						<span class="btn-variant-content {% if settings.image_color_variants and variation.name in ['Color', 'Cor'] %} btn-variant-content-square{% endif %}"{% if option.custom_data and variation.name in ['Color', 'Cor'] %} style="background: {{ option.custom_data }}; border: 1px solid #eee"{% endif %} data-name="{{ option.name }}">
-							{% if settings.image_color_variants and variation.name in ['Color', 'Cor'] %}
+					<a data-option="{{ option.id }}" class="js-insta-variant btn btn-variant ivana-variation-chip{% if product.default_options[variation.id] is same as(option.id) %} selected{% endif %}{% if is_color_variation and (option.custom_data or settings.image_color_variants) %} btn-variant-color{% endif %}" title="{{ option.name }}" data-option="{{ option.id }}" data-variation-id="{{ variation.id }}">
+						<span class="btn-variant-content {% if settings.image_color_variants and is_color_variation %} btn-variant-content-square{% endif %}"{% if option.custom_data and is_color_variation %} style="background: {{ option.custom_data }}; border: 1px solid #eee"{% endif %} data-name="{{ option.name }}">
+							{% if settings.image_color_variants and is_color_variation %}
 								{% if product.default_options[variation.id] is same as(option.id) %}
 									<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ product.featured_variant_image | product_image_url('thumb')}}" data-sizes="auto" class="lazyload img-absolute-centered-vertically" alt="{{ option.name }}" />
 								{% else %}
@@ -66,7 +68,7 @@
 									{% endfor %}
 								{% endif %}
 							{% endif %}
-							{% if not(variation.name in ['Color', 'Cor']) or ((variation.name in ['Color', 'Cor']) and not option.custom_data and not settings.image_color_variants) %}
+							{% if not is_color_variation or (is_color_variation and not option.custom_data and not settings.image_color_variants) %}
 								{{ option.name }}
 							{% endif %}
 						</span>
