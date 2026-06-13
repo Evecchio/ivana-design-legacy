@@ -1186,6 +1186,14 @@ body.template-product .ivana-product-secondary-grid {
   width: 100% !important;
 }
 
+body.template-product .ivana-product-column {
+  align-content: start !important;
+  display: grid !important;
+  gap: clamp(20px, 2.4vw, 28px) !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
 body.template-product .ivana-product-shell .product-images {
   display: grid !important;
   gap: 14px !important;
@@ -1394,7 +1402,7 @@ body.template-product .ivana-product-secondary-grid {
   margin-top: 8px !important;
 }
 
-body.template-product .ivana-product-secondary-grid .ivana-product-description-card,
+body.template-product .ivana-product-description-card,
 body.template-product .ivana-product-logistics-panel {
   background: #ffffff !important;
   border: 1px solid #e9e2dd !important;
@@ -1626,6 +1634,18 @@ body.template-product .ivana-product-logistics-panel button[type="submit"]:after
     grid-template-columns: 1fr !important;
   }
 
+  body.template-product .ivana-product-column {
+    display: contents !important;
+  }
+
+  body.template-product .ivana-product-shell .product-images {
+    order: 1 !important;
+  }
+
+  body.template-product .ivana-product-shell .product-info {
+    order: 2 !important;
+  }
+
   body.template-product .ivana-product-gallery,
   body.template-product .product-images-slider.ivana-product-gallery {
     border-radius: 8px !important;
@@ -1664,10 +1684,14 @@ body.template-product .ivana-product-logistics-panel button[type="submit"]:after
   }
 
   body.template-product .ivana-product-logistics-panel {
-    order: -1 !important;
+    order: 3 !important;
   }
 
-  body.template-product .ivana-product-secondary-grid .ivana-product-description-card,
+  body.template-product .ivana-product-description-card {
+    order: 4 !important;
+  }
+
+  body.template-product .ivana-product-description-card,
   body.template-product .ivana-product-logistics-panel {
     border-radius: 8px !important;
     padding: 20px 18px !important;
