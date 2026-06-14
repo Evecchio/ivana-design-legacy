@@ -231,9 +231,21 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-badge,
     padding: 13px 12px 15px !important;
   }
 
+  .ivana-home-products .ivana-card .ivana-card-content-stack,
+  .ivana-home-products div.js-product-item-private.product-item.ivana-card .ivana-card-content-stack,
+  .ivana-home-products .js-item-product.ivana-card .ivana-card-content-stack {
+    gap: 5px !important;
+  }
+
   .ivana-card .ivana-card-title {
     font-size: 0.72rem !important;
     line-height: 1.24 !important;
+  }
+
+  .ivana-home-products .ivana-card .ivana-card-title,
+  .ivana-home-products div.js-product-item-private.product-item.ivana-card .ivana-card-title,
+  .ivana-home-products .js-item-product.ivana-card .ivana-card-title {
+    min-height: 2.45em !important;
   }
 
   .ivana-card .ivana-card-price-main.js-price-display,
@@ -931,6 +943,7 @@ body.template-product .ivana-product-detail-note-title {
 
 @media (min-width: 360px) and (max-width: 767px) {
   .ivana-home-products .ivana-card .ivana-card-content-stack {
+    gap: 5px !important;
     grid-template-rows: minmax(2.7em, auto) auto minmax(2.6em, auto) auto auto !important;
   }
 
