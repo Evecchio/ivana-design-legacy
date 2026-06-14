@@ -1026,13 +1026,13 @@ body.template-product .ivana-product-detail-note-title {
       "icon caption caption"
       "icon price badge" !important;
     grid-template-columns:
-      clamp(18px, 7cqw, 22px)
+      clamp(16px, 6cqw, 20px)
       minmax(0, 1fr)
       auto !important;
-    column-gap: clamp(5px, 1.8cqw, 8px) !important;
+    column-gap: clamp(4px, 1.4cqw, 6px) !important;
     justify-items: start !important;
-    padding: clamp(7px, 3cqw, 9px) clamp(6px, 2.7cqw, 8px) !important;
-    row-gap: clamp(2px, 1.1cqw, 4px) !important;
+    padding: clamp(6px, 2.6cqw, 8px) clamp(5px, 2.2cqw, 7px) !important;
+    row-gap: clamp(2px, 0.9cqw, 3px) !important;
     min-height: 0 !important;
     width: 100% !important;
   }
@@ -1042,8 +1042,8 @@ body.template-product .ivana-product-detail-note-title {
   .js-item-product.ivana-card .ivana-card-transfer-icon {
     display: inline-flex !important;
     grid-area: icon !important;
-    height: clamp(18px, 7cqw, 22px) !important;
-    width: clamp(18px, 7cqw, 22px) !important;
+    height: clamp(16px, 6cqw, 20px) !important;
+    width: clamp(16px, 6cqw, 20px) !important;
   }
 
   .ivana-card .ivana-card-transfer-icon svg,
@@ -1062,7 +1062,7 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-card .ivana-card-transfer-caption,
   div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-caption,
   .js-item-product.ivana-card .ivana-card-transfer-caption {
-    font-size: clamp(0.4rem, 0.18rem + 1cqw, 0.54rem) !important;
+    font-size: clamp(0.36rem, 0.16rem + 0.85cqw, 0.5rem) !important;
     grid-area: caption !important;
     letter-spacing: 0.015em !important;
     line-height: 1.08 !important;
@@ -1076,7 +1076,7 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-card .ivana-card-transfer-price,
   div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-price,
   .js-item-product.ivana-card .ivana-card-transfer-price {
-    font-size: clamp(0.7rem, 0.28rem + 2.2cqw, 0.9rem) !important;
+    font-size: clamp(0.64rem, 0.24rem + 1.95cqw, 0.84rem) !important;
     grid-area: price !important;
     justify-self: start !important;
     letter-spacing: 0.015em !important;
@@ -1088,7 +1088,7 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-card .ivana-card-transfer-badge,
   div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-badge,
   .js-item-product.ivana-card .ivana-card-transfer-badge {
-    font-size: clamp(0.4rem, 0.18rem + 1cqw, 0.54rem) !important;
+    font-size: clamp(0.36rem, 0.16rem + 0.85cqw, 0.5rem) !important;
     grid-area: badge !important;
     justify-self: start !important;
     letter-spacing: 0.015em !important;
@@ -1100,45 +1100,45 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-home-products .ivana-card .ivana-card-transfer-container,
   .ivana-home-products div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-container,
   .ivana-home-products .js-item-product.ivana-card .ivana-card-transfer-container {
-    column-gap: clamp(5px, 1.8cqw, 8px) !important;
+    column-gap: clamp(4px, 1.4cqw, 6px) !important;
     grid-template-columns:
-      clamp(18px, 7cqw, 22px)
+      clamp(16px, 6cqw, 20px)
       minmax(0, 1fr)
       auto !important;
-    padding: clamp(7px, 3cqw, 9px) clamp(6px, 2.7cqw, 8px) !important;
-    row-gap: clamp(2px, 1.1cqw, 4px) !important;
+    padding: clamp(6px, 2.6cqw, 8px) clamp(5px, 2.2cqw, 7px) !important;
+    row-gap: clamp(2px, 0.9cqw, 3px) !important;
   }
 
   .ivana-home-products .ivana-card .ivana-card-transfer-icon,
   .ivana-home-products div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-icon,
   .ivana-home-products .js-item-product.ivana-card .ivana-card-transfer-icon {
-    height: clamp(18px, 7cqw, 22px) !important;
-    width: clamp(18px, 7cqw, 22px) !important;
+    height: clamp(16px, 6cqw, 20px) !important;
+    width: clamp(16px, 6cqw, 20px) !important;
   }
 
   .ivana-home-products .ivana-card .ivana-card-transfer-caption,
   .ivana-home-products div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-caption,
   .ivana-home-products .js-item-product.ivana-card .ivana-card-transfer-caption {
-    font-size: clamp(0.4rem, 0.18rem + 1cqw, 0.54rem) !important;
+    font-size: clamp(0.36rem, 0.16rem + 0.85cqw, 0.5rem) !important;
     letter-spacing: 0.015em !important;
   }
 
   .ivana-home-products .ivana-card .ivana-card-transfer-price,
   .ivana-home-products div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-price,
   .ivana-home-products .js-item-product.ivana-card .ivana-card-transfer-price {
-    font-size: clamp(0.7rem, 0.28rem + 2.2cqw, 0.9rem) !important;
+    font-size: clamp(0.64rem, 0.24rem + 1.95cqw, 0.84rem) !important;
     letter-spacing: 0.015em !important;
   }
 
   .ivana-home-products .ivana-card .ivana-card-transfer-badge,
   .ivana-home-products div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-badge,
   .ivana-home-products .js-item-product.ivana-card .ivana-card-transfer-badge {
-    font-size: clamp(0.4rem, 0.18rem + 1cqw, 0.54rem) !important;
+    font-size: clamp(0.36rem, 0.16rem + 0.85cqw, 0.5rem) !important;
     letter-spacing: 0.015em !important;
   }
 }
 
-@container (max-width: 148px) {
+@container (max-width: 136px) {
   .ivana-card .ivana-card-transfer-container,
   div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-container,
   .js-item-product.ivana-card .ivana-card-transfer-container,
