@@ -966,14 +966,14 @@ body.template-product .ivana-product-detail-note-title {
   }
 
   .ivana-card .ivana-card-title {
-    font-size: clamp(0.66rem, 0.52rem + 1.2cqw, 0.78rem) !important;
+    font-size: clamp(0.58rem, 0.34rem + 1.8cqw, 0.78rem) !important;
     line-height: 1.24 !important;
     letter-spacing: clamp(0.025em, 0.18cqw, 0.045em) !important;
     min-height: 2.35em !important;
   }
 
   .ivana-card .ivana-card-price-compare {
-    font-size: clamp(0.66rem, 0.52rem + 1cqw, 0.78rem) !important;
+    font-size: clamp(0.58rem, 0.34rem + 1.6cqw, 0.78rem) !important;
   }
 
   .ivana-card .ivana-card-price-row,
@@ -990,7 +990,7 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-card .ivana-card-price-main.js-price-display,
   div.js-product-item-private.product-item.ivana-card .ivana-card-price-main,
   .js-item-product.ivana-card .ivana-card-price-main {
-    font-size: clamp(1rem, 0.72rem + 2cqw, 1.18rem) !important;
+    font-size: clamp(0.9rem, 0.42rem + 3cqw, 1.18rem) !important;
     letter-spacing: clamp(0.035em, 0.25cqw, 0.08em) !important;
   }
 
@@ -998,7 +998,7 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-home-products .ivana-card .ivana-card-discount-tag,
   .ivana-home-products div.js-product-item-private.product-item.ivana-card .ivana-card-discount-tag,
   .ivana-home-products .js-item-product.ivana-card .ivana-card-discount-tag {
-    font-size: clamp(0.5rem, 0.38rem + 0.9cqw, 0.62rem) !important;
+    font-size: clamp(0.44rem, 0.24rem + 1.2cqw, 0.62rem) !important;
     height: clamp(20px, 6.5cqw, 25px) !important;
     min-width: clamp(50px, 18cqw, 68px) !important;
     width: auto !important;
@@ -1007,7 +1007,7 @@ body.template-product .ivana-product-detail-note-title {
 
   .ivana-card .ivana-card-installments-text,
   .ivana-card .ivana-card-installments-text * {
-    font-size: clamp(0.58rem, 0.46rem + 0.9cqw, 0.68rem) !important;
+    font-size: clamp(0.5rem, 0.28rem + 1.1cqw, 0.68rem) !important;
     line-height: 1.28 !important;
   }
 
@@ -1056,7 +1056,7 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-card .ivana-card-transfer-caption,
   div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-caption,
   .js-item-product.ivana-card .ivana-card-transfer-caption {
-    font-size: clamp(0.48rem, 0.36rem + 0.8cqw, 0.58rem) !important;
+    font-size: clamp(0.42rem, 0.2rem + 1cqw, 0.58rem) !important;
     grid-area: caption !important;
     text-align: left !important;
     white-space: nowrap !important;
@@ -1065,7 +1065,7 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-card .ivana-card-transfer-price,
   div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-price,
   .js-item-product.ivana-card .ivana-card-transfer-price {
-    font-size: clamp(0.78rem, 0.58rem + 1.6cqw, 0.96rem) !important;
+    font-size: clamp(0.68rem, 0.28rem + 2.2cqw, 0.96rem) !important;
     grid-area: price !important;
     justify-self: start !important;
     white-space: nowrap !important;
@@ -1074,7 +1074,7 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-card .ivana-card-transfer-badge,
   div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-badge,
   .js-item-product.ivana-card .ivana-card-transfer-badge {
-    font-size: clamp(0.48rem, 0.36rem + 0.8cqw, 0.58rem) !important;
+    font-size: clamp(0.42rem, 0.2rem + 1cqw, 0.58rem) !important;
     grid-area: badge !important;
     justify-self: start !important;
     white-space: nowrap !important;
