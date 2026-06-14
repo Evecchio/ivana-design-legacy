@@ -972,10 +972,10 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-card {
     --ivana-card-browser-scale: calc(100vw / 390);
     --ivana-card-transfer-scale: calc(var(--ivana-card-browser-scale) * 0.82);
-    --ivana-card-transfer-gap: clamp(4px, 1.4vw, 7px);
-    --ivana-card-transfer-price-size: clamp(0.72rem, 2.65vw, 0.9rem);
-    --ivana-card-transfer-badge-size: clamp(0.42rem, 1.75vw, 0.54rem);
-    --ivana-card-transfer-caption-size: clamp(0.42rem, 1.75vw, 0.54rem);
+    --ivana-card-transfer-gap: clamp(5px, 1.5vw, 8px);
+    --ivana-card-transfer-price-size: clamp(0.7rem, 2.55vw, 0.9rem);
+    --ivana-card-transfer-badge-size: clamp(0.4rem, 1.65vw, 0.54rem);
+    --ivana-card-transfer-caption-size: clamp(0.4rem, 1.65vw, 0.54rem);
   }
 
   .ivana-card .ivana-card-content-stack {
@@ -1185,6 +1185,32 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-home-products .js-item-product.ivana-card .ivana-card-transfer-badge {
     font-size: var(--ivana-card-transfer-badge-size) !important;
     letter-spacing: 0.015em !important;
+  }
+}
+
+@container (max-width: 156px) {
+  .ivana-card .ivana-card-transfer-price-row,
+  .ivana-home-products .ivana-card .ivana-card-transfer-price-row,
+  .js-item-product.ivana-card .ivana-card-transfer-price-row,
+  div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-price-row {
+    align-items: flex-start !important;
+    column-gap: 0 !important;
+    flex-wrap: wrap !important;
+    row-gap: 4px !important;
+  }
+
+  .ivana-card .ivana-card-transfer-price,
+  .ivana-home-products .ivana-card .ivana-card-transfer-price,
+  .js-item-product.ivana-card .ivana-card-transfer-price,
+  div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-price {
+    flex: 0 0 100% !important;
+  }
+
+  .ivana-card .ivana-card-transfer-badge,
+  .ivana-home-products .ivana-card .ivana-card-transfer-badge,
+  .js-item-product.ivana-card .ivana-card-transfer-badge,
+  div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-badge {
+    margin-left: 0 !important;
   }
 }
 
