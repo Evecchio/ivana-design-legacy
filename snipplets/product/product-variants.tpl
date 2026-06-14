@@ -55,22 +55,9 @@
 			{% if is_button_variant %}
 				<label class="form-label ivana-variation-label">{{ variation.name }}: <strong class="js-insta-variation-label">{{ product.default_options[variation.id] }}</strong></label>
 				{% for option in variation.options %}
-					<a data-option="{{ option.id }}" class="js-insta-variant btn btn-variant ivana-variation-chip{% if product.default_options[variation.id] is same as(option.id) %} selected{% endif %}{% if is_color_variation and (option.custom_data or settings.image_color_variants) %} btn-variant-color{% endif %}" title="{{ option.name }}" data-option="{{ option.id }}" data-variation-id="{{ variation.id }}">
-						<span class="btn-variant-content {% if settings.image_color_variants and is_color_variation %} btn-variant-content-square{% endif %}"{% if option.custom_data and is_color_variation %} style="background: {{ option.custom_data }}; border: 1px solid #eee"{% endif %} data-name="{{ option.name }}">
-							{% if settings.image_color_variants and is_color_variation %}
-								{% if product.default_options[variation.id] is same as(option.id) %}
-									<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ product.featured_variant_image | product_image_url('thumb')}}" data-sizes="auto" class="lazyload img-absolute-centered-vertically" alt="{{ option.name }}" />
-								{% else %}
-									{% for variant in product.variants if (variant.option1 == option.id) or (variant.option2 == option.id) or (variant.option3 == option.id) %}
-										{% if loop.first %}
-											<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ variant.image | product_image_url('thumb') }}" data-sizes="auto" class="lazyload img-absolute-centered-vertically" alt="{{ option.name }}" />
-										{% endif %}
-									{% endfor %}
-								{% endif %}
-							{% endif %}
-							{% if not is_color_variation or (is_color_variation and not option.custom_data and not settings.image_color_variants) %}
-								{{ option.name }}
-							{% endif %}
+					<a data-option="{{ option.id }}" class="js-insta-variant btn btn-variant ivana-variation-chip{% if is_color_variation %} ivana-variation-chip--filter{% endif %}{% if product.default_options[variation.id] is same as(option.id) %} selected{% endif %}" title="{{ option.name }}" data-option="{{ option.id }}" data-variation-id="{{ variation.id }}">
+						<span class="btn-variant-content" data-name="{{ option.name }}">
+							{{ option.name }}
 						</span>
 					</a>
 				{% endfor %}

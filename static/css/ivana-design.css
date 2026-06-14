@@ -5524,6 +5524,17 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-badge,
   margin: 0 !important;
 }
 
+.ivana-product-shell .js-color-variants-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+}
+
+.ivana-product-shell .js-color-variants-container .ivana-variation-label {
+  flex: 0 0 100% !important;
+}
+
 .ivana-product-shell .js-product-variants .form-label,
 .ivana-product-shell .js-product-variants label,
 .ivana-variation-label {
@@ -5569,6 +5580,21 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-badge,
   border-color: #151412 !important;
   background: #151412 !important;
   color: #ffffff !important;
+}
+
+.ivana-product-shell .ivana-variation-chip--filter {
+  border-radius: 10px !important;
+  min-width: 0 !important;
+  min-height: 44px !important;
+}
+
+.ivana-product-shell .ivana-variation-chip--filter .btn-variant-content {
+  min-width: 0 !important;
+  min-height: 42px !important;
+  padding: 0 14px !important;
+  font-size: 12px !important;
+  letter-spacing: 0.08em !important;
+  white-space: nowrap !important;
 }
 
 .ivana-product-shell .btn-variant-color,
