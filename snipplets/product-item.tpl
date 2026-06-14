@@ -72,11 +72,9 @@
             </span>
             <span class="ivana-card-transfer-copy">
                 <span class="ivana-card-transfer-caption">Transferencia o deposito</span>
-                <span class="ivana-card-transfer-price-row">
-                    <span class="ivana-card-transfer-price">{{ transfer_price | money }}</span>
-                    <span class="ivana-card-transfer-badge">{{ transfer_discount_percentage }}% OFF</span>
-                </span>
+                <span class="ivana-card-transfer-price">{{ transfer_price | money }}</span>
             </span>
+            <span class="ivana-card-transfer-badge">{{ transfer_discount_percentage }}% OFF</span>
         </div>
     {% endif %}
 
