@@ -983,7 +983,7 @@ body.template-product .ivana-product-detail-note-title {
     display: flex !important;
     align-items: center !important;
     flex-direction: row !important;
-    gap: clamp(4px, 2cqw, 8px) !important;
+    gap: clamp(3px, 1.6cqw, 7px) !important;
     flex-wrap: wrap !important;
   }
 
