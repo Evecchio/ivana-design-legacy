@@ -4,7 +4,7 @@
 
 		{{ component('head-tags') }}
 
-		{% set asset_version = '20260613-01' %}
+		{% set asset_version = '20260614-01' %}
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

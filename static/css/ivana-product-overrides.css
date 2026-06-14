@@ -242,6 +242,21 @@ div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-badge,
     font-size: 1.08rem !important;
   }
 
+  .ivana-home-products .ivana-card .ivana-card-price-row,
+  .ivana-home-products div.js-product-item-private.product-item.ivana-card .ivana-card-price-row,
+  .ivana-home-products .js-item-product.ivana-card .ivana-card-price-row {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+  }
+
+  .ivana-home-products .ivana-card .ivana-card-discount-tag,
+  .ivana-home-products div.js-product-item-private.product-item.ivana-card .ivana-card-discount-tag,
+  .ivana-home-products .js-item-product.ivana-card .ivana-card-discount-tag {
+    min-width: 0 !important;
+    width: fit-content !important;
+  }
+
   .ivana-card .ivana-card-transfer-container,
   div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-container,
   .js-item-product.ivana-card .ivana-card-transfer-container,
