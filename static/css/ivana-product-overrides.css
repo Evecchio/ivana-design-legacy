@@ -971,6 +971,7 @@ body.template-product .ivana-product-detail-note-title {
 @media (max-width: 767px) {
   .ivana-card {
     --ivana-card-browser-scale: calc(100vw / 390);
+    --ivana-card-transfer-scale: calc(var(--ivana-card-browser-scale) * 0.82);
   }
 
   .ivana-card .ivana-card-content-stack {
@@ -1033,20 +1034,20 @@ body.template-product .ivana-product-detail-note-title {
   div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-container,
   .js-item-product.ivana-card .ivana-card-transfer-container {
     align-items: center !important;
-    border-radius: calc(7px * var(--ivana-card-browser-scale)) !important;
+    border-radius: calc(6px * var(--ivana-card-transfer-scale)) !important;
     display: grid !important;
     grid-template-areas:
       "icon copy" !important;
     grid-template-columns:
-      calc(24px * var(--ivana-card-browser-scale))
+      calc(18px * var(--ivana-card-transfer-scale))
       minmax(0, 1fr) !important;
     column-gap: 7px !important;
-    row-gap: calc(4px * var(--ivana-card-browser-scale)) !important;
+    row-gap: calc(3px * var(--ivana-card-transfer-scale)) !important;
     justify-content: start !important;
     justify-items: start !important;
     padding:
-      calc(9px * var(--ivana-card-browser-scale))
-      calc(8px * var(--ivana-card-browser-scale)) !important;
+      calc(7px * var(--ivana-card-transfer-scale))
+      calc(6px * var(--ivana-card-transfer-scale)) !important;
     min-height: 0 !important;
     width: 100% !important;
   }
@@ -1056,8 +1057,8 @@ body.template-product .ivana-product-detail-note-title {
   .js-item-product.ivana-card .ivana-card-transfer-icon {
     display: inline-flex !important;
     grid-area: icon !important;
-    height: calc(24px * var(--ivana-card-browser-scale)) !important;
-    width: calc(24px * var(--ivana-card-browser-scale)) !important;
+    height: calc(18px * var(--ivana-card-transfer-scale)) !important;
+    width: calc(18px * var(--ivana-card-transfer-scale)) !important;
   }
 
   .ivana-card .ivana-card-transfer-icon svg,
@@ -1071,7 +1072,7 @@ body.template-product .ivana-product-detail-note-title {
   div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-copy,
   .js-item-product.ivana-card .ivana-card-transfer-copy {
     display: grid !important;
-    gap: calc(4px * var(--ivana-card-browser-scale)) !important;
+    gap: calc(3px * var(--ivana-card-transfer-scale)) !important;
     grid-area: copy !important;
     min-width: 0 !important;
   }
@@ -1079,10 +1080,12 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-card .ivana-card-transfer-caption,
   div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-caption,
   .js-item-product.ivana-card .ivana-card-transfer-caption {
-    font-size: calc(0.58rem * var(--ivana-card-browser-scale)) !important;
-    letter-spacing: calc(0.035em * var(--ivana-card-browser-scale)) !important;
+    font-size: calc(0.44rem * var(--ivana-card-transfer-scale)) !important;
+    letter-spacing: calc(0.02em * var(--ivana-card-transfer-scale)) !important;
     line-height: 1.08 !important;
+    overflow: hidden !important;
     text-align: left !important;
+    text-overflow: ellipsis !important;
     white-space: nowrap !important;
   }
 
@@ -1099,8 +1102,8 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-card .ivana-card-transfer-price,
   div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-price,
   .js-item-product.ivana-card .ivana-card-transfer-price {
-    font-size: calc(0.96rem * var(--ivana-card-browser-scale)) !important;
-    letter-spacing: calc(0.035em * var(--ivana-card-browser-scale)) !important;
+    font-size: calc(0.76rem * var(--ivana-card-transfer-scale)) !important;
+    letter-spacing: calc(0.02em * var(--ivana-card-transfer-scale)) !important;
     line-height: 1 !important;
     white-space: nowrap !important;
   }
@@ -1108,8 +1111,8 @@ body.template-product .ivana-product-detail-note-title {
   .ivana-card .ivana-card-transfer-badge,
   div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-badge,
   .js-item-product.ivana-card .ivana-card-transfer-badge {
-    font-size: calc(0.58rem * var(--ivana-card-browser-scale)) !important;
-    letter-spacing: calc(0.035em * var(--ivana-card-browser-scale)) !important;
+    font-size: calc(0.44rem * var(--ivana-card-transfer-scale)) !important;
+    letter-spacing: calc(0.02em * var(--ivana-card-transfer-scale)) !important;
     line-height: 1.08 !important;
     white-space: nowrap !important;
   }
