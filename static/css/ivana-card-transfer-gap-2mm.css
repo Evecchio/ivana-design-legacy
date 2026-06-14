@@ -1,0 +1,10 @@
+/* Small card override loaded after ivana-product-overrides.css.
+   Adds exactly 2mm between transfer price and 20% OFF badge. */
+.ivana-card .ivana-card-transfer-badge,
+div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-badge,
+.js-item-product.ivana-card .ivana-card-transfer-badge,
+.ivana-home-products .ivana-card .ivana-card-transfer-badge,
+.ivana-home-products div.js-product-item-private.product-item.ivana-card .ivana-card-transfer-badge,
+.ivana-home-products .js-item-product.ivana-card .ivana-card-transfer-badge {
+  margin-left: 2mm !important;
+}
