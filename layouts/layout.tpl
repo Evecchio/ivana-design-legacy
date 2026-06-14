@@ -4,7 +4,7 @@
 
 		{{ component('head-tags') }}
 
-		{% set asset_version = '20260614-05' %}
+		{% set asset_version = '20260614-06' %}
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -81,6 +81,7 @@
 
 		<link rel="stylesheet" href="{{ 'css/ivana-design.css' | static_url }}?v={{ asset_version }}">
 		<link rel="stylesheet" href="{{ 'css/ivana-product-overrides.css' | static_url }}?v={{ asset_version }}">
+		<link rel="stylesheet" href="{{ 'css/ivana-card-transfer-gap-2mm.css' | static_url }}?v={{ asset_version }}">
 	</head>
 	<body class="{% if customer %}customer-logged-in{% endif %} template-{{ template | replace('.', '-') }}">
 
